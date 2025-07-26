@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,38 +14,50 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] min-h-screen;
+    @apply bg-gradient-to-br from-premium-black via-premium-charcoal to-premium-dark min-h-screen;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    @apply font-semibold;
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    @apply font-semibold text-premium-gold;
   }
 }
 
 @layer components {
   .premium-gradient {
-    @apply bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#f093fb];
+    @apply bg-gradient-to-r from-premium-gold via-premium-gold-light to-premium-gold-dark;
   }
   
   .premium-text-gradient {
-    @apply bg-gradient-to-r from-[#60a5fa] via-[#34d399] to-[#a78bfa] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-premium-gold via-premium-gold-light to-premium-gold-dark bg-clip-text text-transparent;
   }
   
   .glass-effect {
-    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+    @apply backdrop-blur-lg bg-premium-gold/10 border border-premium-gold/20;
+  }
+  
+  .luxury-card {
+    @apply bg-gradient-to-br from-premium-charcoal/80 to-premium-dark/80 backdrop-blur-lg border border-premium-gold/30 rounded-xl shadow-2xl;
   }
 }
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  .text-shadow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   }
 }

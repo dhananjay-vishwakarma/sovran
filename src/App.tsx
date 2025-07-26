@@ -12,7 +12,7 @@ import SovranDesign from './pages/SovranDesign';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen w-full bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] overflow-x-hidden">
+      <div className="min-h-screen w-full bg-gradient-to-br from-premium-black via-premium-charcoal to-premium-dark overflow-x-hidden">
         <Navbar />
         <main className="w-full">
           <Routes>
