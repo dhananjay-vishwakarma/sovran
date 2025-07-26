@@ -12,7 +12,7 @@ const Navbar = () => {
     { path: '/', label: 'HOME' },
     { path: '/about', label: 'ABOUT US' },
     { path: '/sovran-builders', label: 'SOVRAN BUILDERS' },
-    { path: '/sovran-interiors', label: 'MR. WARDROBE' },
+    { path: '/sovran-interiors', label: 'SOVRAN INTERIORS' },
     { path: '/sovran-design', label: 'TAAJ KITCHENS' },
     { path: '/careers', label: 'CAREERS' },
     { path: '/contact', label: 'CONTACT' },
