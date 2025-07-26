@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  html {
+    font-family: 'Inter', 'system-ui', sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] min-h-screen;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .premium-gradient {
+    @apply bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#f093fb];
+  }
+  
+  .premium-text-gradient {
+    @apply bg-gradient-to-r from-[#60a5fa] via-[#34d399] to-[#a78bfa] bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
