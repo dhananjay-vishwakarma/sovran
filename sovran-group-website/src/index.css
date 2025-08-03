@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IvyMode Font Styles from Typekit */
+/* The font is loaded via the Typekit CSS link in index.html */
+
+/* IvyMode Font Variations */
+.ivymode-thin {
+  font-family: "ivymode", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.ivymode-thin-italic {
+  font-family: "ivymode", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+.ivymode-light {
+  font-family: "ivymode", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.ivymode-light-italic {
+  font-family: "ivymode", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.ivymode-regular {
+  font-family: "ivymode", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.ivymode-italic {
+  font-family: "ivymode", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.ivymode-semibold {
+  font-family: "ivymode", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.ivymode-semibold-italic {
+  font-family: "ivymode", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.ivymode-bold {
+  font-family: "ivymode", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.ivymode-bold-italic {
+  font-family: "ivymode", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Lato Font Classes */
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+.lato-light {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.lato-regular {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+.lato-bold {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+/* Navigation menu should use Lato */
+.nav-menu, .main-menu, .mega-menu, .nav-link {
+  font-family: 'Lato', sans-serif;
+}
+
+/* Footer menu should use Lato */
+.footer-menu, .footer-nav, footer li, footer a {
+  font-family: 'Lato', sans-serif;
+}
+
+/* For smaller text elements */
+p, .small-text, .text-sm, .text-xs, .description, button, a, li {
+  font-family: 'Lato', sans-serif;
+}
+
+/* For larger text elements */
+h1, h2, h3, h4, h5, h6, .large-text, .heading, .title {
+  font-family: "ivymode", serif;
+  font-weight: 400;
+}
+
+/* Bodoni Moda Font Classes */
+.font-bodoni {
+  font-family: 'Bodoni Moda', serif;
+}
+.bodoni-regular {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 400;
+}
+.bodoni-medium {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+}
+.bodoni-bold {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+}
+
+:root {
+  /* ...existing code... */
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000; /* Black */
+  color: #ffffff; /* White */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ivymode", serif;
+  font-weight: 400;
+  /* ...existing code... */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.reveal-image {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Custom Button Styles */
+.sovran-btn {
+  border: 1px solid #CDAD7D;
+  transition: 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.sovran-btn svg {
+  fill: none;
+  stroke: #CDAD7D;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.sovran-btn:hover {
+  transition: 1s ease-in-out;
+  background: #CDAD7D;
+}
+
+.sovran-btn:hover svg {
+  stroke-dashoffset: -480;
+  stroke: #fff;
+}
+
+.sovran-btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.sovran-btn:hover span {
+  color: #000;
+}
+
+.font-serif {
+  font-family: "ivymode", serif;
+}
+
+/* Custom Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+}

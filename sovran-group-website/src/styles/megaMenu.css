@@ -1,0 +1,128 @@
+/* Mega Menu Styles */
+
+.mega-menu-wrapper {
+  position: relative;
+}
+
+.mega-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.mega-menu-wrapper:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Fix for menu closing when moving cursor between menu and trigger */
+.mega-menu:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+/* Category image hover effects */
+.category-image {
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.category-image:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.category-image img {
+  transition: transform 0.5s ease;
+}
+
+.category-image:hover img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-image:hover .category-overlay {
+  opacity: 1;
+}
+
+/* Video thumbnails */
+.video-thumbnail {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover {
+  transform: translateY(-3px);
+}
+
+.video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.video-thumbnail:hover .video-play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animation for main categories */
+.mega-menu a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mega-menu a:hover {
+  transform: translateX(3px);
+}
+
+/* Staggered animation for mega menu items */
+.mega-menu-wrapper:hover .mega-menu > div > div:nth-child(1) {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.mega-menu-wrapper:hover .mega-menu > div > div:nth-child(2) {
+  animation: fadeInUp 0.4s 0.1s ease forwards;
+}
+
+.mega-menu-wrapper:hover .mega-menu > div > div:nth-child(3) {
+  animation: fadeInUp 0.4s 0.2s ease forwards;
+}
+
+.mega-menu-wrapper:hover .mega-menu > div > div:nth-child(4) {
+  animation: fadeInUp 0.4s 0.3s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "mainPage": {
+    "title": "Sovran Interiors",
+    "description": "Crafting bespoke interiors that reflect your unique style and personality",
+    "heroImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80",
+    "ctaText": "Discuss Your Project",
+    "ctaLink": "/contact",
+    "sections": [
+      {
+        "id": "services",
+        "type": "services",
+        "title": "Our Interior Services",
+        "description": "From concept to completion, we provide comprehensive interior design and implementation services",
+        "items": [
+          {
+            "title": "Custom Wardrobes",
+            "description": "Bespoke wardrobe solutions designed to maximize your space and complement your home's aesthetic.",
+            "icon": "📐",
+            "link": "/sovran-interiors/bespoke-wardrobes"
+          },
+          {
+            "title": "Kitchen Design",
+            "description": "Modern kitchen solutions that blend functionality with elegant design for the heart of your home.",
+            "icon": "🍳",
+            "link": "/sovran-interiors/kitchens"
+          },
+          {
+            "title": "Living Spaces",
+            "description": "Transform your living areas into stylish, comfortable spaces that reflect your personality.",
+            "icon": "🛋️",
+            "link": "/sovran-interiors/bespoke-rooms"
+          },
+          {
+            "title": "Bathroom Renovation",
+            "description": "Luxury bathroom designs with high-quality fixtures and premium finishes.",
+            "icon": "🚿",
+            "link": "/sovran-interiors/bathrooms"
+          },
+          {
+            "title": "Home Office",
+            "description": "Productive and inspiring work environments designed for the modern professional.",
+            "icon": "💼",
+            "link": "/sovran-interiors/bespoke-rooms/offices"
+          },
+          {
+            "title": "Material Selection",
+            "description": "Expert guidance on selecting the perfect materials, colors, and textures for your space.",
+            "icon": "🎨",
+            "link": "/sovran-interiors/design-consultation"
+          }
+        ]
+      },
+      {
+        "id": "projects",
+        "type": "gallery",
+        "title": "Featured Interior Projects",
+        "description": "Explore some of our recent interior transformations",
+        "items": [
+          {
+            "title": "Modern Minimalist Apartment",
+            "description": "A complete interior renovation focusing on clean lines and open spaces.",
+            "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "link": "/sovran-interiors/projects/modern-minimalist"
+          },
+          {
+            "title": "Luxury Kitchen Remodel",
+            "description": "A high-end kitchen transformation with custom cabinetry and premium appliances.",
+            "image": "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1935&q=80",
+            "link": "/sovran-interiors/kitchens/projects/luxury-remodel"
+          },
+          {
+            "title": "Executive Home Office",
+            "description": "A sophisticated workspace designed for productivity and virtual meetings.",
+            "image": "https://images.unsplash.com/photo-1486946255434-2466348c2166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80",
+            "link": "/sovran-interiors/bespoke-rooms/offices/executive"
+          },
+          {
+            "title": "Master Bedroom Suite",
+            "description": "A serene retreat with custom wardrobes and luxurious finishes.",
+            "image": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "link": "/sovran-interiors/bespoke-wardrobes/master-suite"
+          }
+        ]
+      }
+    ],
+    "ctaSection": {
+      "title": "Ready to Transform Your Space?",
+      "description": "Contact our team of interior design specialists to discuss your project needs and vision",
+      "primaryCta": {
+        "text": "Schedule Consultation",
+        "link": "/contact"
+      },
+      "secondaryCta": {
+        "text": "Browse Portfolio",
+        "link": "/sovran-interiors/projects"
+      }
+    }
+  },
+  "categories": [
+    {
+      "id": "bespoke-rooms",
+      "title": "Bespoke Rooms",
+      "description": "Custom designed rooms to match your style and requirements",
+      "heroImage": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "subcategories": [
+        {
+          "id": "our-ranges",
+          "title": "Our Ranges",
+          "description": "Explore our collection of bespoke room designs",
+          "link": "/sovran-interiors/bespoke-rooms/our-ranges"
+        },
+        {
+          "id": "tv-units",
+          "title": "TV Units",
+          "description": "Custom TV units designed to enhance your living space",
+          "link": "/sovran-interiors/bespoke-rooms/tv-units"
+        },
+        {
+          "id": "offices",
+          "title": "Offices",
+          "description": "Productive and stylish home office solutions",
+          "link": "/sovran-interiors/bespoke-rooms/offices"
+        },
+        {
+          "id": "bookshelves-displays",
+          "title": "Bookshelves & Displays",
+          "description": "Beautiful storage and display solutions for your home",
+          "link": "/sovran-interiors/bespoke-rooms/bookshelves-displays"
+        },
+        {
+          "id": "bars",
+          "title": "Bars",
+          "description": "Elegant custom bars for entertaining at home",
+          "link": "/sovran-interiors/bespoke-rooms/bars"
+        }
+      ],
+      "content": {
+        "introduction": "At Sovran Interiors, we specialize in creating bespoke rooms tailored to your specific needs and aesthetic preferences. Each room is thoughtfully designed to maximize functionality while maintaining a cohesive style throughout your home.",
+        "sections": [
+          {
+            "title": "Design Process",
+            "content": "Our expert designers work closely with you to understand your vision, lifestyle, and requirements. We take into account every detail, from spatial planning to lighting, to create a room that exceeds your expectations."
+          },
+          {
+            "title": "Materials & Craftsmanship",
+            "content": "We use only the finest materials and work with skilled craftsmen to ensure exceptional quality in every aspect of your bespoke room. From premium woods to designer hardware, every component is selected for its beauty and durability."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Contemporary Family Room",
+            "description": "A sophisticated yet comfortable space designed for modern family living",
+            "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+          },
+          {
+            "title": "Luxury Home Cinema",
+            "description": "A state-of-the-art entertainment space with premium acoustics and comfortable seating",
+            "image": "https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bespoke-wardrobes",
+      "title": "Bespoke Wardrobes",
+      "description": "Custom wardrobes designed to maximize your space and style",
+      "heroImage": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80",
+      "subcategories": [
+        {
+          "id": "all-wardrobes",
+          "title": "All Wardrobes",
+          "description": "Browse our complete collection of bespoke wardrobes",
+          "link": "/sovran-interiors/bespoke-wardrobes/all-wardrobes"
+        },
+        {
+          "id": "view-all-wardrobes",
+          "title": "View All Wardrobes",
+          "description": "Explore our extensive wardrobe collection",
+          "link": "/sovran-interiors/bespoke-wardrobes/view-all-wardrobes"
+        },
+        {
+          "id": "shop-by-room-type",
+          "title": "Shop by Room Type",
+          "description": "Find the perfect wardrobe for any room in your home",
+          "link": "/sovran-interiors/bespoke-wardrobes/shop-by-room-type"
+        },
+        {
+          "id": "shop-by-door-style",
+          "title": "Shop by Door Style",
+          "description": "Choose from a variety of door styles to match your interior",
+          "link": "/sovran-interiors/bespoke-wardrobes/shop-by-door-style"
+        }
+      ],
+      "content": {
+        "introduction": "Our bespoke wardrobes are designed to provide elegant storage solutions while complementing your interior décor. Each wardrobe is custom-built to optimize your space and accommodate your specific storage needs.",
+        "sections": [
+          {
+            "title": "Custom Solutions",
+            "content": "Whether you're looking for a walk-in wardrobe, fitted wardrobes, or a complete dressing room, our team will create a solution tailored to your requirements and available space."
+          },
+          {
+            "title": "Interior Organization",
+            "content": "We offer a range of interior storage solutions, including hanging rails, shelving, drawers, and specialized compartments, ensuring that everything has its place."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Luxury Walk-in Wardrobe",
+            "description": "A spacious walk-in wardrobe with elegant lighting and custom organization",
+            "image": "https://images.unsplash.com/photo-1571321804268-deadf31c6524?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+          },
+          {
+            "title": "Minimalist Sliding Door Wardrobe",
+            "description": "A sleek, contemporary wardrobe design with efficient use of space",
+            "image": "https://images.unsplash.com/photo-1595520154202-4edb5a5b35ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kitchens",
+      "title": "Kitchens",
+      "description": "Luxury kitchen designs combining functionality with exquisite style",
+      "heroImage": "https://images.unsplash.com/photo-1605982003254-c52dad2b6c6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80",
+      "subcategories": [
+        {
+          "id": "kitchen-collection",
+          "title": "Kitchen Collection",
+          "description": "Explore our range of premium kitchen designs",
+          "link": "/sovran-interiors/kitchens/kitchen-collection"
+        },
+        {
+          "id": "kitchen-features",
+          "title": "Kitchen Features",
+          "description": "Innovative features to enhance your kitchen experience",
+          "link": "/sovran-interiors/kitchens/kitchen-features"
+        },
+        {
+          "id": "luxury-kitchen-materials",
+          "title": "Luxury Kitchen Materials",
+          "description": "Premium materials for a sophisticated kitchen design",
+          "link": "/sovran-interiors/kitchens/luxury-kitchen-materials"
+        },
+        {
+          "id": "projects",
+          "title": "Projects",
+          "description": "Discover our completed kitchen transformations",
+          "link": "/sovran-interiors/kitchens/projects"
+        },
+        {
+          "id": "complete-home-solutions",
+          "title": "Complete Home Solutions",
+          "description": "Comprehensive kitchen and home renovation services",
+          "link": "/sovran-interiors/kitchens/complete-home-solutions"
+        },
+        {
+          "id": "remarkable-developments",
+          "title": "Remarkable Developments",
+          "description": "Innovative designs that push the boundaries of kitchen design",
+          "link": "/sovran-interiors/kitchens/remarkable-developments"
+        }
+      ],
+      "content": {
+        "introduction": "Our luxury kitchens combine exceptional design with practical functionality, creating spaces that are as beautiful as they are functional. Each kitchen is meticulously planned to enhance your cooking experience and complement your lifestyle.",
+        "sections": [
+          {
+            "title": "Bespoke Design",
+            "content": "We design kitchens that reflect your personal style and meet your specific requirements, ensuring a perfect balance between aesthetics and functionality."
+          },
+          {
+            "title": "Premium Materials",
+            "content": "From natural stone countertops to custom cabinetry, we use only the finest materials to create kitchens of unparalleled quality and durability."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Contemporary Open-Plan Kitchen",
+            "description": "A spacious, modern kitchen designed for entertaining and family living",
+            "image": "https://images.unsplash.com/photo-1604709177225-055f99402ea3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          },
+          {
+            "title": "Traditional Luxury Kitchen",
+            "description": "A classic kitchen design with modern amenities and timeless elegance",
+            "image": "https://images.unsplash.com/photo-1570739904762-6c828a7e3e84?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80"
+          }
+        ]
+      }
+    }
+  ],
+  "navigation": {
+    "mainCategories": [
+      {
+        "id": "bespoke-rooms",
+        "title": "Bespoke Rooms",
+        "link": "/sovran-interiors/bespoke-rooms",
+        "subcategories": [
+          {"id": "our-ranges", "title": "Our Ranges", "link": "/sovran-interiors/bespoke-rooms/our-ranges"},
+          {"id": "tv-units", "title": "TV Units", "link": "/sovran-interiors/bespoke-rooms/tv-units"},
+          {"id": "offices", "title": "Offices", "link": "/sovran-interiors/bespoke-rooms/offices"},
+          {"id": "bookshelves-displays", "title": "Bookshelves & Displays", "link": "/sovran-interiors/bespoke-rooms/bookshelves-displays"},
+          {"id": "bars", "title": "Bars", "link": "/sovran-interiors/bespoke-rooms/bars"}
+        ]
+      },
+      {
+        "id": "bespoke-wardrobes",
+        "title": "Bespoke Wardrobes",
+        "link": "/sovran-interiors/bespoke-wardrobes",
+        "subcategories": [
+          {"id": "all-wardrobes", "title": "All Wardrobes", "link": "/sovran-interiors/bespoke-wardrobes/all-wardrobes"},
+          {"id": "view-all-wardrobes", "title": "View All Wardrobes", "link": "/sovran-interiors/bespoke-wardrobes/view-all-wardrobes"},
+          {"id": "shop-by-room-type", "title": "Shop by Room Type", "link": "/sovran-interiors/bespoke-wardrobes/shop-by-room-type"},
+          {"id": "shop-by-door-style", "title": "Shop by Door Style", "link": "/sovran-interiors/bespoke-wardrobes/shop-by-door-style"}
+        ]
+      },
+      {
+        "id": "kitchens",
+        "title": "Kitchens",
+        "link": "/sovran-interiors/kitchens",
+        "subcategories": [
+          {"id": "kitchen-collection", "title": "Kitchen Collection", "link": "/sovran-interiors/kitchens/kitchen-collection"},
+          {"id": "kitchen-features", "title": "Kitchen Features", "link": "/sovran-interiors/kitchens/kitchen-features"},
+          {"id": "luxury-kitchen-materials", "title": "Luxury Kitchen Materials", "link": "/sovran-interiors/kitchens/luxury-kitchen-materials"},
+          {"id": "projects", "title": "Projects", "link": "/sovran-interiors/kitchens/projects"},
+          {"id": "complete-home-solutions", "title": "Complete Home Solutions", "link": "/sovran-interiors/kitchens/complete-home-solutions"},
+          {"id": "remarkable-developments", "title": "Remarkable Developments", "link": "/sovran-interiors/kitchens/remarkable-developments"}
+        ]
+      }
+    ]
+  }
+}
