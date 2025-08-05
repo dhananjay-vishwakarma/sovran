@@ -113,14 +113,14 @@ const AboutPage: React.FC = () => {
         ref={heroRef}
         className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center" 
         style={{
-          backgroundImage: "url('/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg')",
+          backgroundImage: "url('public/images/AdobeStock_1312472493.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="absolute inset-0 bg-dark-900/70 z-0"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">
             About Sovran Group
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

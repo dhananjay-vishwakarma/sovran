@@ -220,6 +220,38 @@ code {
   }
 }
 
+@keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeInWithBlur {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
 .animate-slide-up {
   animation: slideUp 1s ease-out forwards;
+}
+
+.animate-fade-in-blur {
+  animation: fadeInBlur 1.2s ease-out forwards;
+}
+
+.animate-fade-in-with-blur {
+  animation: fadeInWithBlur 1.4s ease-out forwards;
 }
