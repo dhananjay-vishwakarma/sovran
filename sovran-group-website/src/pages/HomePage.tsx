@@ -229,6 +229,23 @@ After extensive research, we found a team whose modern, clean aesthetic and high
         </div>
       </section>
       
+      {/* Philosophy / Brand Belief Statement */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="reveal-up mb-6">
+            <h2 className="font-sans text-4xl md:text-5xl text-black mb-4 ivymode">Every Space Has a Story</h2>
+          </div>
+          <div className="reveal-opacity">
+            <p className="text-lg text-black/85 leading-relaxed">
+              Behind every project is a story — of a family, a dream, and a vision for something better. We listen, we
+              understand, and we bring together the right minds and hands to make it real. For us, it’s not just about
+              building spaces — it’s about creating places you’ll love to live in, grow in, and share with the people who
+              matter most.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Financial Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
