@@ -17,7 +17,7 @@ const MrWardrobePage: React.FC = () => {
               className="h-16 mx-auto mb-6"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl  text-white mb-6">
             Mr Wardrobe
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -30,7 +30,7 @@ const MrWardrobePage: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-dark-800/50 backdrop-blur-sm p-8 rounded-lg border border-dark-600">
-            <h2 className="text-3xl font-bold text-white mb-6">Bespoke Wardrobe Solutions</h2>
+            <h2 className="text-3xl  text-white mb-6">Bespoke Wardrobe Solutions</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
               Mr Wardrobe specializes in creating custom wardrobe solutions that maximize space and style. 
               Our services include:

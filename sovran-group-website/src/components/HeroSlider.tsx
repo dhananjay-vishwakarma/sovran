@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import ArrowButton from './ArrowButton';
 
+
 interface Slide {
     id: number;
     title: string;
@@ -138,9 +139,7 @@ const HeroSlider: React.FC = () => {
                             <div
                                 ref={(el) => { bgRefs.current[index] = el; return undefined; }}
                                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                                style={{
-                                    backgroundImage: `url(${slide.backgroundImage})`
-                                }}
+                                style={{ backgroundImage: `url(${slide.backgroundImage})` }}
                             >
                             </div>
                         </div>
@@ -152,7 +151,7 @@ const HeroSlider: React.FC = () => {
                                 ref={(el) => { contentRefs.current[index] = el; return undefined; }}
                                 className="text-center max-w-4xl mx-auto px-6"
                             >
-                                <h1 className="ivymode-regular text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-wide">
+                                <h1 className="ivymode-regular text-5xl md:text-7xl  text-white mb-8 leading-tight tracking-wide">
                                     {slide.title}
                                 </h1>
                                 <p className="font-lato text-lg md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">

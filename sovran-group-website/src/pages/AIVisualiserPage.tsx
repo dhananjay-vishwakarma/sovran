@@ -10,7 +10,7 @@ const AIVisualiserPage: React.FC = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl  text-white mb-6">
             AI Visualiser
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -23,7 +23,7 @@ const AIVisualiserPage: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-dark-800/50 backdrop-blur-sm p-8 rounded-lg border border-dark-600">
-            <h2 className="text-3xl font-bold text-white mb-6">AI-Powered Design Visualization</h2>
+            <h2 className="text-3xl  text-white mb-6">AI-Powered Design Visualization</h2>
             <p className="text-gray-300 leading-relaxed mb-8">
               Our AI Visualiser tool will help you see your project before construction begins. 
               Features will include:

@@ -1,1 +1,17 @@
 /* Custom styles for React components */
+
+:root {
+	/* Approx header height (logo + menu). Adjust if you change logo size. */
+	--header-height: 160px;
+}
+
+.page-content {
+	padding-top: var(--header-height);
+}
+
+/* When viewport is small, reduce the header offset a bit */
+@media (max-width: 768px) {
+	:root {
+		--header-height: 120px;
+	}
+}

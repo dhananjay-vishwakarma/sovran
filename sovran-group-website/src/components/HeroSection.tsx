@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import Button from './Button';
 import ArrowButton from './ArrowButton';
 
+
 // Service Card Type
 interface ServiceCard {
   id: number;
@@ -18,84 +19,84 @@ const serviceCards: ServiceCard[] = [
     title: "Bespoke Kitchens",
     color: "#CDAD7D",
     size: "medium",
-    image: "/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg"
+    image: "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg"
   },
   {
     id: 2,
     title: "Custom Wardrobes",
     color: "#CDAD7D",
     size: "large",
-    image: "/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg"
+    image: "/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg"
   },
   {
     id: 3,
     title: "Luxury Interiors",
     color: "#CDAD7D",
     size: "small",
-    image: "/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg"
+    image: "/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg"
   },
   {
     id: 4,
     title: "Home Renovations",
     color: "#CDAD7D",
     size: "large",
-    image: "/images/home-builder-2.jpg"
+    image: "/assets/images/home-builder-2.jpg"
   },
   {
     id: 5,
     title: "Architectural Design",
     color: "#CDAD7D",
     size: "medium",
-    image: "/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg"
+    image: "/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg"
   },
   {
     id: 6,
     title: "Home Bars",
     color: "#CDAD7D",
     size: "small",
-    image: "/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg"
+    image: "/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg"
   },
   {
     id: 7,
     title: "Bespoke Furniture",
     color: "#CDAD7D",
     size: "medium",
-    image: "/images/Bookshelvs_MrWardrobe-scaled.jpg"
+    image: "/assets/images/Bookshelvs_MrWardrobe-scaled.jpg"
   },
   {
     id: 8,
     title: "Premium Finishes",
     color: "#CDAD7D",
     size: "small",
-    image: "/images/Fretwork-wardrobes_MrWarobe_0001.png"
+    image: "/assets/images/Fretwork-wardrobes_MrWarobe_0001.png"
   },
   {
     id: 9,
     title: "Sliding Wardrobes",
     color: "#CDAD7D",
     size: "medium",
-    image: "/images/Sliding-door-wardrobes_MrWardrobe-scaled.jpg"
+    image: "/assets/images/Sliding-door-wardrobes_MrWardrobe-scaled.jpg"
   },
   {
     id: 10,
     title: "Walk-in Wardrobes",
     color: "#CDAD7D",
     size: "large",
-    image: "/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg"
+    image: "/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg"
   },
   {
     id: 11,
     title: "Modern Kitchens",
     color: "#CDAD7D",
     size: "small",
-    image: "/images/traditional-shaker-kitchen.jpg"
+    image: "/assets/images/traditional-shaker-kitchen.jpg"
   },
   {
     id: 12,
     title: "Storage Solutions",
     color: "#CDAD7D",
     size: "medium",
-    image: "/images/Bars_MrWardrobe-scaled.jpg"
+    image: "/assets/images/Bars_MrWardrobe-scaled.jpg"
   }
 ];
 
@@ -235,7 +236,7 @@ const HeroSection: React.FC = () => {
           {/* Card with background image */}
           <div className="h-full relative flex flex-col">
             {/* Background image with overlay */}
-            {card.image && (
+              {card.image && (
               <div className="absolute inset-0 z-0">
                 <img 
                   src={card.image} 
@@ -244,9 +245,7 @@ const HeroSection: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 to-dark-800/50 group-hover:from-dark-900/70 transition-all duration-500"></div>
               </div>
-            )}
-            
-            {/* Card content with simplified design */}
+            )}            {/* Card content with simplified design */}
             <div className="h-full flex flex-col justify-end p-3 relative z-10">
               <div className="flex items-center">
                 <div className="flex-shrink-0 mr-2">
@@ -258,7 +257,7 @@ const HeroSection: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-base font-semibold text-white group-hover:text-primary-400 transition-colors duration-300">
+                <h3 className="text-base  text-white group-hover:text-primary-400 transition-colors duration-300">
                   {card.title}
                 </h3>
               </div>
@@ -292,12 +291,10 @@ const HeroSection: React.FC = () => {
           {/* Left side - Hero Text with subtle animations - vertically centered */}
           <div className="z-10 pr-0 lg:pr-4 flex flex-col justify-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-white leading-tight ivymode-regular tracking-tight" style={{ opacity: 0, filter: 'blur(15px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards' }}>
-              All your <span className="text-primary-600 relative inline-block">
-                home
+              We Add <span className="text-primary-600 relative inline-block"> Space</span>, <br/><span className="text-primary-600 relative inline-block">Value</span>, and <span className="text-primary-600 relative inline-block">Style 
                 <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary-600 transform scale-x-0 origin-left transition-transform duration-700 ease-out" style={{ animation: 'slideRight 1.5s ease-out 1.2s forwards' }}></span>
               </span> <br />
-              deliverables in <br />
-              one platform.
+              to Your Property
             </h1>
             
             {/* <p className="text-xl md:text-2xl text-white/90 max-w-xl mt-5 font-lato leading-relaxed" style={{ opacity: 0, filter: 'blur(10px)', animation: 'fadeInBlur 1.2s ease-out 0.6s forwards' }}>
@@ -307,7 +304,7 @@ const HeroSection: React.FC = () => {
             <div ref={buttonsRef} className="flex flex-wrap gap-8 mt-10 hero-buttons">
               <div className="hero-button">
                 <ArrowButton 
-                  text="Request a Consultation" 
+                  text="Book a Free Consultation " 
                   to="/contact" 
                   className="text-primary-500 hover:text-primary-400"
                 />
@@ -315,22 +312,22 @@ const HeroSection: React.FC = () => {
               
               <div className="hero-button">
                 <ArrowButton 
-                  text="Book a Design Visit" 
+                  text="See Our Work" 
                   to="/contact"
                 />
               </div>
             </div>
             
             <p ref={projectsTextRef} className="text-gray-400 mt-3 text-sm font-lato project-count">
-              Over 200 luxury home projects delivered since 2018
+              Over 17+ luxury home projects delivered since 2018.
             </p>
             
             {/* Features List */}
             <div ref={featuresListRef} className="mt-8 space-y-1.5">
               {[
-                "White label services with superfast turnarounds",
-                "Unrivalled quality for home renovation and design",
-                "ROI & margins designed for property investors"
+                "Driven by willingness, clear communication & transparency",
+                "Architectural design. Build. Interiors - one seamless journey",
+                "A trusted team committed to delivering on every promise"
               ].map((feature, index) => (
                 <div key={index} className="flex items-start feature-item">
                   <div className="flex-shrink-0 mt-1">
@@ -346,7 +343,7 @@ const HeroSection: React.FC = () => {
             </div>
             
             {/* Rating section - moved here after feature list */}
-            <div ref={ratingRef} className="mt-6 mb-2 rating-section">
+            {/* <div ref={ratingRef} className="mt-6 mb-2 rating-section">
               <div className="flex items-center">
                 <span className="text-white text-sm mr-1 font-lato">We are rated</span>
                 <span className="text-white text-sm mr-1 font-lato">4.8</span>
@@ -359,11 +356,11 @@ const HeroSection: React.FC = () => {
                 </div>
                 <span className="text-white text-sm ml-1 font-lato">based on <span className="text-[#CDAD7D]">150+ reviews</span></span>
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Right side - Animated Cards with Masonry Layout */}
-          <div className="relative h-[600px] overflow-hidden rounded-xl border border-dark-700 bg-dark-900/70 shadow-xl" style={{ opacity: 0, filter: 'blur(15px)', animation: 'fadeInBlur 6s ease-out 0.3s forwards' }}>
+          <div className="relative h-[500px] overflow-hidden rounded-xl border border-dark-700 bg-dark-900/70 shadow-xl" style={{ opacity: 0, filter: 'blur(15px)', animation: 'fadeInBlur 6s ease-out 0.3s forwards' }}>
             {/* Dark background with gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-800/80 rounded-xl"></div>
             

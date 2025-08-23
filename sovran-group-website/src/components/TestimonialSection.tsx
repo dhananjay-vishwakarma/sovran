@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ArrowButton from './ArrowButton';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +20,7 @@ const testimonials: Testimonial[] = [
     text: "When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.",
     author: "Emilia Clarke",
     position: "Manager Avenger company",
-    avatar: "/images/MrWardrobe-Magazine--739x1024.jpg"
+    avatar: "https://images.unsplash.com/photo-1618151313441-bc79b11e5090"
   },
   {
     id: 2,
@@ -46,142 +45,110 @@ const TestimonialSection: React.FC = () => {
   useEffect(() => {
     const el = headingRef.current;
     if (!el) return;
-    
-    // Prepare the text for animation
+
     const text = el.textContent || '';
     el.textContent = '';
-    const letters = text.split('').map((char) => {
-      const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char;
-      span.style.display = 'inline-block';
-      span.style.filter = 'blur(4px)';
-      span.style.opacity = '0';
-      return span;
+    const letters = text.split('').map((c) => {
+      const s = document.createElement('span');
+      s.textContent = c === ' ' ? '\u00A0' : c;
+      s.style.display = 'inline-block';
+      s.style.filter = 'blur(4px)';
+      s.style.opacity = '0';
+      return s;
     });
-    letters.forEach((span) => el.appendChild(span));
-    
-    // Create animation that triggers when scrolled into view
-    const animation = gsap.timeline({paused: true})
-      .to(letters, {
-        filter: 'blur(0px)',
-        opacity: 1,
-        duration: 0.7,
-        stagger: 0.05,
-        ease: 'power2.out'
-      });
-    
-    // Create ScrollTrigger to play animation when element enters viewport
-    ScrollTrigger.create({
-      trigger: el,
-      start: "top 80%", // Animation starts when top of element is 80% from top of viewport
-      onEnter: () => animation.play(),
-      onLeaveBack: () => animation.pause(0), // Reset animation when scrolling back up and element leaves viewport
-      onEnterBack: () => animation.play(), // Play animation again when scrolling back into view
-      once: false // Allow animation to trigger multiple times
+    letters.forEach((s) => el.appendChild(s));
+
+    const animation = gsap.timeline({ paused: true }).to(letters, {
+      filter: 'blur(0px)',
+      opacity: 1,
+      duration: 0.7,
+      stagger: 0.03,
+      ease: 'power2.out'
     });
-    
-    // Cleanup function
+
+    const trig = ScrollTrigger.create({ trigger: el, start: 'top 80%', onEnter: () => animation.play(), onLeaveBack: () => animation.pause(0), onEnterBack: () => animation.play(), once: false });
+
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill(true));
+      trig.kill(true);
       animation.kill();
     };
   }, []);
 
-  const handleDotClick = (index: number) => {
-    setActiveIndex(index);
-  };
+  const handleDotClick = (i: number) => setActiveIndex(i);
 
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          {/* Left Column - Testimonials */}
           <div className="lg:col-span-7">
             <div className="mb-4">
               <span className="text-primary-500 text-sm font-lato uppercase tracking-wider">TESTIMONIAL</span>
             </div>
-            
-            <h2 ref={headingRef} className="text-4xl md:text-5xl text-black mb-12 ivymode-regular">
-              What our customers say
-            </h2>
-            
-            <div className="relative">
-              {/* Testimonial Quote Mark */}
-              <div className="absolute -left-6 -top-6 text-primary-500/20 text-8xl font-serif">"</div>
-              
-              {/* Testimonial Content */}
-              <div className="min-h-[180px]">
-                {testimonials.map((testimonial, index) => (
-                  <div 
-                    key={testimonial.id}
-                    className={`transition-opacity duration-500 ${index === activeIndex ? 'opacity-100' : 'opacity-0 hidden'}`}
-                  >
-                    <p className="text-lg md:text-xl text-black/90 mb-8 font-lato relative z-10">
-                      "{testimonial.text}"
-                    </p>
-                    
-                    <div className="flex items-center">
-                      {testimonial.avatar && (
-                        <div className="mr-4 w-14 h-14 rounded-full overflow-hidden border-2 border-primary-500/50">
-                          <img 
-                            src={testimonial.avatar} 
-                            alt={testimonial.author}
-                            className="w-full h-full object-cover" 
-                          />
+
+            <h2 ref={headingRef} className="text-4xl md:text-5xl text-black mb-12 ivymode-regular">Proven Expertis, Tangible Results</h2>
+
+            <div>
+              <div className="min-h-[220px]">
+                {testimonials.map((t, idx) => (
+                  <div key={t.id} className={`transition-opacity duration-500 ${idx === activeIndex ? 'opacity-100' : 'opacity-0 hidden'}`}>
+                    <div className="relative">
+                      <div className="absolute -left-8 -top-8 text-primary-500/20 text-8xl font-serif">"</div>
+
+                      <div className="bg-white border border-gray-200 rounded-xl p-8 pl-28 md:pl-36">
+                        <p className="text-lg md:text-xl text-black/90 mb-6 font-lato">"{t.text}"</p>
+                        <div className="pl-2">
+                          <h4 className="text-black text-lg ">{t.author}</h4>
+                          <p className="text-gray-600 text-sm">{t.position}</p>
+                        </div>
+                      </div>
+
+                      {t.avatar && (
+                        <div className="absolute -left-6 -bottom-6 w-36 h-48 rounded-md overflow-hidden border-2 border-primary-500/30 bg-white">
+                          <img src={t.avatar} alt={t.author} className="w-full h-full object-cover" />
                         </div>
                       )}
-                      
-                      <div>
-                        <h4 className="text-black text-lg font-semibold">{testimonial.author}</h4>
-                        <p className="text-gray-600 text-sm">{testimonial.position}</p>
-                      </div>
                     </div>
                   </div>
                 ))}
               </div>
-              
-              {/* Navigation Dots */}
+
               <div className="flex mt-10 space-x-3">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleDotClick(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === activeIndex ? 'bg-primary-500' : 'bg-gray-600 hover:bg-gray-500 border border-gray-500'
-                    }`}
-                    aria-label={`View testimonial ${index + 1}`}
-                  />
+                {testimonials.map((_, i) => (
+                  <button key={i} onClick={() => handleDotClick(i)} className={`w-3 h-3 rounded-full transition-colors ${i === activeIndex ? 'bg-primary-500' : 'bg-gray-600 hover:bg-gray-500 border border-gray-500'}`} aria-label={`View testimonial ${i + 1}`} />
                 ))}
               </div>
             </div>
           </div>
-          
+
           {/* Right Column - Why We're Different */}
-          <div className="lg:col-span-5 bg-gray-100 p-10 rounded-xl border border-gray-200">
-            <h3 className="text-2xl md:text-3xl text-black mb-6 ivymode-regular">
-              Why we're different
-            </h3>
+          <div className="lg:col-span-5 bg-primary-50 p-10 rounded-xl border border-gray-200">
             
-            <p className="text-gray-700 mb-8 font-lato">
-              As fellow entrepreneurs, we understand the need for space which gives your business room
-            </p>
-            
-            <ul className="space-y-4 mb-8">
-              {[
-                "Flexible solutions",
-                "Free technology",
-                "Improved operating conditions",
-                "Transparent costs"
-              ].map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center mr-3 flex-shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-white"></div>
-                  </div>
-                  <span className="text-black font-lato">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
+
+            {/* Highlight lines with inline numbers, icons and dividers */}
+            <div className="grid grid-cols-1 gap-4 mb-8">
+              <div className="flex items-center py-3 border-b border-gray-200">
+                {/* icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <p className="ml-4 text-lg text-black font-lato">385+ properties transformed</p>
+              </div>
+
+              <div className="flex items-center py-3 border-b border-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <p className="ml-4 text-lg text-black font-lato">£5M+ projects delivered</p>
+              </div>
+
+              <div className="flex items-center py-3">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <p className="ml-4 text-lg text-black font-lato">15+ years combined leadership</p>
+              </div>
+            </div>
+
             <div className="inline-block">
               <a href="/contact" className="bg-primary-500 text-dark-900 font-lato py-3 px-8 rounded-md hover:bg-primary-400 transition-colors duration-300 text-lg">
                 Get a quote
@@ -195,3 +162,4 @@ const TestimonialSection: React.FC = () => {
 };
 
 export default TestimonialSection;
+

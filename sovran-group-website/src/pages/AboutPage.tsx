@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import ArrowButton from '../components/ArrowButton';
 import '../styles/fallback.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -14,7 +15,6 @@ const AboutPage: React.FC = () => {
   // State to track if animations are ready
   const [animationsReady, setAnimationsReady] = useState(false);
   
-  // Refs for animations
   const heroRef = useRef<HTMLDivElement>(null);
   const designRef = useRef<HTMLDivElement>(null);
   const philosophyRef = useRef<HTMLDivElement>(null);
@@ -213,7 +213,7 @@ const AboutPage: React.FC = () => {
         ref={heroRef}
         className="relative pt-36 pb-28 px-4 sm:px-6 lg:px-8 bg-cover bg-center" 
         style={{
-          backgroundImage: "url('/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg')",
+          backgroundImage: "url('/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -245,334 +245,313 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Introduction Section - White Background (First Section) */}
-      <section  className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-black mb-8 ivymode split-text">Our Group</h2>
-              <div className="w-24 h-1 bg-[#CDAD7D] mb-8"></div>
-              <p className="text-gray-700 leading-relaxed animate-paragraph">
-                At Sovran Builders, Sovran Interiors, and Sovran Design, we each bring a unique offering to the table, but all share a common commitment to excellence, craftsmanship, and bespoke design.
-              </p>
-              <p className="text-gray-700 leading-relaxed animate-paragraph">
-                From full home renovations to luxury wardrobes, bespoke kitchens, and architectural design, we work passionately to create spaces that perfectly reflect the individual style and needs of our clients.
-              </p>
-              <div className="pt-6">
-                <ArrowButton
-                  text="Learn More About Us"
-                  to="/contact"
-                  className="text-black hover:text-[#CDAD7D]"
-                />
+      {/* Every Space Has a Story */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-black mb-6 ivymode">Every Space Has a Story</h2>
+          <div className="w-24 h-1 bg-[#CDAD7D] mx-auto mb-8"></div>
+          <div className="w-full mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 text-gray-800 leading-relaxed text-justify md:text-left max-w-7xl mx-auto">
+              <div className="prose max-w-none">
+                <p>
+                  What gives a space its power? Is it the walls that contain it, the roof that shelters it — or the lives that unfold within? Every space tells a story. Not through steel or stone, but in the way architecture can move our spirits, in the way surroundings shape our mood, and in the way culture and people breathe life into a place. A powerful space does more than function — it resonates. It inspires. It endures.
+                </p>
+              </div>
+              <div className="prose max-w-none">
+                <p>
+                  At Sovran, we believe the purpose of design and construction is to give shape to those stories. For a family, it may be a sanctuary of belonging. For a developer, an investment that carries influence and permanence. For every client, it is the assurance that vision can become reality, and reality can carry meaning far beyond the physical form. This is why every space has a story — because within each line, detail, and decision lives the ambition of those who imagined it.
+                </p>
+              </div>
+              <div className="prose max-w-none">
+                <p>
+                  We approach each commission not as a project, but as a composition — architecture as structure, construction as rhythm, interiors as voice. Together they form a narrative that is lived, felt, and remembered. The spaces we create are not backdrops, but catalysts — enriching lives, elevating value, and reflecting the culture and aspirations of those who call them their own.
+                </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl">
-                <img src="/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg" alt="Sovran craftsmanship" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl mt-8">
-                <img src="/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg" alt="Sovran design" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl">
-                <img src="/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png" alt="Sovran interiors" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl mt-8">
-                <img src="/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249408-HDR.jpg" alt="Sovran builders" className="w-full h-full object-cover" />
-              </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-lg overflow-hidden ">
+              <img src="/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg" alt="Residential" className="w-full h-64 object-cover" />
+              <div className="p-4 text-center text-sm text-gray-700">Residential — sanctuary and memory</div>
+            </div>
+            <div className="rounded-lg overflow-hidden ">
+              <img src="/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg" alt="Commercial" className="w-full h-64 object-cover" />
+              <div className="p-4 text-center text-sm text-gray-700">Commercial — ambition and growth</div>
+            </div>
+            <div className="rounded-lg overflow-hidden ">
+              <img src="/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg" alt="Legacy" className="w-full h-64 object-cover" />
+              <div className="p-4 text-center text-sm text-gray-700">Legacy — permanence and pride</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sovran Builders Section - Accent Background (Second Section) */}
-      <section 
-          className="py-32 px-4 sm:px-6 lg:px-8 relative bg-[#faf0e1] overflow-hidden"
-        >
-          {/* Oversized "B" in the background */}
-          <div
-            className="absolute select-none pointer-events-none"
-            style={{
-              fontSize: '80rem',
-              lineHeight: '0',
-              bottom: '-5rem',
-              right: '-15rem',
-              opacity: 0.05,
-              zIndex: 0,
-              color: '#000000',
-              fontFamily: 'IvyMode',
-            }}
-          >
-            <span className="ivymode">S</span>
+      {/* Our Story - Built on Craft, Carved in Vision */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF7F3]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="font-sans text-3xl md:text-4xl text-black mb-4 ivymode">Our Story</h2>
+            <h3 className="text-2xl text-black mb-4 font-serif">Built on Craft, Carved in Vision</h3>
+            <div className="prose text-gray-800">
+              <p>
+                Great spaces don’t simply appear. They are imagined, refined, and realised through vision, experience, and a relentless pursuit of excellence. They are born from an idea and brought to life with courage, discipline, and devotion to craft.
+              </p><br />
+              <p>
+                Our founder began his career in the joinery trade, where he learned that a single millimetre could be the difference between harmony and discord. From there he entered the world of Knight Frank, gaining an intimate understanding of what truly defines value — how a space becomes not only functional, but desirable, iconic, and enduring. That unique blend of craftsmanship and market insight evolved into property development, and ultimately, into Sovran.
+              </p><br />
+              <p>
+                Today, Sovran stands as a partner for both residential and commercial clients, trusted to deliver projects that range from family sanctuaries to landmark developments. Over the years, our work has extended into circles of influence and discretion — serving clients whose standards allow for no compromise. These experiences have shaped our philosophy: true design and construction are as much about trust and vision as they are about form and function.
+              </p><br />
+              <p>
+                We do not simply build properties. We craft sanctuaries, stories, and legacies. Each project a reflection of ambition, precision, and permanence — a Sovran imprint that endures long after the final stone is set.
+              </p>
+            </div>
           </div>
+          <div className="grid grid-cols-1 gap-6">
+            <div className="rounded-lg overflow-hidden ">
+              <img src="/assets/images/MrWardrobe-Magazine--739x1024.jpg" alt="Team portrait" className="w-full h-64 object-cover" />
+            </div>
+            <div className="rounded-lg overflow-hidden ">
+              <img src="/assets/images/Picsart_24-04-22_16-00-14-025-scaled.jpg" alt="Community dinner" className="w-full h-64 object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Ethos / Mission / Vision / Why Sovran */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-8">
+            <h2 className="font-sans text-3xl md:text-4xl text-black mb-4 ivymode">Our Ethos</h2>
+            <div className="w-24 h-1 bg-[#CDAD7D] mb-8"></div>
+
+            <div className="p-6 min-h-[220px]">
+              <div className="flex items-start gap-6">
+                <div>
+                  <i className="fas fa-thumbs-up text-[#CDAD7D] text-4xl" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3 className="text-2xl text-black font-semibold mb-3">A Philosophy, Not a Business</h3>
+                  <p className="text-gray-700">We believe in timelessness over trend. In precision over shortcuts. In trust over transaction. Every line we draw and every stone we set must serve both purpose and meaning.</p>
+                </div>
+              </div>
+              <div className="mt-6 text-gray-500 text-sm">Craft, clarity and care guide every decision.</div>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="text-lg font-semibold mb-2 text-black">Mission</h4>
+                <p className="text-gray-700">Our mission is to redefine the way homes and buildings are created. To unite design, construction, and interiors with transparency and care.</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold mb-2 text-black">Vision</h4>
+                <p className="text-gray-700">Our vision is to establish Sovran as the most trusted name in design and build — a brand synonymous with integrity, intelligence, and influence.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-4">
+            <div className="bg-[#FEF7F0] p-8 rounded-2xl border border-gray-100">
+              <h3 className="text-xl text-black font-semibold mb-4">Why Sovran</h3>
+              <p className="text-gray-700 mb-4">Trusted Where It Matters Most — the answer lies in the sum of many projects and the trust we earn.</p>
+              <ul className="space-y-3 text-gray-800 mb-6 text-sm">
+                <li>1785+ properties transformed</li>
+                <li>Projects from £50,000 to multi-million pound developments</li>
+                <li>£15M+ delivered in the past year</li>
+              </ul>
+              <a href="/contact" className="inline-block px-6 py-3 bg-[#CDAD7D] text-dark-900 rounded-md">Request consultation</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section id="process" className="py-32 px-4 sm:px-6 lg:px-8 bg-dark-900 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute h-64 w-64 rounded-full bg-primary-500/10 -top-20 -left-20 blur-xl"></div>
+          <div className="absolute h-96 w-96 rounded-full bg-[#CDAD7D]/10 bottom-0 right-0 blur-3xl"></div>
+          <div className="absolute h-40 w-40 rounded-full bg-primary-600/5 top-1/2 left-1/2 blur-xl"></div>
+        </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="animate-image overflow-hidden  order-2 md:order-1">
-              <img src="/images/AdobeStock_586937970.png" alt="Sovran Builders project" className="w-full h-auto" />
-            
-            </div>
-            <div className="space-y-6 order-1 md:order-2">
-              <h2 className="font-sans text-4xl md:text-5xl md:text-6xl text-black mb-6 ivymode split-text">Sovran Builders</h2>
-              <h3 className="text-dark-900 text-xl mb-4">Formerly Taaj Design and Build</h3>
-              <div className="w-24 h-1 bg-black mb-8"></div>
-              <p className="text-black/90 leading-relaxed animate-paragraph">
-                Sovran Builders was founded with a mission to empower homeowners to transform their vision into reality. Specializing in full-scale renovations, custom home solutions, and large construction projects across London and beyond, we emphasize clear communication, transparency, and precision at every stage of the project.
-              </p>
-              <p className="text-black/90 leading-relaxed animate-paragraph">
-                From the first consultation to the final installation, we stand by our clients every step of the way, ensuring that every detail aligns with their vision and lifestyle. By combining technical expertise with a focus on innovation and sustainability, we deliver results that exceed expectations while maintaining efficiency and cost-effectiveness.
-              </p>
-              <div className="pt-6">
-                <ArrowButton
-                  text="Explore Our Building Services"
-                  to="/sovran-builders"
-                  className="text-black hover:text-white"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sovran Interiors Section - White Background */}
-      <section className="py-36 px-4 sm:px-6 lg:px-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-sans text-4xl md:text-5xl  lg:text-6xl text-dark-900 mb-6 ivymode split-text">Sovran Interiors</h2>
-              <h3 className="text-primary-600 text-xl mb-4">Formerly Mr. Wardrobe & TAAJ Bespoke Kitchens</h3>
-              <div className="w-24 h-1 bg-primary-600 mb-6"></div>
-              <p className="text-dark-800 leading-relaxed">
-                Sovran Interiors represents the fusion of Mr. Wardrobe and TAAJ Bespoke Kitchens, combining two of the most renowned brands in luxury home interiors under one name.
-              </p>
-              <p className="text-dark-800 leading-relaxed">
-                Mr. Wardrobe has long been a leading luxury brand specializing in bespoke wardrobes and custom storage solutions. Over the years, we've honed our craft to offer uniquely tailored storage systems for all types of spaces. From walk-in wardrobes and sliding doors to bespoke bookshelves and dressing rooms, Sovran Interiors offers storage solutions that are not only highly functional but also incredibly stylish.
-              </p>
-              <p className="text-dark-800 leading-relaxed">
-                Meanwhile, TAAJ Bespoke Kitchens brings an exceptional level of craftsmanship to every kitchen project. We specialize in creating seamless, luxurious kitchen spaces that integrate perfectly with the overall design of your home. Whether it's a sleek modern design or a more traditional setup, our bespoke kitchens are crafted to meet your exacting standards, ensuring both beauty and functionality.
-              </p>
-              <p className="text-dark-800 leading-relaxed">
-                Whether you're looking for a custom wardrobe or a dream kitchen, Sovran Interiors creates spaces where luxury meets function, and every detail is tailored to your vision.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl">
-                <img src="/images/Aqib-10-Harold-Rd-027-scaled.jpg" alt="Luxury wardrobe" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl mt-8">
-                <img src="/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg" alt="Luxury kitchen" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl">
-                <img src="/images/Shaker-wardrobe_MrWardrobe-scaled.jpg" alt="Wardrobe design" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl mt-8">
-                <img src="/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg" alt="Kitchen renovation" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sovran Design Section */}
-      <section 
-        ref={designRef}
-        className="py-20 px-4 sm:px-6 lg:px-8 relative"
-        style={{
-          backgroundImage: "url('/images/image-4-1.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="animate-image rounded-xl overflow-hidden shadow-2xl">
-              <img src="/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg" alt="Sovran Design project" className="w-full h-auto" />
-            </div>
-            <div className="space-y-6">
-              <h2 className="font-sans text-4xl md:text-5xl md:text-6xl  text-white mb-6 ivymode split-text">Sovran Design</h2>
-              <h3 className="text-primary-400 text-xl mb-4">Architectural Design and 3D Services</h3>
-              <div className="w-24 h-1 bg-primary-600 mb-6"></div>
-              <p className="text-gray-300 leading-relaxed">
-                Sovran Design specializes in cutting-edge architecture and 3D visualization services. Our talented team of architects and designers creates stunning architectural concepts that blend form and function, ensuring that each project is both innovative and sustainable.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                From creating detailed architectural plans to producing photorealistic 3D renders, we help clients visualize and refine their ideas before breaking ground. We work closely with homeowners, developers, and architects to bring design ideas to life, ensuring every space is as unique as the people who use it.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Whether you need full architectural designs or want to bring a concept to life through 3D modeling, Sovran Design is committed to transforming your vision into reality.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section ref={philosophyRef} className="py-36 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-black mb-6 ivymode split-text">Our Shared Philosophy</h2>
+            <h2 className="font-sans text-4xl md:text-5xl text-white mb-6 ivymode split-text">
+              A Proven Process for a Seamless Build
+            </h2>
             <div className="w-24 h-1 bg-[#CDAD7D] mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="animate-image">
-              <img src="/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg" alt="Craftsmanship" className="rounded-lg shadow-xl mb-6 w-full h-64 object-cover" />
-              <h3 className="text-xl  text-black mb-3">Craftsmanship</h3>
-              <p className="text-gray-800">
-                All three brands are built on the foundation of exceptional craftsmanship. We take pride in the meticulous attention to detail that goes into every project.
-              </p>
-            </div>
-            <div className="animate-image">
-              <img src="/images/Dressing-Rooms.1.png.png" alt="Quality" className="rounded-lg shadow-xl mb-6 w-full h-64 object-cover" />
-              <h3 className="text-xl  text-black mb-3">Quality</h3>
-              <p className="text-gray-800">
-                We never compromise on quality. From materials to execution, every aspect of our work meets the highest standards in the industry.
-              </p>
-            </div>
-            <div className="animate-image">
-              <img src="/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png" alt="Customer Satisfaction" className="rounded-lg shadow-xl mb-6 w-full h-64 object-cover" />
-              <h3 className="text-xl  text-black mb-3">Customer Satisfaction</h3>
-              <p className="text-gray-800">
-                We reject conventional approaches and embrace creativity, offering each client a truly personalized service that reflects their individual needs and personalities.
-              </p>
-            </div>
-          </div>
-          <div className="mt-12 text-center text-gray-800 max-w-4xl mx-auto">
-            <p className="leading-relaxed">
-              Whether we're renovating a home, creating a custom wardrobe, designing a luxury kitchen, or providing architectural design services, our goal is to deliver bespoke, high-quality solutions. No matter the project size or scope, our attention to detail and commitment to excellence ensure that every space we create is a masterpiece.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Sustainability Section */}
-      <section 
-        ref={sustainabilityRef}
-        className="py-20 px-4 sm:px-6 lg:px-8 relative"
-        style={{
-          backgroundImage: "url('/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-dark-900/70 z-0"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="bg-dark-800/70 backdrop-blur-sm p-10 rounded-xl border border-primary-600/20 shadow-2xl">
-            <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl  text-white mb-6 ivymode split-text">Sustainability & Ethical Sourcing</h2>
-            <div className="w-24 h-1 bg-primary-600 mb-8"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="animate-image rounded-xl overflow-hidden shadow-2xl">
-                <img src="/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg" alt="Sustainable materials" className="w-full h-auto" />
-              </div>
-              <div className="space-y-6">
-                <p className="text-gray-300 leading-relaxed">
-                  We are deeply committed to sustainability across all our brands. From Sovran Builders' construction projects to Sovran Interiors' bespoke furniture and kitchens, and Sovran Design's architectural services, we ensure that every material we use is responsibly sourced.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Whether it's fine hardwoods, luxurious stones, or eco-friendly fabrics, we select only the best materials to create stunning, sustainable spaces.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Our commitment to ethical sourcing means we carefully select suppliers who share our values and uphold strict environmental and social standards.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-36 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-black mb-6 ivymode split-text">Why Choose Us</h2>
-            <div className="w-24 h-1 bg-[#CDAD7D] mx-auto mb-6"></div>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Discover what sets Sovran Group apart in the industry
-            </p>
-          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <ul className="space-y-6">
-                <li className="flex items-start animate-paragraph">
-                  <div className="bg-[#CDAD7D] p-2 rounded-full mr-4 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+          <div className="relative">
+            {/* Process timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-[#CDAD7D] to-primary-600 opacity-70"></div>
+            
+            {/* Process steps */}
+            <div className="space-y-24">
+              {/* Step 1 */}
+              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="md:text-right animate-paragraph">
+                  <h3 className="text-2xl text-white mb-4 font-medium">1. Consultation & Concept</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    We begin by understanding your vision, requirements, and budget. 
+                    Our experts collaborate with you to develop initial concepts that 
+                    align with your aesthetic preferences and functional needs.
+                  </p>
+                </div>
+                <div className="md:order-first md:flex md:justify-end relative animate-image">
+                  <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 transform -translate-y-1/2 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 z-20">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                      1
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl text-black mb-2">Bespoke Solutions</h3>
-                    <p className="text-gray-700">Whether it's a full renovation, a custom wardrobe, a luxury kitchen, or architectural design, we provide personalized, tailor-made solutions.</p>
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                    <img 
+                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg" 
+                      alt="Consultation & Concept" 
+                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
-                </li>
-                <li className="flex items-start animate-paragraph">
-                  <div className="bg-[#CDAD7D] p-2 rounded-full mr-4 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                </div>
+              </div>
+              
+              {/* Step 2 */}
+              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="animate-paragraph">
+                  <h3 className="text-2xl text-white mb-4 font-medium">2. Planning & Design</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Our design team creates detailed plans and 3D visualizations 
+                    of your project. We refine these with your input until every 
+                    detail meets your expectations, ensuring the design aligns 
+                    perfectly with your vision.
+                  </p>
+                </div>
+                <div className="relative animate-image">
+                  <div className="absolute left-1/2 md:left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-20">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                      2
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl text-black mb-2">Expert Craftsmanship</h3>
-                    <p className="text-gray-700">Each piece, whether it's a kitchen, wardrobe, or architectural design, is crafted to the highest standards.</p>
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-[#CDAD7D]/20 to-primary-600/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                    <img 
+                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg" 
+                      alt="Planning & Design" 
+                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
-                </li>
-                <li className="flex items-start animate-paragraph">
-                  <div className="bg-[#CDAD7D] p-2 rounded-full mr-4 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                </div>
+              </div>
+              
+              {/* Step 3 */}
+              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="md:text-right animate-paragraph">
+                  <h3 className="text-2xl text-white mb-4 font-medium">3. Build & Project Management</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Our skilled craftsmen and project managers bring your design 
+                    to life with meticulous attention to detail. We maintain clear 
+                    communication throughout the build process, ensuring timely 
+                    progress updates and addressing any questions.
+                  </p>
+                </div>
+                <div className="md:order-first md:flex md:justify-end relative animate-image">
+                  <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 transform -translate-y-1/2 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 z-20">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                      3
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl text-black mb-2">Sustainability & Quality</h3>
-                    <p className="text-gray-700">We prioritize eco-friendly practices and use only premium, ethically sourced materials.</p>
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                    <img 
+                      src="/assets/images/MrWardrobe-manufacturing-unit.jpg" 
+                      alt="Build & Project Management" 
+                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
-                </li>
-                <li className="flex items-start animate-paragraph">
-                  <div className="bg-[#CDAD7D] p-2 rounded-full mr-4 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                </div>
+              </div>
+              
+              {/* Step 4 */}
+              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="animate-paragraph">
+                  <h3 className="text-2xl text-white mb-4 font-medium">4. Interiors & Final Styling</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Our interior design experts add the finishing touches, from 
+                    selecting premium materials and finishes to installing custom 
+                    fixtures and fittings. We ensure every element works in harmony 
+                    to create a cohesive, luxurious space.
+                  </p>
+                </div>
+                <div className="relative animate-image">
+                  <div className="absolute left-1/2 md:left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-20">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                      4
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl text-black mb-2">Customer-Centered</h3>
-                    <p className="text-gray-700">Every project is a collaboration with the client, ensuring their vision comes to life.</p>
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-[#CDAD7D]/20 to-primary-600/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                    <img 
+                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg" 
+                      alt="Interiors & Final Styling" 
+                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
-                </li>
-              </ul>
+                </div>
+              </div>
+              
+              {/* Step 5 */}
+              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="md:text-right animate-paragraph">
+                  <h3 className="text-2xl text-white mb-4 font-medium">5. Handover & Aftercare</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    We provide a comprehensive handover of your completed project, 
+                    ensuring you understand all features and systems. Our commitment 
+                    doesn't end at delivery—we offer dedicated aftercare service to 
+                    address any needs that arise after completion.
+                  </p>
+                </div>
+                <div className="md:order-first md:flex md:justify-end relative animate-image">
+                  <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 transform -translate-y-1/2 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 z-20">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                      5
+                    </div>
+                  </div>
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                    <img 
+                      src="/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg" 
+                      alt="Handover & Aftercare" 
+                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl">
-                <img src="/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg" alt="Luxury interior" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl mt-8">
-                <img src="/images/traditional-kitchen-extension.jpg" alt="Bespoke solution" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl">
-                <img src="/images/Top-slider-2-Taaj-Kitchens.png" alt="Luxury kitchen" className="w-full h-full object-cover" />
-              </div>
-              <div className="animate-image rounded-lg overflow-hidden shadow-xl mt-8">
-                <img src="/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg" alt="Walk-in wardrobe" className="w-full h-full object-cover" />
-              </div>
-            </div>
+
+            
           </div>
+
+          <div className="flex justify-center mt-20">
+              <ArrowButton
+                text="Start Your Project Today"
+                to="/contact"
+                className="text-white hover:text-primary-500"
+              />
+            </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF0E1]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-sans text-6xl md:text-4xl text-black mb-6 ivymode split-text">
-        Ready to Transform Your Space?
+          <h2 className="font-sans text-4xl md:text-5xl text-black mb-6 ivymode">
+            Great spaces do not wait.
           </h2>
           <p className="text-lg text-black mb-8">
-        If you're ready to begin your next project with Sovran Builders, Sovran Interiors, or Sovran Design, we're here to help turn your dream space into a reality.
+            Great spaces do not wait. They are imagined, pursued, and brought to life with urgency and intention. The question is not if — but when you will begin yours.
           </p>
           <a 
-        href="/contact" 
-        className="inline-block px-8 py-3 bg-black hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300"
+            href="/contact" 
+            className="inline-block px-8 py-3 bg-black hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300"
           >
-        Contact Us Today
+            Begin Today
           </a>
         </div>
       </section>

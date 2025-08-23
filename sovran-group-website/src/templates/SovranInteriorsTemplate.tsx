@@ -163,19 +163,19 @@ const SovranInteriorsTemplate: React.FC<PageTemplateProps> = ({ pageType = 'main
   const [defaultDesignInspirations] = useState([
     {
       title: "Contemporary Design",
-      image: "/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      image: "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
       description: "Modern elegance with clean lines and minimalist aesthetic.",
       link: "/sovran-interiors"
     },
     {
       title: "Classic Styling",
-      image: "/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      image: "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
       description: "Traditional designs with timeless appeal and superior craftsmanship.",
       link: "/sovran-interiors"
     },
     {
       title: "Luxury Features",
-      image: "/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      image: "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
       description: "Premium design elements for discerning clients seeking the extraordinary.",
       link: "/sovran-interiors"
     }
@@ -204,11 +204,14 @@ const SovranInteriorsTemplate: React.FC<PageTemplateProps> = ({ pageType = 'main
       return (
         <>
           <ContentSection 
-            title={categoryPage.title}
-            introduction={categoryPage.content.introduction}
-            sections={categoryPage.content.sections}
-            featuredProjects={categoryPage.content.featuredProjects}
-          />
+              title=""
+              introduction={categoryPage.content.introduction}
+              sections={categoryPage.content.sections}
+              featuredProjects={[]}
+            />
+
+
+
           
           {/* Show these sections for all category and subcategory pages */}
           <ProcessSection steps={categoryPage.content.processSteps || defaultProcessSteps} />

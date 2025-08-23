@@ -20,7 +20,7 @@ const SubcategoryNav: React.FC<SubcategoryNavProps> = ({ category, subcategories
     <div className="bg-dark-800 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center">
-          <h3 className="text-white font-semibold mb-3 sm:mb-0 sm:mr-6">{category}</h3>
+          <h3 className="text-white  mb-3 sm:mb-0 sm:mr-6">{category}</h3>
           <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
             {subcategories.map((subcategory) => (
               <Link

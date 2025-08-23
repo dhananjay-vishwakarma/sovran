@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6, .large-text, .heading, .title {
 }
 
 :root {
-  /* ...existing code... */
+
 }
 
 body {
@@ -130,7 +130,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "ivymode", serif;
   font-weight: 400;
-  /* ...existing code... */
+
 }
 
 code {
@@ -184,6 +184,11 @@ code {
 
 .sovran-btn:hover span {
   color: #000;
+}
+
+/* Contact form submit button specific styling */
+.text-black.sovran-btn span {
+  color: black;
 }
 
 .font-serif {

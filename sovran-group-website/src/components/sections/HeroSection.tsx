@@ -31,7 +31,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
               {description}
             </p>
             {ctaText && ctaLink && (
-              <Link to={ctaLink} className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 reveal-up inline-block">
+              <Link to={ctaLink} className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg  transition-all duration-300 transform hover:scale-105 reveal-up inline-block">
                 {ctaText}
               </Link>
             )}

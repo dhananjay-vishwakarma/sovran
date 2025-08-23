@@ -137,22 +137,92 @@ const BusinessVerticalsSection: React.FC = () => {
     const pick = svgPaths[Math.floor(Math.random() * svgPaths.length)];
     setRandomSvg(pick);
 
-    // animate when it enters viewport
-    if (decorEl) {
-      gsap.fromTo(
-        decorEl,
-        { opacity: 0, y: -20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: decorEl,
-            start: 'top 95%',
-          },
-        }
-      );
+    // Inline the SVG and animate a 3s line-draw when it enters the viewport
+    if (decorEl && pick) {
+      // fetch the svg file and inject it so we can animate individual paths
+      fetch(pick)
+        .then((res) => res.text())
+        .then((svgText) => {
+          // inject svg
+          decorEl.innerHTML = svgText;
+
+          const svg = decorEl.querySelector('svg');
+          if (!svg) return;
+
+          // apply positioning classes to the svg element (matches previous img classes)
+          svg.setAttribute('class', 'w-72 h-32 absolute -top-10 right-0 z-20');
+
+          // find drawable elements
+          const drawElems = svg.querySelectorAll('path, line, polyline, polygon, circle, rect');
+
+          const drawableArray: Element[] = [];
+
+          drawElems.forEach((el) => {
+            try {
+              // ensure stroke exists so the line is visible
+              if (!(el as Element).getAttribute('stroke')) {
+                (el as Element).setAttribute('stroke', '#000');
+              }
+
+              // for shapes that normally have fills, remove fill to emphasise stroke (optional)
+              const tag = el.tagName.toLowerCase();
+              if (['path', 'polyline', 'polygon'].includes(tag)) {
+                (el as Element).setAttribute('fill', 'none');
+              }
+
+              // determine length where possible
+              let len = 0;
+              // getTotalLength is available on many SVG geometry elements
+              // @ts-ignore
+              if (typeof (el as any).getTotalLength === 'function') {
+                // @ts-ignore
+                len = (el as any).getTotalLength();
+              }
+
+              if (len && len > 0) {
+                // set dashstyle so the element is hidden initially
+                (el as HTMLElement).style.strokeDasharray = `${len}`;
+                (el as HTMLElement).style.strokeDashoffset = `${len}`;
+                drawableArray.push(el);
+              }
+            } catch (e) {
+              // ignore elements that can't provide length
+            }
+          });
+
+          if (drawableArray.length > 0) {
+            gsap.to(drawableArray, {
+              strokeDashoffset: 0,
+              duration: 3,
+              ease: 'power2.inOut',
+              stagger: 0.05,
+              scrollTrigger: {
+                trigger: decorEl,
+                start: 'top 95%',
+              },
+            });
+          } else {
+            // fallback: fade in the svg if nothing drawable found
+            gsap.fromTo(
+              svg,
+              { opacity: 0, y: -10 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: decorEl,
+                  start: 'top 95%',
+                },
+              }
+            );
+          }
+        })
+        .catch(() => {
+          // if fetch fails, just show the image as a fallback
+          decorEl.innerHTML = `<img src="${pick}" class="w-72 h-32 absolute -top-10 right-0 z-20" alt="decorative" />`;
+        });
     }
 
     return () => {
@@ -162,6 +232,10 @@ const BusinessVerticalsSection: React.FC = () => {
       // use captured refs in cleanup
       const elements = [headingEl, ...cardsEls];
       elements.forEach((el) => el && gsap.set(el, { clearProps: 'all' }));
+        // clear injected decor
+        if (decorEl) {
+          decorEl.innerHTML = '';
+        }
     };
   }, []);
 
@@ -174,10 +248,10 @@ const BusinessVerticalsSection: React.FC = () => {
       <div
         className="absolute select-none pointer-events-none"
         style={{
-          fontSize: '90rem',
+          fontSize: '120rem',
           lineHeight: '0',
-          top: '-25rem',
-          left: '-15rem',
+          top: '10rem',
+          left: '-10rem',
           opacity: 0.1,
           zIndex: 0,
         }}
@@ -203,9 +277,10 @@ const BusinessVerticalsSection: React.FC = () => {
 
           {/* Right side - Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 flex-1">
-            {/* Sovran Design Card */}
+
+{/* Architectural Design Card */}
             <div
-              ref={card1Ref}
+              ref={card2Ref}
               className="bg-white border border-gray-200 hover:border-[#CDAD7D] transition-colors duration-300 p-8"
               style={{ opacity: 1 }}
             >
@@ -223,18 +298,19 @@ const BusinessVerticalsSection: React.FC = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                       />
                     </svg>
                   </div>
-                  <h3 className="text-4xl font-semibold text-black mb-4">
-                    Sovran Design
+                  <h3 className="text-4xl  text-black mb-4">
+  Architectural
                   </h3>
                 </div>
                 <p className="text-gray-700 mb-6 flex-grow">
-                  From custom homes to large-scale renovations, Sovran Builders
-                  delivers end-to-end construction solutions with precision and
-                  care. We focus on lasting quality across every project
+                  We specialize in high-end, custom designs tailored to your
+                  lifestyle. From kitchens to full home concepts, Sovran Design
+                  brings vision and architecture together with creativity and
+                  detail.
                 </p>
                 <div>
                   <Link
@@ -261,9 +337,9 @@ const BusinessVerticalsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Sovran Builders Card */}
+            {/* Sovran Design Card */}
             <div
-              ref={card2Ref}
+              ref={card1Ref}
               className="bg-white border border-gray-200 hover:border-[#CDAD7D] transition-colors duration-300 p-8"
               style={{ opacity: 1 }}
             >
@@ -281,19 +357,18 @@ const BusinessVerticalsSection: React.FC = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                       />
                     </svg>
                   </div>
-                  <h3 className="text-4xl font-semibold text-black mb-4">
-                    Sovran Builders
+                  <h3 className="text-4xl  text-black mb-4">
+                    Build
                   </h3>
                 </div>
                 <p className="text-gray-700 mb-6 flex-grow">
-                  We specialize in high-end, custom designs tailored to your
-                  lifestyle. From kitchens to full home concepts, Sovran Design
-                  brings vision and architecture together with creativity and
-                  detail.
+                  From custom homes to large-scale renovations, Sovran Builders
+                  delivers end-to-end construction solutions with precision and
+                  care. We focus on lasting quality across every project
                 </p>
                 <div>
                   <Link
@@ -320,6 +395,8 @@ const BusinessVerticalsSection: React.FC = () => {
               </div>
             </div>
 
+
+
             {/* Sovran Interiors Card */}
             <div
               ref={card3Ref}
@@ -344,8 +421,8 @@ const BusinessVerticalsSection: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-4xl font-semibold text-black mb-4">
-                    Sovran Interiors
+                  <h3 className="text-4xl  text-black mb-4">
+                    Interior
                   </h3>
                 </div>
                 <p className="text-gray-700 mb-6 flex-grow">
@@ -386,7 +463,7 @@ const BusinessVerticalsSection: React.FC = () => {
             <img
               src={randomSvg}
               alt="decorative"
-              className="w-32 h-32 absolute -top-10 right-0 z-20"
+              className="w-72 h-32 absolute -top-10 right-0 z-20"
             />
           )}
         </div>

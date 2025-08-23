@@ -201,14 +201,14 @@ const CareersPage: React.FC = () => {
         ref={heroRef}
         className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center" 
         style={{
-          backgroundImage: "url('/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg')",
+          backgroundImage: "url('/assets/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="font-serif text-5xl md:text-6xl  text-white mb-6">
             Join Our Team
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
@@ -229,7 +229,7 @@ const CareersPage: React.FC = () => {
         ref={cultureRef} 
         className="py-20 px-4 sm:px-6 lg:px-8 relative"
         style={{
-          backgroundImage: "url('/images/image-4-1.png')",
+          backgroundImage: "url('/assets/images/image-4-1.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -238,14 +238,14 @@ const CareersPage: React.FC = () => {
         <div className="absolute inset-0 bg-dark-900/70 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-white mb-6">Our Culture</h2>
+            <h2 className="font-serif text-4xl  text-white mb-6">Our Culture</h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg" 
+                src="/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg" 
                 alt="Team collaboration at Sovran Group" 
                 className="w-full h-auto"
               />
@@ -272,7 +272,7 @@ const CareersPage: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-white mb-6">Benefits & Perks</h2>
+            <h2 className="font-serif text-4xl  text-white mb-6">Benefits & Perks</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We value our team members and offer a comprehensive benefits package to support your well-being and growth.
             </p>
@@ -317,7 +317,7 @@ const CareersPage: React.FC = () => {
                 className="benefit-card bg-dark-900/70 border border-primary-600/20 rounded-xl p-6 shadow-xl backdrop-blur-sm"
               >
                 <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-serif font-bold text-white mb-3">{benefit.title}</h3>
+                <h3 className="text-xl font-serif  text-white mb-3">{benefit.title}</h3>
                 <p className="text-gray-300">{benefit.description}</p>
               </div>
             ))}
@@ -330,7 +330,7 @@ const CareersPage: React.FC = () => {
         ref={processRef}
         className="py-20 px-4 sm:px-6 lg:px-8 relative"
         style={{
-          backgroundImage: "url('/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png')",
+          backgroundImage: "url('/assets/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -338,7 +338,7 @@ const CareersPage: React.FC = () => {
         <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-white mb-6">Our Application Process</h2>
+            <h2 className="font-serif text-4xl  text-white mb-6">Our Application Process</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We've designed a straightforward process to help us find the right talent for our team.
             </p>
@@ -372,10 +372,10 @@ const CareersPage: React.FC = () => {
                 key={index} 
                 className="process-step relative p-6 rounded-xl bg-dark-800/60 border border-primary-600/20 backdrop-blur-sm"
               >
-                <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-dark-900 font-bold">
+                <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-dark-900 ">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-serif font-bold text-white mt-2 mb-3">{process.title}</h3>
+                <h3 className="text-xl font-serif  text-white mt-2 mb-3">{process.title}</h3>
                 <p className="text-gray-300">{process.description}</p>
               </div>
             ))}
@@ -402,7 +402,7 @@ const CareersPage: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-white mb-6">Open Positions</h2>
+            <h2 className="font-serif text-4xl  text-white mb-6">Open Positions</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Join our team of talented professionals and help us create exceptional spaces.
             </p>
@@ -422,7 +422,7 @@ const CareersPage: React.FC = () => {
                 <div className="p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                     <div>
-                      <h3 className="text-2xl font-serif font-bold text-white">{job.title}</h3>
+                      <h3 className="text-2xl font-serif  text-white">{job.title}</h3>
                       <div className="flex flex-wrap gap-2 mt-2">
                         <span className="px-3 py-1 bg-primary-600/20 text-primary-400 rounded-full text-sm">
                           {job.department}
@@ -446,7 +446,7 @@ const CareersPage: React.FC = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <h4 className="text-lg font-bold text-white mb-3">Responsibilities</h4>
+                      <h4 className="text-lg  text-white mb-3">Responsibilities</h4>
                       <ul className="space-y-2">
                         {job.responsibilities.map((item, i) => (
                           <li key={i} className="flex items-start">
@@ -457,7 +457,7 @@ const CareersPage: React.FC = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-white mb-3">Requirements</h4>
+                      <h4 className="text-lg  text-white mb-3">Requirements</h4>
                       <ul className="space-y-2">
                         {job.requirements.map((item, i) => (
                           <li key={i} className="flex items-start">
@@ -484,7 +484,7 @@ const CareersPage: React.FC = () => {
           {/* No positions notice - conditionally rendered if no jobs available */}
           {jobs.length === 0 && (
             <div className="bg-dark-900/70 border border-primary-600/20 rounded-xl p-8 text-center backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-white mb-4">No Open Positions Currently</h3>
+              <h3 className="text-xl  text-white mb-4">No Open Positions Currently</h3>
               <p className="text-gray-300 mb-6">
                 We don't have any open positions at the moment, but we're always looking for talented individuals to join our team.
               </p>
@@ -500,7 +500,7 @@ const CareersPage: React.FC = () => {
       <section 
         className="py-20 px-4 sm:px-6 lg:px-8 relative"
         style={{
-          backgroundImage: "url('/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg')",
+          backgroundImage: "url('/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -508,7 +508,7 @@ const CareersPage: React.FC = () => {
         <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-white mb-6">What Our Team Says</h2>
+            <h2 className="font-serif text-4xl  text-white mb-6">What Our Team Says</h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
           </div>
           
@@ -518,19 +518,19 @@ const CareersPage: React.FC = () => {
                 quote: "Joining Sovran Group was the best career decision I've made. The collaborative environment and challenging projects have helped me grow professionally.",
                 name: "Sophia Chen",
                 position: "Senior Interior Designer",
-                image: "/images/Review-2-Em-Sheldon.jpg"
+                image: "/assets/images/Review-2-Em-Sheldon.jpg"
               },
               {
                 quote: "What I love most about working here is the emphasis on craftsmanship and quality. We're encouraged to take the time to do things right.",
                 name: "James Thompson",
                 position: "Project Manager",
-                image: "/images/Review-3-Mathew-and-Jason.jpg"
+                image: "/assets/images/Review-3-Mathew-and-Jason.jpg"
               },
               {
                 quote: "The mentorship and professional development opportunities at Sovran Group are unparalleled. I've learned so much from the experienced team members.",
                 name: "Olivia Martinez",
                 position: "Architectural Designer",
-                image: "/images/Review-1-Maria-Carolina-860x1024.jpg"
+                image: "/assets/images/Review-1-Maria-Carolina-860x1024.jpg"
               }
             ].map((testimonial, index) => (
               <div 
@@ -550,7 +550,7 @@ const CareersPage: React.FC = () => {
                   "{testimonial.quote}"
                 </blockquote>
                 <div className="text-center">
-                  <p className="font-bold text-white">{testimonial.name}</p>
+                  <p className=" text-white">{testimonial.name}</p>
                   <p className="text-primary-400 text-sm">{testimonial.position}</p>
                 </div>
               </div>
@@ -562,7 +562,7 @@ const CareersPage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary-900/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl  text-white mb-6">
             Ready to Join Our Team?
           </h2>
           <p className="text-lg text-gray-300 mb-8">

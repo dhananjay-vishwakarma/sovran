@@ -9,28 +9,14 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="ivymode-regular text-2xl font-bold text-white">SOVRAN GROUP</h3>
+            <h3 className="ivymode-regular text-2xl  text-white">SOVRAN GROUP</h3>
             <p className="text-gray-400 font-lato">
               Building excellence, one project at a time.
             </p>
             <div className="mt-6 space-y-3 font-lato">
+              
               <div className="flex items-center">
-                <EnvelopeIcon className="h-5 w-5 text-primary-500 mr-3" />
-                <a href="mailto:info@sovrangroup.co.uk" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  info@sovrangroup.co.uk
-                </a>
-              </div>
-              <div className="flex items-center">
-                <PhoneIcon className="h-5 w-5 text-primary-500 mr-3" />
-                <div className="text-gray-400">
-                  <a href="tel:+447713129769" className="hover:text-primary-400 transition-colors">
-                    07713 129769
-                  </a>
-                  <span className="mx-2">|</span>
-                  <a href="tel:+442031430103" className="hover:text-primary-400 transition-colors">
-                    +44 20 3143 0103
-                  </a>
-                </div>
+                
               </div>
             </div>
             
@@ -65,21 +51,21 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="ivymode-regular text-lg font-semibold text-white">Quick Links</h4>
+            <h4 className="ivymode-regular text-lg text-white">Quick Links</h4>
             <ul className="space-y-2 font-lato">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Home
+                <Link to="/sovran-builders" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/#case-studies" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  Portfolio
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Projects
+                  About
                 </Link>
               </li>
               <li>
@@ -90,51 +76,48 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Contact Details */}
           <div className="space-y-4">
-            <h4 className="ivymode-regular text-lg font-semibold text-white">Our Services</h4>
+            <h4 className="ivymode-regular text-lg text-white">Contact Details</h4>
             <ul className="space-y-2 font-lato">
-              <li>
-                <Link to="/sovran-builders" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Sovran Builders
-                </Link>
+              <li className="flex items-center">
+                <EnvelopeIcon className="h-5 w-5 text-primary-500 mr-3" />
+                <a href="mailto:info@sovrangroup.co.uk" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  info@sovrangroup.co.uk
+                </a>
               </li>
-              <li>
-                <Link to="/sovran-design" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Sovran Design
-                </Link>
+              <li className="flex items-center">
+                <PhoneIcon className="h-5 w-5 text-primary-500 mr-3" />
+                <a href="tel:+442031430103" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  +44 20 3143 0103
+                </a>
               </li>
-              <li>
-                <Link to="/sovran-interiors" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Sovran Interiors
-                </Link>
+              <li className="mt-4">
+                <p className="text-gray-400">
+                  2nd floor, Saracen House, Swan St,<br /> Isleworth TW7 6RJ, United Kingdom
+                </p>
               </li>
             </ul>
           </div>
 
-          {/* Tools */}
+          {/* Business Hours */}
           <div className="space-y-4">
-            <h4 className="ivymode-regular text-lg font-semibold text-white">Tools</h4>
+            <h4 className="ivymode-regular text-lg text-white">Business Hours</h4>
             <ul className="space-y-2 font-lato">
-              <li>
-                <Link to="/cost-calculator" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Cost Calculator
-                </Link>
+              <li className="text-gray-400">
+                <span className="text-primary-400">Mon-Fri:</span> 9:00am - 6:00pm
               </li>
-              <li>
-                <Link to="/ai-visualiser" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  AI Visualiser
-                </Link>
+              <li className="text-gray-400">
+                <span className="text-primary-400">Saturday:</span> 10:00am - 4:00pm
+              </li>
+              <li className="text-gray-400">
+                <span className="text-primary-400">Sunday:</span> Closed
               </li>
             </ul>
             <div className="pt-4">
-              <h4 className="ivymode-regular text-lg font-semibold text-white">Get In Touch</h4>
-              <p className="text-gray-400 mt-2 font-lato">
-                Ready to build your dream space? Contact us now for a consultation.
-              </p>
               <Link
                 to="/contact"
-                className="mt-4 inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg text-sm font-lato font-semibold transition-all duration-300"
+                className="mt-4 inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg text-sm font-lato transition-all duration-300"
               >
                 Contact Us
               </Link>

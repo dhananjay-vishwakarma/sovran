@@ -32,7 +32,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({ data }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.items.map((project, index) => (
-            <div key={index} className="reveal-image rounded-lg overflow-hidden shadow-xl bg-dark-900">
+            <div key={index} className="reveal-image rounded-lg overflow-hidden  bg-dark-900">
               <div className="h-64 overflow-hidden">
                 <img
                   src={project.image}
@@ -41,7 +41,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({ data }) => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                <h3 className="text-xl  text-white mb-2">{project.title}</h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <Link to={project.link} className="text-primary-400 hover:text-primary-300 font-medium flex items-center">
                   View Project Details

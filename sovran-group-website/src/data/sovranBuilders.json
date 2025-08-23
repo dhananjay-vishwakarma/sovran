@@ -1,0 +1,716 @@
+{
+  "mainPage": {
+    "title": "Sovran Builders",
+    "description": "Exceptional construction services delivered with precision, quality, and care",
+    "heroImage": "/assets/images/home-builder-2.jpg",
+    "ctaText": "Discuss Your Project",
+    "ctaLink": "/contact",
+    "sections": [
+      {
+        "id": "residential",
+        "type": "services",
+        "title": "Residential Construction",
+        "description": "High-quality construction services for your home project",
+        "items": [
+          {
+            "title": "Renovations",
+            "description": "Transform your existing space with our comprehensive renovation services.",
+            "icon": "🏠",
+            "link": "/sovran-builders/residential/renovations"
+          },
+          {
+            "title": "New Builds",
+            "description": "Create your dream home from the ground up with our bespoke new build services.",
+            "icon": "🏗️",
+            "link": "/sovran-builders/residential/new-builds"
+          },
+          {
+            "title": "Extensions",
+            "description": "Expand your living space with our carefully designed and executed extensions.",
+            "icon": "📐",
+            "link": "/sovran-builders/residential/extensions"
+          },
+          {
+            "title": "Loft Conversions",
+            "description": "Transform unused attic space into functional living areas.",
+            "icon": "🔝",
+            "link": "/sovran-builders/residential/loft-conversions"
+          },
+          {
+            "title": "Basements",
+            "description": "Create additional living space with our expert basement construction and conversion.",
+            "icon": "⬇️",
+            "link": "/sovran-builders/residential/basements"
+          },
+          {
+            "title": "Landscaping",
+            "description": "Enhance your outdoor spaces with professional landscaping and garden design.",
+            "icon": "🌱",
+            "link": "/sovran-builders/residential/landscaping"
+          },
+          {
+            "title": "Swimming Pools",
+            "description": "Luxury swimming pool design and installation for your property.",
+            "icon": "🏊",
+            "link": "/sovran-builders/residential/swimming-pools"
+          }
+        ]
+      }
+    ],
+    "ctaSection": {
+      "title": "Ready to Start Your Construction Project?",
+      "description": "Contact our team of building specialists to discuss your project needs and vision",
+      "primaryCta": {
+        "text": "Schedule Consultation",
+        "link": "/contact"
+      },
+      "secondaryCta": {
+        "text": "Browse Portfolio",
+        "link": "/sovran-builders/portfolio"
+      }
+    }
+  },
+  "categories": [
+    {
+      "id": "renovations",
+      "title": "Renovations",
+      "description": "Transform your existing space into something extraordinary",
+      "heroImage": "/assets/images/Before.jpg",
+      "content": {
+        "introduction": "Our renovation services are designed to breathe new life into your existing property. Whether you're looking to update a single room or transform your entire home, our team delivers exceptional craftsmanship and attention to detail at every stage.",
+        "sections": [
+          {
+            "title": "Interior Renovations",
+            "content": "From kitchen and bathroom updates to complete interior overhauls, we handle all aspects of interior renovation with meticulous care and precision."
+          },
+          {
+            "title": "Exterior Renovations",
+            "content": "Transform the look and functionality of your property with our comprehensive exterior renovation services, including façade updates, roofing, and outdoor living spaces."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Victorian Terrace Renovation",
+            "description": "A complete renovation of a Victorian property in London, preserving period features while introducing modern comforts",
+            "image": "/assets/images/After.jpg"
+          },
+          {
+            "title": "Contemporary Apartment Transformation",
+            "description": "A comprehensive renovation of a dated apartment into a sleek, modern living space",
+            "image": "/assets/images/AdobeStock_586937970.png"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Sovran Group transformed our outdated property into a stunning contemporary home. Their attention to detail and problem-solving abilities made all the difference.",
+            "author": "James Wilson",
+            "company": "Hampstead",
+            "projectType": "Full House Renovation"
+          },
+          {
+            "quote": "The renovation of our Victorian property was handled with such care and respect for the original features. The team's craftsmanship is simply outstanding.",
+            "author": "Sarah Thompson",
+            "company": "Kensington",
+            "projectType": "Period Property Renovation"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Initial Consultation",
+            "description": "We discuss your renovation goals, budget, and timeline to understand your vision."
+          },
+          {
+            "number": 2,
+            "title": "Design & Planning",
+            "description": "Our design team creates detailed plans and visualizations of your renovation project."
+          },
+          {
+            "number": 3,
+            "title": "Building Regulations & Permits",
+            "description": "We handle all necessary permits and ensure compliance with building regulations."
+          },
+          {
+            "number": 4,
+            "title": "Construction Phase",
+            "description": "Our skilled craftsmen execute the renovation with precision and attention to detail."
+          },
+          {
+            "number": 5,
+            "title": "Quality Inspection & Handover",
+            "description": "A thorough quality check ensures everything meets our high standards before project completion."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/Before.jpg",
+            "caption": "Before: Dated interior ready for transformation"
+          },
+          {
+            "image": "/assets/images/After.jpg",
+            "caption": "After: Elegant, modern living space"
+          },
+          {
+            "image": "/assets/images/AdobeStock_586937970.png",
+            "caption": "Contemporary kitchen renovation with premium finishes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "new-builds",
+      "title": "New Builds",
+      "description": "Create your dream home from the ground up",
+      "heroImage": "/assets/images/032720_RH_M7_Develop.jpeg",
+      "content": {
+        "introduction": "Our new build services offer you the opportunity to create a home that perfectly matches your lifestyle and aesthetic preferences. From contemporary designs to traditional styles, we bring your vision to life with exceptional craftsmanship and attention to detail.",
+        "sections": [
+          {
+            "title": "Bespoke Design",
+            "content": "Working closely with our architects and designers, we create a custom home design that reflects your personal style and meets your specific requirements."
+          },
+          {
+            "title": "Quality Construction",
+            "content": "Our team of skilled craftsmen utilizes the finest materials and construction techniques to build a home of exceptional quality and durability."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Contemporary Family Home",
+            "description": "A modern new build designed for family living with sustainable features and innovative design",
+            "image": "/assets/images/032720_RH_M7_Develop.jpeg"
+          },
+          {
+            "title": "Luxury Georgian-inspired Residence",
+            "description": "A new build combining classical architecture with modern amenities and technology",
+            "image": "/assets/images/AdobeStock_1312472493.jpeg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Building our dream home with Sovran Group was an incredible experience. Their guidance throughout the process and commitment to quality exceeded our expectations.",
+            "author": "Michael Harris",
+            "company": "Richmond",
+            "projectType": "Contemporary New Build"
+          },
+          {
+            "quote": "The attention to detail in our new home is remarkable. Sovran Group understood our vision perfectly and delivered a house that truly feels like our forever home.",
+            "author": "Emma Richards",
+            "company": "Surrey",
+            "projectType": "Traditional New Build"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Design Brief",
+            "description": "We gather detailed information about your requirements, preferences, and budget for your new home."
+          },
+          {
+            "number": 2,
+            "title": "Architectural Design",
+            "description": "Our architects create concept designs and detailed plans for your approval."
+          },
+          {
+            "number": 3,
+            "title": "Planning Permission",
+            "description": "We handle all planning applications and building regulation approvals."
+          },
+          {
+            "number": 4,
+            "title": "Construction",
+            "description": "Our team builds your home with precision and care, keeping you informed throughout the process."
+          },
+          {
+            "number": 5,
+            "title": "Final Inspection & Handover",
+            "description": "After thorough quality checks, we proudly hand over your new home."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/032720_RH_M7_Develop.jpeg",
+            "caption": "Contemporary new build with clean lines and open living spaces"
+          },
+          {
+            "image": "/assets/images/AdobeStock_1312472493.jpeg",
+            "caption": "Luxury family home with premium materials and finishes"
+          },
+          {
+            "image": "/assets/images/AdobeStock_586937970.png",
+            "caption": "Elegant interior design complementing the architectural style"
+          }
+        ]
+      }
+    },
+    {
+      "id": "extensions",
+      "title": "Extensions",
+      "description": "Expand your living space with beautifully designed extensions",
+      "heroImage": "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
+      "content": {
+        "introduction": "Our extension services provide the perfect solution for adding space and value to your home. Whether you need a rear extension, side return, or multi-story addition, we deliver exceptional results that seamlessly integrate with your existing property.",
+        "sections": [
+          {
+            "title": "Design & Planning",
+            "content": "Our expert designers work closely with you to create an extension that complements your home's architecture while meeting your functional requirements."
+          },
+          {
+            "title": "Seamless Integration",
+            "content": "We pay special attention to ensuring your extension blends seamlessly with the existing structure, both externally and internally."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Contemporary Glass Extension",
+            "description": "A modern glass extension creating a light-filled kitchen and dining space",
+            "image": "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg"
+          },
+          {
+            "title": "Two-Story Side Extension",
+            "description": "A substantial extension providing additional bedrooms and living space",
+            "image": "/assets/images/home-builder-2.jpg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Our kitchen extension has transformed the way we live in our home. Sovran Group managed the entire process effortlessly, from design to completion.",
+            "author": "Daniel Parker",
+            "company": "Fulham",
+            "projectType": "Rear Extension"
+          },
+          {
+            "quote": "The extension blends so perfectly with our period property that it looks like it was always there. The craftsmanship and attention to detail are exceptional.",
+            "author": "Catherine Mitchell",
+            "company": "Chiswick",
+            "projectType": "Side Return Extension"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Initial Consultation",
+            "description": "We discuss your extension needs, budget, and timeline to understand your requirements."
+          },
+          {
+            "number": 2,
+            "title": "Design Development",
+            "description": "Our designers create detailed plans and 3D visualizations of your extension."
+          },
+          {
+            "number": 3,
+            "title": "Planning & Approvals",
+            "description": "We handle all planning applications and building regulation approvals."
+          },
+          {
+            "number": 4,
+            "title": "Construction Phase",
+            "description": "Our team builds your extension with minimal disruption to your daily life."
+          },
+          {
+            "number": 5,
+            "title": "Finishing & Handover",
+            "description": "After thorough quality checks, we complete all finishing touches and hand over your new space."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
+            "caption": "Spacious extension with large glass panels for natural light"
+          },
+          {
+            "image": "/assets/images/home-builder-2.jpg",
+            "caption": "Elegantly designed extension complementing the existing architecture"
+          },
+          {
+            "image": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens.png",
+            "caption": "Interior view of a completed kitchen extension"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loft-conversions",
+      "title": "Loft Conversions",
+      "description": "Transform unused attic space into valuable living areas",
+      "heroImage": "/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg",
+      "content": {
+        "introduction": "Our loft conversion services help you maximize your home's potential by transforming underutilized attic space into beautiful, functional rooms. Whether you need an additional bedroom, home office, or bathroom, we create stunning loft spaces that add value to your property.",
+        "sections": [
+          {
+            "title": "Tailored Design",
+            "content": "We design loft conversions that make the most of your available space, with clever storage solutions and optimized layouts."
+          },
+          {
+            "title": "Structural Expertise",
+            "content": "Our team handles all structural aspects of your loft conversion, ensuring safety and compliance with building regulations."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Master Suite Loft Conversion",
+            "description": "A spacious loft conversion incorporating a bedroom, ensuite bathroom, and dressing area",
+            "image": "/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg"
+          },
+          {
+            "title": "Home Office Loft Conversion",
+            "description": "A bright, airy loft space transformed into a productive home working environment",
+            "image": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "The loft conversion has given us the extra space we desperately needed. The team's ability to maximize the available space while creating a beautiful room was impressive.",
+            "author": "Robert Thompson",
+            "company": "Islington",
+            "projectType": "Bedroom Loft Conversion"
+          },
+          {
+            "quote": "Our loft office has been a game-changer for working from home. Sovran Group's attention to detail with the storage solutions and lighting design was exceptional.",
+            "author": "Sophia Lewis",
+            "company": "Camden",
+            "projectType": "Home Office Loft Conversion"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Feasibility Assessment",
+            "description": "We assess your loft space to determine the most suitable conversion type for your home."
+          },
+          {
+            "number": 2,
+            "title": "Design & Planning",
+            "description": "Our designers create detailed plans for your loft conversion, incorporating your specific requirements."
+          },
+          {
+            "number": 3,
+            "title": "Building Regulations & Permits",
+            "description": "We handle all necessary approvals and ensure compliance with building regulations."
+          },
+          {
+            "number": 4,
+            "title": "Construction Phase",
+            "description": "Our experienced team carries out the conversion with minimal disruption to your home."
+          },
+          {
+            "number": 5,
+            "title": "Finishing & Handover",
+            "description": "We complete all finishing touches and ensure your new loft space is ready for use."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg",
+            "caption": "Elegant loft bedroom with built-in storage solutions"
+          },
+          {
+            "image": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+            "caption": "Bright loft office space with ample natural light"
+          },
+          {
+            "image": "/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+            "caption": "Custom storage solutions maximizing loft space"
+          }
+        ]
+      }
+    },
+    {
+      "id": "basements",
+      "title": "Basements",
+      "description": "Create valuable additional living space below your home",
+      "heroImage": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png",
+      "content": {
+        "introduction": "Our basement construction and conversion services provide an excellent way to significantly increase your living space without extending your property's footprint. From new basement excavations to conversions of existing cellars, we deliver high-quality underground spaces that are bright, dry, and comfortable.",
+        "sections": [
+          {
+            "title": "Structural Excellence",
+            "content": "Our specialist team handles the complex structural work involved in basement projects, ensuring waterproofing, ventilation, and accessibility are all expertly addressed."
+          },
+          {
+            "title": "Versatile Spaces",
+            "content": "We create basements for a variety of purposes, including entertainment areas, additional bedrooms, home gyms, wine cellars, or self-contained apartments."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Luxury Family Entertainment Basement",
+            "description": "A spacious basement incorporating a cinema room, games area, and bar",
+            "image": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png"
+          },
+          {
+            "title": "Self-Contained Garden Flat",
+            "description": "A basement conversion creating a separate apartment with garden access",
+            "image": "/assets/images/Background-image-for-highligt-figures-Taaj-kitchens-Homepage-7.png"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "The basement has doubled our living space and created the perfect entertainment area for our family. The team's expertise in handling the technical aspects was impressive.",
+            "author": "James Wilson",
+            "company": "Chelsea",
+            "projectType": "Entertainment Basement"
+          },
+          {
+            "quote": "Our basement apartment has added significant value to our property. The quality of waterproofing and ventilation systems installed gives us complete peace of mind.",
+            "author": "Emma Richards",
+            "company": "Notting Hill",
+            "projectType": "Basement Flat Conversion"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Feasibility Study",
+            "description": "We assess your property's suitability for a basement project and discuss options."
+          },
+          {
+            "number": 2,
+            "title": "Detailed Design",
+            "description": "Our specialists create comprehensive plans addressing structural, waterproofing, and interior design aspects."
+          },
+          {
+            "number": 3,
+            "title": "Planning & Building Regulations",
+            "description": "We handle all necessary permissions and ensure compliance with regulations."
+          },
+          {
+            "number": 4,
+            "title": "Excavation & Construction",
+            "description": "Our expert team carries out the complex construction work with minimal disruption."
+          },
+          {
+            "number": 5,
+            "title": "Waterproofing & Finishing",
+            "description": "We implement robust waterproofing systems and complete all finishing elements."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png",
+            "caption": "Spacious basement entertainment area with premium finishes"
+          },
+          {
+            "image": "/assets/images/Background-image-for-highligt-figures-Taaj-kitchens-Homepage-7.png",
+            "caption": "Bright basement apartment with clever lighting solutions"
+          },
+          {
+            "image": "/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg",
+            "caption": "Luxurious basement wine cellar and tasting area"
+          }
+        ]
+      }
+    },
+    {
+      "id": "landscaping",
+      "title": "Landscaping",
+      "description": "Transform your outdoor spaces with expert landscaping services",
+      "heroImage": "/assets/images/AdobeStock_586937970.png",
+      "content": {
+        "introduction": "Our professional landscaping services help you create beautiful, functional outdoor spaces that complement your property and lifestyle. From garden redesigns to patios, decking, and planting schemes, we transform outdoor areas into extensions of your home.",
+        "sections": [
+          {
+            "title": "Garden Design",
+            "content": "Our landscape designers create outdoor spaces that reflect your personal style and meet your practical requirements, whether you prefer contemporary minimalism or traditional charm."
+          },
+          {
+            "title": "Hard Landscaping",
+            "content": "We implement high-quality paving, decking, walls, and structures that provide the framework for your garden and withstand the test of time."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Contemporary Urban Garden",
+            "description": "A modern outdoor space designed for entertainment and relaxation in a city setting",
+            "image": "/assets/images/AdobeStock_586937970.png"
+          },
+          {
+            "title": "Traditional Country Garden",
+            "description": "A landscaping project creating a classic English garden with distinct areas and seasonal interest",
+            "image": "/assets/images/AdobeStock_1312472493.jpeg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Sovran Group transformed our neglected garden into a beautiful outdoor living space that we use year-round. Their design vision and attention to detail were exceptional.",
+            "author": "Catherine Mitchell",
+            "company": "Richmond",
+            "projectType": "Complete Garden Redesign"
+          },
+          {
+            "quote": "The landscaping team created exactly what we envisioned for our outdoor space. The quality of the stonework and planting has made our garden the envy of our neighbors.",
+            "author": "Daniel Parker",
+            "company": "Hampstead",
+            "projectType": "Contemporary Garden Design"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Site Assessment",
+            "description": "We evaluate your outdoor space, considering soil conditions, aspect, and existing features."
+          },
+          {
+            "number": 2,
+            "title": "Design Development",
+            "description": "Our landscape designers create detailed plans based on your preferences and requirements."
+          },
+          {
+            "number": 3,
+            "title": "Material Selection",
+            "description": "We help you choose the perfect materials for hard landscaping elements and select appropriate plants."
+          },
+          {
+            "number": 4,
+            "title": "Construction Phase",
+            "description": "Our skilled team implements the design, from groundwork to planting and finishing touches."
+          },
+          {
+            "number": 5,
+            "title": "Maintenance Planning",
+            "description": "We provide guidance on maintaining your new landscape and offer ongoing maintenance services if required."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/AdobeStock_586937970.png",
+            "caption": "Modern outdoor entertaining space with clean lines and sophisticated planting"
+          },
+          {
+            "image": "/assets/images/AdobeStock_1312472493.jpeg",
+            "caption": "Traditional landscaping with stone pathways and lush planting"
+          },
+          {
+            "image": "/assets/images/032720_RH_M7_Develop.jpeg",
+            "caption": "Contemporary water feature creating a focal point in a designed garden"
+          }
+        ]
+      }
+    },
+    {
+      "id": "swimming-pools",
+      "title": "Swimming Pools",
+      "description": "Luxury swimming pool design and installation for residential properties",
+      "heroImage": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens.png",
+      "content": {
+        "introduction": "Our swimming pool services cover every aspect of pool design and installation, from initial concept to completion. Whether you're looking for an indoor pool, outdoor pool, or spa area, we create luxurious aquatic environments tailored to your property and preferences.",
+        "sections": [
+          {
+            "title": "Bespoke Design",
+            "content": "We design swimming pools that complement your property's architecture and landscape, with attention to functionality, aesthetics, and energy efficiency."
+          },
+          {
+            "title": "Quality Construction",
+            "content": "Our specialist team handles the complex construction process, ensuring structural integrity, waterproofing, and installation of high-quality filtration and heating systems."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Indoor Leisure Complex",
+            "description": "A luxury indoor swimming pool with adjoining spa facilities and relaxation area",
+            "image": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens.png"
+          },
+          {
+            "title": "Contemporary Outdoor Pool",
+            "description": "A sleek, modern outdoor pool designed to complement a minimalist garden landscape",
+            "image": "/assets/images/Background-image-for-highligt-figures-Taaj-kitchens-Homepage-7.png"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "The indoor pool complex has transformed our home and lifestyle. Sovran Group's expertise in managing such a complex project was impressive from start to finish.",
+            "author": "Michael Harris",
+            "company": "Surrey",
+            "projectType": "Indoor Swimming Pool"
+          },
+          {
+            "quote": "Our outdoor pool is not just beautiful but also practical and energy-efficient. The team's attention to detail with the surrounding landscaping created a perfect outdoor oasis.",
+            "author": "Alexandra Winters",
+            "company": "Hampstead",
+            "projectType": "Outdoor Swimming Pool"
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Consultation & Site Survey",
+            "description": "We discuss your requirements and assess your property's suitability for a swimming pool."
+          },
+          {
+            "number": 2,
+            "title": "Design Development",
+            "description": "Our designers create detailed plans for your pool, considering structural requirements and aesthetic preferences."
+          },
+          {
+            "number": 3,
+            "title": "Planning & Permissions",
+            "description": "We handle all necessary planning applications and building regulation approvals."
+          },
+          {
+            "number": 4,
+            "title": "Construction Phase",
+            "description": "Our specialist team carries out the construction work with precision and attention to detail."
+          },
+          {
+            "number": 5,
+            "title": "Commissioning & Handover",
+            "description": "We test all systems, provide instruction on maintenance, and ensure your pool is ready for use."
+          }
+        ],
+        "gallery": [
+          {
+            "image": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens.png",
+            "caption": "Elegant indoor swimming pool with premium finishes"
+          },
+          {
+            "image": "/assets/images/Background-image-for-highligt-figures-Taaj-kitchens-Homepage-7.png",
+            "caption": "Contemporary outdoor pool with stylish surrounding patio"
+          },
+          {
+            "image": "/assets/images/Designed-crafted-and-Installed-Taaj-kitchens-Homepage-2.png",
+            "caption": "Luxurious spa area adjoining swimming pool"
+          }
+        ]
+      }
+    }
+  ],
+  "navigation": {
+    "residential": [
+      {
+        "id": "renovations",
+        "title": "Renovations",
+        "link": "/sovran-builders/residential/renovations"
+      },
+      {
+        "id": "new-builds",
+        "title": "New Builds",
+        "link": "/sovran-builders/residential/new-builds"
+      },
+      {
+        "id": "extensions",
+        "title": "Extensions",
+        "link": "/sovran-builders/residential/extensions"
+      },
+      {
+        "id": "loft-conversions",
+        "title": "Loft Conversions",
+        "link": "/sovran-builders/residential/loft-conversions"
+      },
+      {
+        "id": "basements",
+        "title": "Basements",
+        "link": "/sovran-builders/residential/basements"
+      },
+      {
+        "id": "landscaping",
+        "title": "Landscaping",
+        "link": "/sovran-builders/residential/landscaping"
+      },
+      {
+        "id": "swimming-pools",
+        "title": "Swimming Pools",
+        "link": "/sovran-builders/residential/swimming-pools"
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+/* Navigation Styles */
+.header-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  transition: all 0.25s ease;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  transition: opacity 0.25s ease, transform 0.25s ease, height 0.25s ease, margin 0.25s ease;
+}
+
+.logo {
+  width: auto;
+  height: 104px; /* ~30% larger than a 80px baseline */
+  transition: all 0.25s ease;
+  display: block;
+}
+
+.nav-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center the menu items under the logo */
+  gap: 2rem;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+/* fallback selector in case menu is rendered as a list */
+.nav-menu ul,
+.nav-menu .nav-menu-items {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+}
+
+/* Ensure desktop menu stays visible and sticks on scroll */
+.header-nav.scrolled {
+  backdrop-filter: blur(6px);
+}
+
+.header-nav.scrolled .logo-container {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+/* Compact header when scrolled */
+.header-nav.scrolled .header-container {
+  padding: 0.5rem 1.5rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo {
+    height: 86px;
+  }
+  .nav-menu .nav-menu-items {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}

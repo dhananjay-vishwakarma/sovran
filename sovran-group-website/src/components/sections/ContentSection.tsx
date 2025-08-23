@@ -34,7 +34,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ title, introduction, se
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {sections.map((section, index) => (
             <div key={index} className="reveal-up">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-gray-800 mb-6">{section.title}</h3>
+              <h3 className="text-2xl lg:text-3xl  text-gray-800 mb-6">{section.title}</h3>
               <p className="text-gray-600 text-lg">{section.content}</p>
             </div>
           ))}
@@ -43,7 +43,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ title, introduction, se
         {/* Featured Projects */}
         {featuredProjects && featuredProjects.length > 0 && (
           <div className="mt-20">
-            <h3 className="text-3xl font-semibold text-gray-800 mb-12 reveal-up">Featured Projects</h3>
+            <h3 className="text-3xl  text-gray-800 mb-12 reveal-up">Featured Projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {featuredProjects.map((project, index) => (
                 <div key={index} className="reveal-image rounded-lg overflow-hidden shadow-xl bg-white">
@@ -55,7 +55,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ title, introduction, se
                     />
                   </div>
                   <div className="p-8">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">{project.title}</h3>
+                    <h3 className="text-2xl  text-gray-800 mb-4">{project.title}</h3>
                     <p className="text-gray-600">{project.description}</p>
                   </div>
                 </div>

@@ -14,7 +14,7 @@
   pointer-events: none; /* Prevent interaction when hidden */
 }
 
-.mega-menu-wrapper:hover .mega-menu {
+.mega-menu-visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -37,16 +37,118 @@
   padding: 4px 0;
 }
 
+/* Three-column layout specific styles */
+.mega-menu .col-span-3.grid-cols-3 > div {
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+.mega-menu .col-span-3.grid-cols-3 > div:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mega-menu .col-span-3.grid-cols-3 > div > a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.mega-menu .col-span-3.grid-cols-3 > div > a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s ease;
+}
+
+.mega-menu .col-span-3.grid-cols-3 > div > a:hover::after {
+  width: 100%;
+}
+
+/* Subcategory links styling */
+.mega-menu .col-span-3.grid-cols-3 .space-y-2 a {
+  position: relative;
+  padding-left: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.mega-menu .col-span-3.grid-cols-3 .space-y-2 a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.mega-menu .col-span-3.grid-cols-3 .space-y-2 a:hover {
+  color: white;
+  transform: translateX(3px);
+}
+
+.mega-menu .col-span-3.grid-cols-3 .space-y-2 a:hover::before {
+  background-color: white;
+}
+
+/* Residential submenu animation */
+.group-hover\/residential > div {
+  animation: fadeInSide 0.2s ease-out forwards;
+  transform-origin: left center;
+}
+
+@keyframes fadeInSide {
+  from {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Override animation origin when displayed on the left side */
+div[style*="right: calc(100% + 8px)"].group-hover\/residential > div {
+  transform-origin: right center;
+  animation: fadeInSideLeft 0.2s ease-out forwards;
+}
+
+@keyframes fadeInSideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 /* Optimize image loading and rendering */
-.mega-menu img,
-img.w-full.h-full.object-cover {
+.mega-menu img {
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
+  opacity: 100;
   transition: opacity 0.3s ease-out;
   position: absolute;
   top: 0;
@@ -54,8 +156,7 @@ img.w-full.h-full.object-cover {
   z-index: 0;
 }
 
-.mega-menu img.loaded,
-img.w-full.h-full.object-cover.loaded {
+.mega-menu img.loaded {
   opacity: 1;
   z-index: 1; /* Slightly above placeholder but below overlay */
 }

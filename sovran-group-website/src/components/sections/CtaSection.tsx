@@ -27,14 +27,14 @@ const CtaSection: React.FC<CtaSectionProps> = ({ title, description, primaryCta,
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
               to={primaryCta.link} 
-              className="bg-white text-primary-900 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-50 transition-all duration-300"
+              className="bg-white text-primary-900 px-8 py-3 rounded-lg text-lg  hover:bg-primary-50 transition-all duration-300"
             >
               {primaryCta.text}
             </Link>
             {secondaryCta && (
               <Link 
                 to={secondaryCta.link} 
-                className="border border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all duration-300"
+                className="border border-white text-white px-8 py-3 rounded-lg text-lg  hover:bg-white/10 transition-all duration-300"
               >
                 {secondaryCta.text}
               </Link>

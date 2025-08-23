@@ -1,0 +1,51 @@
+/* This CSS file handles the residential submenu hover behavior */
+
+/* Style for the Build dropdown main menu */
+.build-menu {
+  position: relative;
+}
+
+/* Style for the residential menu item */
+.residential-item {
+  position: relative;
+}
+
+/* Style for the residential submenu */
+.residential-submenu {
+  display: none;
+  position: absolute;
+  left: 100%; 
+  top: 0;
+  min-width: 240px;
+  background-color: rgba(26, 32, 44, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Show submenu on hover - make sure this has higher specificity */
+.build-menu .residential-item:hover .residential-submenu {
+  display: block;
+}
+
+/* Style for the submenu items */
+.residential-submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.residential-submenu a:hover {
+  background-color: #3B82F6;
+}
+
+/* Fix for edge of screen alignment */
+@media (max-width: 1200px) {
+  .residential-submenu {
+    left: auto;
+    right: 100%;
+  }
+}

@@ -38,7 +38,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ data }) => {
               className="reveal-up bg-dark-800 rounded-lg p-6 shadow-xl hover:transform hover:scale-105 transition-all duration-300"
             >
               <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+              <h3 className="text-xl  text-white mb-3">{service.title}</h3>
               <p className="text-gray-300">{service.description}</p>
             </Link>
           ))}
