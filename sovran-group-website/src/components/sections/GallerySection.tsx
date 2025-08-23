@@ -22,7 +22,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({ data }) => {
     <section id={data.id} className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/50">
       <div className="max-w-7xl mx-auto">
         <div className="reveal-up text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl  text-white mb-4">
             {data.title}
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">

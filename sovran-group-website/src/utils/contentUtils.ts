@@ -1,4 +1,5 @@
 import sovranInteriorsData from '../data/sovranInteriors.json';
+import subcategoriesData from '../data/subcategories.json';
 
 export interface PageData {
   title: string;
@@ -43,6 +44,66 @@ export interface CategoryData {
       description: string;
       image: string;
     }[];
+    testimonials?: {
+      quote: string;
+      author: string;
+      company?: string;
+      projectType?: string;
+    }[];
+    specifications?: {
+      category: string;
+      items: {
+        name: string;
+        value: string;
+      }[];
+    }[];
+    processSteps?: {
+      number: number;
+      title: string;
+      description: string;
+    }[];
+    designInspirations?: {
+      title: string;
+      image: string;
+      description: string;
+      link?: string;
+    }[];
+  };
+}
+
+export interface SubcategoryData extends CategoryData {
+  parentId: string;
+  testimonials?: {
+    quote: string;
+    author: string;
+    company?: string;
+    projectType?: string;
+  }[];
+  specifications?: {
+    category: string;
+    items: {
+      name: string;
+      value: string;
+    }[];
+  }[];
+  processSteps?: {
+    number: number;
+    title: string;
+    description: string;
+  }[];
+  designInspirations?: {
+    title: string;
+    image: string;
+    description: string;
+    link?: string;
+  }[];
+  finalCta?: {
+    title: string;
+    description: string;
+    buttonText: string;
+    buttonLink: string;
+    secondaryText?: string;
+    secondaryLink?: string;
   };
 }
 

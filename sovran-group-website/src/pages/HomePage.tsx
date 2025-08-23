@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Button from '../components/Button';
+import ArrowButton from '../components/ArrowButton';
 import HeroSection from '../components/HeroSection';
 import TestimonialSection from '../components/TestimonialSection';
 import BusinessVerticalsSection from '../components/BusinessVerticalsSection';
@@ -148,7 +149,7 @@ After extensive research, we found a team whose modern, clean aesthetic and high
 
     {/* Client Testimonials Section */}
 <section ref={testimonialsRef}>
-  <div className="reveal-up">
+  <div>
     <TestimonialSection />
   </div>
 </section>
@@ -157,7 +158,7 @@ After extensive research, we found a team whose modern, clean aesthetic and high
       <section ref={caseStudiesRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
         <div className="max-w-7xl mx-auto">
           <div className="reveal-up text-center mb-16">
-            <h2 className="font-sans font-bold text-4xl md:text-5xl text-white mb-6 ivymode-bold">
+            <h2 className="font-sans text-4xl md:text-5xl lg:text-5xl text-white mb-6 ivymode">
               Our Recent Projects – Turning Vision Into Reality
             </h2>
           </div>
@@ -209,26 +210,43 @@ After extensive research, we found a team whose modern, clean aesthetic and high
           </div>
           
           <div className="flex justify-center mt-12">
-            <Button
+            <ArrowButton
               text="View More Projects"
               to="/contact"
+              className="text-white hover:text-primary-500"
             />
           </div>
         </div>
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary-600">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-sans font-bold text-3xl md:text-4xl text-white mb-6 ivymode-bold">
+      <section className="py-36 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+        {/* Oversized "S" in the background - positioned differently from the business verticals section */}
+        <div
+          className="absolute select-none pointer-events-none"
+          style={{
+            fontSize: '90rem',
+            lineHeight: '0',
+            top: '-5rem',
+            right: '-15rem',
+            opacity: 0.1,
+            zIndex: 0,
+          }}
+        >
+          <span className="ivymode-bold text-black">S</span>
+        </div>
+        
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="font-sans text-3xl md:text-4xl text-black mb-6 ivymode">
             Get in Touch with Sovran Group Today!
           </h2>
-          <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-            Ready to build your dream space? Whether you're starting a full renovation or designing a luxury kitchen, Sovran Group is here to help. Contact us now for a consultation.
+          <p className="text-xl text-black/90 mb-10 max-w-3xl mx-auto">
+            Ready to build your dream space? <br />Whether you're starting a full renovation or designing a luxury kitchen, Sovran Group is here to help. Contact us now for a consultation.
           </p>
-          <Button
+          <ArrowButton
             text="Contact Us Now"
             to="/contact"
+            className="text-black hover:text-primary-500"
           />
         </div>
       </section>

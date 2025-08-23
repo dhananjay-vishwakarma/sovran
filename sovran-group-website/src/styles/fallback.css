@@ -1,0 +1,11 @@
+/* Fallback CSS to ensure headings are visible even if animations fail */
+.split-text {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+/* Hide all SplitText-generated divs that are empty */
+.split-text div:empty {
+  display: none;
+}

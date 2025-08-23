@@ -531,7 +531,7 @@ const HomePage: React.FC = () => {
       {/* Client Testimonials Section */}
       <section
         ref={testimonialsRef}
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-20 px-4 sm:px-6 lg:px-64 bg-white"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="font-sans text-4xl md:text-5xl text-black text-center mb-16" style={{ marginBottom: "3rem" }}>
@@ -690,7 +690,7 @@ const HomePage: React.FC = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary-600">
+      <section className="py-32 px-4 sm:px-6 lg:py-32 bg-primary-600">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-sans text-3xl md:text-4xl text-white" style={{ marginBottom: "2rem" }}>
             Get in Touch with Sovran Group Today!

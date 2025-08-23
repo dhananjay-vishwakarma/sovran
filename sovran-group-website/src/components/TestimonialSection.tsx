@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ArrowButton from './ArrowButton';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 // Testimonial Type
 interface Testimonial {
@@ -35,14 +40,59 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialSection: React.FC = () => {
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const el = headingRef.current;
+    if (!el) return;
+    
+    // Prepare the text for animation
+    const text = el.textContent || '';
+    el.textContent = '';
+    const letters = text.split('').map((char) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      span.style.display = 'inline-block';
+      span.style.filter = 'blur(4px)';
+      span.style.opacity = '0';
+      return span;
+    });
+    letters.forEach((span) => el.appendChild(span));
+    
+    // Create animation that triggers when scrolled into view
+    const animation = gsap.timeline({paused: true})
+      .to(letters, {
+        filter: 'blur(0px)',
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.05,
+        ease: 'power2.out'
+      });
+    
+    // Create ScrollTrigger to play animation when element enters viewport
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top 80%", // Animation starts when top of element is 80% from top of viewport
+      onEnter: () => animation.play(),
+      onLeaveBack: () => animation.pause(0), // Reset animation when scrolling back up and element leaves viewport
+      onEnterBack: () => animation.play(), // Play animation again when scrolling back into view
+      once: false // Allow animation to trigger multiple times
+    });
+    
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill(true));
+      animation.kill();
+    };
+  }, []);
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
   };
 
   return (
-    <section className="py-20 md:py-28 bg-dark-800">
+    <section className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Left Column - Testimonials */}
@@ -51,7 +101,7 @@ const TestimonialSection: React.FC = () => {
               <span className="text-primary-500 text-sm font-lato uppercase tracking-wider">TESTIMONIAL</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl text-white mb-12 ivymode-regular">
+            <h2 ref={headingRef} className="text-4xl md:text-5xl text-black mb-12 ivymode-regular">
               What our customers say
             </h2>
             
@@ -66,7 +116,7 @@ const TestimonialSection: React.FC = () => {
                     key={testimonial.id}
                     className={`transition-opacity duration-500 ${index === activeIndex ? 'opacity-100' : 'opacity-0 hidden'}`}
                   >
-                    <p className="text-lg md:text-xl text-white/90 mb-8 font-lato relative z-10">
+                    <p className="text-lg md:text-xl text-black/90 mb-8 font-lato relative z-10">
                       "{testimonial.text}"
                     </p>
                     
@@ -82,8 +132,8 @@ const TestimonialSection: React.FC = () => {
                       )}
                       
                       <div>
-                        <h4 className="text-white text-lg font-semibold">{testimonial.author}</h4>
-                        <p className="text-gray-400 text-sm">{testimonial.position}</p>
+                        <h4 className="text-black text-lg font-semibold">{testimonial.author}</h4>
+                        <p className="text-gray-600 text-sm">{testimonial.position}</p>
                       </div>
                     </div>
                   </div>
@@ -107,12 +157,12 @@ const TestimonialSection: React.FC = () => {
           </div>
           
           {/* Right Column - Why We're Different */}
-          <div className="lg:col-span-5 bg-dark-700/50 p-10 rounded-xl border border-dark-600">
-            <h3 className="text-2xl md:text-3xl text-white mb-6 ivymode-regular">
+          <div className="lg:col-span-5 bg-gray-100 p-10 rounded-xl border border-gray-200">
+            <h3 className="text-2xl md:text-3xl text-black mb-6 ivymode-regular">
               Why we're different
             </h3>
             
-            <p className="text-gray-300 mb-8 font-lato">
+            <p className="text-gray-700 mb-8 font-lato">
               As fellow entrepreneurs, we understand the need for space which gives your business room
             </p>
             
@@ -127,7 +177,7 @@ const TestimonialSection: React.FC = () => {
                   <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center mr-3 flex-shrink-0">
                     <div className="w-2 h-2 rounded-full bg-white"></div>
                   </div>
-                  <span className="text-white font-lato">{feature}</span>
+                  <span className="text-black font-lato">{feature}</span>
                 </li>
               ))}
             </ul>

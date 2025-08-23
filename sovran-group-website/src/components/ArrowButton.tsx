@@ -29,8 +29,11 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
     </>
   );
 
-  const baseClasses = "group inline-flex items-center text-white font-lato text-lg hover:text-primary-500 transition-all duration-300";
-  const combinedClasses = `${baseClasses} ${className}`;
+  const baseClasses = "group inline-flex items-center font-lato text-lg transition-all duration-300";
+  // Only add default text-white if no className (which might override text color) is provided
+  const combinedClasses = className.includes('text-') ? 
+    `${baseClasses} ${className}` : 
+    `${baseClasses} text-white hover:text-primary-500 ${className}`;
 
   if (to) {
     return (

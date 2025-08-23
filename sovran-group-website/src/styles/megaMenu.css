@@ -7,26 +7,83 @@
 .mega-menu {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-5px);
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out, visibility 0s linear 0.1s;
   z-index: 50;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  pointer-events: none; /* Prevent interaction when hidden */
 }
 
 .mega-menu-wrapper:hover .mega-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0s linear 0s;
+  pointer-events: auto; /* Allow interaction when visible */
 }
 
 /* Fix for menu closing when moving cursor between menu and trigger */
 .mega-menu:before {
   content: '';
   position: absolute;
-  top: -10px;
+  top: -5px; /* Reduced gap for faster response */
   left: 0;
   right: 0;
-  height: 10px;
+  height: 5px;
+}
+
+/* Make the hover area slightly larger for easier menu access */
+.mega-menu-wrapper button {
+  padding: 4px 0;
+}
+
+/* Optimize image loading and rendering */
+.mega-menu img,
+img.w-full.h-full.object-cover {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.mega-menu img.loaded,
+img.w-full.h-full.object-cover.loaded {
+  opacity: 1;
+  z-index: 1; /* Slightly above placeholder but below overlay */
+}
+
+/* Placeholder for images while loading */
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, #1a1a1a 8%, #2a2a2a 18%, #1a1a1a 33%);
+  background-size: 200% 100%;
+  z-index: 0; /* Make sure it's behind the overlay */
+}
+
+/* Active loading state with enhanced animation */
+.image-placeholder.active-loading {
+  animation: shine 1.5s linear infinite;
+  opacity: 0.8;
+  background: linear-gradient(110deg, #1a1a1a 8%, #303030 18%, #1a1a1a 33%);
+  position: absolute;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }
 
 /* Category image hover effects */
@@ -34,6 +91,7 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+  position: relative;
 }
 
 .category-image:hover {
@@ -42,20 +100,36 @@
 
 .category-image img {
   transition: transform 0.5s ease;
+  z-index: 0;
 }
 
 .category-image:hover img {
   transform: scale(1.1);
 }
 
+/* Ensure overlay content is always above images */
+.category-image .absolute {
+  z-index: 10;
+}
+
 .category-overlay {
   background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 1; /* Always visible */
+  transition: all 0.2s ease-out;
+  z-index: 10; /* Ensure overlay is above image */
 }
 
 .category-image:hover .category-overlay {
-  opacity: 1;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Global rule to ensure text and buttons are always above images */
+.category-image h3,
+.category-image a,
+.category-image button,
+.category-image .bg-primary-600 {
+  position: relative;
+  z-index: 15;
 }
 
 /* Video thumbnails */
@@ -99,27 +173,27 @@
   transform: translateX(3px);
 }
 
-/* Staggered animation for mega menu items */
+/* Staggered animation for mega menu items - optimized for quick display */
 .mega-menu-wrapper:hover .mega-menu > div > div:nth-child(1) {
-  animation: fadeInUp 0.4s ease forwards;
+  animation: fadeInUp 0.12s ease forwards;
 }
 
 .mega-menu-wrapper:hover .mega-menu > div > div:nth-child(2) {
-  animation: fadeInUp 0.4s 0.1s ease forwards;
+  animation: fadeInUp 0.12s 0.02s ease forwards;
 }
 
 .mega-menu-wrapper:hover .mega-menu > div > div:nth-child(3) {
-  animation: fadeInUp 0.4s 0.2s ease forwards;
+  animation: fadeInUp 0.12s 0.04s ease forwards;
 }
 
 .mega-menu-wrapper:hover .mega-menu > div > div:nth-child(4) {
-  animation: fadeInUp 0.4s 0.3s ease forwards;
+  animation: fadeInUp 0.12s 0.06s ease forwards;
 }
 
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(10px);
+    opacity: 0.7;
+    transform: translateY(5px);
   }
   to {
     opacity: 1;

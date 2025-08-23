@@ -18,7 +18,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({ title, description, primaryCta,
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto bg-primary-900/30 backdrop-blur-sm rounded-xl p-8 md:p-12 border border-primary-700/50">
         <div className="text-center reveal-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl  text-white mb-6">
             {title}
           </h2>
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">

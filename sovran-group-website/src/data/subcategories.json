@@ -1,0 +1,137 @@
+{
+  "bespoke-rooms-bars": {
+    "id": "bars",
+    "parentId": "bespoke-rooms",
+    "title": "Luxury Home Bars",
+    "description": "Custom-designed bars for elegant home entertainment",
+    "heroImage": "https://images.unsplash.com/photo-1607976973585-a2857eeaef3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    "content": {
+      "introduction": "Transform your home entertainment space with our bespoke luxury bars. Each bar is meticulously designed to match your style preferences and practical requirements, creating the perfect setting for entertaining guests or enjoying quiet evenings at home.",
+      "sections": [
+        {
+          "title": "Bespoke Design",
+          "content": "Our designers work closely with you to create a bar that perfectly complements your home's aesthetic while providing all the functionality you desire. Whether you envision a sleek modern bar or a traditional wooden design, we bring your ideas to life with precision and creativity."
+        },
+        {
+          "title": "Premium Materials",
+          "content": "We use only the finest materials for our custom bars, including select hardwoods, natural stone countertops, and high-grade metals. Each material is chosen not only for its beauty but also for its durability and functionality in a bar environment."
+        },
+        {
+          "title": "Complete Solutions",
+          "content": "From design to installation, we handle every aspect of creating your perfect bar. This includes custom cabinetry, specialized storage for bottles and glassware, integrated lighting, and optional features like sinks, refrigerators, and wine coolers."
+        },
+        {
+          "title": "Expert Craftsmanship",
+          "content": "Our skilled craftsmen have years of experience creating luxury bars. Their attention to detail ensures that every element of your bar is perfectly executed, from precise joinery to flawless finishes."
+        }
+      ],
+      "featuredProjects": [
+        {
+          "title": "Contemporary Apartment Bar",
+          "description": "A sleek, modern bar design with LED lighting and minimalist aesthetics for a London penthouse.",
+          "image": "https://images.unsplash.com/photo-1507566132020-fb7aceabcdb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+          "title": "Classic Home Bar",
+          "description": "A traditional wooden bar with ornate details and integrated wine storage for a Surrey residence.",
+          "image": "https://images.unsplash.com/photo-1608275861033-19b089db9fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "quote": "The attention to detail and quality of craftsmanship exceeded our expectations. Our new bar has become the highlight of our home.",
+        "author": "Michael Johnson",
+        "company": "London",
+        "projectType": "Custom Home Bar"
+      },
+      {
+        "quote": "The team at Sovran Interiors transformed our space with a stunning bar design that perfectly complements our home style.",
+        "author": "Emily Parker",
+        "company": "Surrey",
+        "projectType": "Entertainment Room Bar"
+      },
+      {
+        "quote": "Professional service from start to finish. The design process was collaborative and the final result is exactly what we envisioned.",
+        "author": "David Williams",
+        "company": "Kent",
+        "projectType": "Wine Cellar & Bar Area"
+      }
+    ],
+    "specifications": [
+      {
+        "category": "Materials",
+        "items": [
+          { "name": "Cabinet Construction", "value": "Solid oak, walnut, or custom selection" },
+          { "name": "Countertops", "value": "Marble, granite, quartz, or solid surface" },
+          { "name": "Backsplash", "value": "Glass, tile, or matching countertop material" },
+          { "name": "Hardware", "value": "Brushed brass, matte black, or stainless steel" }
+        ]
+      },
+      {
+        "category": "Features",
+        "items": [
+          { "name": "Storage", "value": "Custom bottle racks, glass holders, drawers" },
+          { "name": "Lighting", "value": "LED strip lighting, pendant lights, cabinet lighting" },
+          { "name": "Accessories", "value": "Wine coolers, ice makers, bar sinks" },
+          { "name": "Smart Features", "value": "Smart lighting control, temperature monitoring" }
+        ]
+      }
+    ],
+    "processSteps": [
+      {
+        "number": 1,
+        "title": "Initial Consultation",
+        "description": "We meet to discuss your requirements, preferences, and budget to understand your vision for the bar area."
+      },
+      {
+        "number": 2,
+        "title": "Design & Planning",
+        "description": "Our designers create detailed plans and 3D visualizations of your custom bar to ensure it meets your expectations."
+      },
+      {
+        "number": 3,
+        "title": "Material Selection",
+        "description": "Choose from our premium materials for countertops, cabinetry, hardware, and accessories."
+      },
+      {
+        "number": 4,
+        "title": "Crafting & Construction",
+        "description": "Our skilled craftsmen build your custom bar components in our workshop with precision and attention to detail."
+      },
+      {
+        "number": 5,
+        "title": "Installation",
+        "description": "Professional installation team carefully installs your bar, ensuring perfect fit and functionality."
+      }
+    ],
+    "designInspirations": [
+      {
+        "title": "Contemporary Bar Design",
+        "image": "https://images.unsplash.com/photo-1584827387179-e677bbc96703?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "description": "Modern elegance with clean lines and minimalist aesthetic.",
+        "link": "/sovran-interiors/bespoke-rooms/bars/contemporary"
+      },
+      {
+        "title": "Classic Wooden Bar",
+        "image": "https://images.unsplash.com/photo-1607976973585-a2857eeaef3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "description": "Traditional styling with rich wood tones and ornate details.",
+        "link": "/sovran-interiors/bespoke-rooms/bars/classic"
+      },
+      {
+        "title": "Luxury Wine Storage",
+        "image": "https://images.unsplash.com/photo-1616957776515-0f5397d5546c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "description": "Sophisticated wine storage solutions for the discerning collector.",
+        "link": "/sovran-interiors/bespoke-rooms/bars/wine-storage"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to Create Your Dream Bar?",
+      "description": "Contact our design team today to schedule a consultation and bring your vision to life.",
+      "buttonText": "Schedule Consultation",
+      "buttonLink": "/contact",
+      "secondaryText": "View More Designs",
+      "secondaryLink": "/sovran-interiors/bespoke-rooms"
+    }
+  }
+}

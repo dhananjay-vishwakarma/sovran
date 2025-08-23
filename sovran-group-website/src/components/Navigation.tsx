@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import sovranInteriorsData from '../data/sovranInteriors.json';
 import '../styles/megaMenu.css';
+import { Helmet } from 'react-helmet';
+import LazyImage from './LazyImage';
 
 // Image paths for mega menu
 const megaMenuImages = {
@@ -54,6 +56,13 @@ const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
+  
+  // Get an array of critical images that should be preloaded
+  const criticalImages = [
+    megaMenuImages['bespoke-rooms'].main,
+    megaMenuImages['bespoke-wardrobes'].main,
+    megaMenuImages['kitchens'].main
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,22 +82,27 @@ const Navigation: React.FC = () => {
   };
 
   const handleClickOutside = () => {
-    if (!isHovering) {
-      setActiveDropdown(null);
-    }
+    setActiveDropdown(null);
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
+    if (!isHovering) {
+      document.addEventListener('click', handleClickOutside);
+      return () => {
+        document.removeEventListener('click', handleClickOutside);
+      };
+    }
   }, [isHovering]);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-dark-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
+      <Helmet>
+        {criticalImages.map((image, index) => (
+          <link key={index} rel="preload" href={image} as="image" />
+        ))}
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -117,12 +131,9 @@ const Navigation: React.FC = () => {
                 setIsHovering(true);
               }}
               onMouseLeave={() => {
+                // Immediately hide the dropdown when mouse leaves
+                setActiveDropdown(null);
                 setIsHovering(false);
-                setTimeout(() => {
-                  if (!isHovering) {
-                    setActiveDropdown(null);
-                  }
-                }, 100);
               }}
             >
               <button
@@ -171,54 +182,97 @@ const Navigation: React.FC = () => {
                     </div>
 
                     {/* Middle - Images Grid */}
-                    <div className="col-span-2 grid grid-cols-2 gap-4">
+                    <div className="col-span-2 grid grid-cols-2 grid-rows-3 gap-4">
                       {/* First row */}
                       <div className="relative aspect-video rounded-lg overflow-hidden group/img category-image">
-                        <img 
+                        <LazyImage 
                           src={megaMenuImages['bespoke-rooms'].main} 
                           alt="Bespoke Rooms" 
-                          className="w-full h-full object-cover transform transition-transform duration-500 group-hover/img:scale-110"
+                          className="transform transition-transform duration-500 group-hover/img:scale-110"
+                          shouldLoad={activeDropdown === 'interiors'}
+                          priority={0} // First image to load
                         />
-                        <div className="absolute inset-0 bg-dark-900/50 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 category-overlay">
-                          <Link to="/sovran-interiors/bespoke-rooms" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg">
-                            Bespoke Rooms
+                        <div className="absolute inset-0 bg-dark-900/60 flex flex-col items-center justify-center z-10">
+                          <h3 className="text-white font-semibold mb-2 text-center">Bespoke Rooms</h3>
+                          <Link to="/sovran-interiors/bespoke-rooms" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                            Explore
                           </Link>
                         </div>
                       </div>
                       <div className="relative aspect-video rounded-lg overflow-hidden group/img category-image">
-                        <img 
+                        <LazyImage 
                           src={megaMenuImages['bespoke-wardrobes'].main} 
                           alt="Bespoke Wardrobes" 
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover/img:scale-110"
+                          shouldLoad={activeDropdown === 'interiors'}
+                          priority={1} // Second image to load
                         />
-                        <div className="absolute inset-0 bg-dark-900/50 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 category-overlay">
-                          <Link to="/sovran-interiors/bespoke-wardrobes" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg">
-                            Bespoke Wardrobes
+                        <div className="absolute inset-0 bg-dark-900/60 flex flex-col items-center justify-center z-10">
+                          <h3 className="text-white font-semibold mb-2 text-center">Bespoke Wardrobes</h3>
+                          <Link to="/sovran-interiors/bespoke-wardrobes" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                            Explore
                           </Link>
                         </div>
                       </div>
                       {/* Second row */}
                       <div className="relative aspect-video rounded-lg overflow-hidden group/img category-image">
-                        <img 
+                        <LazyImage 
                           src={megaMenuImages['kitchens'].main} 
                           alt="Kitchens" 
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover/img:scale-110"
+                          shouldLoad={activeDropdown === 'interiors'}
+                          priority={2} // Third image to load
                         />
-                        <div className="absolute inset-0 bg-dark-900/50 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 category-overlay">
-                          <Link to="/sovran-interiors/kitchens" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg">
-                            Kitchens
+                        <div className="absolute inset-0 bg-dark-900/60 flex flex-col items-center justify-center z-10">
+                          <h3 className="text-white font-semibold mb-2 text-center">Kitchens</h3>
+                          <Link to="/sovran-interiors/kitchens" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                            Explore
                           </Link>
                         </div>
                       </div>
                       <div className="relative aspect-video rounded-lg overflow-hidden group/img category-image">
-                        <img 
+                        <LazyImage 
                           src={megaMenuImages['kitchens'].subcategories['projects']} 
                           alt="Projects" 
                           className="w-full h-full object-cover transform transition-transform duration-500 group-hover/img:scale-110"
+                          shouldLoad={activeDropdown === 'interiors'}
+                          priority={3} // Fourth image to load
                         />
-                        <div className="absolute inset-0 bg-dark-900/50 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
-                          <Link to="/sovran-interiors/kitchens/projects" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg">
-                            Our Projects
+                        <div className="absolute inset-0 bg-dark-900/60 flex flex-col items-center justify-center z-10">
+                          <h3 className="text-white font-semibold mb-2 text-center">Our Projects</h3>
+                          <Link to="/sovran-interiors/kitchens/projects" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                            View Projects
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Third row (using subcategories for more examples) */}
+                      <div className="relative aspect-video rounded-lg overflow-hidden group/img category-image">
+                        <LazyImage 
+                          src={megaMenuImages['bespoke-rooms'].subcategories['tv-units']} 
+                          alt="TV Units" 
+                          className="w-full h-full object-cover transform transition-transform duration-500 group-hover/img:scale-110"
+                          shouldLoad={activeDropdown === 'interiors'}
+                          priority={4} // Fifth image to load
+                        />
+                        <div className="absolute inset-0 bg-dark-900/60 flex flex-col items-center justify-center z-10">
+                          <h3 className="text-white font-semibold mb-2 text-center">TV Units</h3>
+                          <Link to="/sovran-interiors/bespoke-rooms/tv-units" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                            Discover
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="relative aspect-video rounded-lg overflow-hidden group/img category-image">
+                        <LazyImage 
+                          src={megaMenuImages['bespoke-rooms'].subcategories['bars']} 
+                          alt="Home Bars" 
+                          className="w-full h-full object-cover transform transition-transform duration-500 group-hover/img:scale-110"
+                          shouldLoad={activeDropdown === 'interiors'}
+                          priority={5} // Sixth image to load
+                        />
+                        <div className="absolute inset-0 bg-dark-900/60 flex flex-col items-center justify-center z-10">
+                          <h3 className="text-white font-semibold mb-2 text-center">Home Bars</h3>
+                          <Link to="/sovran-interiors/bespoke-rooms/bars" className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                            Discover
                           </Link>
                         </div>
                       </div>
@@ -231,12 +285,14 @@ const Navigation: React.FC = () => {
                         {featuredVideos.map((video, index) => (
                           <div key={index} className="group/video">
                             <div className="relative aspect-video rounded-lg overflow-hidden mb-2">
-                              <img 
+                              <LazyImage 
                                 src={video.thumbnail} 
                                 alt={video.title} 
                                 className="w-full h-full object-cover"
+                                shouldLoad={activeDropdown === 'interiors'}
+                                priority={6 + index} // Load after grid images
                               />
-                              <div className="absolute inset-0 bg-dark-900/50 flex items-center justify-center opacity-0 group-hover/video:opacity-100 transition-opacity duration-300">
+                              <div className="absolute inset-0 bg-dark-900/50 flex items-center justify-center opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 z-10">
                                 <Link to={`/sovran-interiors/videos/${index}`} className="bg-primary-600 hover:bg-primary-700 text-white p-2 rounded-full">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -347,14 +403,16 @@ const Navigation: React.FC = () => {
                     
                     {/* Mobile menu category images */}
                     <div className="grid grid-cols-2 gap-2 px-3 py-2">
-                      {sovranInteriorsData.navigation.mainCategories.map((category) => (
+                      {sovranInteriorsData.navigation.mainCategories.map((category, index) => (
                         <div key={category.id} className="relative rounded-lg overflow-hidden aspect-video">
-                          <img 
+                          <LazyImage 
                             src={megaMenuImages[category.id as keyof typeof megaMenuImages]?.main} 
                             alt={category.title}
                             className="w-full h-full object-cover"
+                            shouldLoad={activeDropdown === 'mobile-interiors'}
+                            priority={index} // Load in sequence
                           />
-                          <div className="absolute inset-0 bg-dark-900/60 flex items-center justify-center">
+                          <div className="absolute inset-0 bg-dark-900/60 flex items-center justify-center z-10">
                             <Link 
                               to={category.link}
                               className="text-white text-xs font-medium hover:text-primary-400"
@@ -399,12 +457,14 @@ const Navigation: React.FC = () => {
                       <div className="grid grid-cols-2 gap-2 px-3">
                         {featuredVideos.map((video, index) => (
                           <div key={index} className="relative rounded-lg overflow-hidden aspect-video">
-                            <img 
+                            <LazyImage 
                               src={video.thumbnail} 
                               alt={video.title}
                               className="w-full h-full object-cover"
+                              shouldLoad={activeDropdown === 'mobile-interiors'}
+                              priority={sovranInteriorsData.navigation.mainCategories.length + index} // Load after category images
                             />
-                            <div className="absolute inset-0 bg-dark-900/60 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-dark-900/60 flex items-center justify-center z-10">
                               <Link 
                                 to={`/sovran-interiors/videos/${index}`}
                                 className="text-white text-xs font-medium hover:text-primary-400"

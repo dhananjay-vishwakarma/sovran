@@ -98,10 +98,154 @@
   },
   "categories": [
     {
+      "id": "home-renovations",
+      "title": "Home Renovations",
+      "description": "Transform your living spaces with our comprehensive renovation services",
+      "heroImage": "/images/Home-Renovations.1.png",
+      "subcategories": [
+        {
+          "id": "full-house",
+          "title": "Full House",
+          "description": "Complete home renovations for a fresh new living experience",
+          "link": "/sovran-interiors/home-renovations/full-house"
+        },
+        {
+          "id": "kitchen",
+          "title": "Kitchen",
+          "description": "Transform your kitchen into a functional and beautiful space",
+          "link": "/sovran-interiors/home-renovations/kitchen"
+        },
+        {
+          "id": "bathroom",
+          "title": "Bathroom",
+          "description": "Create a luxurious bathroom retreat with our renovation services",
+          "link": "/sovran-interiors/home-renovations/bathroom"
+        },
+        {
+          "id": "extension",
+          "title": "Extension",
+          "description": "Expand your living space with our high-quality extension services",
+          "link": "/sovran-interiors/home-renovations/extension"
+        }
+      ],
+      "content": {
+        "introduction": "Our home renovation services are designed to transform your living spaces into beautiful, functional environments that reflect your personal style and meet your practical needs.",
+        "sections": [
+          {
+            "title": "Full Home Renovation",
+            "content": "From concept to completion, we handle every aspect of full home renovations, ensuring a seamless process and outstanding results."
+          },
+          {
+            "title": "Specialized Renovations",
+            "content": "Whether you're looking to update your kitchen, bathroom, or add an extension, our team brings expertise and attention to detail to every project."
+          }
+        ],
+        "featuredProjects": [
+          {
+            "title": "Victorian Home Modernization",
+            "description": "A complete renovation of a Victorian property, blending period features with contemporary design",
+            "image": "/images/home-builder-2.jpg"
+          },
+          {
+            "title": "Luxury Kitchen Transformation",
+            "description": "A kitchen renovation featuring bespoke cabinetry and high-end appliances",
+            "image": "/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Sovran Group transformed our outdated home into a modern masterpiece. Their attention to detail and project management skills were exceptional.",
+            "author": "James Wilson",
+            "company": "Hampstead",
+            "projectType": "Full House Renovation"
+          },
+          {
+            "quote": "The kitchen renovation exceeded our expectations. The team was professional, punctual, and delivered a stunning result within our budget.",
+            "author": "Olivia Thompson",
+            "company": "Fulham",
+            "projectType": "Kitchen Renovation"
+          },
+          {
+            "quote": "From planning to completion, Sovran Group handled our extension project with expertise. The new space blends seamlessly with the original house.",
+            "author": "Michael Harris",
+            "company": "Richmond",
+            "projectType": "Home Extension"
+          }
+        ],
+        "specifications": [
+          {
+            "category": "Services Offered",
+            "items": [
+              { "name": "Full House Renovations", "value": "Complete interior and exterior transformations" },
+              { "name": "Kitchen Renovations", "value": "Custom layouts, cabinetry, and premium fixtures" },
+              { "name": "Bathroom Renovations", "value": "Luxury fittings, tiling, and waterproofing solutions" },
+              { "name": "Extensions", "value": "Side extensions, loft conversions, basement developments" }
+            ]
+          },
+          {
+            "category": "Quality Standards",
+            "items": [
+              { "name": "Building Regulations", "value": "All projects comply with UK building regulations" },
+              { "name": "Materials", "value": "Premium quality, sustainably sourced where possible" },
+              { "name": "Warranty", "value": "Comprehensive warranty on all workmanship" },
+              { "name": "Insurance", "value": "Fully insured projects with liability coverage" }
+            ]
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Initial Consultation",
+            "description": "We discuss your renovation goals, budget, and timeline to understand your vision."
+          },
+          {
+            "number": 2,
+            "title": "Design & Planning",
+            "description": "Our design team creates detailed plans and visualizations of your renovation project."
+          },
+          {
+            "number": 3,
+            "title": "Permitting & Approval",
+            "description": "We handle all necessary permits and approvals to ensure compliance with regulations."
+          },
+          {
+            "number": 4,
+            "title": "Construction",
+            "description": "Our skilled craftsmen execute the renovation with precision and attention to detail."
+          },
+          {
+            "number": 5,
+            "title": "Final Inspection & Handover",
+            "description": "A thorough quality check ensures everything meets our high standards before project completion."
+          }
+        ],
+        "designInspirations": [
+          {
+            "title": "Contemporary Open-Plan Living",
+            "image": "/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+            "description": "Modern living spaces that combine functionality with elegant design elements.",
+            "link": "/sovran-interiors/home-renovations/full-house"
+          },
+          {
+            "title": "Luxury Kitchen Designs",
+            "image": "/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+            "description": "Sophisticated kitchen renovations featuring premium materials and smart storage solutions.",
+            "link": "/sovran-interiors/home-renovations/kitchen"
+          },
+          {
+            "title": "Elegant Home Extensions",
+            "image": "/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+            "description": "Seamless extensions that enhance your living space while complementing your existing home.",
+            "link": "/sovran-interiors/home-renovations/extension"
+          }
+        ]
+      }
+    },
+    {
       "id": "bespoke-rooms",
       "title": "Bespoke Rooms",
       "description": "Custom designed rooms to match your style and requirements",
-      "heroImage": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "heroImage": "/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
       "subcategories": [
         {
           "id": "our-ranges",
@@ -150,12 +294,99 @@
           {
             "title": "Contemporary Family Room",
             "description": "A sophisticated yet comfortable space designed for modern family living",
-            "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+            "image": "/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg"
           },
           {
             "title": "Luxury Home Cinema",
             "description": "A state-of-the-art entertainment space with premium acoustics and comfortable seating",
-            "image": "https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            "image": "/images/Tv-units_MrWardrobe-scaled.jpg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Sovran Interiors transformed our living space into a beautiful and functional area that perfectly matches our style.",
+            "author": "Robert Thompson",
+            "company": "London",
+            "projectType": "Living Room Design"
+          },
+          {
+            "quote": "The attention to detail and craftsmanship in our bespoke room is extraordinary. We couldn't be happier with the results.",
+            "author": "Catherine Mitchell",
+            "company": "Surrey",
+            "projectType": "Multi-purpose Room"
+          },
+          {
+            "quote": "From design to completion, Sovran made the process enjoyable and stress-free. The results exceeded our expectations.",
+            "author": "James Wilson",
+            "company": "Kent",
+            "projectType": "Entertainment Room"
+          }
+        ],
+        "specifications": [
+          {
+            "category": "Materials",
+            "items": [
+              { "name": "Wood Options", "value": "Oak, Walnut, Maple, Cherry, Custom Finishes" },
+              { "name": "Surface Materials", "value": "Natural Stone, Engineered Stone, Glass, Metal" },
+              { "name": "Fabric Options", "value": "Designer Upholstery, Performance Fabrics, Leather" },
+              { "name": "Hardware", "value": "Custom Handles, Soft-Close Mechanisms, Smart Systems" }
+            ]
+          },
+          {
+            "category": "Features",
+            "items": [
+              { "name": "Storage Solutions", "value": "Custom Cabinets, Hidden Storage, Display Units" },
+              { "name": "Lighting", "value": "Ambient, Task, Accent, Smart Lighting Systems" },
+              { "name": "Technology Integration", "value": "Smart Home Controls, Hidden AV Equipment" },
+              { "name": "Customizations", "value": "Built-in Seating, Multi-functional Furniture" }
+            ]
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Initial Consultation",
+            "description": "We discuss your needs, preferences, and budget to understand your vision for the space."
+          },
+          {
+            "number": 2,
+            "title": "Design Concept",
+            "description": "Our designers create detailed plans with 3D visualizations to bring your ideas to life."
+          },
+          {
+            "number": 3,
+            "title": "Material Selection",
+            "description": "Choose from our curated collection of premium materials, finishes, and accessories."
+          },
+          {
+            "number": 4,
+            "title": "Crafting & Manufacturing",
+            "description": "Our skilled artisans handcraft your bespoke furniture pieces with precision and care."
+          },
+          {
+            "number": 5,
+            "title": "Professional Installation",
+            "description": "Our expert team handles installation with minimal disruption to your home."
+          }
+        ],
+        "designInspirations": [
+          {
+            "title": "Modern Entertainment Room",
+            "image": "/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+            "description": "Clean lines and contemporary styling for an elegant entertainment space.",
+            "link": "/sovran-interiors/bespoke-rooms/tv-units"
+          },
+          {
+            "title": "Home Office Solutions",
+            "image": "/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+            "description": "Functional workspace designs that blend seamlessly with your home aesthetic.",
+            "link": "/sovran-interiors/bespoke-rooms/offices"
+          },
+          {
+            "title": "Custom Bookshelf Designs",
+            "image": "/images/Bookshelvs_MrWardrobe-scaled.jpg",
+            "description": "Beautiful storage solutions showcasing your collection with style.",
+            "link": "/sovran-interiors/bespoke-rooms/bookshelves-displays"
           }
         ]
       }
@@ -164,7 +395,7 @@
       "id": "bespoke-wardrobes",
       "title": "Bespoke Wardrobes",
       "description": "Custom wardrobes designed to maximize your space and style",
-      "heroImage": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80",
+      "heroImage": "/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
       "subcategories": [
         {
           "id": "all-wardrobes",
@@ -207,12 +438,99 @@
           {
             "title": "Luxury Walk-in Wardrobe",
             "description": "A spacious walk-in wardrobe with elegant lighting and custom organization",
-            "image": "https://images.unsplash.com/photo-1571321804268-deadf31c6524?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+            "image": "/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg"
           },
           {
             "title": "Minimalist Sliding Door Wardrobe",
             "description": "A sleek, contemporary wardrobe design with efficient use of space",
-            "image": "https://images.unsplash.com/photo-1595520154202-4edb5a5b35ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            "image": "/images/Sliding-door-wardrobes_MrWardrobe-scaled.jpg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Sovran Interiors designed the perfect wardrobe for our master bedroom. The storage solutions are ingenious and the finish is exquisite.",
+            "author": "Emma Richards",
+            "company": "Chelsea",
+            "projectType": "Master Bedroom Wardrobe"
+          },
+          {
+            "quote": "From the initial design to the final installation, the team's attention to detail was impressive. Our wardrobes are both beautiful and functional.",
+            "author": "Daniel Parker",
+            "company": "Kensington",
+            "projectType": "Built-in Wardrobes"
+          },
+          {
+            "quote": "The walk-in wardrobe designed by Sovran has transformed our bedroom. The quality of workmanship is outstanding.",
+            "author": "Sophia Lewis",
+            "company": "Richmond",
+            "projectType": "Walk-in Wardrobe"
+          }
+        ],
+        "specifications": [
+          {
+            "category": "Construction",
+            "items": [
+              { "name": "Frame Material", "value": "Engineered Wood, Solid Timber, MDF with Veneer" },
+              { "name": "Door Options", "value": "Hinged, Sliding, Bi-fold, Glass-fronted" },
+              { "name": "Interior Finish", "value": "Fabric-lined, Wood Veneer, Melamine" },
+              { "name": "Hardware", "value": "Soft-close Hinges, Premium Handles, LED Lighting Systems" }
+            ]
+          },
+          {
+            "category": "Storage Features",
+            "items": [
+              { "name": "Hanging Options", "value": "Double-height, Single-height, Pull-down Rails" },
+              { "name": "Drawer Systems", "value": "Soft-close, Glass-fronted, Velvet-lined" },
+              { "name": "Shelving", "value": "Adjustable, Fixed, Display, Glass" },
+              { "name": "Accessories", "value": "Shoe Racks, Jewelry Drawers, Tie/Belt Rails, Island Units" }
+            ]
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Space Assessment",
+            "description": "We measure your space and discuss your storage requirements and design preferences."
+          },
+          {
+            "number": 2,
+            "title": "Personalized Design",
+            "description": "Our designers create detailed 3D visualizations of your bespoke wardrobe solution."
+          },
+          {
+            "number": 3,
+            "title": "Material & Finish Selection",
+            "description": "Choose from a range of premium materials, finishes, and hardware options."
+          },
+          {
+            "number": 4,
+            "title": "Precision Manufacturing",
+            "description": "Your wardrobe is crafted with precision in our dedicated workshop."
+          },
+          {
+            "number": 5,
+            "title": "Expert Installation",
+            "description": "Our specialist fitting team ensures perfect installation with minimal disruption."
+          }
+        ],
+        "designInspirations": [
+          {
+            "title": "Contemporary Fitted Wardrobes",
+            "image": "/images/Fretwork-wardrobes_MrWarobe_0001.png",
+            "description": "Sleek, modern designs that maximize space with clean lines and minimal hardware.",
+            "link": "/sovran-interiors/bespoke-wardrobes/all-wardrobes"
+          },
+          {
+            "title": "Luxury Walk-in Wardrobes",
+            "image": "/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg",
+            "description": "Opulent dressing room designs with premium finishes and intelligent organization.",
+            "link": "/sovran-interiors/bespoke-wardrobes/shop-by-room-type"
+          },
+          {
+            "title": "Glass Door Wardrobes",
+            "image": "/images/Glass-door-wardrobes-_MrWardrobe5-scaled.jpg",
+            "description": "Elegant glass-fronted designs that showcase your clothing while providing protection.",
+            "link": "/sovran-interiors/bespoke-wardrobes/shop-by-door-style"
           }
         ]
       }
@@ -221,7 +539,7 @@
       "id": "kitchens",
       "title": "Kitchens",
       "description": "Luxury kitchen designs combining functionality with exquisite style",
-      "heroImage": "https://images.unsplash.com/photo-1605982003254-c52dad2b6c6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80",
+      "heroImage": "/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
       "subcategories": [
         {
           "id": "kitchen-collection",
@@ -276,12 +594,99 @@
           {
             "title": "Contemporary Open-Plan Kitchen",
             "description": "A spacious, modern kitchen designed for entertaining and family living",
-            "image": "https://images.unsplash.com/photo-1604709177225-055f99402ea3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            "image": "/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg"
           },
           {
             "title": "Traditional Luxury Kitchen",
             "description": "A classic kitchen design with modern amenities and timeless elegance",
-            "image": "https://images.unsplash.com/photo-1570739904762-6c828a7e3e84?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80"
+            "image": "/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg"
+          }
+        ],
+        "testimonials": [
+          {
+            "quote": "Our new kitchen is not only stunning but incredibly functional. Sovran Group understood our vision perfectly and executed it flawlessly.",
+            "author": "Alexandra Winters",
+            "company": "Kensington",
+            "projectType": "Contemporary Kitchen"
+          },
+          {
+            "quote": "The attention to detail in our kitchen renovation was exceptional. The team's expertise in material selection and space planning transformed our kitchen completely.",
+            "author": "Martin Edwards",
+            "company": "Chelsea",
+            "projectType": "Luxury Kitchen Remodel"
+          },
+          {
+            "quote": "Working with Sovran Group was a pleasure from start to finish. They created a kitchen that has become the heart of our home and receives endless compliments.",
+            "author": "Victoria Bennett",
+            "company": "Mayfair",
+            "projectType": "Open-Plan Kitchen Design"
+          }
+        ],
+        "specifications": [
+          {
+            "category": "Materials",
+            "items": [
+              { "name": "Countertops", "value": "Natural Marble, Granite, Quartz, Porcelain, Solid Surface" },
+              { "name": "Cabinetry", "value": "Solid Wood, Hand-painted, High Gloss, Matte Finishes" },
+              { "name": "Splashbacks", "value": "Glass, Natural Stone, Ceramic, Porcelain" },
+              { "name": "Flooring", "value": "Engineered Wood, Natural Stone, Porcelain Tiles" }
+            ]
+          },
+          {
+            "category": "Features",
+            "items": [
+              { "name": "Appliances", "value": "Integrated Premium Brands, Smart Technology, Energy Efficient" },
+              { "name": "Storage Solutions", "value": "Custom Pantries, Corner Systems, Drawer Organizers" },
+              { "name": "Lighting", "value": "Task, Ambient, Feature, Under-Cabinet LED Systems" },
+              { "name": "Special Features", "value": "Islands, Breakfast Bars, Hidden Appliances, Butler's Pantry" }
+            ]
+          }
+        ],
+        "processSteps": [
+          {
+            "number": 1,
+            "title": "Kitchen Consultation",
+            "description": "We explore your requirements, cooking habits, and design preferences to understand your ideal kitchen."
+          },
+          {
+            "number": 2,
+            "title": "Design & Visualization",
+            "description": "Our kitchen designers create detailed 3D visualizations to bring your dream kitchen to life."
+          },
+          {
+            "number": 3,
+            "title": "Material Selection",
+            "description": "Choose from our range of premium materials, finishes, and appliances for your kitchen."
+          },
+          {
+            "number": 4,
+            "title": "Precision Manufacturing",
+            "description": "Your kitchen cabinetry and components are crafted to exact specifications in our workshop."
+          },
+          {
+            "number": 5,
+            "title": "Professional Installation",
+            "description": "Our expert installation team ensures your new kitchen is fitted perfectly with minimal disruption."
+          }
+        ],
+        "designInspirations": [
+          {
+            "title": "Contemporary Minimalist",
+            "image": "/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+            "description": "Clean lines and sleek finishes for the modern home with integrated technology.",
+            "link": "/sovran-interiors/kitchens/kitchen-collection"
+          },
+          {
+            "title": "Traditional Elegance",
+            "image": "/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg",
+            "description": "Timeless kitchen designs with classic details and superior craftsmanship.",
+            "link": "/sovran-interiors/kitchens/luxury-kitchen-materials"
+          },
+          {
+            "title": "Innovative Features",
+            "image": "/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png",
+            "description": "Cutting-edge kitchen solutions that enhance functionality and convenience.",
+            "link": "/sovran-interiors/kitchens/kitchen-features"
           }
         ]
       }
