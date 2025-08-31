@@ -1,0 +1,1033 @@
+{
+  "src/index.tsx": [],
+  "src/App.tsx": [],
+  "src/utils/imageCompression.tsx": [],
+  "src/components/StorySection.tsx": [
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg",
+      "line": 20,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran1.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran 2.jpg",
+      "line": 21,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran 2.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran 2.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran 3.jpg",
+      "line": 22,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran 3.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran 3.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran 4.jpg",
+      "line": 23,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran 4.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran 4.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran 5.jpg",
+      "line": 24,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran 5.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran 5.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran6.jpg",
+      "line": 25,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran6.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran6.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran7.jpg",
+      "line": 26,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran7.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran7.jpg"
+    },
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran8.jpg",
+      "line": 27,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran8.jpg",
+      "copied_to": "src/assets/images/from-tsx/StorySection/Chiswick home- Sovran8.jpg"
+    }
+  ],
+  "src/components/ScrollToTop.tsx": [],
+  "src/components/MediaCards.tsx": [],
+  "src/components/ProblemSolutionHookSection.tsx": [],
+  "src/components/ExitIntentPopup.tsx": [
+    {
+      "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg",
+      "line": 171,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg",
+      "copied_to": "src/assets/images/from-tsx/ExitIntentPopup/Chiswick home- Sovran1.jpg"
+    }
+  ],
+  "src/components/BuilderHeroSection.tsx": [],
+  "src/components/CompressedImage.tsx": [],
+  "src/components/Footer.tsx": [],
+  "src/components/TestimonialSection.tsx": [
+    {
+      "img": "/assets/images/032720_RH_M7_Develop.jpeg",
+      "line": 21,
+      "full": null
+    },
+    {
+      "img": "/assets/images/AdobeStock_1312472493.jpeg",
+      "line": 22,
+      "full": null
+    },
+    {
+      "img": "/assets/images/After.jpg",
+      "line": 23,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
+      "line": 24,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png",
+      "line": 25,
+      "full": null
+    },
+    {
+      "img": "/images/MrWardrobe-Design-support-e1688585963867.jpg",
+      "line": 34,
+      "full": null
+    },
+    {
+      "img": "/images/MrWardrobe-Design-support-e1688585963867.jpg",
+      "line": 41,
+      "full": null
+    },
+    {
+      "img": "/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg",
+      "line": 48,
+      "full": null
+    },
+    {
+      "img": "/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg",
+      "line": 55,
+      "full": null
+    }
+  ],
+  "src/components/LazyImage.tsx": [],
+  "src/components/HeroSection.tsx": [],
+  "src/components/RandomDoodle.tsx": [],
+  "src/components/SubcategoryNav.tsx": [],
+  "src/components/ArrowButton.tsx": [],
+  "src/components/Button.tsx": [],
+  "src/components/BusinessVerticalsSection.tsx": [
+    {
+      "img": "../assets/images/AdobeStock_190403814.jpeg",
+      "line": 7,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/AdobeStock_190403814.jpeg",
+      "copied_to": "src/assets/images/from-tsx/BusinessVerticalsSection/AdobeStock_190403814.jpeg"
+    },
+    {
+      "img": "../assets/images/Gerrards_Cross_Sovran_.jpeg",
+      "line": 8,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Gerrards_Cross_Sovran_.jpeg",
+      "copied_to": "src/assets/images/from-tsx/BusinessVerticalsSection/Gerrards_Cross_Sovran_.jpeg"
+    },
+    {
+      "img": "../assets/images/Battersea_Renovation_Sovran.jpg",
+      "line": 9,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/images/Battersea_Renovation_Sovran.jpg",
+      "copied_to": "src/assets/images/from-tsx/BusinessVerticalsSection/Battersea_Renovation_Sovran.jpg"
+    }
+  ],
+  "src/components/Navigation.tsx": [
+    {
+      "img": "../assets/logo/Sovran-03-03.png",
+      "line": 12,
+      "full": "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/src/assets/logo/Sovran-03-03.png",
+      "copied_to": "src/assets/images/from-tsx/Navigation/Sovran-03-03.png"
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg",
+      "line": 93,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249572-HDR.jpg",
+      "line": 95,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg",
+      "line": 96,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249597-HDR.jpg",
+      "line": 97,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260088-HDR.jpg",
+      "line": 98,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249418-HDR.jpg",
+      "line": 102,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg",
+      "line": 104,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249433-HDR.jpg",
+      "line": 105,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249468-HDR.jpg",
+      "line": 106,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249592-HDR.jpg",
+      "line": 110,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kitchen-Lounge-P1249557-HDR.jpg",
+      "line": 112,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kitchen-Lounge-P1249562-HDR.jpg",
+      "line": 113,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kitchen-Lounge-P1249567-HDR.jpg",
+      "line": 114,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kitchen-Lounge-P1260053-HDR.jpg",
+      "line": 115,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260063-HDR.jpg",
+      "line": 116,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249682-HDR.jpg",
+      "line": 126,
+      "full": null
+    },
+    {
+      "img": "/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249438-HDR.jpg",
+      "line": 131,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg",
+      "line": 501,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249562-HDR.jpg",
+      "line": 508,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249572-HDR.jpg",
+      "line": 515,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249418-HDR.jpg",
+      "line": 522,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg",
+      "line": 583,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg",
+      "line": 590,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249592-HDR.jpg",
+      "line": 597,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg",
+      "line": 604,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg",
+      "line": 937,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg",
+      "line": 944,
+      "full": null
+    }
+  ],
+  "src/components/ExampleCompressedImage.tsx": [
+    {
+      "img": "/path/to/image.jpg",
+      "line": 10,
+      "full": null
+    },
+    {
+      "img": "/path/to/image.jpg",
+      "line": 14,
+      "full": null
+    },
+    {
+      "img": "/path/to/high-quality-image.jpg",
+      "line": 23,
+      "full": null
+    },
+    {
+      "img": "/path/to/thumbnail.jpg",
+      "line": 31,
+      "full": null
+    }
+  ],
+  "src/components/TypewriterText.tsx": [],
+  "src/components/SectionMenu.tsx": [],
+  "src/components/HeroSlider.tsx": [
+    {
+      "img": "https://taajdesignandbuild.co.uk/wp-content/uploads/2021/02/Picturer-under-slider-1-1.jpg",
+      "line": 30,
+      "full": null
+    },
+    {
+      "img": "https://mrwardrobe.co.uk/wp-content/uploads/2023/06/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+      "line": 38,
+      "full": null
+    }
+  ],
+  "src/templates/SovranInteriorsTemplate.tsx": [
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 166,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 172,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 178,
+      "full": null
+    }
+  ],
+  "src/templates/SovranBuildersTemplate.tsx": [],
+  "src/pages/SovranInteriorsPage.tsx": [],
+  "src/pages/AIVisualiserPage.tsx": [],
+  "src/pages/AboutPage.tsx": [
+    {
+      "img": "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
+      "line": 271,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "line": 275,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 279,
+      "full": null
+    },
+    {
+      "img": "/assets/images/MrWardrobe-Magazine--739x1024.jpg",
+      "line": 313,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Picsart_24-04-22_16-00-14-025-scaled.jpg",
+      "line": 316,
+      "full": null
+    },
+    {
+      "img": "/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg",
+      "line": 422,
+      "full": null
+    },
+    {
+      "img": "/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg",
+      "line": 449,
+      "full": null
+    },
+    {
+      "img": "/assets/images/MrWardrobe-manufacturing-unit.jpg",
+      "line": 476,
+      "full": null
+    },
+    {
+      "img": "/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg",
+      "line": 503,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 530,
+      "full": null
+    }
+  ],
+  "src/pages/ContactPage.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 160,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg",
+      "line": 394,
+      "full": null
+    }
+  ],
+  "src/pages/SovranDesignPage.tsx": [],
+  "src/pages/TaajKitchensPage.tsx": [],
+  "src/pages/SovranBuildersPage.tsx": [],
+  "src/pages/CareersPage.tsx": [
+    {
+      "img": "/assets/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg",
+      "line": 204,
+      "full": null
+    },
+    {
+      "img": "/assets/images/image-4-1.png",
+      "line": 232,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "line": 248,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png",
+      "line": 333,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+      "line": 503,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-2-Em-Sheldon.jpg",
+      "line": 521,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-3-Mathew-and-Jason.jpg",
+      "line": 527,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-1-Maria-Carolina-860x1024.jpg",
+      "line": 533,
+      "full": null
+    }
+  ],
+  "src/pages/NotFoundPage.tsx": [],
+  "src/pages/MrWardrobePage.tsx": [
+    {
+      "img": "https://mrwardrobe.co.uk/wp-content/uploads/2023/06/Mr-Wardrobe-png-new-logo-white-e.png",
+      "line": 15,
+      "full": null
+    }
+  ],
+  "src/pages/CostCalculatorPage.tsx": [],
+  "src/pages/HomePage.tsx": [
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg",
+      "line": 121,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249592-HDR.jpg",
+      "line": 176,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249418-HDR.jpg",
+      "line": 181,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg",
+      "line": 186,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Chiswick-home-sovran11.jpg",
+      "line": 191,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210757.jpg",
+      "line": 196,
+      "full": null
+    },
+    {
+      "img": "/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Taaj Kitchens -Entertaiment.jpg",
+      "line": 201,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210015.jpg",
+      "line": 326,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg",
+      "line": 452,
+      "full": null
+    }
+  ],
+  "src/components/sections/CtaSection.tsx": [],
+  "src/components/sections/BuilderTestimonialsSection.tsx": [
+    {
+      "img": "/assets/images/Review-1-Maria-Carolina-860x1024.jpg",
+      "line": 20,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-2-Em-Sheldon.jpg",
+      "line": 41,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-3-Mathew-and-Jason.jpg",
+      "line": 62,
+      "full": null
+    }
+  ],
+  "src/components/sections/ProcessSection.tsx": [],
+  "src/components/sections/BuilderProcessSection.tsx": [],
+  "src/components/sections/BuilderFeaturedWorksSection.tsx": [
+    {
+      "img": "/assets/images/After.jpg",
+      "line": 20,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg",
+      "line": 49,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 70,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-shaker-kitchen.jpg",
+      "line": 91,
+      "full": null
+    }
+  ],
+  "src/components/sections/BuilderPromoBanner.tsx": [],
+  "src/components/sections/BuilderHeroSection.tsx": [
+    {
+      "img": "/assets/images/home-builder-2.jpg",
+      "line": 8,
+      "full": null
+    }
+  ],
+  "src/components/sections/FinalCtaSection.tsx": [],
+  "src/components/sections/BuilderFaqSection.tsx": [],
+  "src/components/sections/BuilderAboutSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 25,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+      "line": 30,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-kitchen-extension.jpg",
+      "line": 35,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg",
+      "line": 40,
+      "full": null
+    }
+  ],
+  "src/components/sections/ServicesSection.tsx": [],
+  "src/components/sections/GallerySection.tsx": [],
+  "src/components/sections/ContentSection.tsx": [],
+  "src/components/sections/TestimonialsSection.tsx": [],
+  "src/components/sections/HeroSection.tsx": [],
+  "src/components/sections/BuilderServicesSection.tsx": [
+    {
+      "img": "/assets/images/home-builder-2.jpg",
+      "line": 19,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Before.jpg",
+      "line": 38,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-kitchen-extension.jpg",
+      "line": 57,
+      "full": null
+    }
+  ],
+  "src/components/sections/BuilderBookingSection.tsx": [],
+  "src/components/sections/SpecificationsSection.tsx": [],
+  "src/components/sections/DesignInspirationSection.tsx": [],
+  "src/components/sections/BuilderContactSection.tsx": [],
+  "src/components/sections/design/DesignProcessSection.tsx": [],
+  "src/components/sections/design/DesignTestimonialsSection.tsx": [
+    {
+      "img": "/assets/images/Review-3-Mathew-and-Jason.jpg",
+      "line": 9,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-1-Maria-Carolina-860x1024.jpg",
+      "line": 15,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-2-Em-Sheldon.jpg",
+      "line": 21,
+      "full": null
+    },
+    {
+      "img": "/assets/images/MrWardrobe-Magazine--739x1024.jpg",
+      "line": 87,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Press-1-min.jpg",
+      "line": 90,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignServicesSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 9,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg",
+      "line": 15,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-kitchen-extension.jpg",
+      "line": 21,
+      "full": null
+    },
+    {
+      "img": "/assets/images/home-builder-2.jpg",
+      "line": 27,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 33,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 39,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignFeaturedProjectsSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+      "line": 8,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 14,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg",
+      "line": 20,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-shaker-kitchen.jpg",
+      "line": 26,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignCtaSection.tsx": [
+    {
+      "img": "/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg",
+      "line": 27,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignTechnologySection.tsx": [],
+  "src/components/sections/design/DesignPortfolioSection.tsx": [
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 19,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Dressing-Rooms.1.png.png",
+      "line": 26,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg",
+      "line": 33,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg",
+      "line": 40,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 47,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg",
+      "line": 54,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 61,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+      "line": 68,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignTeamSection.tsx": [
+    {
+      "img": "/assets/images/Review-2-Em-Sheldon.jpg",
+      "line": 8,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-3-Mathew-and-Jason.jpg",
+      "line": 14,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Review-4-Carlie-goodson.jpg",
+      "line": 20,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignContactSection.tsx": [],
+  "src/components/sections/design/DesignPlanningSection.tsx": [
+    {
+      "img": "/assets/images/home-builder-2.jpg",
+      "line": 9,
+      "full": null
+    },
+    {
+      "img": "/assets/images/home-Builder-2.jpg",
+      "line": 15,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png",
+      "line": 21,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-kitchen-extension.jpg",
+      "line": 27,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignRendersSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 8,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 13,
+      "full": null
+    },
+    {
+      "img": "/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg",
+      "line": 18,
+      "full": null
+    },
+    {
+      "img": "/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg",
+      "line": 23,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignHeroSection.tsx": [
+    {
+      "img": "/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg",
+      "line": 9,
+      "full": null
+    }
+  ],
+  "src/components/sections/design/DesignEngineeringSection.tsx": [
+    {
+      "img": "/assets/images/AdobeStock_586937970.png",
+      "line": 17,
+      "full": null
+    }
+  ],
+  "src/components/sections/interiors/InteriorsCtaSection.tsx": [],
+  "src/components/sections/interiors/InteriorsServicesSection.tsx": [
+    {
+      "img": "/assets/images/Glass-door-wardrobes-_MrWardrobe5-scaled.jpg",
+      "line": 10,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 16,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 22,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+      "line": 28,
+      "full": null
+    }
+  ],
+  "src/components/sections/interiors/InteriorsGallerySection.tsx": [
+    {
+      "img": "/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg",
+      "line": 7,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 11,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 15,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg",
+      "line": 19,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "line": 23,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Bookshelvs_MrWardrobe-scaled.jpg",
+      "line": 27,
+      "full": null
+    }
+  ],
+  "src/components/sections/interiors/InteriorsContactSection.tsx": [],
+  "src/components/sections/interiors/InteriorsHeroSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 11,
+      "full": null
+    }
+  ],
+  "src/components/sections/interiors/InteriorsProcessSection.tsx": [],
+  "src/components/sections/interiors/InteriorsTestimonialsSection.tsx": [
+    {
+      "img": "/assets/images/MrWardrobe-Magazine--739x1024.jpg",
+      "line": 10,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 16,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 22,
+      "full": null
+    }
+  ],
+  "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 9,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 15,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "line": 21,
+      "full": null
+    }
+  ],
+  "src/components/sections/builder/BuilderResidentialSection.tsx": [
+    {
+      "img": "/assets/images/After.jpg",
+      "line": 9,
+      "full": null
+    },
+    {
+      "img": "/assets/images/home-builder-2.jpg",
+      "line": 16,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-kitchen-extension.jpg",
+      "line": 23,
+      "full": null
+    },
+    {
+      "img": "/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg",
+      "line": 30,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Wine-lovers-dream-by-taaj-kitchens-1-2-1.jpg",
+      "line": 37,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1210060.jpg",
+      "line": 44,
+      "full": null
+    },
+    {
+      "img": "/assets/images/AdobeStock_1312472493.jpeg",
+      "line": 51,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 133,
+      "full": null
+    }
+  ],
+  "src/components/sections/builder/BuilderProcessSection.tsx": [],
+  "src/components/sections/builder/BuilderPortfolioSection.tsx": [
+    {
+      "img": "/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "line": 19,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "line": 26,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+      "line": 33,
+      "full": null
+    },
+    {
+      "img": "/assets/images/home-builder-2.jpg",
+      "line": 40,
+      "full": null
+    },
+    {
+      "img": "/assets/images/traditional-kitchen-extension.jpg",
+      "line": 47,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 54,
+      "full": null
+    },
+    {
+      "img": "/assets/images/MrWardrobe-home-theme.jpg",
+      "line": 61,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Designed-for-sould-Taaj-kitchens-Homepage.png",
+      "line": 68,
+      "full": null
+    }
+  ],
+  "src/components/sections/builder/BuilderCommercialSection.tsx": [
+    {
+      "img": "/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "line": 8,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Fretwork-wardrobes_MrWarobe_0001.png",
+      "line": 13,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg",
+      "line": 18,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Mrwardrobe-manufacturing-unit.jpg",
+      "line": 23,
+      "full": null
+    },
+    {
+      "img": "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "line": 102,
+      "full": null
+    }
+  ],
+  "node_modules/@react-aria/ssr/src/SSRProvider.tsx": [],
+  "node_modules/@react-aria/focus/src/FocusRing.tsx": [],
+  "node_modules/@react-aria/focus/src/FocusScope.tsx": [],
+  "node_modules/@react-aria/utils/src/keyboard.tsx": [],
+  "node_modules/@react-aria/utils/src/openLink.tsx": [],
+  "node_modules/@react-aria/interactions/src/Pressable.tsx": [],
+  "node_modules/@react-aria/interactions/src/useFocusable.tsx": [],
+  "node_modules/@react-aria/interactions/src/PressResponder.tsx": [],
+  "node_modules/@tanstack/react-virtual/src/index.tsx": []
+}

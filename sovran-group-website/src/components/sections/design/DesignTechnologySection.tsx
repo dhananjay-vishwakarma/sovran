@@ -62,7 +62,7 @@ const DesignTechnologySection: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#081E27]">
             <div>
               <h4 className="text-xl  text-gray-900 mb-4">Technical Excellence</h4>
               <ul className="space-y-3">

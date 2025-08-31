@@ -1,0 +1,50 @@
+/* Section Menu Styles */
+.section-menu {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: #081E27;
+}
+
+.section-menu-button {
+  transition: color 0.2s ease;
+  padding: 6px 12px;
+}
+
+.section-menu-button-divider {
+  height: 1px;
+  background-color: #CDAD7D;
+  opacity: 0.4;
+  margin: 0 10px;
+}
+
+/* Ensure menu doesn't interfere with content */
+@media (max-width: 768px) {
+  .section-menu-mobile-closed {
+    transform: translateX(-100%);
+  }
+  
+  .section-menu-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 6px rgba(8, 30, 39, 0.1);
+    background-color: #081E27;
+  }
+}
+
+/* Animation for active section indicator */
+.section-menu-active-indicator {
+  position: absolute;
+  left: 0;
+  width: 3px;
+  background-color: #CDAD7D;
+  transition: top 0.3s ease, height 0.3s ease;
+}
+
+/* Enhance visibility with subtle backdrop blur */
+.section-menu-container {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

@@ -25,7 +25,7 @@ const BuilderHeroSection: React.FC<HeroSectionProps> = ({
           alt={title} 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-dark-900/70"></div>
+        <div className="absolute inset-0 bg-[#081E27]/70"></div>
       </div>
       
       {/* Content */}

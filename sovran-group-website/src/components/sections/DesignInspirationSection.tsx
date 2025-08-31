@@ -13,7 +13,7 @@ interface DesignInspirationSectionProps {
 
 const DesignInspirationSection: React.FC<DesignInspirationSectionProps> = ({ designs }) => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-[#081E27] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-40 h-40 opacity-10 transform -rotate-12">
         <RandomDoodle />
       </div>
@@ -35,7 +35,7 @@ const DesignInspirationSection: React.FC<DesignInspirationSectionProps> = ({ des
                   alt={design.title}
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-[#081E27] bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {design.link && (
                     <Link 
                       to={design.link} 

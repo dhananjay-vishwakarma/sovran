@@ -2,14 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
+
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark-900 border-t border-dark-700">
+    <footer className="bg-[#081E27] border-t border-dark-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="ivymode-regular text-2xl  text-white">SOVRAN GROUP</h3>
+            <div className="flex items-center">
+              <img 
+                src="/static/media/Sovran-03-03.7daba6c2ae44e4352308.png" 
+                alt="Sovran Group Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
             <p className="text-gray-400 font-lato">
               Building excellence, one project at a time.
             </p>
@@ -33,7 +40,7 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/sovrangroupuk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
@@ -82,12 +89,18 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 font-lato">
               <li className="flex items-center">
                 <EnvelopeIcon className="h-5 w-5 text-primary-500 mr-3" />
-                <a href="mailto:info@sovrangroup.co.uk" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  info@sovrangroup.co.uk
+                <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  INFO@SOVRANGROUP.CO.UK
                 </a>
               </li>
               <li className="flex items-center">
                 <PhoneIcon className="h-5 w-5 text-primary-500 mr-3" />
+                <a href="tel:+447516100111" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  +44 7516 100111
+                </a>
+              </li>
+              <li className="flex items-center mt-2">
+                <PhoneIcon className="h-5 w-5 text-primary-500 mr-3 opacity-0" />
                 <a href="tel:+442031430103" className="text-gray-400 hover:text-primary-400 transition-colors">
                   +44 20 3143 0103
                 </a>
@@ -114,15 +127,9 @@ const Footer: React.FC = () => {
                 <span className="text-primary-400">Sunday:</span> Closed
               </li>
             </ul>
-            <div className="pt-4">
-              <Link
-                to="/contact"
-                className="mt-4 inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg text-sm font-lato transition-all duration-300"
-              >
-                Contact Us
-              </Link>
-            </div>
+            
           </div>
+
         </div>
 
         {/* Bottom Section */}

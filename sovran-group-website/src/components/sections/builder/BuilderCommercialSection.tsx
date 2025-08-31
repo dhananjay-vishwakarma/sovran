@@ -28,7 +28,7 @@ const BuilderCommercialSection: React.FC = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-100" id="commercial">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-dark-900 mb-4">Commercial Construction</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] mb-4">Commercial Construction</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p className="text-xl text-dark-700 max-w-3xl mx-auto">
             Building exceptional commercial spaces that support your business objectives and enhance your brand.
@@ -46,7 +46,7 @@ const BuilderCommercialSection: React.FC = () => {
                 />
               </div>
               <div className="w-2/3 p-6">
-                <h3 className="text-xl text-dark-900 mb-3">{service.title}</h3>
+                <h3 className="text-xl text-[#081E27] mb-3">{service.title}</h3>
                 <p className="text-dark-700 mb-4">{service.description}</p>
                 <a 
                   href="#" 

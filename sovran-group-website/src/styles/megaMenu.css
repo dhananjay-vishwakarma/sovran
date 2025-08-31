@@ -5,21 +5,19 @@
 }
 
 .mega-menu {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-5px);
-  transition: opacity 0.1s ease-out, transform 0.1s ease-out, visibility 0s linear 0.1s;
-  z-index: 50;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  pointer-events: none; /* Prevent interaction when hidden */
+  /* Pre-render off-screen but don't animate transform for better performance */
+  /* transform is CPU-intensive and can cause lag on large content */
+  backface-visibility: hidden;
+  will-change: opacity;
+  /* Ensure images inside mega menu are loaded efficiently */
+  contain: content;
+  /* Use opacity-only transitions for better performance */
+  transition: opacity 0.15s ease, visibility 0.15s;
 }
 
-.mega-menu-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0s linear 0s;
-  pointer-events: auto; /* Allow interaction when visible */
+/* Force hardware acceleration for smoother animations */
+.mega-menu-wrapper:hover .mega-menu {
+  will-change: opacity, visibility;
 }
 
 /* Fix for menu closing when moving cursor between menu and trigger */
@@ -168,7 +166,7 @@ div[style*="right: calc(100% + 8px)"].group-hover\/residential > div {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(110deg, #1a1a1a 8%, #2a2a2a 18%, #1a1a1a 33%);
+  background: linear-gradient(110deg, #081E27 8%, #0a2936 18%, #081E27 33%);
   background-size: 200% 100%;
   z-index: 0; /* Make sure it's behind the overlay */
 }
@@ -177,7 +175,7 @@ div[style*="right: calc(100% + 8px)"].group-hover\/residential > div {
 .image-placeholder.active-loading {
   animation: shine 1.5s linear infinite;
   opacity: 0.8;
-  background: linear-gradient(110deg, #1a1a1a 8%, #303030 18%, #1a1a1a 33%);
+  background: linear-gradient(110deg, #081E27 8%, #0d3140 18%, #081E27 33%);
   position: absolute;
 }
 
@@ -190,13 +188,13 @@ div[style*="right: calc(100% + 8px)"].group-hover\/residential > div {
 /* Category image hover effects */
 .category-image {
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(8, 30, 39, 0.1);
   transition: box-shadow 0.3s ease;
   position: relative;
 }
 
 .category-image:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(8, 30, 39, 0.2);
 }
 
 .category-image img {
@@ -214,14 +212,14 @@ div[style*="right: calc(100% + 8px)"].group-hover\/residential > div {
 }
 
 .category-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(8, 30, 39, 0.5);
   opacity: 1; /* Always visible */
   transition: all 0.2s ease-out;
   z-index: 10; /* Ensure overlay is above image */
 }
 
 .category-image:hover .category-overlay {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(8, 30, 39, 0.7);
 }
 
 /* Global rule to ensure text and buttons are always above images */

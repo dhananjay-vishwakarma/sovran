@@ -33,7 +33,7 @@ const InteriorsProcessSection: React.FC = () => {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-black ivymode-regular mb-4">Our Design Process</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] ivymode-regular mb-4">Our Design Process</h2>
           <p className="text-lg text-gray-600 font-lato max-w-3xl mx-auto">
             From initial concept to final installation, our comprehensive process ensures your vision becomes reality.
           </p>
@@ -50,7 +50,7 @@ const InteriorsProcessSection: React.FC = () => {
                   <div className="w-16 h-16 rounded-full bg-primary-600 text-white flex items-center justify-center mb-4 text-xl ">
                     {step.number}
                   </div>
-                  <h3 className="text-xl text-black font-medium mb-3 ivymode-regular text-center">{step.title}</h3>
+                  <h3 className="text-xl text-[#081E27] font-medium mb-3 ivymode-regular text-center">{step.title}</h3>
                   <p className="text-gray-600 font-lato text-center">{step.description}</p>
                 </div>
               </div>

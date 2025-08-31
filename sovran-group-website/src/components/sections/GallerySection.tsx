@@ -32,7 +32,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({ data }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.items.map((project, index) => (
-            <div key={index} className="reveal-image rounded-lg overflow-hidden  bg-dark-900">
+            <div key={index} className="reveal-image rounded-lg overflow-hidden  bg-[#081E27]">
               <div className="h-64 overflow-hidden">
                 <img
                   src={project.image}

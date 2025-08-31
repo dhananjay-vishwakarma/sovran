@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import ArrowButton from '../components/ArrowButton';
+import SectionMenu from '../components/SectionMenu';
 import '../styles/fallback.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -15,11 +16,23 @@ const AboutPage: React.FC = () => {
   // State to track if animations are ready
   const [animationsReady, setAnimationsReady] = useState(false);
   
+  // Section refs for navigation
   const heroRef = useRef<HTMLDivElement>(null);
-  const designRef = useRef<HTMLDivElement>(null);
-  const philosophyRef = useRef<HTMLDivElement>(null);
-  const sustainabilityRef = useRef<HTMLDivElement>(null);
-  const whyUsRef = useRef<HTMLDivElement>(null);
+  const spaceStoryRef = useRef<HTMLDivElement>(null);
+  const ourStoryRef = useRef<HTMLDivElement>(null);
+  const ourEthosRef = useRef<HTMLDivElement>(null);
+  const processRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  // Section definitions for the menu
+  const sections = [
+    { id: 'hero', title: 'About Us', ref: heroRef },
+    { id: 'space-story', title: 'Every Space Has a Story', ref: spaceStoryRef },
+    { id: 'our-story', title: 'Our Story', ref: ourStoryRef },
+    { id: 'our-ethos', title: 'Our Ethos', ref: ourEthosRef },
+    { id: 'process', title: 'Our Process', ref: processRef },
+    { id: 'contact', title: 'Contact Us', ref: ctaRef },
+  ];
 
   // Initialize all headings to be visible regardless of animation
   useEffect(() => {
@@ -96,33 +109,7 @@ const AboutPage: React.FC = () => {
       }
     });
     
-    // Animate sections on scroll with enhanced effects
-    const animateSections = [
-      designRef.current,
-      philosophyRef.current,
-      sustainabilityRef.current
-      // whyUsRef removed - content is animated individually
-    ];
-    
-    animateSections.forEach((section, index) => {
-      gsap.fromTo(
-        section,
-        { opacity: 0, y: 50, filter: 'blur(4px)' },
-        { 
-          opacity: 1, 
-          y: 0, 
-          filter: 'blur(0px)', 
-          duration: 1,
-          delay: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
-    });
+
     
     // Animate images with blur effect
     document.querySelectorAll('.animate-image').forEach((img, index) => {
@@ -205,35 +192,44 @@ const AboutPage: React.FC = () => {
   }, [animationsReady]);
 
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className="min-h-screen bg-[#081E27]">
       <Navigation />
+      
+      {/* Section Navigation Menu */}
+      <SectionMenu sections={sections} />
       
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative pt-36 pb-28 px-4 sm:px-6 lg:px-8 bg-cover bg-center" 
+        id="hero"
+        className="relative pt-36 pb-28 px-4 sm:px-6 lg:px-8" 
         style={{
-          backgroundImage: "url('/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg')",
+          backgroundColor: "#081E27",
+          backgroundImage: "url('/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209733.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundBlendMode: "overlay"
         }}
       >
         {/* Oversized "S" in the background */}
         <div
           className="absolute select-none pointer-events-none"
           style={{
-            fontSize: '90rem',
-            lineHeight: '0',
             top: '-25rem',
             left: '-15rem',
             opacity: 0.05,
             zIndex: 0,
-            color: '#ffffff',
+            width: '100rem',
+            height: '100rem',
           }}
         >
-          <span className="ivymode">S</span>
+          <img 
+            src={require('../assets/logo/s.svg')} 
+            alt="S Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
-        <div className="absolute inset-0 bg-dark-900/60 backdrop-blur-[2px] z-0"></div>
+        <div className="absolute inset-0 bg-[#081E27]/80 backdrop-blur-[3px] z-0"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="font-sans text-6xl md:text-7xl text-white mb-8 ivymode split-text">
             About Sovran Group
@@ -246,9 +242,13 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Every Space Has a Story */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section 
+        ref={spaceStoryRef}
+        id="space-story" 
+        className="py-24 px-4 sm:px-6 lg:px-8 bg-white"
+      >
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-black mb-6 ivymode">Every Space Has a Story</h2>
+          <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-[#081E27] mb-6 ivymode">Every Space Has a Story</h2>
           <div className="w-24 h-1 bg-[#CDAD7D] mx-auto mb-8"></div>
           <div className="w-full mb-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 text-gray-800 leading-relaxed text-justify md:text-left max-w-7xl mx-auto">
@@ -271,16 +271,16 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-lg overflow-hidden ">
-              <img src="/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg" alt="Residential" className="w-full h-64 object-cover" />
+            <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl transform hover:scale-[1.02]">
+              <img src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249004-HDR.jpg" alt="Residential" className="w-full h-64 object-cover" />
               <div className="p-4 text-center text-sm text-gray-700">Residential — sanctuary and memory</div>
             </div>
-            <div className="rounded-lg overflow-hidden ">
-              <img src="/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg" alt="Commercial" className="w-full h-64 object-cover" />
+            <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl transform hover:scale-[1.02]">
+              <img src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe- bespoke home office.jpg" alt="Commercial" className="w-full h-64 object-cover" />
               <div className="p-4 text-center text-sm text-gray-700">Commercial — ambition and growth</div>
             </div>
-            <div className="rounded-lg overflow-hidden ">
-              <img src="/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg" alt="Legacy" className="w-full h-64 object-cover" />
+            <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl transform hover:scale-[1.02]">
+              <img src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg" alt="Legacy" className="w-full h-64 object-cover" />
               <div className="p-4 text-center text-sm text-gray-700">Legacy — permanence and pride</div>
             </div>
           </div>
@@ -288,11 +288,23 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Our Story - Built on Craft, Carved in Vision */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF7F3]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section 
+        ref={ourStoryRef}
+        id="our-story"
+        className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF7F3] relative"
+        style={{
+          backgroundImage: "url('/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          backgroundBlendMode: "overlay"
+        }}
+      >
+        <div className="absolute inset-0 bg-[#FAF7F3]/95 backdrop-blur-[1px] z-0"></div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="space-y-6">
-            <h2 className="font-sans text-3xl md:text-4xl text-black mb-4 ivymode">Our Story</h2>
-            <h3 className="text-2xl text-black mb-4 font-serif">Built on Craft, Carved in Vision</h3>
+            <h2 className="font-sans text-3xl md:text-4xl text-[#081E27] mb-4 ivymode">Our Story</h2>
+            <h3 className="text-2xl text-[#081E27] mb-4 font-serif">Built on Craft, Carved in Vision</h3>
             <div className="prose text-gray-800">
               <p>
                 Great spaces don’t simply appear. They are imagined, refined, and realised through vision, experience, and a relentless pursuit of excellence. They are born from an idea and brought to life with courage, discipline, and devotion to craft.
@@ -310,20 +322,24 @@ const AboutPage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 gap-6">
             <div className="rounded-lg overflow-hidden ">
-              <img src="/assets/images/MrWardrobe-Magazine--739x1024.jpg" alt="Team portrait" className="w-full h-64 object-cover" />
+              <img src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-46-845.jpg" alt="Team portrait" className="w-full h-64 object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden ">
-              <img src="/assets/images/Picsart_24-04-22_16-00-14-025-scaled.jpg" alt="Community dinner" className="w-full h-64 object-cover" />
+              <img src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249069-HDR.jpg" alt="Community dinner" className="w-full h-64 object-cover" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Ethos / Mission / Vision / Why Sovran */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section 
+        ref={ourEthosRef}
+        id="our-ethos"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-8">
-            <h2 className="font-sans text-3xl md:text-4xl text-black mb-4 ivymode">Our Ethos</h2>
+            <h2 className="font-sans text-3xl md:text-4xl text-[#081E27] mb-4 ivymode">Our Ethos</h2>
             <div className="w-24 h-1 bg-[#CDAD7D] mb-8"></div>
 
             <div className="p-6 min-h-[220px]">
@@ -332,7 +348,7 @@ const AboutPage: React.FC = () => {
                   <i className="fas fa-thumbs-up text-[#CDAD7D] text-4xl" aria-hidden="true"></i>
                 </div>
                 <div>
-                  <h3 className="text-2xl text-black font-semibold mb-3">A Philosophy, Not a Business</h3>
+                  <h3 className="text-2xl text-[#081E27] font-semibold mb-3">A Philosophy, Not a Business</h3>
                   <p className="text-gray-700">We believe in timelessness over trend. In precision over shortcuts. In trust over transaction. Every line we draw and every stone we set must serve both purpose and meaning.</p>
                 </div>
               </div>
@@ -341,34 +357,50 @@ const AboutPage: React.FC = () => {
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="text-lg font-semibold mb-2 text-black">Mission</h4>
+                <h4 className="text-lg font-semibold mb-2 text-[#081E27]">Mission</h4>
                 <p className="text-gray-700">Our mission is to redefine the way homes and buildings are created. To unite design, construction, and interiors with transparency and care.</p>
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold mb-2 text-black">Vision</h4>
+                <h4 className="text-lg font-semibold mb-2 text-[#081E27]">Vision</h4>
                 <p className="text-gray-700">Our vision is to establish Sovran as the most trusted name in design and build — a brand synonymous with integrity, intelligence, and influence.</p>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-4">
-            <div className="bg-[#FEF7F0] p-8 rounded-2xl border border-gray-100">
-              <h3 className="text-xl text-black font-semibold mb-4">Why Sovran</h3>
-              <p className="text-gray-700 mb-4">Trusted Where It Matters Most — the answer lies in the sum of many projects and the trust we earn.</p>
-              <ul className="space-y-3 text-gray-800 mb-6 text-sm">
-                <li>1785+ properties transformed</li>
-                <li>Projects from £50,000 to multi-million pound developments</li>
-                <li>£15M+ delivered in the past year</li>
-              </ul>
-              <a href="/contact" className="inline-block px-6 py-3 bg-[#CDAD7D] text-dark-900 rounded-md">Request consultation</a>
+            <div className="bg-[#FEF7F0] p-8 rounded-2xl border border-gray-100 relative overflow-hidden">
+              <div className="absolute inset-0 z-0 opacity-10">
+                <img 
+                  src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210010.jpg" 
+                  alt="Sovran background" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-xl text-[#081E27] font-semibold mb-4">Why Sovran</h3>
+                <p className="text-gray-700 mb-4">Trusted Where It Matters Most — the answer lies in the sum of many projects and the trust we earn.</p>
+                <ul className="space-y-3 text-gray-800 mb-6 text-sm">
+                  <li>1785+ properties transformed</li>
+                  <li>Projects from £50,000 to multi-million pound developments</li>
+                  <li>£15M+ delivered in the past year</li>
+                </ul>
+                <a href="/contact" className="inline-block px-6 py-3 bg-[#CDAD7D] text-[#081E27] rounded-md hover:bg-[#CDAD7D]/90 transition-colors">Request consultation</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-32 px-4 sm:px-6 lg:px-8 bg-dark-900 relative overflow-hidden">
+      <section 
+        ref={processRef}
+        id="process" 
+        className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+        style={{
+          backgroundColor: "#081E27"
+        }}
+      >
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute h-64 w-64 rounded-full bg-primary-500/10 -top-20 -left-20 blur-xl"></div>
@@ -381,6 +413,7 @@ const AboutPage: React.FC = () => {
             <h2 className="font-sans text-4xl md:text-5xl text-white mb-6 ivymode split-text">
               A Proven Process for a Seamless Build
             </h2>
+            <p className="text-gray-300 max-w-3xl mx-auto mb-8">Our methodical approach ensures that each project is delivered with precision, transparency, and excellence from concept to completion.</p>
             <div className="w-24 h-1 bg-[#CDAD7D] mx-auto"></div>
           </div>
           
@@ -402,15 +435,15 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="md:order-first md:flex md:justify-end relative animate-image">
                   <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 transform -translate-y-1/2 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 z-20">
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900 shadow-lg transform transition-transform duration-300 hover:scale-110">
                       1
                     </div>
                   </div>
-                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden shadow-xl">
                     <img 
-                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg" 
+                      src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg" 
                       alt="Consultation & Concept" 
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500 transform hover:scale-105"
                     />
                   </div>
                 </div>
@@ -429,15 +462,15 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="relative animate-image">
                   <div className="absolute left-1/2 md:left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-20">
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900 shadow-lg transform transition-transform duration-300 hover:scale-110">
                       2
                     </div>
                   </div>
-                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-[#CDAD7D]/20 to-primary-600/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-[#CDAD7D]/20 to-primary-600/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden shadow-xl">
                     <img 
-                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg" 
+                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg" 
                       alt="Planning & Design" 
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500 transform hover:scale-105"
                     />
                   </div>
                 </div>
@@ -456,15 +489,15 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="md:order-first md:flex md:justify-end relative animate-image">
                   <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 transform -translate-y-1/2 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 z-20">
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900 shadow-lg transform transition-transform duration-300 hover:scale-110">
                       3
                     </div>
                   </div>
-                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden shadow-xl">
                     <img 
-                      src="/assets/images/MrWardrobe-manufacturing-unit.jpg" 
+                      src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg" 
                       alt="Build & Project Management" 
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500 transform hover:scale-105"
                     />
                   </div>
                 </div>
@@ -483,15 +516,15 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="relative animate-image">
                   <div className="absolute left-1/2 md:left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-20">
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900 shadow-lg transform transition-transform duration-300 hover:scale-110">
                       4
                     </div>
                   </div>
-                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-[#CDAD7D]/20 to-primary-600/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-[#CDAD7D]/20 to-primary-600/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden shadow-xl">
                     <img 
-                      src="/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg" 
+                      src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg" 
                       alt="Interiors & Final Styling" 
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500 transform hover:scale-105"
                     />
                   </div>
                 </div>
@@ -510,15 +543,15 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="md:order-first md:flex md:justify-end relative animate-image">
                   <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 transform -translate-y-1/2 md:-translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 z-20">
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#CDAD7D] text-white text-xl font-bold border-4 border-dark-900 shadow-lg transform transition-transform duration-300 hover:scale-110">
                       5
                     </div>
                   </div>
-                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden">
+                  <div className="h-48 w-full md:w-4/5 bg-gradient-to-r from-primary-600/20 to-[#CDAD7D]/20 rounded-lg backdrop-blur-sm border border-white/10 p-0 overflow-hidden shadow-xl">
                     <img 
-                      src="/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg" 
+                      src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249662-HDR.jpg" 
                       alt="Handover & Aftercare" 
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500 transform hover:scale-105"
                     />
                   </div>
                 </div>
@@ -539,17 +572,21 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF0E1]">
+      <section 
+        ref={ctaRef}
+        id="contact"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF0E1]"
+      >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-sans text-4xl md:text-5xl text-black mb-6 ivymode">
+          <h2 className="font-sans text-4xl md:text-5xl text-[#081E27] mb-6 ivymode">
             Great spaces do not wait.
           </h2>
-          <p className="text-lg text-black mb-8">
+          <p className="text-lg text-[#081E27] mb-8">
             Great spaces do not wait. They are imagined, pursued, and brought to life with urgency and intention. The question is not if — but when you will begin yours.
           </p>
           <a 
             href="/contact" 
-            className="inline-block px-8 py-3 bg-black hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300"
+            className="inline-block px-8 py-3 bg-[#081E27] hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300"
           >
             Begin Today
           </a>

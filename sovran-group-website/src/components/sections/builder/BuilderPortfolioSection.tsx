@@ -78,7 +78,7 @@ const BuilderPortfolioSection: React.FC = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white" id="portfolio">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-dark-900 mb-4">Our Portfolio</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] mb-4">Our Portfolio</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p className="text-xl text-dark-700 max-w-3xl mx-auto">
             Explore our diverse range of construction projects showcasing quality craftsmanship and attention to detail.
@@ -115,7 +115,7 @@ const BuilderPortfolioSection: React.FC = () => {
                 <span className="inline-block px-3 py-1 text-xs font-semibold text-primary-700 bg-primary-100 rounded-full mb-2">
                   {categories.find(cat => cat.id === item.category)?.name}
                 </span>
-                <h3 className="text-xl font-medium text-dark-900 mb-2">{item.title}</h3>
+                <h3 className="text-xl font-medium text-[#081E27] mb-2">{item.title}</h3>
                 <p className="text-dark-700 mb-4">{item.description}</p>
                 <a href="#" className="text-primary-500 font-medium hover:text-primary-600 inline-flex items-center">
                   View Project 

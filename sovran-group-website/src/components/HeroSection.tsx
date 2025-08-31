@@ -2,163 +2,18 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Button from './Button';
 import ArrowButton from './ArrowButton';
+import MediaCards from './MediaCards';
 
 
-// Service Card Type
-interface ServiceCard {
-  id: number;
-  title: string;
-  color?: string;
-  size?: 'small' | 'medium' | 'large'; // Added size property for masonry layout
-  image?: string; // Optional image for cards
-}
-
-const serviceCards: ServiceCard[] = [
-  {
-    id: 1,
-    title: "Bespoke Kitchens",
-    color: "#CDAD7D",
-    size: "medium",
-    image: "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg"
-  },
-  {
-    id: 2,
-    title: "Custom Wardrobes",
-    color: "#CDAD7D",
-    size: "large",
-    image: "/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg"
-  },
-  {
-    id: 3,
-    title: "Luxury Interiors",
-    color: "#CDAD7D",
-    size: "small",
-    image: "/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg"
-  },
-  {
-    id: 4,
-    title: "Home Renovations",
-    color: "#CDAD7D",
-    size: "large",
-    image: "/assets/images/home-builder-2.jpg"
-  },
-  {
-    id: 5,
-    title: "Architectural Design",
-    color: "#CDAD7D",
-    size: "medium",
-    image: "/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg"
-  },
-  {
-    id: 6,
-    title: "Home Bars",
-    color: "#CDAD7D",
-    size: "small",
-    image: "/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg"
-  },
-  {
-    id: 7,
-    title: "Bespoke Furniture",
-    color: "#CDAD7D",
-    size: "medium",
-    image: "/assets/images/Bookshelvs_MrWardrobe-scaled.jpg"
-  },
-  {
-    id: 8,
-    title: "Premium Finishes",
-    color: "#CDAD7D",
-    size: "small",
-    image: "/assets/images/Fretwork-wardrobes_MrWarobe_0001.png"
-  },
-  {
-    id: 9,
-    title: "Sliding Wardrobes",
-    color: "#CDAD7D",
-    size: "medium",
-    image: "/assets/images/Sliding-door-wardrobes_MrWardrobe-scaled.jpg"
-  },
-  {
-    id: 10,
-    title: "Walk-in Wardrobes",
-    color: "#CDAD7D",
-    size: "large",
-    image: "/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg"
-  },
-  {
-    id: 11,
-    title: "Modern Kitchens",
-    color: "#CDAD7D",
-    size: "small",
-    image: "/assets/images/traditional-shaker-kitchen.jpg"
-  },
-  {
-    id: 12,
-    title: "Storage Solutions",
-    color: "#CDAD7D",
-    size: "medium",
-    image: "/assets/images/Bars_MrWardrobe-scaled.jpg"
-  }
-];
+// No need for service cards as MediaCards component now handles this
 
 const HeroSection: React.FC = () => {
-  const column1Ref = useRef<HTMLDivElement>(null);
-  const column2Ref = useRef<HTMLDivElement>(null);
-  const column3Ref = useRef<HTMLDivElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const projectsTextRef = useRef<HTMLParagraphElement>(null);
   const featuresListRef = useRef<HTMLDivElement>(null);
   const ratingRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Animation for continuous loop movement
-    if (column1Ref.current && column2Ref.current && column3Ref.current) {
-      // Create a more elegant infinite scroll effect
-      gsap.set([column1Ref.current, column2Ref.current, column3Ref.current], { 
-        y: 0 
-      });
-      
-      // Create the infinite scrolling timelines
-      gsap.to(column1Ref.current, {
-        y: "-50%", 
-        duration: 15, 
-        ease: "none", 
-        repeat: -1, 
-        yoyo: false,
-        modifiers: {
-          y: function(y) {
-            // When the animation completes a full cycle, reset to top position
-            return `${parseFloat(y) % -50}%`;
-          }
-        }
-      });
-      
-      gsap.to(column2Ref.current, {
-        y: "-50%", 
-        duration: 20, 
-        ease: "none", 
-        repeat: -1,
-        yoyo: false,
-        modifiers: {
-          y: function(y) {
-            return `${parseFloat(y) % -50}%`;
-          }
-        }
-      });
-      
-      gsap.to(column3Ref.current, {
-        y: "-50%", 
-        duration: 25, 
-        ease: "none", 
-        repeat: -1,
-        yoyo: false,
-        modifiers: {
-          y: function(y) {
-            return `${parseFloat(y) % -50}%`;
-          }
-        }
-      });
-    }
-  }, []);
+  // No need for the column animations as MediaCards handles its own animations
   
   // Animation for buttons, features, and rating section
   useEffect(() => {
@@ -216,80 +71,14 @@ const HeroSection: React.FC = () => {
     }
   }, []);
 
-  // Helper function to render cards with masonry layout - more compact
-  const renderCards = (startIndex: number, endIndex: number, columnRef: React.RefObject<HTMLDivElement | null>) => {
-    // Create a function to render a single card
-    const renderCard = (card: ServiceCard, index: number) => {
-      // More substantial card heights for better visual impact
-      const cardHeight = card.size === 'small' 
-        ? 'h-[180px]' 
-        : card.size === 'large' 
-          ? 'h-[320px]' 
-          : 'h-[240px]';
-      
-      return (
-        <div 
-          key={`${card.id}-${index}`}
-          className={`card-item w-full rounded-md overflow-hidden shadow-md ${cardHeight} cursor-pointer bg-dark-800 border border-dark-700 transition-all duration-300 hover:border-primary-500/50 group`}
-          style={{ margin: '0.125rem 0' }} // Increased margin for better spacing
-        >
-          {/* Card with background image */}
-          <div className="h-full relative flex flex-col">
-            {/* Background image with overlay */}
-              {card.image && (
-              <div className="absolute inset-0 z-0">
-                <img 
-                  src={card.image} 
-                  alt={card.title} 
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 to-dark-800/50 group-hover:from-dark-900/70 transition-all duration-500"></div>
-              </div>
-            )}            {/* Card content with simplified design */}
-            <div className="h-full flex flex-col justify-end p-3 relative z-10">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 mr-2">
-                  <div style={{ backgroundColor: card.color }} 
-                    className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-primary-500"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-dark-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-base  text-white group-hover:text-primary-400 transition-colors duration-300">
-                  {card.title}
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    };
-    
-    const cards = serviceCards.slice(startIndex, endIndex);
-    
-    return (
-      <div 
-        ref={columnRef}
-        className="flex flex-col gap-4 relative will-change-transform"
-        style={{ height: "250%" }} // Double the height to accommodate the duplicated cards
-      >
-        {/* Original cards */}
-        {cards.map((card, index) => renderCard(card, index))}
-        
-        {/* Duplicate cards for seamless looping */}
-        {cards.map((card, index) => renderCard(card, index + cards.length))}
-      </div>
-    );
-  };
+  // Media Cards component will now handle the card display
 
   return (
-    <section className="relative overflow-hidden flex items-center bg-dark-900 pt-24 md:pt-28 lg:pt-32 pb-24">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
+    <section className="hero-section relative overflow-visible flex items-center bg-[#081E27] pt-24 md:pt-28 lg:pt-32 pb-24 md:pb-32 lg:pb-48">
+      <div className="container mx-auto px-4 max-w-[1500px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center">
           {/* Left side - Hero Text with subtle animations - vertically centered */}
-          <div className="z-10 pr-0 lg:pr-4 flex flex-col justify-center">
+          <div className="z-10 pr-0 lg:pr-4 lg:ml-12 flex flex-col justify-center lg:col-span-5 lg:col-start-2 mb-16 md:mb-0">
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-white leading-tight ivymode-regular tracking-tight" style={{ opacity: 0, filter: 'blur(15px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards' }}>
               We Add <span className="text-primary-600 relative inline-block"> Space</span>, <br/><span className="text-primary-600 relative inline-block">Value</span>, and <span className="text-primary-600 relative inline-block">Style 
                 <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary-600 transform scale-x-0 origin-left transition-transform duration-700 ease-out" style={{ animation: 'slideRight 1.5s ease-out 1.2s forwards' }}></span>
@@ -319,7 +108,7 @@ const HeroSection: React.FC = () => {
             </div>
             
             <p ref={projectsTextRef} className="text-gray-400 mt-3 text-sm font-lato project-count">
-              Over 17+ luxury home projects delivered since 2018.
+              Over 1785+ projects completed in last 5 years
             </p>
             
             {/* Features List */}
@@ -359,34 +148,12 @@ const HeroSection: React.FC = () => {
             </div> */}
           </div>
           
-          {/* Right side - Animated Cards with Masonry Layout */}
-          <div className="relative h-[500px] overflow-hidden rounded-xl border border-dark-700 bg-dark-900/70 shadow-xl" style={{ opacity: 0, filter: 'blur(15px)', animation: 'fadeInBlur 6s ease-out 0.3s forwards' }}>
-            {/* Dark background with gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-800/80 rounded-xl"></div>
-            
-            {/* Cards Container - Removed blur effects */}
-            <div className="h-full relative px-3 py-6 overflow-hidden">
-              {/* Simple overlay for depth without blur */}
-              <div className="absolute inset-0 bg-dark-900/20 z-0"></div>
-              
-              {/* Floating particles effect for depth - reduced for compactness */}
-              <div className="absolute inset-0 z-1">
-                <div className="absolute w-1 h-1 bg-primary-500/20 rounded-full top-[10%] left-[25%] animate-pulse"></div>
-                <div className="absolute w-2 h-2 bg-primary-500/10 rounded-full top-[30%] left-[80%] animate-pulse" style={{ animationDelay: '1s' }}></div>
-              </div>
-              
-              {/* Masonry Grid with infinite scroll effect */}
-              <div className="grid grid-cols-3 gap-4 h-full overflow-hidden relative z-5">
-                <div className="col-span-1 overflow-hidden h-full">
-                  {renderCards(0, 4, column1Ref)}
-                </div>
-                <div className="col-span-1 overflow-hidden h-full">
-                  {renderCards(4, 8, column2Ref)}
-                </div>
-                <div className="col-span-1 overflow-hidden h-full">
-                  {renderCards(8, 12, column3Ref)}
-                </div>
-              </div>
+          {/* Right side - MediaCards Component */}
+          <div className="relative overflow-visible lg:col-span-5" style={{ animation: 'fadeIn 2s ease-out 0.3s forwards' }}>
+            {/* Media Cards Container - clean, no borders, backgrounds or blurs */}
+            <div className=" left-[-50px] relative overflow-visible flex justify-center lg:justify-start">
+              {/* Media Cards component */}
+              <MediaCards className="relative" />
             </div>
           </div>
         </div>

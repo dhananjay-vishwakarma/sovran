@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   z-index: 50;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 .header-container {
@@ -14,32 +14,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1rem;
+  transition: all 0.3s ease;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.75rem;
-  transition: opacity 0.25s ease, transform 0.25s ease, height 0.25s ease, margin 0.25s ease;
+  margin-bottom: 0.8rem;
+  transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease, margin 0.3s ease;
 }
 
 .logo {
   width: auto;
-  height: 104px; /* ~30% larger than a 80px baseline */
-  transition: all 0.25s ease;
-  display: block;
+  height: 420px; /* increased further for a bigger normal (not-scrolled) logo */
+  max-height: 10vh; /* prevent excessive overflow on small viewports */
+  transition: all 0.3s ease;
+  margin: 20px;
+  /* display: block; */
 }
 
 .nav-menu {
   width: 100%;
   display: flex;
   justify-content: center; /* center the menu items under the logo */
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 60;
+  transition: all 0.3s ease;
+  font-size: large;
 }
 
 /* fallback selector in case menu is rendered as a list */
@@ -55,7 +60,9 @@
 
 /* Ensure desktop menu stays visible and sticks on scroll */
 .header-nav.scrolled {
-  backdrop-filter: blur(6px);
+  background-color: rgba(8, 30, 39, 0.2) !important; /* 50% opacity background */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .header-nav.scrolled .logo-container {
@@ -68,16 +75,153 @@
 
 /* Compact header when scrolled */
 .header-nav.scrolled .header-container {
-  padding: 0.5rem 1.5rem;
+  padding: 0.12rem 0.75rem;
+  transform: scale(0.95); /* Make everything slightly smaller */
+}
+
+/* Scale down elements when scrolled */
+.header-nav.scrolled .nav-menu {
+  font-size: 0.95rem;
+}
+
+.header-nav.scrolled .logo {
+  height: 52px; /* Half of the original height */
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .logo {
-    height: 86px;
+  .header-container {
+    padding: 0.5rem 1rem;
+    position: relative;
+    justify-content: center;
   }
+
+  .logo-container {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 60;
+    /* Center logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    height: 50px; /* Smaller logo for mobile */
+    max-height: none;
+  }
+
+  /* Make logo persist when scrolled on mobile */
+  .header-nav.scrolled .logo-container {
+    opacity: 1;
+    height: auto;
+    margin: 0;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .header-nav.scrolled .logo {
+    height: 40px; /* Even smaller when scrolled */
+  }
+
+  /* Mobile menu button positioning at bottom */
+  .mobile-menu-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(8, 30, 39, 0.95);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Increased z-index to ensure it's above everything */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer; /* Add pointer cursor */
+  }
+
+  /* Mobile menu styling */
+  .mobile-menu {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    max-width: 90%;
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-height: 75vh;
+    overflow-y: auto;
+    z-index: 998; /* High z-index but below the button */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   .nav-menu .nav-menu-items {
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  /* Style the header to be more visible on mobile */
+  .header-nav.scrolled {
+    background-color: rgba(8, 30, 39, 0.2) !important; /* slightly translucent bg when sticky */
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Keep logo visible but compact when scrolled */
+  .header-nav.scrolled .logo-container {
+    opacity: 1;
+    height: auto;
+    margin: 0;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Compact header when scrolled: roughly half the visual height */
+  .header-nav.scrolled .header-container {
+    padding: 0.28rem 0.5rem; /* reduced vertical padding for compact header */
+  }
+
+  /* Scale down elements when scrolled */
+  .header-nav.scrolled .nav-menu {
+    font-size: 0.9rem;
+    gap: 0.6rem;
+  }
+
+  .header-nav.scrolled .logo {
+    height: 48px; /* approx half of the 96px baseline */
+  }
+
+}
+
+/* Hide logo on desktop when header is scrolled */
+.header-nav.scrolled .logo-container {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.header-nav.scrolled .logo {
+  height: 0;
+}
+
+/* Re-enable logo visibility on small screens when scrolled */
+@media (max-width: 768px) {
+  .header-nav.scrolled .logo-container {
+    opacity: 1;
+    height: auto;
+    margin: 0;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .header-nav.scrolled .logo {
+    height: 40px;
   }
 }

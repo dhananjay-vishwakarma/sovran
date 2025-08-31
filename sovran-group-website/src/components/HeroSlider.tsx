@@ -143,7 +143,7 @@ const HeroSlider: React.FC = () => {
                             >
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/70 via-dark-900/60 to-dark-900/70"></div>
 
                         {/* Content */}
                         <div className="relative z-20 flex items-center justify-center h-full">

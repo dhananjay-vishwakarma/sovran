@@ -297,7 +297,7 @@ const ContactPage: React.FC = () => {
                     <Button
                       type="submit"
                       text={isSubmitting ? "Sending..." : "Send Message"}
-                      className="w-full md:w-auto font-medium text-black contact-submit-button"
+                      className="w-full md:w-auto font-medium text-[#081E27] contact-submit-button"
                     />
                     </div>
                 </form>
@@ -313,16 +313,22 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-gray-900">Sovran Group Headquarters</h3>
                     <address className="not-italic text-gray-700 mt-1 leading-relaxed">
-                      123 Design Street<br />
-                      Kensington<br />
-                      London, W8 5SA<br />
+                      2nd floor, Saracen House, Swan St,<br />
+                      Isleworth TW7 6RJ,<br />
                       United Kingdom
                     </address>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3 mb-6">
+                <div className="flex items-center space-x-3 mb-3">
                   <PhoneIcon className="h-5 w-5 text-primary-500" />
+                  <a href="tel:+447516100111" className="text-gray-700 hover:text-primary-600 transition-colors">
+                    +44 7516 100111
+                  </a>
+                </div>
+                
+                <div className="flex items-center space-x-3 mb-6">
+                  <PhoneIcon className="h-5 w-5 text-primary-500 opacity-0" />
                   <a href="tel:+442031430103" className="text-gray-700 hover:text-primary-600 transition-colors">
                     +44 20 3143 0103
                   </a>
@@ -330,8 +336,8 @@ const ContactPage: React.FC = () => {
                 
                 <div className="flex items-center space-x-3">
                   <EnvelopeIcon className="h-5 w-5 text-primary-500" />
-                  <a href="mailto:info@sovrangroup.co.uk" className="text-gray-700 hover:text-primary-600 transition-colors">
-                    info@sovrangroup.co.uk
+                  <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="text-gray-700 hover:text-primary-600 transition-colors">
+                    INFO@SOVRANGROUP.CO.UK
                   </a>
                 </div>
               </div>

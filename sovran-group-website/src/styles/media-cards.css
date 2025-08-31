@@ -1,0 +1,64 @@
+/* MediaCards responsive styles */
+
+/* Common styles for all screen sizes */
+.media-card-container {
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.media-card {
+  max-width: calc(100vw - 40px);
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Large screens (desktop) */
+@media (min-width: 1024px) {
+  .media-card-container {
+    transform: none;
+  }
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .media-card-container {
+    transform: scale(0.9);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-section {
+    padding-bottom: 6rem !important;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 767px) {
+  .media-card-container {
+    transform: scale(0.85);
+    height: 400px !important;
+    margin-top: -2rem;
+  }
+  
+  .media-card {
+    height: 400px !important;
+  }
+  
+  /* Add more space between hero section and problem solution section on mobile */
+  .hero-section {
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .media-card-container {
+    transform: scale(0.75);
+    margin-top: -4rem;
+  }
+  
+  .media-card {
+    height: 360px !important;
+  }
+}

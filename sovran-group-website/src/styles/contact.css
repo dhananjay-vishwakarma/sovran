@@ -2,9 +2,9 @@
 
 /* Contact form submit button specific styling */
 .contact-submit-button.sovran-btn span {
-  color: #000 !important; /* Use !important to override any other styles */
+  color: #081E27 !important; /* Use !important to override any other styles */
 }
 
 .contact-submit-button.sovran-btn:hover span {
-  color: #000 !important;
+  color: #081E27 !important;
 }

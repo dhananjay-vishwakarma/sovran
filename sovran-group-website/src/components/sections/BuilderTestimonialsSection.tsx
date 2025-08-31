@@ -5,10 +5,10 @@ const BuilderTestimonialsSection: React.FC = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl  text-dark-900 mb-4">Client Testimonials</h2>
+          <h2 className="text-3xl md:text-4xl  text-[#081E27] mb-4">Featured Project Feedback</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p className="text-xl text-dark-700 max-w-3xl mx-auto">
-            Hear what our clients have to say about their experience working with Sovran Builders.
+            See what our completed projects reveal about the quality and craftsmanship of Sovran Builders.
           </p>
         </div>
         
@@ -22,8 +22,8 @@ const BuilderTestimonialsSection: React.FC = () => {
                 className="w-16 h-16 rounded-full object-cover mr-4"
               />
               <div>
-                <h3 className="text-lg  text-dark-900">Maria C.</h3>
-                <p className="text-gray-600">Fulham</p>
+                <h3 className="text-lg  text-[#081E27]">Fulham Kitchen & Dining Extension</h3>
+                <p className="text-gray-600">Residential Project</p>
               </div>
             </div>
             <div className="mb-4 flex">
@@ -43,8 +43,8 @@ const BuilderTestimonialsSection: React.FC = () => {
                 className="w-16 h-16 rounded-full object-cover mr-4"
               />
               <div>
-                <h3 className="text-lg  text-dark-900">Emily S.</h3>
-                <p className="text-gray-600">Hampstead</p>
+                <h3 className="text-lg  text-[#081E27]">Hampstead Home Renovation</h3>
+                <p className="text-gray-600">Complete Refurbishment</p>
               </div>
             </div>
             <div className="mb-4 flex">
@@ -64,8 +64,8 @@ const BuilderTestimonialsSection: React.FC = () => {
                 className="w-16 h-16 rounded-full object-cover mr-4"
               />
               <div>
-                <h3 className="text-lg  text-dark-900">Matthew & Jason</h3>
-                <p className="text-gray-600">Richmond</p>
+                <h3 className="text-lg  text-[#081E27]">Richmond Kitchen Extension</h3>
+                <p className="text-gray-600">Open-Plan Living Project</p>
               </div>
             </div>
             <div className="mb-4 flex">

@@ -11,7 +11,7 @@ interface ProcessSectionProps {
 
 const ProcessSection: React.FC<ProcessSectionProps> = ({ steps }) => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-[#081E27] relative overflow-hidden">
       <div className="absolute top-1/2 left-0 w-48 h-48 opacity-10 transform -translate-y-1/2">
         <RandomDoodle />
       </div>

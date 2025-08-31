@@ -66,7 +66,7 @@ const BuilderContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl  text-dark-900 mb-4">Contact Us</h2>
+            <h2 className="text-3xl md:text-4xl  text-[#081E27] mb-4">Contact Us</h2>
             <div className="w-20 h-1 bg-primary-500 mb-6"></div>
             <p className="text-xl text-dark-700 mb-8">
               Have questions or ready to start your project? Get in touch with our team today.
@@ -81,8 +81,8 @@ const BuilderContactSection: React.FC = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <p className="text-dark-900 font-medium">Address</p>
-                  <p className="text-dark-700">123 Sovran Street, London, SW1 1AA</p>
+                  <p className="text-[#081E27] font-medium">Address</p>
+                  <p className="text-dark-700">2nd floor, Saracen House, Swan St, Isleworth TW7 6RJ, United Kingdom</p>
                 </div>
               </div>
               
@@ -93,8 +93,9 @@ const BuilderContactSection: React.FC = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <p className="text-dark-900 font-medium">Phone</p>
-                  <p className="text-dark-700">020 1234 5678</p>
+                  <p className="text-[#081E27] font-medium">Phone</p>
+                  <p className="text-dark-700">+44 7516 100111</p>
+                  <p className="text-dark-700">+44 20 3143 0103</p>
                 </div>
               </div>
               
@@ -105,8 +106,8 @@ const BuilderContactSection: React.FC = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <p className="text-dark-900 font-medium">Email</p>
-                  <p className="text-dark-700">info@sovranbuilders.com</p>
+                  <p className="text-[#081E27] font-medium">Email</p>
+                  <p className="text-dark-700">INFO@SOVRANGROUP.CO.UK</p>
                 </div>
               </div>
               
@@ -117,7 +118,7 @@ const BuilderContactSection: React.FC = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <p className="text-dark-900 font-medium">Business Hours</p>
+                  <p className="text-[#081E27] font-medium">Business Hours</p>
                   <p className="text-dark-700">Monday-Friday: 9am-6pm</p>
                   <p className="text-dark-700">Saturday: By appointment only</p>
                 </div>
@@ -145,7 +146,7 @@ const BuilderContactSection: React.FC = () => {
           
           <div>
             <div className="bg-white shadow-lg p-8 rounded-lg border border-gray-200">
-              <h3 className="text-xl  text-dark-900 mb-6">Send us a message</h3>
+              <h3 className="text-xl  text-[#081E27] mb-6">Send us a message</h3>
               
               {submitStatus.message && (
                 <div className={`mb-6 p-4 rounded-md ${submitStatus.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
@@ -160,7 +161,7 @@ const BuilderContactSection: React.FC = () => {
                     id="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     placeholder="Your Name"
                     required
                   />
@@ -171,7 +172,7 @@ const BuilderContactSection: React.FC = () => {
                     id="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     placeholder="Your Email"
                     required
                   />
@@ -182,7 +183,7 @@ const BuilderContactSection: React.FC = () => {
                     id="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     placeholder="Your Phone"
                   />
                 </div>
@@ -191,14 +192,14 @@ const BuilderContactSection: React.FC = () => {
                     id="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500 min-h-[150px]"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500 min-h-[150px]"
                     placeholder="Your Message"
                     required
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-primary-500 hover:bg-primary-600 text-black py-3 px-4 rounded-lg transition-all"
+                  className="w-full bg-primary-500 hover:bg-primary-600 text-[#081E27] py-3 px-4 rounded-lg transition-all"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}

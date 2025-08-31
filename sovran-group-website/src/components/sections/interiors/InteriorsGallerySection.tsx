@@ -33,7 +33,7 @@ const InteriorsGallerySection: React.FC = () => {
     <section className="py-16 md:py-24 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-black ivymode-regular mb-4">Our Gallery</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] ivymode-regular mb-4">Our Gallery</h2>
           <p className="text-lg text-gray-600 font-lato max-w-3xl mx-auto">
             A selection of our bespoke interior designs that showcase our craftsmanship, innovation and attention to detail.
           </p>
@@ -49,7 +49,7 @@ const InteriorsGallerySection: React.FC = () => {
                 startLoading={true}
                 priority={index + 1}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/70 to-transparent opacity-80"></div>
               <div className="absolute bottom-0 left-0 p-4">
                 <p className="text-white font-medium ivymode-regular text-lg">{item.category}</p>
               </div>

@@ -57,7 +57,7 @@ const BuilderResidentialSection: React.FC = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white" id="residential">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-dark-900 mb-4">Residential Construction</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] mb-4">Residential Construction</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p className="text-xl text-dark-700 max-w-3xl mx-auto">
             From stunning renovations to new builds and specialized projects, we deliver exceptional quality for every home.
@@ -78,7 +78,7 @@ const BuilderResidentialSection: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl text-dark-900 mb-3">{service.title}</h3>
+                <h3 className="text-xl text-[#081E27] mb-3">{service.title}</h3>
                 <p className="text-dark-700 mb-5">{service.description}</p>
                 <a 
                   href={service.link} 
@@ -97,7 +97,7 @@ const BuilderResidentialSection: React.FC = () => {
         <div className="mt-16 bg-gray-100 p-8 rounded-lg">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl text-dark-900 mb-4">Why Choose Sovran Builders for Your Home?</h3>
+              <h3 className="text-2xl text-[#081E27] mb-4">Why Choose Sovran Builders for Your Home?</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <svg className="h-6 w-6 text-primary-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -23,7 +23,7 @@ const ProblemSolutionHookSection: React.FC = () => {
     const splitHeading = new SplitText(heading, { type: "words" });
 
     // start with heading words slightly down and hidden
-    gsap.set([...splitHeading.words], { opacity: 0, y: 50 });
+    gsap.set([...splitHeading.words], { opacity: 0, y: 30 });
 
     // hide paragraph until heading animation completes
     if (paragraph) {
@@ -34,10 +34,11 @@ const ProblemSolutionHookSection: React.FC = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top top',
-        end: '+=1000', // adjust as needed
-        scrub: 0.6,    // numeric scrub smooths the animation
-        pin: true,
+        start: 'top bottom-=20%', // Start when the top of the section is 20% from the bottom of the viewport
+        end: 'bottom top+=80%',   // End when the bottom of the section is 20% from the top of the viewport
+        scrub: 0.6,               // numeric scrub smooths the animation
+        pin: false,               // Don't pin since we want animation to start as the section enters view
+        markers: false,           // Set to true during development to visualize trigger points
       }
     });
 
@@ -53,16 +54,34 @@ const ProblemSolutionHookSection: React.FC = () => {
 
     // after heading words finish, fade in the paragraph
     if (paragraph) {
-      tl.to(paragraph, {
+      // Create a separate timeline for the paragraph
+      const paragraphTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: paragraph,
+          start: 'top bottom-=10%', // Start when the paragraph is close to entering the viewport
+          end: 'top center',        // End when the paragraph is at the center of the viewport
+          scrub: 0.3,               // Faster scrub for paragraph
+          markers: false,
+        }
+      });
+      
+      paragraphTl.to(paragraph, {
         opacity: 1,
         y: 0,
-        duration: 0.6,
         ease: 'power2.out',
         pointerEvents: 'auto'
-      }, '+=0.1');
+      });
     }
 
     return () => {
+      // Kill all ScrollTrigger instances associated with this component
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === sectionRef.current || 
+            (paragraph && trigger.vars.trigger === paragraph)) {
+          trigger.kill();
+        }
+      });
+      
       tl.kill();
       splitHeading.revert();
       if (paragraph) gsap.set(paragraph, { clearProps: 'all' });
@@ -72,7 +91,7 @@ const ProblemSolutionHookSection: React.FC = () => {
   return (
  <section
   ref={sectionRef}
-  className="pt-40 px-4 sm:px-6 lg:px-8 bg-primary-50 text-black reveal-npm up py-32"
+  className="pt-40 px-4 sm:px-6 lg:px-8 bg-primary-50 text-[#081E27] reveal-npm up py-32"
 >
   <div className="max-w-5xl mx-auto text-center">
     <h2 className="text-4xl md:text-5xl lg:text-[72px] mb-8 leading-[1.25]">
@@ -85,7 +104,7 @@ const ProblemSolutionHookSection: React.FC = () => {
       <div className="md:col-span-7"></div>
 
       <div className="md:col-span-5 md:text-left">
-        <p className="text-xl text-black/90">{paragraphText}</p>
+        <p className="text-xl text-dark-900/90">{paragraphText}</p>
       </div>
     </div>
   </div>

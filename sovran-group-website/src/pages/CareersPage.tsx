@@ -193,7 +193,7 @@ const CareersPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className="min-h-screen bg-[#081E27]">
       <Navigation />
       
       {/* Hero Section */}
@@ -206,7 +206,7 @@ const CareersPage: React.FC = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
+        <div className="absolute inset-0 bg-[#081E27]/80 z-0"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="font-serif text-5xl md:text-6xl  text-white mb-6">
             Join Our Team
@@ -235,7 +235,7 @@ const CareersPage: React.FC = () => {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="absolute inset-0 bg-dark-900/70 z-0"></div>
+        <div className="absolute inset-0 bg-[#081E27]/70 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl  text-white mb-6">Our Culture</h2>
@@ -314,7 +314,7 @@ const CareersPage: React.FC = () => {
             ].map((benefit, index) => (
               <div 
                 key={index} 
-                className="benefit-card bg-dark-900/70 border border-primary-600/20 rounded-xl p-6 shadow-xl backdrop-blur-sm"
+                className="benefit-card bg-[#081E27]/70 border border-primary-600/20 rounded-xl p-6 shadow-xl backdrop-blur-sm"
               >
                 <div className="text-4xl mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-serif  text-white mb-3">{benefit.title}</h3>
@@ -335,7 +335,7 @@ const CareersPage: React.FC = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
+        <div className="absolute inset-0 bg-[#081E27]/80 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl  text-white mb-6">Our Application Process</h2>
@@ -372,7 +372,7 @@ const CareersPage: React.FC = () => {
                 key={index} 
                 className="process-step relative p-6 rounded-xl bg-dark-800/60 border border-primary-600/20 backdrop-blur-sm"
               >
-                <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-dark-900 ">
+                <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-[#081E27] ">
                   {process.step}
                 </div>
                 <h3 className="text-xl font-serif  text-white mt-2 mb-3">{process.title}</h3>
@@ -417,7 +417,7 @@ const CareersPage: React.FC = () => {
                   jobCardRefs.current[index] = el;
                   return undefined;
                 }}
-                className="bg-dark-900/70 border border-primary-600/20 rounded-xl overflow-hidden shadow-xl backdrop-blur-sm"
+                className="bg-[#081E27]/70 border border-primary-600/20 rounded-xl overflow-hidden shadow-xl backdrop-blur-sm"
               >
                 <div className="p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
@@ -483,7 +483,7 @@ const CareersPage: React.FC = () => {
           
           {/* No positions notice - conditionally rendered if no jobs available */}
           {jobs.length === 0 && (
-            <div className="bg-dark-900/70 border border-primary-600/20 rounded-xl p-8 text-center backdrop-blur-sm">
+            <div className="bg-[#081E27]/70 border border-primary-600/20 rounded-xl p-8 text-center backdrop-blur-sm">
               <h3 className="text-xl  text-white mb-4">No Open Positions Currently</h3>
               <p className="text-gray-300 mb-6">
                 We don't have any open positions at the moment, but we're always looking for talented individuals to join our team.
@@ -505,7 +505,7 @@ const CareersPage: React.FC = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-dark-900/80 z-0"></div>
+        <div className="absolute inset-0 bg-[#081E27]/80 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl  text-white mb-6">What Our Team Says</h2>

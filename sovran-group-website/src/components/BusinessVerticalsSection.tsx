@@ -5,8 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Import images from src/assets/images
 import businessArch from '../assets/images/AdobeStock_190403814.jpeg';
-import businessBuild from '../assets/images/After.jpg';
-import businessInterior from '../assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg';
+import businessBuild from '../assets/images/Gerrards_Cross_Sovran_.jpeg';
+import businessInterior from '../assets/images/Battersea_Renovation_Sovran.jpg';
+import logoImage from '../assets/logo/s.svg';
 
 
 // Load all SVGs from /src/assets/svgs
@@ -75,50 +76,103 @@ const BusinessVerticalsSection: React.FC = () => {
       );
     });
 
-// Setup marquees
+// Super simple and reliable CSS-based marquee implementation
 const marqueeContainers = [marquee1Ref.current, marquee2Ref.current, marquee3Ref.current];
 marqueeContainers.forEach((container) => {
   if (!container) return;
-  const content = container.querySelector('.marquee-content') as HTMLElement | null;
-  if (!content) return;
-
-  (container as HTMLElement).style.overflow = 'hidden';
-  (container as HTMLElement).style.whiteSpace = 'nowrap';
-  (container as HTMLElement).style.position = 'relative';
-  (container as HTMLElement).style.height = '1.4rem';
-  content.style.display = 'inline-block';
-
-  const containerWidth = container.offsetWidth || 300;
-  const contentWidth = content.offsetWidth || 300;
-  const distance = containerWidth + contentWidth;
-
-  // Function to generate random speed
-  const getRandomDuration = () => Math.max(8, distance / (40 + Math.random() * 40)); // random speed
-
-  gsap.set(content, { x: -contentWidth });
-
-  const tween = gsap.to(content, {
-    x: containerWidth,
-    duration: getRandomDuration(),
-    ease: 'linear',
+  
+  // Get the original content
+  const originalContent = container.querySelector('.marquee-content') as HTMLElement | null;
+  if (!originalContent) return;
+  
+  // Extract and enhance text content
+  const textContent = originalContent.innerHTML;
+  const spacedText = textContent.replace(/·/g, ' · '); // Add extra spaces around dots
+  
+  // Create a completely new structure for the marquee
+  container.innerHTML = '';
+  container.className = 'marquee-container';
+  
+  // Create marquee wrapper
+  const marqueeWrapper = document.createElement('div');
+  marqueeWrapper.className = 'marquee-wrapper';
+  marqueeWrapper.style.display = 'flex';
+  marqueeWrapper.style.width = 'fit-content'; // Ensure it takes the width of its content
+  marqueeWrapper.style.willChange = 'transform'; // Performance optimization
+  
+  // Create several copies of the text for seamless looping
+  for (let i = 0; i < 4; i++) {
+    const textSpan = document.createElement('span');
+    textSpan.innerHTML = spacedText + '     '; // Extra space between repetitions
+    textSpan.style.padding = '0 1.5cm'; // Space on both sides
+    textSpan.style.whiteSpace = 'nowrap';
+    textSpan.style.letterSpacing = '0.05em';
+    textSpan.style.display = 'inline-block';
+    marqueeWrapper.appendChild(textSpan);
+  }
+  
+  // Add the new structure to container
+  container.appendChild(marqueeWrapper);
+  container.style.overflow = 'hidden';
+  container.style.display = 'block';
+  container.style.whiteSpace = 'nowrap';
+  container.style.height = '1.4rem';
+  
+  // Set the animation using GSAP
+  gsap.to(marqueeWrapper, {
+    x: `-50%`, // Move half the width to create a seamless loop
+    duration: 50,
+    ease: 'none',
     repeat: -1,
-    onRepeat: () => {
-      tween.duration(getRandomDuration()); // change speed on each repeat
-    },
+    // No need for onRepeat as it's a continuous loop
   });
-
+  
+  // Create a variable to track the animation
+  let animation = true;
+  
   // Pause on hover
-  container.addEventListener('mouseenter', () => tween.pause());
-  container.addEventListener('mouseleave', () => tween.play());
-
+  container.addEventListener('mouseenter', () => {
+    if (animation) {
+      gsap.killTweensOf(marqueeWrapper);
+      animation = false;
+    }
+  });
+  
+  // Resume on mouse leave
+  container.addEventListener('mouseleave', () => {
+    if (!animation) {
+      gsap.to(marqueeWrapper, {
+        x: `-50%`,
+        duration: 20,
+        ease: 'none',
+        repeat: -1,
+      });
+      animation = true;
+    }
+  });
+  
+  // Handle scroll visibility
   ScrollTrigger.create({
     trigger: container,
     start: 'top bottom',
     end: 'bottom top',
-    onEnter: () => tween.play(),
-    onEnterBack: () => tween.play(),
-    onLeave: () => tween.pause(),
-    onLeaveBack: () => tween.pause(),
+    onEnter: () => {
+      if (!animation) {
+        gsap.to(marqueeWrapper, {
+          x: `-50%`,
+          duration: 20,
+          ease: 'none',
+          repeat: -1,
+        });
+        animation = true;
+      }
+    },
+    onLeave: () => {
+      if (animation) {
+        gsap.killTweensOf(marqueeWrapper);
+        animation = false;
+      }
+    },
   });
 });
 
@@ -151,19 +205,23 @@ marqueeContainers.forEach((container) => {
       ref={sectionRef}
       className="py-16 lg:py-36 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
-      {/* Oversized "S" */}
+      {/* Background Logo */}
       <div
         className="absolute select-none pointer-events-none"
         style={{
-          fontSize: '100rem',
-          lineHeight: '0',
-          top: '10rem',
-          left: '-50rem',
+          top: '-20rem',
+          left: '-8rem',
           opacity: 0.1,
           zIndex: 0,
+          width: '80rem',
+          height: '80rem',
         }}
       >
-        <span className="ivymode-bold text-black">S</span>
+        <img 
+          src={logoImage} 
+          alt="Sovran Logo Background" 
+          className="w-full h-full object-contain" 
+        />
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -173,7 +231,7 @@ marqueeContainers.forEach((container) => {
           </h2>
           <h3
             ref={headingRef}
-            className="text-5xl md:text-6xl lg:text-6xl text-dark-900 ivymode-regular"
+            className="text-5xl md:text-6xl lg:text-6xl text-[#081E27] ivymode-regular"
           >
             Our business verticals
           </h3>
@@ -192,12 +250,12 @@ marqueeContainers.forEach((container) => {
                 backgroundPosition: 'center',
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent" />
               <div className="relative p-8 flex flex-col justify-end h-full">
                 <h3 className="text-4xl text-white mb-2">Architectural</h3>
                 <div ref={marquee2Ref} className="marquee-container">
                   <div className="marquee-content text-sm text-white/90">
-                    Planning &amp; Building Regulations · Structural Engineering · 3D Renders &amp; Visualisation · Projects / Portfolio
+                    Planning &amp; Building Regulations · Structural Engineering · 3D Renders &amp; Visualisation · Projects / Portfolio.  Planning &amp; Building Regulations · Structural Engineering
                   </div>
                 </div>
               </div>
@@ -213,7 +271,7 @@ marqueeContainers.forEach((container) => {
                 backgroundPosition: 'center',
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent" />
               <div className="relative p-8 flex flex-col justify-end h-full">
                 <h3 className="text-4xl text-white mb-2">Build</h3>
                 <div ref={marquee1Ref} className="marquee-container">
@@ -234,7 +292,7 @@ marqueeContainers.forEach((container) => {
                 backgroundPosition: 'center',
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent" />
               <div className="relative p-8 flex flex-col justify-end h-full">
                 <h3 className="text-4xl text-white mb-2">Interior</h3>
                 <div ref={marquee3Ref} className="marquee-container">
@@ -248,8 +306,8 @@ marqueeContainers.forEach((container) => {
           </div>
         </div>
 
-        {/* Decoration */}
-        <div ref={decorRef} className="relative mt-8">
+        {/* Decoration with added space above */}
+        <div ref={decorRef} className="relative mt-16 pt-24">
           {randomSvg && (
             <img
               src={randomSvg}

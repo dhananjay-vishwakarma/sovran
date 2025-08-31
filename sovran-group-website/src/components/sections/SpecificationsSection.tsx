@@ -13,7 +13,7 @@ interface SpecificationsSectionProps {
 
 const SpecificationsSection: React.FC<SpecificationsSectionProps> = ({ specifications }) => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-[#081E27] relative overflow-hidden">
       <div className="absolute top-10 left-5 w-48 h-48 opacity-10">
         <RandomDoodle />
       </div>

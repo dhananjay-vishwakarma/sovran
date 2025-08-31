@@ -22,7 +22,7 @@ const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({
   background = 'white'
 }) => {
   return (
-    <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-${background} text-black relative overflow-hidden`}>
+    <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-${background} text-[#081E27] relative overflow-hidden`}>
       <div className="absolute top-0 left-1/4 w-40 h-40 opacity-10 transform -rotate-6">
         <RandomDoodle />
       </div>

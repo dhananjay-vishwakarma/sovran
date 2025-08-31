@@ -29,7 +29,7 @@ const DesignCtaSection: React.FC = () => {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="absolute inset-0 bg-[#081E27]/20"></div>
             </div>
           </div>
         </div>

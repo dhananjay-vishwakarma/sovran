@@ -87,7 +87,7 @@ const DesignContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl  text-gray-900 mb-1">Visit Our Studio</h3>
-                  <p className="text-gray-600">123 Design Street, London, SW1 1AA</p>
+                  <p className="text-gray-600">2nd floor, Saracen House, Swan St, Isleworth TW7 6RJ, United Kingdom</p>
                 </div>
               </div>
               
@@ -99,7 +99,8 @@ const DesignContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl  text-gray-900 mb-1">Call Us</h3>
-                  <p className="text-gray-600">+44 (0) 123 456 7890</p>
+                  <p className="text-gray-600">+44 7516 100111</p>
+                  <p className="text-gray-600">+44 20 3143 0103</p>
                 </div>
               </div>
               
@@ -111,7 +112,7 @@ const DesignContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl  text-gray-900 mb-1">Email Us</h3>
-                  <p className="text-gray-600">design@sovrangroup.com</p>
+                  <p className="text-gray-600">INFO@SOVRANGROUP.CO.UK</p>
                 </div>
               </div>
             </div>
@@ -209,7 +210,7 @@ const DesignContactSection: React.FC = () => {
               
               <button 
                 type="submit" 
-                className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-600 text-black font-medium rounded-md transition-all duration-300"
+                className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-600 text-[#081E27] font-medium rounded-md transition-all duration-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}

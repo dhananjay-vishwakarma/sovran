@@ -6,7 +6,7 @@ const BuilderAboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl  text-dark-900 mb-4">About Us</h2>
+            <h2 className="text-3xl md:text-4xl  text-[#081E27] mb-4">About Us</h2>
             <div className="w-20 h-1 bg-primary-500 mb-6"></div>
             <h3 className="text-xl md:text-2xl  text-primary-500 mb-6">Our Mission & Ethos</h3>
             <p className="text-dark-700 leading-relaxed mb-6">

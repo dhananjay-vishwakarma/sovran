@@ -5,7 +5,7 @@ const BuilderServicesSection: React.FC = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl  text-dark-900 mb-4">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl  text-[#081E27] mb-4">Our Services</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p className="text-xl text-dark-700 max-w-3xl mx-auto">
             Comprehensive building services tailored to meet your specific needs and exceed your expectations.

@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 const CostCalculatorPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className="min-h-screen bg-[#081E27]">
       <Navigation />
       
       {/* Hero Section */}

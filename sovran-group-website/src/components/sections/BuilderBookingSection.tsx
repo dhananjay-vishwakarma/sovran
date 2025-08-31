@@ -77,7 +77,7 @@ const BuilderBookingSection: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <div className="bg-white shadow-lg p-8 md:p-12 rounded-lg border border-gray-200">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl  text-dark-900 mb-4">Book Your Consultation</h2>
+            <h2 className="text-3xl md:text-4xl  text-[#081E27] mb-4">Book Your Consultation</h2>
             <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
             <p className="text-xl text-dark-700 max-w-3xl mx-auto">
               Take the first step towards your dream home. Schedule a no-obligation consultation with our experts.
@@ -86,7 +86,7 @@ const BuilderBookingSection: React.FC = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl  text-dark-900 mb-6">Fill in your details</h3>
+              <h3 className="text-xl  text-[#081E27] mb-6">Fill in your details</h3>
               
               {submitStatus.message && (
                 <div className={`mb-6 p-4 rounded-md ${submitStatus.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
@@ -103,7 +103,7 @@ const BuilderBookingSection: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     placeholder="Your Name"
                     required
                   />
@@ -116,7 +116,7 @@ const BuilderBookingSection: React.FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     placeholder="your@email.com"
                     required
                   />
@@ -129,7 +129,7 @@ const BuilderBookingSection: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     placeholder="Your Phone Number"
                     required
                   />
@@ -141,7 +141,7 @@ const BuilderBookingSection: React.FC = () => {
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     required
                   >
                     <option value="New Build">New Build</option>
@@ -158,7 +158,7 @@ const BuilderBookingSection: React.FC = () => {
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-dark-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full bg-gray-50 border border-gray-300 rounded-md py-3 px-4 text-[#081E27] focus:outline-none focus:ring-2 focus:ring-primary-500"
                     required
                   >
                     <option value="£50,000 - £100,000">£50,000 - £100,000</option>
@@ -169,7 +169,7 @@ const BuilderBookingSection: React.FC = () => {
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-primary-500 hover:bg-primary-600 text-black py-3 px-4 rounded-lg transition-all"
+                  className="w-full bg-primary-500 hover:bg-primary-600 text-[#081E27] py-3 px-4 rounded-lg transition-all"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Book Consultation'}
@@ -178,10 +178,10 @@ const BuilderBookingSection: React.FC = () => {
             </div>
             
             <div className="flex flex-col justify-center">
-              <h3 className="text-xl  text-dark-900 mb-6">Or call us directly</h3>
+              <h3 className="text-xl  text-[#081E27] mb-6">Or call us directly</h3>
               <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-6">
                 <p className="text-dark-700 mb-2">Call our team:</p>
-                <p className="text-2xl  text-dark-900">020 1234 5678</p>
+                <p className="text-2xl  text-[#081E27]">020 1234 5678</p>
               </div>
               <p className="text-dark-700 mb-6">
                 Our team is available Monday to Friday, 9am to 6pm, to discuss your project requirements and arrange a site visit.
@@ -193,7 +193,7 @@ const BuilderBookingSection: React.FC = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <p className="text-dark-900 font-medium">No obligation consultations</p>
+                  <p className="text-[#081E27] font-medium">No obligation consultations</p>
                   <p className="text-gray-600">We provide free initial consultations</p>
                 </div>
               </div>

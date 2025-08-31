@@ -17,7 +17,7 @@ interface ContentSectionProps {
 
 const ContentSection: React.FC<ContentSectionProps> = ({ title, introduction, sections, featuredProjects }) => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-[#081E27] relative overflow-hidden">
       <div className="absolute top-10 right-10 w-40 h-40 opacity-10 transform rotate-12">
         <RandomDoodle />
       </div>

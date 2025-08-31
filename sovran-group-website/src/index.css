@@ -123,7 +123,7 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000; /* Black */
+  background-color: #081E27; /* Black */
   color: #ffffff; /* White */
 }
 
@@ -183,12 +183,12 @@ code {
 }
 
 .sovran-btn:hover span {
-  color: #000;
+  color: #081E27;
 }
 
 /* Contact form submit button specific styling */
-.text-black.sovran-btn span {
-  color: black;
+.text-[#081E27].sovran-btn span {
+  color: #081E27;
 }
 
 .font-serif {

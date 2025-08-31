@@ -1,0 +1,117 @@
+/* Mobile Menu Styles */
+.mobile-menu-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mobile-menu-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.mobile-menu-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.mobile-menu-header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(8, 30, 39, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-link {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mobile-menu-link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Logo Styles */
+@media (max-width: 768px) {
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 60;
+  }
+  
+  .logo {
+    width: auto;
+    height: 50px !important; /* Override with !important to ensure smaller size */
+    transition: all 0.3s ease;
+    display: block;
+  }
+  
+  /* Make the header nav background more visible on mobile */
+  .header-nav {
+    background-color: rgba(8, 30, 39, 0.8);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Mobile Menu Button Styles - Added as separate section for clarity */
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    width: 70px !important;
+    height: 70px !important;
+    background-color: #002938 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    border: 3px solid rgba(255, 255, 255, 0.2) !important;
+    z-index: 9999 !important; /* Make sure it's above everything */
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: transform 0.3s ease !important;
+  }
+  
+  .mobile-menu-button:hover {
+    transform: scale(1.05) !important;
+  }
+  
+  .mobile-menu-button:active {
+    transform: scale(0.95) !important;
+  }
+  
+  /* Enhance mobile menu visibility */
+  .mobile-menu {
+    z-index: 9998 !important; /* High z-index but below the button */
+    background-color: rgba(8, 30, 39, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6) !important;
+  }
+}

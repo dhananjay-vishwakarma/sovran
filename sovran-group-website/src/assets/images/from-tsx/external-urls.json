@@ -1,0 +1,17 @@
+[
+  {
+    "file": "src/components/HeroSlider.tsx",
+    "img": "https://taajdesignandbuild.co.uk/wp-content/uploads/2021/02/Picturer-under-slider-1-1.jpg",
+    "line": 30
+  },
+  {
+    "file": "src/components/HeroSlider.tsx",
+    "img": "https://mrwardrobe.co.uk/wp-content/uploads/2023/06/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+    "line": 38
+  },
+  {
+    "file": "src/pages/MrWardrobePage.tsx",
+    "img": "https://mrwardrobe.co.uk/wp-content/uploads/2023/06/Mr-Wardrobe-png-new-logo-white-e.png",
+    "line": 15
+  }
+]

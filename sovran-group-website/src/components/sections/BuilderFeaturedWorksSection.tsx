@@ -5,7 +5,7 @@ const BuilderFeaturedWorksSection: React.FC = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl  text-dark-900 mb-4">Featured Works</h2>
+          <h2 className="text-3xl md:text-4xl  text-[#081E27] mb-4">Featured Works</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p className="text-xl text-dark-700 max-w-3xl mx-auto">
             Explore our portfolio of stunning projects that showcase our expertise and craftsmanship.
@@ -23,7 +23,7 @@ const BuilderFeaturedWorksSection: React.FC = () => {
               />
             </div>
             <div className="bg-white shadow-lg p-8 rounded-lg border border-gray-200">
-              <h3 className="text-2xl  text-dark-900 mb-2">Fulham Residence</h3>
+              <h3 className="text-2xl  text-[#081E27] mb-2">Fulham Residence</h3>
               <p className="text-gray-600 mb-4">Complete Home Renovation</p>
               <p className="text-dark-700 leading-relaxed mb-6">
                 A comprehensive renovation of a Victorian property in Fulham, transforming it into a modern family home while preserving its historical character. The project included a kitchen extension, loft conversion, and complete interior redesign.
@@ -52,7 +52,7 @@ const BuilderFeaturedWorksSection: React.FC = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl  text-dark-900 mb-2">Hampstead Development</h3>
+              <h3 className="text-xl  text-[#081E27] mb-2">Hampstead Development</h3>
               <p className="text-gray-600 mb-3">New Build Project</p>
               <p className="text-dark-700 leading-relaxed mb-4 line-clamp-3">
                 A luxurious new-build property featuring five bedrooms, state-of-the-art amenities, and sustainable building practices.
@@ -73,7 +73,7 @@ const BuilderFeaturedWorksSection: React.FC = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl  text-dark-900 mb-2">Kensington Apartment</h3>
+              <h3 className="text-xl  text-[#081E27] mb-2">Kensington Apartment</h3>
               <p className="text-gray-600 mb-3">Luxury Renovation</p>
               <p className="text-dark-700 leading-relaxed mb-4 line-clamp-3">
                 Complete renovation of a high-end apartment with custom joinery, smart home features, and bespoke finishes throughout.
@@ -94,7 +94,7 @@ const BuilderFeaturedWorksSection: React.FC = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl  text-dark-900 mb-2">Richmond Extension</h3>
+              <h3 className="text-xl  text-[#081E27] mb-2">Richmond Extension</h3>
               <p className="text-gray-600 mb-3">Kitchen & Living Space Extension</p>
               <p className="text-dark-700 leading-relaxed mb-4 line-clamp-3">
                 A contemporary extension creating an open-plan kitchen and living area with floor-to-ceiling glazing overlooking the garden.

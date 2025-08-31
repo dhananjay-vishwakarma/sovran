@@ -4,7 +4,7 @@ import LazyImage from '../../LazyImage';
 
 const InteriorsHeroSection: React.FC = () => {
   return (
-    <div className="relative bg-dark-900 text-white min-h-screen flex items-center">
+    <div className="relative bg-[#081E27] text-white min-h-screen flex items-center">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/80 to-dark-900/70 z-10"></div>
         <LazyImage 

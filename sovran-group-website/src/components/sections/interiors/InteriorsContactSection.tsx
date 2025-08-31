@@ -78,7 +78,7 @@ const InteriorsContactSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl text-black ivymode-regular mb-4">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl text-[#081E27] ivymode-regular mb-4">Get In Touch</h2>
             <p className="text-lg text-gray-600 font-lato mb-6">
               Our team is ready to assist you with any questions you may have about our interior design services.
               Contact us today to start your journey to a beautifully transformed space.
@@ -94,9 +94,9 @@ const InteriorsContactSection: React.FC = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-medium ivymode-regular">Visit Our Showroom</h4>
                   <p className="text-gray-600 font-lato">
-                    123 Design Street<br />
-                    London, UK<br />
-                    SW1 1AA
+                    2nd floor, Saracen House, Swan St,<br />
+                    Isleworth TW7 6RJ,<br />
+                    United Kingdom
                   </p>
                 </div>
               </div>
@@ -110,11 +110,11 @@ const InteriorsContactSection: React.FC = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-medium ivymode-regular">Call Us</h4>
                   <p className="text-gray-600 font-lato">
+                    <a href="tel:+447516100111" className="hover:text-primary-600 transition-colors">
+                      +44 7516 100111
+                    </a><br />
                     <a href="tel:+442031430103" className="hover:text-primary-600 transition-colors">
                       +44 20 3143 0103
-                    </a><br />
-                    <a href="tel:+447713129769" className="hover:text-primary-600 transition-colors">
-                      07713 129769
                     </a>
                   </p>
                 </div>
@@ -130,8 +130,8 @@ const InteriorsContactSection: React.FC = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-medium ivymode-regular">Email Us</h4>
                   <p className="text-gray-600 font-lato">
-                    <a href="mailto:info@sovrangroup.co.uk" className="hover:text-primary-600 transition-colors">
-                      info@sovrangroup.co.uk
+                    <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="hover:text-primary-600 transition-colors">
+                      INFO@SOVRANGROUP.CO.UK
                     </a>
                   </p>
                 </div>
@@ -154,7 +154,7 @@ const InteriorsContactSection: React.FC = () => {
           
           <div>
             <form className="bg-gray-50 p-6 rounded-lg shadow-md" onSubmit={handleSubmit}>
-              <h3 className="text-2xl text-black ivymode-regular mb-6">Contact Form</h3>
+              <h3 className="text-2xl text-[#081E27] ivymode-regular mb-6">Contact Form</h3>
               
               {submitStatus.message && (
                 <div className={`mb-6 p-4 rounded-md ${submitStatus.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
@@ -250,7 +250,7 @@ const InteriorsContactSection: React.FC = () => {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-primary-600 hover:bg-primary-700 text-black px-6 py-3 rounded-md transition-colors font-lato font-medium"
+                    className="w-full bg-primary-600 hover:bg-primary-700 text-[#081E27] px-6 py-3 rounded-md transition-colors font-lato font-medium"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}

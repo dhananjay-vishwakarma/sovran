@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/megaMenu.css';
+import CompressedImage from './CompressedImage';
 
 interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
-  startLoading: boolean;
-  priority: number;
+  startLoading?: boolean;
+  priority?: number;
+  width?: number;
+  height?: number;
+  quality?: number;
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
 }
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, startLoading, priority }) => {
+const LazyImage: React.FC<LazyImageProps> = ({
+  src,
+  alt,
+  className,
+  startLoading = true,
+  priority = 0,
+  width,
+  height,
+  quality = 0.8,
+  objectFit = 'cover'
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
 
@@ -23,24 +38,27 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, startLoading
     }
   }, [startLoading, priority]);
 
-  useEffect(() => {
-    if (shouldLoad) {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        setIsLoaded(true);
-      };
-    }
-  }, [shouldLoad, src]);
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
 
   return (
     <>
       {!isLoaded && <div className="image-placeholder active-loading" />}
-      <img
-        src={shouldLoad ? src : ''}
-        alt={alt}
-        className={`${className} ${isLoaded ? 'loaded' : ''}`}
-      />
+      {shouldLoad && (
+        <CompressedImage
+          src={src}
+          alt={alt}
+          className={`${className} ${isLoaded ? 'loaded' : ''}`}
+          onLoad={handleImageLoad}
+          width={width}
+          height={height}
+          quality={quality}
+          priority={priority}
+          objectFit={objectFit}
+          startLoading={shouldLoad}
+        />
+      )}
     </>
   );
 };

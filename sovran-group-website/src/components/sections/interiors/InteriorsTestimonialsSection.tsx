@@ -5,20 +5,20 @@ const InteriorsTestimonialsSection: React.FC = () => {
   const testimonials = [
     {
       quote: "The attention to detail and quality of craftsmanship exceeded our expectations. Our wardrobes have become the highlight of our bedroom.",
-      author: "Michael Johnson",
-      location: "Kensington, London",
+      author: "Kensington Bespoke Wardrobes",
+      location: "Residential Project",
       image: "/assets/images/MrWardrobe-Magazine--739x1024.jpg"
     },
     {
       quote: "Sovran Interiors transformed our kitchen with a stunning design that perfectly complements our home style. Their process was seamless.",
-      author: "Emily Parker",
-      location: "Chelsea, London",
+      author: "Chelsea Luxury Kitchen",
+      location: "Modern Kitchen Project",
       image: "/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg"
     },
     {
       quote: "Professional service from start to finish. The design process was collaborative and the final result is exactly what we envisioned.",
-      author: "David Williams",
-      location: "Mayfair, London",
+      author: "Mayfair Media Wall",
+      location: "Entertainment Space Project",
       image: "/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg"
     }
   ];
@@ -27,9 +27,9 @@ const InteriorsTestimonialsSection: React.FC = () => {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-black ivymode-regular mb-4">Client Testimonials</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] ivymode-regular mb-4">Project Showcases</h2>
           <p className="text-lg text-gray-600 font-lato max-w-3xl mx-auto">
-            Hear what our clients have to say about their experience working with Sovran Interiors.
+            See the exceptional results from our interior design projects across London.
           </p>
         </div>
         

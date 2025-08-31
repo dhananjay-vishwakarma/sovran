@@ -27,7 +27,7 @@ const InteriorsFeaturedProjectsSection: React.FC = () => {
     <section className="py-16 md:py-24 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-black ivymode-regular mb-4">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl text-[#081E27] ivymode-regular mb-4">Featured Projects</h2>
           <p className="text-lg text-gray-600 font-lato max-w-3xl mx-auto">
             Explore our most celebrated interior designs that showcase our expertise, creativity, and attention to detail.
           </p>

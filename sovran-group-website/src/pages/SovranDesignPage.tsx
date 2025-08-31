@@ -8,7 +8,6 @@ import DesignProcessSection from '../components/sections/design/DesignProcessSec
 import DesignFeaturedProjectsSection from '../components/sections/design/DesignFeaturedProjectsSection';
 import DesignTestimonialsSection from '../components/sections/design/DesignTestimonialsSection';
 import DesignTechnologySection from '../components/sections/design/DesignTechnologySection';
-import DesignTeamSection from '../components/sections/design/DesignTeamSection';
 import DesignRendersSection from '../components/sections/design/DesignRendersSection';
 import DesignPortfolioSection from '../components/sections/design/DesignPortfolioSection';
 import DesignEngineeringSection from '../components/sections/design/DesignEngineeringSection';
@@ -25,7 +24,6 @@ const SovranDesignPage: React.FC = () => {
     { id: 'process', title: 'Our Process', link: '#process' },
     { id: 'projects', title: 'Featured Projects', link: '#projects' },
     { id: 'technology', title: 'Technology', link: '#technology' },
-    { id: 'team', title: 'Our Team', link: '#team' },
     { id: 'engineering', title: 'Engineering', link: '#engineering' },
     { id: 'renders', title: '3D Renders', link: '#renders' },
     { id: 'portfolio', title: 'Portfolio', link: '#portfolio' },
@@ -37,7 +35,7 @@ const SovranDesignPage: React.FC = () => {
     const handleScroll = () => {
       const sections = [
         'home', 'services', 'process', 'projects', 
-        'technology', 'team', 'engineering', 'renders', 'portfolio', 'contact'
+        'technology', 'engineering', 'renders', 'portfolio', 'contact'
       ];
       
       for (const section of sections) {
@@ -87,11 +85,6 @@ const SovranDesignPage: React.FC = () => {
       {/* Technology Section - Light Gray Background */}
       <div id="technology">
         <DesignTechnologySection />
-      </div>
-      
-      {/* Team Section - Light Gray Background */}
-      <div id="team">
-        <DesignTeamSection />
       </div>
       
       {/* Engineering Section - Light Gray Background */}
