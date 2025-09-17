@@ -4,6 +4,10 @@
 /node_modules
 /bower_components
 /vendor
+### Ignore large image/media directories
+sovran-group-website/public/assets/images/Drop Box-20250726T154239Z-1-009/
+sovran-group-website/public/assets/images/portfolio/
+sovran-group-website/public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/
 
 # Build artifacts and compiled files
 /build
