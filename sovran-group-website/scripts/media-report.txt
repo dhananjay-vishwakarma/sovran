@@ -1,0 +1,847 @@
+# Media Usage Report
+
+Generated on 9/13/2025, 6:58:42 PM
+
+Total media files used: 97
+Images: 90
+Videos: 7
+
+## Media Files Used in Components
+
+### public/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg (image)
+
+Used in the following files:
+
+- src/templates/SovranInteriorsTemplate.tsx (absolute)
+- src/templates/SovranInteriorsTemplate.tsx (direct)
+- src/components/sections/interiors/InteriorsTestimonialsSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsTestimonialsSection.tsx (direct)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (direct)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (absolute)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (direct)
+- src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx (direct)
+- src/components/sections/design/DesignServicesSection.tsx (absolute)
+- src/components/sections/design/DesignServicesSection.tsx (direct)
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+
+### public/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg (image)
+
+Used in the following files:
+
+- src/templates/SovranInteriorsTemplate.tsx (absolute)
+- src/templates/SovranInteriorsTemplate.tsx (direct)
+- src/pages/ContactPage.tsx (css)
+- src/pages/ContactPage.tsx (absolute)
+- src/pages/ContactPage.tsx (direct)
+- src/components/sections/BuilderAboutSection.tsx (src)
+- src/components/sections/BuilderAboutSection.tsx (absolute)
+- src/components/sections/BuilderAboutSection.tsx (direct)
+- src/components/sections/interiors/InteriorsHeroSection.tsx (src)
+- src/components/sections/interiors/InteriorsHeroSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsHeroSection.tsx (direct)
+- src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx (direct)
+- src/components/sections/design/DesignServicesSection.tsx (absolute)
+- src/components/sections/design/DesignServicesSection.tsx (direct)
+- src/components/sections/design/DesignRendersSection.tsx (absolute)
+- src/components/sections/design/DesignRendersSection.tsx (direct)
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+- src/components/sections/builder/BuilderResidentialSection.tsx (src)
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+
+### public/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg (image)
+
+Used in the following files:
+
+- src/templates/SovranInteriorsTemplate.tsx (absolute)
+- src/templates/SovranInteriorsTemplate.tsx (direct)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (src)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (absolute)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (direct)
+- src/components/sections/interiors/InteriorsTestimonialsSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsTestimonialsSection.tsx (direct)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (direct)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (absolute)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (direct)
+- src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx (direct)
+- src/components/sections/design/DesignServicesSection.tsx (absolute)
+- src/components/sections/design/DesignServicesSection.tsx (direct)
+- src/components/sections/design/DesignRendersSection.tsx (absolute)
+- src/components/sections/design/DesignRendersSection.tsx (direct)
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (direct)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+- src/components/sections/builder/BuilderCommercialSection.tsx (css)
+- src/components/sections/builder/BuilderCommercialSection.tsx (absolute)
+- src/components/sections/builder/BuilderCommercialSection.tsx (direct)
+
+### public/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg (image)
+
+Used in the following files:
+
+- src/pages/ContactPage.tsx (css)
+- src/pages/ContactPage.tsx (absolute)
+- src/pages/ContactPage.tsx (direct)
+- src/components/sections/design/DesignServicesSection.tsx (absolute)
+- src/components/sections/design/DesignServicesSection.tsx (direct)
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+- src/components/sections/builder/BuilderCommercialSection.tsx (absolute)
+- src/components/sections/builder/BuilderCommercialSection.tsx (direct)
+
+### public/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (src)
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (absolute)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (direct)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+- src/components/sections/builder/BuilderCommercialSection.tsx (absolute)
+- src/components/sections/builder/BuilderCommercialSection.tsx (direct)
+
+### public/assets/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (css)
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+
+### public/assets/images/image-4-1.png (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (css)
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+
+### public/assets/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (css)
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+- src/components/sections/design/DesignPlanningSection.tsx (absolute)
+- src/components/sections/design/DesignPlanningSection.tsx (direct)
+
+### public/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (css)
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+- src/components/sections/BuilderAboutSection.tsx (src)
+- src/components/sections/BuilderAboutSection.tsx (absolute)
+- src/components/sections/BuilderAboutSection.tsx (direct)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (direct)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (direct)
+
+### public/assets/images/Review-2-Em-Sheldon.jpg (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+- src/components/sections/BuilderTestimonialsSection.tsx (src)
+- src/components/sections/BuilderTestimonialsSection.tsx (absolute)
+- src/components/sections/BuilderTestimonialsSection.tsx (direct)
+- src/components/sections/design/DesignTeamSection.tsx (absolute)
+- src/components/sections/design/DesignTeamSection.tsx (direct)
+
+### public/assets/images/Review-3-Mathew-and-Jason.jpg (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+- src/components/sections/BuilderTestimonialsSection.tsx (src)
+- src/components/sections/BuilderTestimonialsSection.tsx (absolute)
+- src/components/sections/BuilderTestimonialsSection.tsx (direct)
+- src/components/sections/design/DesignTeamSection.tsx (absolute)
+- src/components/sections/design/DesignTeamSection.tsx (direct)
+
+### public/assets/images/Review-1-Maria-Carolina-860x1024.jpg (image)
+
+Used in the following files:
+
+- src/pages/CareersPage.tsx (absolute)
+- src/pages/CareersPage.tsx (direct)
+- src/components/sections/BuilderTestimonialsSection.tsx (src)
+- src/components/sections/BuilderTestimonialsSection.tsx (absolute)
+- src/components/sections/BuilderTestimonialsSection.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249004-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe- bespoke home office.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-46-845.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249069-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210010.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+- src/components/sections/design/DesignRendersSection.tsx (absolute)
+- src/components/sections/design/DesignRendersSection.tsx (direct)
+- scripts/EXPLICIT_INCLUDE (explicit)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249662-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (src)
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209733.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg (image)
+
+Used in the following files:
+
+- src/pages/AboutPage.tsx (absolute)
+- src/pages/AboutPage.tsx (direct)
+
+### public/assets/icon/500w/SVG/8GoPIo.svg (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (src)
+- src/components/TestimonialSection.tsx (direct)
+- src/components/SuccessStorySection.tsx (src)
+- src/components/SuccessStorySection.tsx (direct)
+
+### public/assets/icon/500w/clients.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (src)
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/icon/500w/projects.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (src)
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/icon/500w/experience.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (src)
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/avatar/1.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/avatar/Marcus-O-Neill.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/avatar/2.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/avatar/Nyla-Idrissi.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/avatar/3.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/avatar/Shiv-Patel.png (image)
+
+Used in the following files:
+
+- src/components/TestimonialSection.tsx (direct)
+
+### public/assets/videos/Walkthrough.mp4 (video)
+
+Used in the following files:
+
+- src/components/SuccessStorySection.tsx (src)
+- src/components/SuccessStorySection.tsx (absolute)
+- src/components/SuccessStorySection.tsx (direct)
+
+### public/assets/avatar/Daniel-Turner.png (image)
+
+Used in the following files:
+
+- src/components/SuccessStorySection.tsx (src)
+- src/components/SuccessStorySection.tsx (direct)
+
+### public/assets/everyspacehasstory/bg.png (image)
+
+Used in the following files:
+
+- src/components/StorySection.tsx (css)
+- src/components/StorySection.tsx (direct)
+
+### public/assets/images/portfolio/1.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (src)
+- src/components/RecentProjectsSection.tsx (src)
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+- src/components/RecentProjectsSection.tsx (direct)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/2.mp4 (video)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/3.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/4.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/5.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/6.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/7.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/8.mp4 (video)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/9.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/10.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/11.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/12.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/13.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/14.mp4 (video)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/15.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/16.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/17.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### public/assets/images/portfolio/18.jpg (image)
+
+Used in the following files:
+
+- src/components/RecentProjectsSection.tsx (absolute)
+- src/components/RecentProjectsSection.tsx (direct)
+
+### src/assets/logo/Sovran-03-03.png (image)
+
+Used in the following files:
+
+- src/components/Navigation.tsx (import)
+- src/components/Navigation.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Media Wall Reel.mp4 (video)
+
+Used in the following files:
+
+- src/components/Navigation.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249682-HDR.jpg (image)
+
+Used in the following files:
+
+- src/components/Navigation.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Wardrobe reel.mp4 (video)
+
+Used in the following files:
+
+- src/components/Navigation.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249438-HDR.jpg (image)
+
+Used in the following files:
+
+- src/components/Navigation.tsx (direct)
+
+### public/assets/hero/1.png (image)
+
+Used in the following files:
+
+- src/components/MediaCards.tsx (direct)
+
+### public/assets/hero/2.mp4 (video)
+
+Used in the following files:
+
+- src/components/MediaCards.tsx (direct)
+
+### src/assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg (image)
+
+Used in the following files:
+
+- src/components/ExitIntentPopup.tsx (require)
+- src/components/ExitIntentPopup.tsx (direct)
+
+### src/assets/logo/s.svg (image)
+
+Used in the following files:
+
+- src/components/BusinessVerticalsSection.tsx (import)
+- src/components/BusinessVerticalsSection.tsx (direct)
+
+### public/assets/verticals/1.png (image)
+
+Used in the following files:
+
+- src/components/BusinessVerticalsSection.tsx (direct)
+
+### public/assets/verticals/2.jpg (image)
+
+Used in the following files:
+
+- src/components/BusinessVerticalsSection.tsx (direct)
+
+### public/assets/verticals/3.jpg (image)
+
+Used in the following files:
+
+- src/components/BusinessVerticalsSection.tsx (direct)
+
+### public/assets/images/home-builder-2.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/BuilderServicesSection.tsx (src)
+- src/components/sections/BuilderServicesSection.tsx (absolute)
+- src/components/sections/BuilderServicesSection.tsx (direct)
+- src/components/sections/BuilderHeroSection.tsx (src)
+- src/components/sections/BuilderHeroSection.tsx (absolute)
+- src/components/sections/BuilderHeroSection.tsx (direct)
+- src/components/sections/design/DesignServicesSection.tsx (absolute)
+- src/components/sections/design/DesignServicesSection.tsx (direct)
+- src/components/sections/design/DesignPlanningSection.tsx (absolute)
+- src/components/sections/design/DesignPlanningSection.tsx (direct)
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+
+### public/assets/images/Before.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/BuilderServicesSection.tsx (src)
+- src/components/sections/BuilderServicesSection.tsx (absolute)
+- src/components/sections/BuilderServicesSection.tsx (direct)
+
+### public/assets/images/traditional-kitchen-extension.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/BuilderServicesSection.tsx (src)
+- src/components/sections/BuilderServicesSection.tsx (absolute)
+- src/components/sections/BuilderServicesSection.tsx (direct)
+- src/components/sections/BuilderAboutSection.tsx (src)
+- src/components/sections/BuilderAboutSection.tsx (absolute)
+- src/components/sections/BuilderAboutSection.tsx (direct)
+- src/components/sections/design/DesignServicesSection.tsx (absolute)
+- src/components/sections/design/DesignServicesSection.tsx (direct)
+- src/components/sections/design/DesignPlanningSection.tsx (absolute)
+- src/components/sections/design/DesignPlanningSection.tsx (direct)
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+
+### public/assets/images/After.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/BuilderFeaturedWorksSection.tsx (src)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (absolute)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (direct)
+- src/components/sections/design/DesignTestimonialsSection.tsx (absolute)
+- src/components/sections/design/DesignTestimonialsSection.tsx (direct)
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+
+### public/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/BuilderFeaturedWorksSection.tsx (src)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (absolute)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (direct)
+- src/components/sections/BuilderAboutSection.tsx (src)
+- src/components/sections/BuilderAboutSection.tsx (absolute)
+- src/components/sections/BuilderAboutSection.tsx (direct)
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (direct)
+
+### public/assets/images/traditional-shaker-kitchen.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/BuilderFeaturedWorksSection.tsx (src)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (absolute)
+- src/components/sections/BuilderFeaturedWorksSection.tsx (direct)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (absolute)
+- src/components/sections/design/DesignFeaturedProjectsSection.tsx (direct)
+
+### public/assets/images/MrWardrobe-Magazine--739x1024.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/interiors/InteriorsTestimonialsSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsTestimonialsSection.tsx (direct)
+
+### public/assets/images/Glass-door-wardrobes-_MrWardrobe5-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/interiors/InteriorsServicesSection.tsx (absolute)
+- src/components/sections/interiors/InteriorsServicesSection.tsx (direct)
+
+### public/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/interiors/InteriorsGallerySection.tsx (absolute)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (direct)
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+
+### public/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/interiors/InteriorsGallerySection.tsx (absolute)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (direct)
+
+### public/assets/images/Bookshelvs_MrWardrobe-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/interiors/InteriorsGallerySection.tsx (absolute)
+- src/components/sections/interiors/InteriorsGallerySection.tsx (direct)
+
+### public/assets/images/032720_RH_M7_Develop.jpeg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignTestimonialsSection.tsx (absolute)
+- src/components/sections/design/DesignTestimonialsSection.tsx (direct)
+
+### public/assets/images/AdobeStock_1312472493.jpeg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignTestimonialsSection.tsx (absolute)
+- src/components/sections/design/DesignTestimonialsSection.tsx (direct)
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+
+### public/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignTestimonialsSection.tsx (absolute)
+- src/components/sections/design/DesignTestimonialsSection.tsx (direct)
+
+### public/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignTestimonialsSection.tsx (absolute)
+- src/components/sections/design/DesignTestimonialsSection.tsx (direct)
+- scripts/EXPLICIT_INCLUDE (explicit)
+
+### public/assets/images/Review-4-Carlie-goodson.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignTeamSection.tsx (absolute)
+- src/components/sections/design/DesignTeamSection.tsx (direct)
+
+### public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignRendersSection.tsx (absolute)
+- src/components/sections/design/DesignRendersSection.tsx (direct)
+
+### public/assets/images/Dressing-Rooms.1.png.png (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+
+### public/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignPortfolioSection.tsx (absolute)
+- src/components/sections/design/DesignPortfolioSection.tsx (direct)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+
+### public/assets/images/home-Builder-2.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignPlanningSection.tsx (absolute)
+- src/components/sections/design/DesignPlanningSection.tsx (direct)
+
+### public/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignHeroSection.tsx (src)
+- src/components/sections/design/DesignHeroSection.tsx (absolute)
+- src/components/sections/design/DesignHeroSection.tsx (direct)
+- src/components/sections/design/DesignCtaSection.tsx (src)
+- src/components/sections/design/DesignCtaSection.tsx (absolute)
+- src/components/sections/design/DesignCtaSection.tsx (direct)
+
+### public/assets/images/AdobeStock_586937970.png (image)
+
+Used in the following files:
+
+- src/components/sections/design/DesignEngineeringSection.tsx (src)
+- src/components/sections/design/DesignEngineeringSection.tsx (absolute)
+- src/components/sections/design/DesignEngineeringSection.tsx (direct)
+
+### public/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+
+### public/assets/images/Wine-lovers-dream-by-taaj-kitchens-1-2-1.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/builder/BuilderResidentialSection.tsx (absolute)
+- src/components/sections/builder/BuilderResidentialSection.tsx (direct)
+
+### public/assets/images/MrWardrobe-home-theme.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+
+### public/assets/images/Designed-for-sould-Taaj-kitchens-Homepage.png (image)
+
+Used in the following files:
+
+- src/components/sections/builder/BuilderPortfolioSection.tsx (absolute)
+- src/components/sections/builder/BuilderPortfolioSection.tsx (direct)
+
+### public/assets/images/Fretwork-wardrobes_MrWarobe_0001.png (image)
+
+Used in the following files:
+
+- src/components/sections/builder/BuilderCommercialSection.tsx (absolute)
+- src/components/sections/builder/BuilderCommercialSection.tsx (direct)
+
+### public/assets/images/Mrwardrobe-manufacturing-unit.jpg (image)
+
+Used in the following files:
+
+- src/components/sections/builder/BuilderCommercialSection.tsx (absolute)
+- src/components/sections/builder/BuilderCommercialSection.tsx (direct)
+
+### public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg (image)
+
+Used in the following files:
+
+- scripts/EXPLICIT_INCLUDE (explicit)
+

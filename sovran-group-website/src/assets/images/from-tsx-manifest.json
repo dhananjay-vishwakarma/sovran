@@ -1,7 +1,6 @@
 {
   "src/index.tsx": [],
   "src/App.tsx": [],
-  "src/utils/imageCompression.tsx": [],
   "src/components/StorySection.tsx": [
     {
       "img": "../assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg",

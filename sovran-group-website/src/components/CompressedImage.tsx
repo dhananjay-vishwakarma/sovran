@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Compressor from 'compressorjs';
+import React, { useState } from 'react';
 
-// Cache for storing compressed image URLs to avoid recompression
-const imageCache: Record<string, string> = {};
-
+// Note: Client-side compression has been removed as images are now optimized during build
 interface CompressedImageProps {
   src: string;
   alt: string;
-  quality?: number;
+  quality?: number; // Kept for backwards compatibility but no longer used
   width?: number;
   height?: number;
   className?: string;
@@ -22,7 +19,7 @@ interface CompressedImageProps {
 const CompressedImage: React.FC<CompressedImageProps> = ({
   src,
   alt,
-  quality = 0.8,
+  quality, // No longer used but kept for API compatibility
   width,
   height,
   className = '',
@@ -33,116 +30,24 @@ const CompressedImage: React.FC<CompressedImageProps> = ({
   priority = 0,
   objectFit = 'cover',
 }) => {
-  const [compressedSrc, setCompressedSrc] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<boolean>(false);
 
-  // Create a cache key from src and quality
-  const cacheKey = `${src}_${quality}_${width || 'auto'}_${height || 'auto'}`;
+  const handleLoad = () => {
+    setIsLoading(false);
+    if (onLoad) onLoad();
+  };
 
-  useEffect(() => {
-    if (!startLoading) return; // Don't load if not ready (for lazy loading)
+  const handleError = () => {
+    setIsLoading(false);
+    setHasError(true);
+    if (onError) onError();
+  };
 
-    // Check cache first
-    if (imageCache[cacheKey]) {
-      setCompressedSrc(imageCache[cacheKey]);
-      setIsLoading(false);
-      return;
-    }
-
-    // Skip compression for SVGs or already compressed images (data URLs)
-    if (src.endsWith('.svg') || src.startsWith('data:')) {
-      setCompressedSrc(src);
-      imageCache[cacheKey] = src;
-      setIsLoading(false);
-      return;
-    }
-
-    // Skip compression for external URLs (we can't fetch them directly for compression)
-    if ((src.startsWith('http') && !src.includes(window.location.hostname)) || src.startsWith('blob:')) {
-      setCompressedSrc(src);
-      imageCache[cacheKey] = src;
-      setIsLoading(false);
-      return;
-    }
-
-    // Create an image object to load the source
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    
-    img.onload = () => {
-      // Skip compression for small images
-      if (img.width < 300 && img.height < 300) {
-        setCompressedSrc(src);
-        imageCache[cacheKey] = src;
-        setIsLoading(false);
-        return;
-      }
-
-      // Calculate target dimensions
-      const targetWidth = width || img.width;
-      const targetHeight = height || img.height;
-
-      // Convert Image to Blob
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      
-      if (ctx) {
-        ctx.drawImage(img, 0, 0);
-        canvas.toBlob((blob) => {
-          if (!blob) {
-            setCompressedSrc(src);
-            setIsLoading(false);
-            return;
-          }
-
-          // Use CompressorJS for better compression
-          new Compressor(blob, {
-            quality: quality,
-            maxWidth: targetWidth * 2, // Account for retina displays
-            maxHeight: targetHeight * 2,
-            success(result) {
-              const url = URL.createObjectURL(result);
-              setCompressedSrc(url);
-              imageCache[cacheKey] = url;
-              setIsLoading(false);
-              
-              if (onLoad) onLoad();
-            },
-            error() {
-              setCompressedSrc(src);
-              setIsLoading(false);
-              
-              if (onError) onError();
-            },
-          });
-        }, 'image/jpeg');
-      } else {
-        // Fallback if canvas context isn't available
-        setCompressedSrc(src);
-        setIsLoading(false);
-      }
-    };
-    
-    img.onerror = () => {
-      setHasError(true);
-      setIsLoading(false);
-      setCompressedSrc(src); // Fallback to original
-      
-      if (onError) onError();
-    };
-    
-    img.src = src;
-    
-    // Clean up object URLs on unmount to prevent memory leaks
-    return () => {
-      if (compressedSrc && compressedSrc.startsWith('blob:')) {
-        URL.revokeObjectURL(compressedSrc);
-      }
-    };
-  }, [src, quality, width, height, onError, onLoad, cacheKey, startLoading]);
+  // Don't render anything until startLoading is true (for lazy loading)
+  if (!startLoading) {
+    return null;
+  }
 
   // Placeholder during loading
   if (isLoading) {
@@ -176,10 +81,10 @@ const CompressedImage: React.FC<CompressedImageProps> = ({
     );
   }
 
-  // Render compressed image
+  // Render image (now using pre-optimized images from build)
   return (
     <img
-      src={compressedSrc}
+      src={src}
       alt={alt}
       className={className}
       style={{
@@ -188,8 +93,8 @@ const CompressedImage: React.FC<CompressedImageProps> = ({
       }}
       width={width}
       height={height}
-      onLoad={onLoad}
-      onError={onError}
+      onLoad={handleLoad}
+      onError={handleError}
       loading={priority > 0 ? 'eager' : 'lazy'}
       data-testid="compressed-image"
     />

@@ -192,7 +192,7 @@ const AboutPage: React.FC = () => {
   }, [animationsReady]);
 
   return (
-    <div className="min-h-screen bg-[#081E27]">
+    <div className="min-h-screen bg-[#081E27] overflow-x-hidden max-w-full">
       <Navigation />
       
       {/* Section Navigation Menu */}
@@ -202,7 +202,7 @@ const AboutPage: React.FC = () => {
       <section 
         ref={heroRef}
         id="hero"
-        className="relative pt-36 pb-28 px-4 sm:px-6 lg:px-8" 
+        className="relative pt-36 pb-28 px-4 sm:px-6 lg:px-8 overflow-x-hidden sm:overflow-x-visible" 
         style={{
           backgroundColor: "#081E27",
           backgroundImage: "url('/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209733.jpg')",
@@ -211,30 +211,12 @@ const AboutPage: React.FC = () => {
           backgroundBlendMode: "overlay"
         }}
       >
-        {/* Oversized "S" in the background */}
-        <div
-          className="absolute select-none pointer-events-none"
-          style={{
-            top: '-25rem',
-            left: '-15rem',
-            opacity: 0.05,
-            zIndex: 0,
-            width: '100rem',
-            height: '100rem',
-          }}
-        >
-          <img 
-            src={require('../assets/logo/s.svg')} 
-            alt="S Logo" 
-            className="w-full h-full object-contain"
-          />
-        </div>
         <div className="absolute inset-0 bg-[#081E27]/80 backdrop-blur-[3px] z-0"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="font-sans text-6xl md:text-7xl text-white mb-8 ivymode split-text">
+          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 ivymode split-text">
             About Sovran Group
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-paragraph">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-paragraph px-4 sm:px-0">
             Building excellence through innovation, craftsmanship, and dedication to our clients' visions.
           </p>
           <div className="w-24 h-1 bg-primary-600 mx-auto mt-10"></div>
@@ -248,10 +230,10 @@ const AboutPage: React.FC = () => {
         className="py-24 px-4 sm:px-6 lg:px-8 bg-white"
       >
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl text-[#081E27] mb-6 ivymode">Every Space Has a Story</h2>
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#081E27] mb-4 ivymode">Every Space Has a Story</h2>
           <div className="w-24 h-1 bg-[#CDAD7D] mx-auto mb-8"></div>
           <div className="w-full mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 text-gray-800 leading-relaxed text-justify md:text-left max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-800 leading-relaxed text-justify md:text-left max-w-7xl mx-auto">
               <div className="prose max-w-none">
                 <p>
                   What gives a space its power? Is it the walls that contain it, the roof that shelters it — or the lives that unfold within? Every space tells a story. Not through steel or stone, but in the way architecture can move our spirits, in the way surroundings shape our mood, and in the way culture and people breathe life into a place. A powerful space does more than function — it resonates. It inspires. It endures.
@@ -303,7 +285,7 @@ const AboutPage: React.FC = () => {
         <div className="absolute inset-0 bg-[#FAF7F3]/95 backdrop-blur-[1px] z-0"></div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="space-y-6">
-            <h2 className="font-sans text-3xl md:text-4xl text-[#081E27] mb-4 ivymode">Our Story</h2>
+            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl text-[#081E27] mb-3 ivymode">Our Story</h2>
             <h3 className="text-2xl text-[#081E27] mb-4 font-serif">Built on Craft, Carved in Vision</h3>
             <div className="prose text-gray-800">
               <p>
@@ -339,7 +321,7 @@ const AboutPage: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-8">
-            <h2 className="font-sans text-3xl md:text-4xl text-[#081E27] mb-4 ivymode">Our Ethos</h2>
+            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl text-[#081E27] mb-3 ivymode">Our Ethos</h2>
             <div className="w-24 h-1 bg-[#CDAD7D] mb-8"></div>
 
             <div className="p-6 min-h-[220px]">
@@ -381,7 +363,7 @@ const AboutPage: React.FC = () => {
                 <h3 className="text-xl text-[#081E27] font-semibold mb-4">Why Sovran</h3>
                 <p className="text-gray-700 mb-4">Trusted Where It Matters Most — the answer lies in the sum of many projects and the trust we earn.</p>
                 <ul className="space-y-3 text-gray-800 mb-6 text-sm">
-                  <li>1785+ properties transformed</li>
+                  <li>785+ properties transformed</li>
                   <li>Projects from £50,000 to multi-million pound developments</li>
                   <li>£15M+ delivered in the past year</li>
                 </ul>
@@ -410,7 +392,7 @@ const AboutPage: React.FC = () => {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-sans text-4xl md:text-5xl text-white mb-6 ivymode split-text">
+            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-5 ivymode split-text">
               A Proven Process for a Seamless Build
             </h2>
             <p className="text-gray-300 max-w-3xl mx-auto mb-8">Our methodical approach ensures that each project is delivered with precision, transparency, and excellence from concept to completion.</p>
@@ -426,7 +408,7 @@ const AboutPage: React.FC = () => {
               {/* Step 1 */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="md:text-right animate-paragraph">
-                  <h3 className="text-2xl text-white mb-4 font-medium">1. Consultation & Concept</h3>
+                  <h3 className="text-xl sm:text-2xl text-white mb-4 font-medium">1. Consultation & Concept</h3>
                   <p className="text-gray-300 leading-relaxed">
                     We begin by understanding your vision, requirements, and budget. 
                     Our experts collaborate with you to develop initial concepts that 
@@ -452,7 +434,7 @@ const AboutPage: React.FC = () => {
               {/* Step 2 */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="animate-paragraph">
-                  <h3 className="text-2xl text-white mb-4 font-medium">2. Planning & Design</h3>
+                  <h3 className="text-xl sm:text-2xl text-white mb-4 font-medium">2. Planning & Design</h3>
                   <p className="text-gray-300 leading-relaxed">
                     Our design team creates detailed plans and 3D visualizations 
                     of your project. We refine these with your input until every 
@@ -479,7 +461,7 @@ const AboutPage: React.FC = () => {
               {/* Step 3 */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="md:text-right animate-paragraph">
-                  <h3 className="text-2xl text-white mb-4 font-medium">3. Build & Project Management</h3>
+                  <h3 className="text-xl sm:text-2xl text-white mb-4 font-medium">3. Build & Project Management</h3>
                   <p className="text-gray-300 leading-relaxed">
                     Our skilled craftsmen and project managers bring your design 
                     to life with meticulous attention to detail. We maintain clear 
@@ -506,7 +488,7 @@ const AboutPage: React.FC = () => {
               {/* Step 4 */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="animate-paragraph">
-                  <h3 className="text-2xl text-white mb-4 font-medium">4. Interiors & Final Styling</h3>
+                  <h3 className="text-xl sm:text-2xl text-white mb-4 font-medium">4. Interiors & Final Styling</h3>
                   <p className="text-gray-300 leading-relaxed">
                     Our interior design experts add the finishing touches, from 
                     selecting premium materials and finishes to installing custom 
@@ -533,7 +515,7 @@ const AboutPage: React.FC = () => {
               {/* Step 5 */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="md:text-right animate-paragraph">
-                  <h3 className="text-2xl text-white mb-4 font-medium">5. Handover & Aftercare</h3>
+                  <h3 className="text-xl sm:text-2xl text-white mb-4 font-medium">5. Handover & Aftercare</h3>
                   <p className="text-gray-300 leading-relaxed">
                     We provide a comprehensive handover of your completed project, 
                     ensuring you understand all features and systems. Our commitment 
@@ -578,10 +560,10 @@ const AboutPage: React.FC = () => {
         className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF0E1]"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-sans text-4xl md:text-5xl text-[#081E27] mb-6 ivymode">
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#081E27] mb-5 ivymode">
             Great spaces do not wait.
           </h2>
-          <p className="text-lg text-[#081E27] mb-8">
+          <p className="text-lg text-[#081E27] mb-8 px-4 sm:px-0">
             Great spaces do not wait. They are imagined, pursued, and brought to life with urgency and intention. The question is not if — but when you will begin yours.
           </p>
           <a 

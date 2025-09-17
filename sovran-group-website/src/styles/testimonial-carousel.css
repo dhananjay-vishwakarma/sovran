@@ -3,6 +3,9 @@
 .testimonial-container {
   transition: transform 0.3s ease;
   user-select: none;
+  position: relative;
+  overflow: visible; /* Changed from hidden to visible */
+  margin-bottom: 60px; /* Add margin to accommodate the avatars */
 }
 
 .testimonial-container.dragging {
@@ -13,6 +16,55 @@
 .testimonial-item {
   transform-origin: center;
   will-change: transform, opacity;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955), 
+              opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  overflow: visible; /* Ensure the item doesn't clip its children */
+}
+
+/* Slide animations */
+.slide-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Slide reverse animations */
+.slide-reverse-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.slide-reverse-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-reverse-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-reverse-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .testimonial-avatar {

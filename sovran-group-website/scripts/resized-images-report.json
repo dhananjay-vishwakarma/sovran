@@ -1,0 +1,509 @@
+{
+  "summary": {
+    "totalImages": 94,
+    "resizedImages": 32,
+    "skippedImages": 4,
+    "totalSavedBytes": 117428806,
+    "totalSavedFormatted": "111.99 MB"
+  },
+  "resizedImages": [
+    {
+      "path": "assets/images/AdobeStock_1312472493.jpeg",
+      "originalSize": 3479375,
+      "newSize": 531049,
+      "originalDimensions": {
+        "width": 4368,
+        "height": 2448
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1121
+      },
+      "byteSaved": 2948326,
+      "percentSaved": 85
+    },
+    {
+      "path": "assets/images/AdobeStock_586937970.png",
+      "originalSize": 428897,
+      "newSize": 81897,
+      "originalDimensions": {
+        "width": 5036,
+        "height": 2978
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1183
+      },
+      "byteSaved": 347000,
+      "percentSaved": 81
+    },
+    {
+      "path": "assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
+      "originalSize": 248562,
+      "newSize": 248562,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2048
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 2048
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/Bookshelvs_MrWardrobe-scaled.jpg",
+      "originalSize": 300657,
+      "newSize": 300657,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 1607
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 1607
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "originalSize": 70853,
+      "newSize": 70853,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 1509
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 1509
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg",
+      "originalSize": 208179,
+      "newSize": 208179,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2048
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 2048
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg",
+      "originalSize": 9623648,
+      "newSize": 187389,
+      "originalDimensions": {
+        "width": 5973,
+        "height": 3982
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 9436259,
+      "percentSaved": 98
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg",
+      "originalSize": 11228884,
+      "newSize": 242131,
+      "originalDimensions": {
+        "width": 5970,
+        "height": 3980
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 10986753,
+      "percentSaved": 98
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249438-HDR.jpg",
+      "originalSize": 10465833,
+      "newSize": 227638,
+      "originalDimensions": {
+        "width": 5967,
+        "height": 3978
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 10238195,
+      "percentSaved": 98
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg",
+      "originalSize": 11545476,
+      "newSize": 301857,
+      "originalDimensions": {
+        "width": 5958,
+        "height": 3972
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 11243619,
+      "percentSaved": 97
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249662-HDR.jpg",
+      "originalSize": 9933403,
+      "newSize": 215806,
+      "originalDimensions": {
+        "width": 5988,
+        "height": 3992
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 9717597,
+      "percentSaved": 98
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249682-HDR.jpg",
+      "originalSize": 10435967,
+      "newSize": 256776,
+      "originalDimensions": {
+        "width": 5961,
+        "height": 3974
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 10179191,
+      "percentSaved": 98
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg",
+      "originalSize": 23303023,
+      "newSize": 261821,
+      "originalDimensions": {
+        "width": 5967,
+        "height": 3978
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 23041202,
+      "percentSaved": 99
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249069-HDR.jpg",
+      "originalSize": 18837504,
+      "newSize": 375062,
+      "originalDimensions": {
+        "width": 3831,
+        "height": 5746
+      },
+      "newDimensions": {
+        "width": 1333,
+        "height": 2000
+      },
+      "byteSaved": 18462442,
+      "percentSaved": 98
+    },
+    {
+      "path": "assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "originalSize": 476523,
+      "newSize": 476523,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2550
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 2550
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/Fretwork-wardrobes_MrWarobe_0001.png",
+      "originalSize": 2574665,
+      "newSize": 1386231,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2560
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 2000
+      },
+      "byteSaved": 1188434,
+      "percentSaved": 46
+    },
+    {
+      "path": "assets/images/Glass-door-wardrobes-_MrWardrobe5-scaled.jpg",
+      "originalSize": 408822,
+      "newSize": 408822,
+      "originalDimensions": {
+        "width": 2546,
+        "height": 2560
+      },
+      "newDimensions": {
+        "width": 2546,
+        "height": 2560
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+      "originalSize": 343093,
+      "newSize": 232832,
+      "originalDimensions": {
+        "width": 1911,
+        "height": 2560
+      },
+      "newDimensions": {
+        "width": 1493,
+        "height": 2000
+      },
+      "byteSaved": 110261,
+      "percentSaved": 32
+    },
+    {
+      "path": "assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "originalSize": 368522,
+      "newSize": 249133,
+      "originalDimensions": {
+        "width": 1914,
+        "height": 2560
+      },
+      "newDimensions": {
+        "width": 1495,
+        "height": 2000
+      },
+      "byteSaved": 119389,
+      "percentSaved": 32
+    },
+    {
+      "path": "assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "originalSize": 186623,
+      "newSize": 186623,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2544
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 2544
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/MrWardrobe-home-theme.jpg",
+      "originalSize": 13139,
+      "newSize": 13139,
+      "originalDimensions": {
+        "width": 2061,
+        "height": 1440
+      },
+      "newDimensions": {
+        "width": 2061,
+        "height": 1440
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg",
+      "originalSize": 525873,
+      "newSize": 352579,
+      "originalDimensions": {
+        "width": 1707,
+        "height": 2560
+      },
+      "newDimensions": {
+        "width": 1334,
+        "height": 2000
+      },
+      "byteSaved": 173294,
+      "percentSaved": 33
+    },
+    {
+      "path": "assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg",
+      "originalSize": 1160334,
+      "newSize": 147595,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 1440
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1125
+      },
+      "byteSaved": 1012739,
+      "percentSaved": 87
+    },
+    {
+      "path": "assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg",
+      "originalSize": 1746843,
+      "newSize": 205267,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 1440
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1125
+      },
+      "byteSaved": 1541576,
+      "percentSaved": 88
+    },
+    {
+      "path": "assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg",
+      "originalSize": 2665140,
+      "newSize": 336324,
+      "originalDimensions": {
+        "width": 2696,
+        "height": 3380
+      },
+      "newDimensions": {
+        "width": 1595,
+        "height": 2000
+      },
+      "byteSaved": 2328816,
+      "percentSaved": 87
+    },
+    {
+      "path": "assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-46-845.jpg",
+      "originalSize": 1676994,
+      "newSize": 421049,
+      "originalDimensions": {
+        "width": 2160,
+        "height": 2160
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 2000
+      },
+      "byteSaved": 1255945,
+      "percentSaved": 75
+    },
+    {
+      "path": "assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg",
+      "originalSize": 313925,
+      "newSize": 230595,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2091
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1634
+      },
+      "byteSaved": 83330,
+      "percentSaved": 27
+    },
+    {
+      "path": "assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+      "originalSize": 334693,
+      "newSize": 334693,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2540
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 2540
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg",
+      "originalSize": 389189,
+      "newSize": 389189,
+      "originalDimensions": {
+        "width": 2560,
+        "height": 2014
+      },
+      "newDimensions": {
+        "width": 2560,
+        "height": 2014
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "assets/images/home-builder-2.jpg",
+      "originalSize": 492300,
+      "newSize": 492300,
+      "originalDimensions": {
+        "width": 2048,
+        "height": 1416
+      },
+      "newDimensions": {
+        "width": 2048,
+        "height": 1416
+      },
+      "byteSaved": 0,
+      "percentSaved": 0
+    },
+    {
+      "path": "static/media/Chiswick home- Sovran1.18bef98c1b1010ac453f.jpg",
+      "originalSize": 3298788,
+      "newSize": 339048,
+      "originalDimensions": {
+        "width": 4096,
+        "height": 2731
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 1333
+      },
+      "byteSaved": 2959740,
+      "percentSaved": 90
+    },
+    {
+      "path": "static/media/Sovran-03-03.7daba6c2ae44e4352308.png",
+      "originalSize": 86227,
+      "newSize": 31529,
+      "originalDimensions": {
+        "width": 4218,
+        "height": 961
+      },
+      "newDimensions": {
+        "width": 2000,
+        "height": 456
+      },
+      "byteSaved": 54698,
+      "percentSaved": 63
+    }
+  ],
+  "skippedImages": [
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg",
+      "reason": "Empty file"
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249004-HDR.jpg",
+      "reason": "Resize operation failed"
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209733.jpg",
+      "reason": "Resize operation failed"
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210010.jpg",
+      "reason": "Resize operation failed"
+    }
+  ]
+}

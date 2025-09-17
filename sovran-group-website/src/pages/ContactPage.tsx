@@ -162,7 +162,7 @@ const ContactPage: React.FC = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-gray-900/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-brand backdrop-blur-sm"></div>
         <div className="max-w-7xl mx-auto relative" ref={headerRef}>
           <div className="text-center">
             <h1 className="font-serif text-4xl md:text-6xl text-white mb-6">
@@ -181,7 +181,7 @@ const ContactPage: React.FC = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-primary-500/20">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8  border border-primary-500/20">
               <h2 className="text-3xl font-serif text-gray-900 mb-6">Send Us a Message</h2>
               
               {formSubmitted ? (

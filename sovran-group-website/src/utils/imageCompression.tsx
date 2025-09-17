@@ -1,28 +1,11 @@
 import React from 'react';
 import CompressedImage from '../components/CompressedImage';
 
-// This utility helps replace all <img> tags with <CompressedImage> tags
-// for automatic image compression across the application
+// This is a placeholder file to satisfy TypeScript module requirements
+// The actual implementation has been removed as images are now optimized during build
 
-// Default compression quality
+// Default compression quality (kept for API compatibility)
 const DEFAULT_QUALITY = 0.75;
-
-// Utility to patch the global Image component in React
-export const patchReactImage = () => {
-  console.warn('Image patching is experimental and may cause issues with some libraries');
-  
-  // This approach is risky and not recommended
-  // It's better to use the methods below instead
-};
-
-// Higher-order component to wrap components that use images
-export const withCompressedImages = (WrappedComponent: React.ComponentType<any>) => {
-  return (props: any) => {
-    // Implementation depends on the specific requirements
-    // This is a stub for a more complex implementation
-    return <WrappedComponent {...props} />;
-  };
-};
 
 // Provides a drop-in replacement for the standard <img> tag
 export const Image = (props: React.ImgHTMLAttributes<HTMLImageElement> & {
@@ -33,7 +16,7 @@ export const Image = (props: React.ImgHTMLAttributes<HTMLImageElement> & {
   const {
     src,
     alt = '',
-    quality = DEFAULT_QUALITY,
+    quality = DEFAULT_QUALITY, // Kept for API compatibility
     width,
     height,
     className,
@@ -60,7 +43,7 @@ export const Image = (props: React.ImgHTMLAttributes<HTMLImageElement> & {
       style={style}
       onLoad={onLoad as () => void}
       onError={onError as () => void}
-      objectFit={objectFit}
+      objectFit={objectFit as any}
       priority={priority}
       {...rest}
     />
@@ -72,7 +55,6 @@ export { CompressedImage };
 
 // Usage guide for different approaches
 export const compressionGuide = {
-  basic: 'Use <CompressedImage src="..." alt="..." /> directly',
+  basic: 'Use <CompressedImage src="..." alt="..." /> for images optimized during build',
   dropIn: 'Replace <img> with <Image> from this utility file',
-  advanced: 'Use the withCompressedImages HOC for wrapping components',
 };

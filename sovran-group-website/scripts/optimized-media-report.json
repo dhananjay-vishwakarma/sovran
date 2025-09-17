@@ -1,0 +1,2130 @@
+{
+  "kept": [
+    {
+      "path": "build/assets/avatar/1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/avatar/2.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/avatar/3.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/avatar/Daniel-Turner.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/avatar/Marcus-O-Neill.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/avatar/Nyla-Idrissi.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/avatar/Shiv-Patel.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/everyspacehasstory/bg.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/hero/1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/hero/2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/hero/3.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/icon/500w/SVG/8GoPIo.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/icon/500w/clients.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/icon/500w/experience.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/icon/500w/projects.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/032720_RH_M7_Develop.jpeg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/AdobeStock_1312472493.jpeg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/AdobeStock_586937970.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/After.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Before.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Bookshelvs_MrWardrobe-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Designed-for-sould-Taaj-kitchens-Homepage.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Dressing-Rooms.1.png.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249438-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249662-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249682-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Media Wall Reel.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Wardrobe reel.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249004-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249069-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209733.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210010.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/optimised/1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/optimised/2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/optimised/3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/optimised/4.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Fretwork-wardrobes_MrWarobe_0001.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Glass-door-wardrobes-_MrWardrobe5-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/MrWardrobe-Magazine--739x1024.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/MrWardrobe-home-theme.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Mrwardrobe-manufacturing-unit.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Review-1-Maria-Carolina-860x1024.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Review-2-Em-Sheldon.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Review-3-Mathew-and-Jason.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Review-4-Carlie-goodson.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-46-845.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe- bespoke home office.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Wine-lovers-dream-by-taaj-kitchens-1-2-1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/home-builder-2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/image-4-1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/10.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/11.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/12.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/13.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/14.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/portfolio/15.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/16.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/17.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/18.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/portfolio/3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/4.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/5.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/6.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/7.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/portfolio/8.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/portfolio/9.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/traditional-kitchen-extension.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/traditional-shaker-kitchen.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/verticals/1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/verticals/2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/verticals/3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/videos/Walkthrough.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/static/media/Asset 1.82ae5d0bf68e2be82313.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Asset 2.9cb4f126bdbde4762eb0.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Asset 3.caba02d8113b0106e1e6.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Asset 4.b2f74d5f9df841180137.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Asset 5.5ec67a188604ea4839d4.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Asset 6.8ea22aea4ec2b398eee4.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Chiswick home- Sovran1.18bef98c1b1010ac453f.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/Sovran-03-03.7daba6c2ae44e4352308.png",
+      "type": "image"
+    },
+    {
+      "path": "build/static/media/s.de94781dc4a54bb92b6b010955568afd.svg",
+      "type": "image"
+    }
+  ],
+  "removed": [
+    {
+      "path": "build/assets/icon/500w/SVG/clients.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/icon/500w/SVG/experience.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/icon/500w/SVG/projects.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Background-image-for-highligt-figures-Taaj-kitchens-Homepage-7.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Bars_MrWardrobe-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Chiswick-home-sovran11.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Designed-crafted-and-Installed-Taaj-kitchens-Homepage-2.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259797-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259802-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259832-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259837-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 2/Photos/P1259917-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 2/Photos/P1259952-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 2/Photos/P1260238-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 2/Photos/P1260253-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 2/Photos/P1260278-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249418-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249433-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249468-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 2/Photos/P1260193-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 2/Photos/P1260203-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/CORRUPT.Full House Reel 1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Full House Reel 2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249408-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249542-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249547-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249557-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249562-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249567-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249572-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249577-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249592-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249597-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249672-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249701-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1259992-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260038-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260043-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260063-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260068-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260088-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260093-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260113-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Landscape/Taaj_Dali_Kitchen_Media_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Landscape/Taaj_Dali_Wardrobe_Media_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Media Wall reel.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/CORRUPT.Taaj D&B - Hannah Price Loft Conversions Video Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1307857.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1307959.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1307984.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1307999.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1308019.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1308034.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Photoshoot/P1308152.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hannah Price/Taaj D&B - Hannah Price Loft Conversions Video Vertical.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248442-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248452-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248457-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248462-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248472-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248477-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248487-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248497-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248502-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 1/photos/P1248507-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 2/Photos/P1248589-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 2/Photos/P1248594-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248642-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248647-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248657-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248662-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248672-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248687-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248697-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248727-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 3/Photos/P1248732-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 4/Photos/P1248789-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 4/Photos/P1248819-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Bathroom 5/Photos/P1248860-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238055-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238105-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238130-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238155-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238165-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238170-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238180-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen/Photos/P1238200-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen (1)/CORRUPT.Taaj_Hubs&Meena_Kitchen_Landscape_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Kitchen (1)/CORRUPT.Taaj_Hubs&Meena_Kitchen_Portrait_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248271-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248281-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248291-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248296-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248306-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248316-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248321-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248326-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248331-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248336-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248341-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248346-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248391-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Living Room/Photos/P1248396-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Hubs & Meena/Whole House/CORRUPT.Taaj_Hubs&Meena_Internal_Reel_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/CORRUPT.TAAJ_John_Port_Updated_Logo.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/CORRUPT.Taaj_Johnathan_Logo_Fix.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Photos/P1211011.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Photos/P1211018.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Photos/P1211042.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Photos/P1211051.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Photos/P1211057.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Photos/P1211093.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/CORRUPT.TAAJ_Johnathan_V4.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/CORRUPT.Taaj_Johnathan_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Photos/P1172139.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Photos/P1172154.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Photos/P1172156.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Photos/P1172172.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Photos/P1172239.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Photos/P1172290.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/TAAJ_John_Port_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/TAAJ_John_Redo_Land_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Taaj_Johnathan_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Johnathan/Superseeded/Taaj_Johnathan_V3.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/CORRUPT.Taaj_Karim_Landscape_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1248959-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1248974-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1248984-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249019-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249044-HDR.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Taaj_Karim_Portrait_V1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Latifa - Bedroom + Wardrobe - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Latifa - Bedroom - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Latifa - Wardrobe - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210751.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210757.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210761.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210767.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210785.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210792.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210798.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210839.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210852.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210858.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210865.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210868.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210869.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210871.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210874.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210888.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210892.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210899.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210905.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210910.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210915.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210916.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/Photos/P1210918.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/SS/Bedroom + Wardrobe - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/SS/Latifa - Bedroom + Wardrobe - Landscape (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/SS/Latifa - Bedroom - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/SS/Latifa - Bedroom - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/SS/Latifa - Wardrobe - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Latifa/SS/Latifa - Wardrobe - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/CORRUPT.Mark - House - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Mark - Case Study 2 Portrait v3.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Mark - Case Study Landscape v3.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Mark - House 1 - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Mark - House 2 - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Mark - Kitchen - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Mark - Wardrobe - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bathroom/P1210194.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bathroom/P1210206.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 1/P1210124.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 1/P1210131.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 2/P1210152.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 2/P1210165.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 2/P1210240.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 2/SS/P1210155.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 2/SS/P1210171.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Bedroom 2/SS/P1210260.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209721.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209735.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209741.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1209981.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1209990.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210015.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 1/P1209843.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 1/P1209848.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 1/P1209928.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 2/P1210076.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 2/P1210088.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 2/P1210092.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Living room 2/P1210102.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/CORRUPT.Mark - Case Study - Landscape (2).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/CORRUPT.Mark - Case Study 2 - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study - Landscape (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study 1 - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study 1 - Portrait (2).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study 1 - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study 2 - Portrait (2).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Case Study 2 - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - House - Landscape (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - House - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - House 1 - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - House 1 - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - House 2 - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - House 2 - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Kitchen - Landscape (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Kitchen - Landscape.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Wardrobe - Portrait (1).mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/SS/Mark - Wardrobe - Portrait.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Dali/CORRUPT.Taaj_Dali_Wardrobe_Media_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Dali/Taaj_Dali_Full_House_2_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Dali/Taaj_Dali_Kitchen_Media_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Dali/Taaj_Dali_Media_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Hubs & Meena/CORRUPT.Taaj_Hubs&Meena_Internal_Reel_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Hubs & Meena/Taaj_Hubs&Meena_Kitchen_Portrait_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Karim/Taaj_Karim_Landscape_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/New Logo March Jobs/Karim/Taaj_Karim_Portrait_V2.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/Home-Renovations.1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Mr-Wardrobe-delivery-Van-1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/MrWardrobe-Design-support-e1688585963867.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Picsart_24-04-22_16-00-14-025-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Picsart_24-04-30_16-31-51-378-1024x1024.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Picturer-under-slider-1-1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Plain-Hinged-Wardrobe_MrWardrobe.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Press-1-min.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Shaker-wardrobe_MrWardrobe-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Sliding-door-wardrobes_MrWardrobe-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/1 render.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/2 render.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/2a.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Ajay Vaish Kitchen Quote.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Rhena Dhugga Kitchen Quote.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/20240606_184812.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/Picsart_24-07-05_11-10-42-543.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/Screenshot_20240411_200339_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/Screenshot_20240705_110640_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/blanco_uk_20240522_164000_0.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/capleuk_20240614_131335_0.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/liebherrhomeuk_20240529_112742_0.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/shethsinteriors_20240610_155748_0.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/vsnk024_l.webp",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/vsnk100_lrg.webp",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Accessories/vsnk259_l.webp",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114248.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114323.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114326.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114514.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114535.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114542.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240517_114545.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240518_130128.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240518_130138.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/20240518_130237.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Bar design-mrwardrobe.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Picsart_24-04-23_09-43-42-683.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Screenshot_20240629_105818_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Screenshot_20240629_105827_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Screenshot_20240704_171822_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Taaj Kitchens -Entertaiment.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Taaj Kitchens Wine+Cellar-+V3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Taak Kitchens BAR+V4.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/Wine celler.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Bars & Wine cellers/lorenzo_castillo_rest_hispania_MG_9214.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/IMG-20240613-WA0003.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/IMG-20240613-WA0006.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/IMG-20240613-WA0008.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/IMG-20240613-WA0009.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Interior Design 3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 10.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 11.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 12.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 4.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 5.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 6.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 7.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 8.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Mr wardrobe and taaj kitchens- headboard design 9.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/Picsart_23-05-22_13-18-02-394.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Beds & Headboards/instakekotlin.random.XorWowRandom@293d0b3_20250119_151117_0.bin.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_133851_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_133900_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_133909_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_133917_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_133925_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_134119_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_134129_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_134138_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Kids Room/Screenshot_20240806_134150_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/20240522_122809.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Majestic kitchen in Paris- Taaj kitchens- front view-close up.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Majestic kitchen in Paris- Taaj kitchens-Island,dining.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Majestic kitchen in Paris- Taaj kitchens-front view.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Majestic kitchen in Paris- Taaj kitchens-side view.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-04-22_16-00-14-025.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-04-25_14-48-14-896.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-04-25_14-51-58-189.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-05-30_18-01-50-625.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-03_15-46-56-248.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-34-58-581.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-36-39-562.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-29_13-29-43-440.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-07-03_16-15-16-081.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-07-03_16-17-53-570.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Screenshot 2024-07-02 191304.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Screenshot_20240315_141901_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Screenshot_20240315_141916_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Screenshot_20240325_181315_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Screenshot_20240426_165804_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Screenshot_20240629_105840_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Taaj kitchens design.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Taaj kitchens- FLUTED-KITCHEN_05.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Taaj kitchens-inspo.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Taaj kitchens_FLUTED-KITCHEN_03.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Taaj kitchens_FLUTED-KITCHEN_CAMEO_F01.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/luxury-kitchen-design-projecct-juliettes-interiors-1-1440x810.webp",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/taaj kitchens inspo 2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/20200125_035216.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/20200616_152050_IMG_20191120_120029_998.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/2533288c9b4e85a2ddbb61006c7d0d94.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Bespoke office mr wardrobe .jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG-20200907-WA0026.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG-20200907-WA0027.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG-20201001-WA0018.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG-20220208-WA0006.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG-20220208-WA0008.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG-20220208-WA0009.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0011.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0017.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0096.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0097.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0103.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0106.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0107.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0108.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0110.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/IMG_0111.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Picsart_24-04-23_10-51-55-533.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Picsart_24-05-10_17-17-07-197.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20210105-192112_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20210108-123741_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20210322-141852_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20220614-170055_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20220614-170110_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20220722-175111_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20230926_210644_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20240324_180612_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20240324_180620_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20240324_180633_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/Screenshot_20240716_160457_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/VID-20210503-WA0057.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/VID-20210507-WA0043.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/hayfieldhomes_20240716_160627_0.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe- fitted home office.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe- home office decor.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe-fitted home office 2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/20200616_151920_20200607_231508.JPG",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/20240522_125622.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Light tower- Storage drawers with intigrated lighting.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot 2024-07-02 191439.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot 2024-07-02 191725.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot 2024-07-02 191755.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot_20210106-192226_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot_20210106-193310_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot_20210608-231632_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Screenshot_20240411_171028_Instagram.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Taaj kitchens design 1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Taaj kitchens- display cabinets storage .jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Pantries/Taaj kitchens- display cabinets storage 1.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/035ecc212632713.673a08b0d28d3.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/20240522_125622.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Picsart_23-04-07_17-28-08-218.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Picsart_23-04-07_17-28-36-733.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Picsart_23-04-07_17-29-00-438.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Picsart_24-07-03_16-17-53-570.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot 2025-01-05 170009.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot 2025-01-05 170043.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot 2025-01-05 170107.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot_20240315_141857_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot_20240315_141901_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot_20240315_141908_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot_20240315_141912_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Screenshot_20240315_141916_Behance.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Taaj Kitchen+V2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Taaj Kitchens -Entertaiment.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Taaj Kitchens -large scandinavian kitchen.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Taaj Kitchens Kitchen+.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/Taaj Kitchens+Living+V2.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Scandinavian - Japandi Kitchens/c6cced212632713.675a7e7503d16.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Taaj-kitchens-Homepage-e1736774098222-1024x896.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Taaj-kitchens-Homepage-e1736774098222.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Taaj-kitchens-London-showroom-1-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Testimonial-1-Taaj-kitchens-1024x892.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/The-french-beauty-by-taaj-kitchens-Title-1-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Top-slider-2-Taaj-Kitchens.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Tv-units_MrWardrobe-scaled.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/Utility-room-.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/WhatsApp-Image-2023-06-05-at-12.58.10-PM.jpeg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/image-5-1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/image-6-1-1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/images/rawpixel-274860-unsplash.jpg",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/videos/1.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/videos/Mark-Case_Study_1_Portrait_v3.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/assets/videos/kitchen-design.mp4",
+      "type": "video"
+    },
+    {
+      "path": "build/favicon-simple.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/favicon.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/logo192.png",
+      "type": "image"
+    },
+    {
+      "path": "build/logo512.png",
+      "type": "image"
+    },
+    {
+      "path": "build/sovran-s.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/svg/SVG/Asset 1.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/svg/SVG/Asset 2.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/svg/SVG/Asset 3.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/svg/SVG/Asset 4.svg",
+      "type": "image"
+    },
+    {
+      "path": "build/svg/SVG/Asset 5.svg",
+      "type": "image"
+    }
+  ]
+}

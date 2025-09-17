@@ -12,22 +12,13 @@ import SovranBuildersTemplate from './templates/SovranBuildersTemplate';
 import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ExitIntentPopup from './components/ExitIntentPopup';
-import { setupImageCompression } from './utils/ImageCompressor';
 import './App.css';
 import './styles/media-cards.css';
 
 function App() {
   const [showExitPopup, setShowExitPopup] = useState(false);
-  
-  // Initialize global image compression
-  useEffect(() => {
-    // Setup global image compression
-    const cleanup = setupImageCompression();
-    
-    // Cleanup when component unmounts
-    return cleanup;
-  }, []);
-  
+
+
   // Check if the popup should be shown based on localStorage
   const shouldShowPopup = useCallback(() => {
     // Don't show on contact page

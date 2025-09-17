@@ -5,13 +5,59 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+// Load all SVGs from /src/assets/svgs
+// @ts-ignore
+const svgContext = require.context('../assets/svgs', false, /\.svg$/);
+const svgPaths = svgContext.keys().map(svgContext);
+
 const ProblemSolutionHookSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const svgContainerRef = useRef<HTMLDivElement>(null);
+  // Get a random SVG index on component mount only
+  const randomSvgIndex = useRef<number>(Math.floor(Math.random() * svgPaths.length));
 
   const headingTextPart1 = "One vision, A dozen specialists, A hundred moving parts. We bring them all – the best architects, designers, project managers, and suppliers.";
   const headingTextPart2 = "One team. One roof. One smooth journey.";
-  const paragraphText = "With Sovran, you’re not chasing quotes or managing chaos. From planning permissions to final finishes, our in-house specialists and trusted partners work in perfect harmony — so every stage of your project moves forward with clarity, precision, and care.";
+  const paragraphText = "With Sovran, you're not chasing quotes or managing chaos. From planning permissions to final finishes, our in-house specialists and trusted partners work in perfect harmony — so every stage of your project moves forward with clarity, precision, and care.";
 
+  // Function to load and display a new SVG
+  const loadSvg = (index: number) => {
+    if (!svgContainerRef.current) return;
+    
+    const svgPath = svgPaths[index];
+    if (!svgPath) return;
+    
+    fetch(svgPath)
+      .then((res) => res.text())
+      .then((svgText) => {
+        if (!svgContainerRef.current) return;
+        
+        // Clear current SVG
+        svgContainerRef.current.innerHTML = '';
+        
+        // Add new SVG
+        svgContainerRef.current.innerHTML = svgText;
+        const svg = svgContainerRef.current.querySelector('svg');
+        if (!svg) return;
+        
+        // Style the SVG
+        svg.setAttribute('class', 'w-full h-full object-contain transition-opacity duration-500');
+        svg.setAttribute('style', 'opacity: 0');
+        
+        // Animate the SVG in
+        setTimeout(() => {
+          if (svg) svg.setAttribute('style', 'opacity: 1');
+        }, 100);
+      })
+      .catch((error) => {
+        console.error("Error loading SVG:", error);
+        if (svgContainerRef.current) {
+          svgContainerRef.current.innerHTML = `<img src="${svgPath}" class="w-full h-full object-contain" alt="decorative" />`;
+        }
+      });
+  };
+
+  // Set up text animations
   useEffect(() => {
     if (!sectionRef.current) return;
 
@@ -88,27 +134,47 @@ const ProblemSolutionHookSection: React.FC = () => {
     };
   }, []);
 
+  // Load a random SVG on component mount only
+  useEffect(() => {
+    // Load the randomly selected SVG
+    loadSvg(randomSvgIndex.current);
+    
+    return () => {
+      if (svgContainerRef.current) {
+        svgContainerRef.current.innerHTML = '';
+      }
+    };
+  }, []);
+
   return (
- <section
-  ref={sectionRef}
-  className="pt-40 px-4 sm:px-6 lg:px-8 bg-primary-50 text-[#081E27] reveal-npm up py-32"
->
-  <div className="max-w-5xl mx-auto text-center">
-    <h2 className="text-4xl md:text-5xl lg:text-[72px] mb-8 leading-[1.25]">
-      {headingTextPart1}
-      <br />
-      <span className="text-4xl sm:text-4xl pt-16 pb-8 block">{headingTextPart2}</span>
-    </h2>
+    <section
+      ref={sectionRef}
+      className="pt-40 px-4 sm:px-6 lg:px-8 bg-primary-50 text-[#081E27] reveal-npm up py-32"
+    >
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl lg:text-[72px] mb-8 leading-[1.25]">
+          {headingTextPart1}
+          <br />
+          <span className="text-4xl sm:text-4xl pt-16 pb-8 block">{headingTextPart2}</span>
+        </h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-6">
-      <div className="md:col-span-7"></div>
+        <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-6">
+          <div className="md:col-span-7 flex justify-center items-center">
+            <div 
+              ref={svgContainerRef} 
+              className="w-[400px] svg-container"
+              style={{ opacity: 0.8 }}
+            >
+              {/* SVGs will be loaded here dynamically */}
+            </div>
+          </div>
 
-      <div className="md:col-span-5 md:text-left">
-        <p className="text-xl text-dark-900/90">{paragraphText}</p>
+          <div className="md:col-span-5 md:text-left">
+            <p className="text-[1.5rem] text-dark-900/90">{paragraphText}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
 

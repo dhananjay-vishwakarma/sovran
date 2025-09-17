@@ -5,6 +5,28 @@
 /* IvyMode Font Styles from Typekit */
 /* The font is loaded via the Typekit CSS link in index.html */
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Advanced Smooth Scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html, body.smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Optional: Parallax element styles */
+.parallax-element {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
 /* IvyMode Font Variations */
 .ivymode-thin {
   font-family: "ivymode", sans-serif;
@@ -113,7 +135,10 @@ h1, h2, h3, h4, h5, h6, .large-text, .heading, .title {
 }
 
 :root {
+  --scroll-timeline-opacity: 0;
+}
 
+html {
 }
 
 body {
@@ -125,6 +150,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #081E27; /* Black */
   color: #ffffff; /* White */
+  /* Add smooth scroll with ease-out easing */
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -193,6 +221,23 @@ code {
 
 .font-serif {
   font-family: "ivymode", serif;
+}
+
+/* Smooth Scrolling */
+.smooth-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.smooth-content {
+  will-change: transform;
+}
+
+/* ScrollSmoother needs to have the content elements relative */
+.smooth-content * {
+  position: relative;
 }
 
 /* Custom Animations */

@@ -1,0 +1,20 @@
+/* Mega Menu Positioning Fixes */
+
+/* Fix for menu centering when scrolled */
+.header-nav.scrolled .mega-menu-wrapper .mega-menu {
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0 !important;
+}
+
+/* Ensure backdrop blur works on all browsers */
+.mega-menu {
+  background-color: rgba(8, 30, 39, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Ensure menu has proper width in scrolled state */
+.header-nav.scrolled .mega-menu-wrapper {
+  position: static;
+}

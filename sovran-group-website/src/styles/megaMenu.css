@@ -13,6 +13,9 @@
   contain: content;
   /* Use opacity-only transitions for better performance */
   transition: opacity 0.15s ease, visibility 0.15s;
+  /* Force backdrop filter */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 /* Force hardware acceleration for smoother animations */

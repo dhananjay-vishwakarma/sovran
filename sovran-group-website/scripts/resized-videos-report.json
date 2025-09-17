@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "totalVideos": 7,
+    "resizedVideos": 3,
+    "skippedVideos": 4,
+    "failedVideos": 0,
+    "totalSavedBytes": 134811496,
+    "totalSavedFormatted": "128.57 MB"
+  },
+  "resizedVideos": [
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Media Wall Reel.mp4",
+      "originalSize": 81292834,
+      "newSize": 8121261,
+      "originalDimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "newDimensions": {
+        "width": 404,
+        "height": 720
+      },
+      "duration": 31.88,
+      "byteSaved": 73171573,
+      "percentSaved": 90
+    },
+    {
+      "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Wardrobe reel.mp4",
+      "originalSize": 66946959,
+      "newSize": 6657434,
+      "originalDimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "newDimensions": {
+        "width": 404,
+        "height": 720
+      },
+      "duration": 26.74,
+      "byteSaved": 60289525,
+      "percentSaved": 90
+    },
+    {
+      "path": "assets/videos/Walkthrough.mp4",
+      "originalSize": 3656183,
+      "newSize": 2305785,
+      "originalDimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "newDimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "duration": 9.15,
+      "byteSaved": 1350398,
+      "percentSaved": 37
+    }
+  ],
+  "skippedVideos": [
+    {
+      "path": "assets/hero/2.mp4",
+      "reason": "Already within size limits",
+      "dimensions": {
+        "width": 600,
+        "height": 480
+      }
+    },
+    {
+      "path": "assets/images/portfolio/14.mp4",
+      "reason": "Already within size limits",
+      "dimensions": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    {
+      "path": "assets/images/portfolio/2.mp4",
+      "reason": "Already within size limits",
+      "dimensions": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    {
+      "path": "assets/images/portfolio/8.mp4",
+      "reason": "Already within size limits",
+      "dimensions": {
+        "width": 500,
+        "height": 500
+      }
+    }
+  ],
+  "failedVideos": []
+}

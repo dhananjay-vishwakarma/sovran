@@ -12,6 +12,24 @@
   margin: 0 auto;
   border-radius: 1rem;
   overflow: hidden;
+  cursor: pointer;
+}
+
+/* Zoom effect for images */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.zoom-effect {
+  animation: zoomInOut 15s infinite ease-in-out;
 }
 
 /* Large screens (desktop) */

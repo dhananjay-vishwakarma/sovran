@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const DesignTestimonialsSection: React.FC = () => {
+  // State for counters
+  const [projectCount, setProjectCount] = useState(1785);
+  const [satisfactionCount, setSatisfactionCount] = useState(98);
+  const [awardsCount, setAwardsCount] = useState(15);
+  const [yearsCount, setYearsCount] = useState(7);
+  
+  // Max counts (current + 50 for projects, smaller increments for others)
+  const maxProjectCount = 1835;
+  const maxSatisfactionCount = 99;
+  const maxAwardsCount = 20;
+  const maxYearsCount = 10;
+  
+  // Refs for intervals
+  const projectIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const satisfactionIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const awardsIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const yearsIntervalRef = useRef<NodeJS.Timeout | null>(null);
   // Profile images from Dropbox (using available assets)
   const profileImages = [
     "/assets/images/032720_RH_M7_Develop.jpeg",
@@ -9,6 +26,101 @@ const DesignTestimonialsSection: React.FC = () => {
     "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
     "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png"
   ];
+  
+  // Counter animation effect
+  useEffect(() => {
+    // Start the counter intervals with a slight delay between them
+    setTimeout(() => {
+      // Projects counter
+      projectIntervalRef.current = setInterval(() => {
+        setProjectCount(prevCount => {
+          // Randomly increment by 1 or 2
+          const increment = Math.random() > 0.5 ? 1 : 2;
+          const newCount = prevCount + increment;
+          
+          // If we reached or exceeded the max, clear the interval
+          if (newCount >= maxProjectCount) {
+            if (projectIntervalRef.current) {
+              clearInterval(projectIntervalRef.current);
+              projectIntervalRef.current = null;
+            }
+            return maxProjectCount;
+          }
+          
+          return newCount;
+        });
+      }, Math.floor(Math.random() * 2000) + 2000); // Random interval between 2-4 seconds
+    }, 1000);
+    
+    // Satisfaction counter
+    setTimeout(() => {
+      satisfactionIntervalRef.current = setInterval(() => {
+        setSatisfactionCount(prevCount => {
+          // Only increment by 0.1 or 0.2 since this is a percentage
+          const increment = Math.random() > 0.5 ? 0.1 : 0.2;
+          const newCount = Math.round((prevCount + increment) * 10) / 10; // Round to 1 decimal
+          
+          if (newCount >= maxSatisfactionCount) {
+            if (satisfactionIntervalRef.current) {
+              clearInterval(satisfactionIntervalRef.current);
+              satisfactionIntervalRef.current = null;
+            }
+            return maxSatisfactionCount;
+          }
+          
+          return newCount;
+        });
+      }, Math.floor(Math.random() * 2000) + 2000);
+    }, 1500);
+    
+    // Awards counter
+    setTimeout(() => {
+      awardsIntervalRef.current = setInterval(() => {
+        setAwardsCount(prevCount => {
+          const increment = Math.random() > 0.7 ? 1 : 0; // Less frequent increments
+          const newCount = prevCount + increment;
+          
+          if (newCount >= maxAwardsCount) {
+            if (awardsIntervalRef.current) {
+              clearInterval(awardsIntervalRef.current);
+              awardsIntervalRef.current = null;
+            }
+            return maxAwardsCount;
+          }
+          
+          return newCount;
+        });
+      }, Math.floor(Math.random() * 2000) + 2000);
+    }, 2000);
+    
+    // Years counter
+    setTimeout(() => {
+      yearsIntervalRef.current = setInterval(() => {
+        setYearsCount(prevCount => {
+          const increment = Math.random() > 0.7 ? 1 : 0; // Less frequent increments
+          const newCount = prevCount + increment;
+          
+          if (newCount >= maxYearsCount) {
+            if (yearsIntervalRef.current) {
+              clearInterval(yearsIntervalRef.current);
+              yearsIntervalRef.current = null;
+            }
+            return maxYearsCount;
+          }
+          
+          return newCount;
+        });
+      }, Math.floor(Math.random() * 2000) + 2000);
+    }, 2500);
+    
+    // Cleanup function
+    return () => {
+      if (projectIntervalRef.current) clearInterval(projectIntervalRef.current);
+      if (satisfactionIntervalRef.current) clearInterval(satisfactionIntervalRef.current);
+      if (awardsIntervalRef.current) clearInterval(awardsIntervalRef.current);
+      if (yearsIntervalRef.current) clearInterval(yearsIntervalRef.current);
+    };
+  }, []);
   
   const testimonials = [
     {
@@ -70,19 +182,19 @@ const DesignTestimonialsSection: React.FC = () => {
             <h3 className="text-2xl  text-center mb-8">Our Success in Numbers</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div className="p-4">
-                <div className="text-4xl  text-amber-500 mb-2">1785+</div>
+                <div className="text-4xl  text-amber-500 mb-2">{projectCount}+</div>
                 <p className="text-gray-600">Projects Completed</p>
               </div>
               <div className="p-4">
-                <div className="text-4xl  text-amber-500 mb-2">98%</div>
+                <div className="text-4xl  text-amber-500 mb-2">{satisfactionCount}%</div>
                 <p className="text-gray-600">Client Satisfaction</p>
               </div>
               <div className="p-4">
-                <div className="text-4xl  text-amber-500 mb-2">15+</div>
+                <div className="text-4xl  text-amber-500 mb-2">{awardsCount}+</div>
                 <p className="text-gray-600">Design Awards</p>
               </div>
               <div className="p-4">
-                <div className="text-4xl  text-amber-500 mb-2">7+</div>
+                <div className="text-4xl  text-amber-500 mb-2">{yearsCount}+</div>
                 <p className="text-gray-600">Years of Excellence</p>
               </div>
             </div>

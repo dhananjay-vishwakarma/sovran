@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="mt-4">
                 <p className="text-gray-400">
-                  2nd floor, Saracen House, Swan St,<br /> Isleworth TW7 6RJ, United Kingdom
+                  2nd floor, Saracen House, Swan St,Isleworth TW7 6RJ, United Kingdom
                 </p>
               </li>
             </ul>

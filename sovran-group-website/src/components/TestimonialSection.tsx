@@ -1,10 +1,41 @@
-import React, { useState, useRef, useEffect, TouchEvent, MouseEvent } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/testimonial-carousel.css';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
+// Additional styles for testimonial
+const additionalStyles = `
+  .testimonial-client-avatar {
+    transition: all 0.3s ease;
+  }
+  .testimonial-client-avatar:hover {
+    transform: scale(1.1);
+  }
+  .testimonial-avatar {
+    border-color: #CDAD7D;
+  }
+  .star-rating {
+    display: inline-flex;
+    transition: all 0.3s ease;
+  }
+  .star-rating i:hover {
+    transform: scale(1.2);
+  }
+  .testimonial-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-item {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+`;
 
 // Testimonial Type
 interface Testimonial {
@@ -13,6 +44,7 @@ interface Testimonial {
   author: string;
   position: string;
   avatar?: string;
+  clientAvatar?: string;
 }
 
 // Modal interface
@@ -25,44 +57,32 @@ interface ModalProps {
   position: string;
 }
 
-// Array of profile images that can be randomly assigned
-// Replace these with your actual Dropbox links when available
-const profileImages = [
-  "/assets/images/032720_RH_M7_Develop.jpeg",
-  "/assets/images/AdobeStock_1312472493.jpeg", 
-  "/assets/images/After.jpg",
-  "/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg",
-  "/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png"
-];
+// Profile images array removed as we're using the pre-defined images in testimonials
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    text: "Great work and very respectful team. Went above and beyond in many cases and got a great finishing. I would definitely recommend/ use the team again for future renovations!",
-    author: "Kensington Home Renovation",
-    position: "Residential Project",
-    avatar: "/images/MrWardrobe-Design-support-e1688585963867.jpg"
+    text: "\"5 Years of Successfull Partnership\"\n\nWe've worked with Sovran for over five years on multiple developments. Their consistency, attention to detail, and reliability keep us coming back...they deliver exactly what high-value projects demand.",
+    author: "Marcus O'Neill",
+    position: "Prestigious real estate Developer",
+    avatar: "/assets/avatar/1.png",
+    clientAvatar: "/assets/avatar/Marcus-O-Neill.png"
   },
   {
     id: 2,
-    text: "Have used Sovran for house extension and they have been very helpful. Their team assisted me and my family from the architectural plans to the completion of the construction work; they have been extremely supportive throughout and made the process very easy for us. Would recommend to anyone and prices are a bargain for the service you get in return.",
-    author: "Harrow Double Storey Extension",
-    position: "Extension Project",
-    avatar: "/images/MrWardrobe-Design-support-e1688585963867.jpg"
+    text: "\"Went Beyond Our Expectation\"\n\nThey understood our vision and went above and beyond their limits to deliver it. The final results are even better than our expectations. I would definitely recommend / use the team again for future renovations!",
+    author: "Nyla Idrissi",
+    position: "Contemporary New Build",
+    avatar: "/assets/avatar/2.png",
+    clientAvatar: "/assets/avatar/Nyla-Idrissi.png"
   },
   {
     id: 3,
-    text: "Really good guys, they are trustworthy and efficient. Had no issues and everything was taken care of. I got a loft extension for my son and they made it so spacious and decorated it very nicely. Any work I always come to these guys, they're easy to talk to and take care of everything for you.",
-    author: "Ealing Loft Conversion",
-    position: "Loft Project",
-    avatar: "/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg"
-  },
-  {
-    id: 4,
-    text: "I spent so long trying to find genuine people that don't rip you off and I can honestly say I have finally found them!!! The guys at Sovran, especially Avtar and team has been super helpful and knowledgeable regarding our project. They are people I can truly trust and rely on - you'll know when you meet them! I got a rear extension built for our growing family, communication was great from start to finish and the finish was much more than what I could've asked for - they really know their stuff! If you're like me and struggle to find reliable people, I can assure you these guys are ones you can count on.",
-    author: "Richmond Rear Extension",
-    position: "Extension Project",
-    avatar: "/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg"
+    text: "\"MILITARY LEVEL PRECISION\"\n\nWhat impressed us most was discretion. Sovran worked in our home quietly, respectfully, with military precision. The result is stunning, but the experience itself was priceless — a team you can truly trust.",
+    author: "Shiv Patel",
+    position: "Extension & Renovation",
+    avatar: "/assets/avatar/3.png",
+    clientAvatar: "/assets/avatar/Shiv-Patel.png"
   }
 ];
 
@@ -110,22 +130,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, content, author, 
         ref={modalContentRef}
         className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-auto shadow-xl modal-content"
       >
-        <div className="p-6 flex flex-col">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-2xl font-medium text-[#081E27] ivymode-regular">{title}</h3>
-            <button 
-              onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 transition-colors p-1 rounded-full hover:bg-gray-100"
-              aria-label="Close modal"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="mb-6">
-            <p className="text-lg text-dark-900/90 font-lato leading-relaxed">"{content}"</p>
-          </div>
+                  <div className="p-6 flex flex-col">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-2xl font-medium text-[#081E27] ivymode-regular">{title}</h3>
+              <button 
+                onClick={onClose}
+                className="text-gray-500 hover:text-gray-700 transition-colors p-1 rounded-full hover:bg-gray-100"
+                aria-label="Close modal"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="mb-6">
+              <p className="text-lg text-dark-900/90 font-lato leading-relaxed">{content}</p>
+            </div>
           <div className="mt-auto border-t border-gray-200 pt-4">
             <h4 className="text-[#081E27] text-lg font-medium">{author}</h4>
             <p className="text-gray-600 text-sm">{position}</p>
@@ -141,29 +161,42 @@ const TestimonialSection: React.FC = () => {
   const testimonialContainerRef = useRef<HTMLDivElement>(null);
   const autoRotateTimerRef = useRef<NodeJS.Timeout | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [startX, setStartX] = useState<number | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
   const [randomizedTestimonials, setRandomizedTestimonials] = useState<Testimonial[]>([]);
   
-  // Randomize testimonial images on initial load
+  // Position control settings (x, y coordinates and z-index)
+  const [positions, setPositions] = useState({
+    avatarX: -130, // Controls left/right position of project image
+    avatarY: 167, // Controls top/bottom position of project image (higher values move it down)
+    arrowsY: 94, // Controls top position of navigation arrows
+    arrowsZ: 20, // Controls z-index of navigation arrows
+    clientInfoY: -20, // Controls top margin of client info section
+    containerHeight: 340, // Controls height of testimonial container
+    rightColumnHeight: 340, // Controls height of right column
+  });
+  
+  // Project counter animation
+  const [projectCount, setProjectCount] = useState(785);
+  const maxCount = 835; // 785 + 50
+  const countingIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Use testimonial images sequentially (no randomization)
   useEffect(() => {
-    const assignRandomImages = () => {
-      return testimonials.map(testimonial => {
-        const randomImageIndex = Math.floor(Math.random() * profileImages.length);
-        return {
-          ...testimonial,
-          avatar: profileImages[randomImageIndex]
-        };
-      });
-    };
-    
-    setRandomizedTestimonials(assignRandomImages());
+    // Simply use the images directly from the testimonials array
+    // without any randomization
+    setRandomizedTestimonials(testimonials);
   }, []);
 
   // Text animation effect
   useEffect(() => {
     const el = headingRef.current;
     if (!el) return;
+
+    // Add the additional styles to the document head
+    const styleEl = document.createElement('style');
+    styleEl.type = 'text/css';
+    styleEl.appendChild(document.createTextNode(additionalStyles));
+    document.head.appendChild(styleEl);
 
     const text = el.textContent || '';
     el.textContent = '';
@@ -197,6 +230,12 @@ const TestimonialSection: React.FC = () => {
     return () => {
       trig.kill(true);
       animation.kill();
+      
+      // Remove the additional styles
+      const styleEl = document.querySelector('style[type="text/css"]');
+      if (styleEl && styleEl.textContent?.includes('testimonial-client-avatar')) {
+        styleEl.remove();
+      }
     };
   }, []);
   
@@ -208,6 +247,7 @@ const TestimonialSection: React.FC = () => {
       }
       
       autoRotateTimerRef.current = setInterval(() => {
+        setSlideDirection('right');
         setActiveIndex(prevIndex => (prevIndex + 1) % randomizedTestimonials.length);
       }, 5000); // Change testimonial every 5 seconds
     };
@@ -225,71 +265,68 @@ const TestimonialSection: React.FC = () => {
     };
   }, [randomizedTestimonials.length]);
   
-  // Handle manual navigation
-  const handleDotClick = (i: number) => {
-    setActiveIndex(i);
+  // Counter animation for project count
+  useEffect(() => {
+    // Start the counter interval
+    countingIntervalRef.current = setInterval(() => {
+      setProjectCount(prevCount => {
+        // Randomly increment by 1 or 2
+        const increment = Math.random() > 0.5 ? 1 : 2;
+        const newCount = prevCount + increment;
+        
+        // If we reached or exceeded the max, clear the interval and return exactly the max
+        if (newCount >= maxCount) {
+          if (countingIntervalRef.current) {
+            clearInterval(countingIntervalRef.current);
+            countingIntervalRef.current = null;
+          }
+          return maxCount;
+        }
+        
+        return newCount;
+      });
+    }, Math.floor(Math.random() * 3000) + 2000); // Random interval between 2-5 seconds
     
-    // Reset auto-rotation timer when manually changing
+    // Cleanup function
+    return () => {
+      if (countingIntervalRef.current) {
+        clearInterval(countingIntervalRef.current);
+      }
+    };
+  }, []);
+  
+  // Handle navigation
+  const handleDotClick = (i: number) => {
+    setSlideDirection(i > activeIndex ? 'right' : 'left');
+    setActiveIndex(i);
+    resetAutoRotateTimer();
+  };
+  
+  // Navigation arrows
+  const handlePrevious = () => {
+    setSlideDirection('left');
+    setActiveIndex(prevIndex => 
+      prevIndex === 0 ? randomizedTestimonials.length - 1 : prevIndex - 1
+    );
+    resetAutoRotateTimer();
+  };
+  
+  const handleNext = () => {
+    setSlideDirection('right');
+    setActiveIndex(prevIndex => 
+      (prevIndex + 1) % randomizedTestimonials.length
+    );
+    resetAutoRotateTimer();
+  };
+  
+  // Reset auto-rotation timer when manually changing
+  const resetAutoRotateTimer = () => {
     if (autoRotateTimerRef.current) {
       clearInterval(autoRotateTimerRef.current);
       autoRotateTimerRef.current = setInterval(() => {
+        setSlideDirection('right');
         setActiveIndex(prevIndex => (prevIndex + 1) % randomizedTestimonials.length);
       }, 5000);
-    }
-  };
-  
-  // Drag functionality
-  const handleTouchStart = (e: TouchEvent) => {
-    setStartX(e.touches[0].clientX);
-    setIsDragging(true);
-  };
-  
-  const handleMouseStart = (e: MouseEvent) => {
-    setStartX(e.clientX);
-    setIsDragging(true);
-  };
-  
-  const handleTouchEnd = (e: TouchEvent) => {
-    if (startX !== null && isDragging) {
-      const endX = e.changedTouches[0].clientX;
-      handleSwipe(endX - startX);
-    }
-    setStartX(null);
-    setIsDragging(false);
-  };
-  
-  const handleMouseEnd = (e: MouseEvent) => {
-    if (startX !== null && isDragging) {
-      const endX = e.clientX;
-      handleSwipe(endX - startX);
-    }
-    setStartX(null);
-    setIsDragging(false);
-  };
-  
-  const handleSwipe = (deltaX: number) => {
-    const minSwipeDistance = 50;
-    
-    if (Math.abs(deltaX) > minSwipeDistance) {
-      if (deltaX > 0) {
-        // Swiped right - show previous
-        setActiveIndex(prevIndex => 
-          prevIndex === 0 ? randomizedTestimonials.length - 1 : prevIndex - 1
-        );
-      } else {
-        // Swiped left - show next
-        setActiveIndex(prevIndex => 
-          (prevIndex + 1) % randomizedTestimonials.length
-        );
-      }
-      
-      // Reset auto-rotation timer when manually changing
-      if (autoRotateTimerRef.current) {
-        clearInterval(autoRotateTimerRef.current);
-        autoRotateTimerRef.current = setInterval(() => {
-          setActiveIndex(prevIndex => (prevIndex + 1) % randomizedTestimonials.length);
-        }, 5000);
-      }
     }
   };
 
@@ -303,9 +340,21 @@ const TestimonialSection: React.FC = () => {
   });
 
   const openModal = (title: string, content: string, author: string, position: string) => {
+    // Extract the title from the content if it exists in the format "TITLE"\n\nContent
+    let modalTitle = title;
+    let modalContent = content;
+    
+    if (content.includes('\n\n')) {
+      const parts = content.split('\n\n');
+      // Use the quoted title part as the modal title
+      modalTitle = parts[0].replace(/\"/g, '');
+      // Use just the content part for the modal content
+      modalContent = parts[1];
+    }
+    
     setModalContent({
-      title,
-      content,
+      title: modalTitle,
+      content: modalContent,
       author,
       position
     });
@@ -317,7 +366,10 @@ const TestimonialSection: React.FC = () => {
   };
 
   // Function to truncate text
-  const truncateText = (text: string, maxLength: number = 180) => {
+  const truncateText = (text: string, maxLength: number = 250) => {
+    // Don't include the title part in the length calculation if it's in the format "TITLE"\n\nContent
+    if (!text) return "";
+    
     if (text.length <= maxLength) return text;
     
     // Find the last space before maxLength to avoid cutting words
@@ -329,75 +381,143 @@ const TestimonialSection: React.FC = () => {
 
   return (
     <section className="py-20 md:py-28 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          <div className="lg:col-span-8">
-            <div className="mb-4">
-              <span className="text-primary-500 text-sm font-lato uppercase tracking-wider">TESTIMONIAL</span>
-            </div>
+      <div className="container mx-auto px-2 max-w-7xl">
+        <div className="mb-4">
+          <span className="text-primary-500 text-sm font-lato uppercase tracking-wider">TESTIMONIAL</span>
+        </div>
 
-            <h2 ref={headingRef} className="text-4xl md:text-5xl text-[#081E27] mb-12 ivymode-regular">Proven Expertise, Tangible Results</h2>
-
+        <h2 ref={headingRef} className="text-4xl md:text-5xl text-[#081E27] mb-28 ivymode-regular">Proven Expertise, Tangible Results</h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-stretch">
+          <div className="lg:col-span-8 flex flex-col">
             <div>
-              <div 
-                ref={testimonialContainerRef}
-                className={`testimonial-container min-h-[220px] cursor-grab active:cursor-grabbing ${isDragging ? 'dragging' : ''}`}
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-                onMouseDown={handleMouseStart}
-                onMouseUp={handleMouseEnd}
-                onMouseLeave={(e) => isDragging && handleMouseEnd(e)}
-              >
-                {randomizedTestimonials.map((t, idx) => (
-                  <div key={t.id} 
-                    className={`testimonial-item transition-all duration-500 ease-in-out transform ${
-                      idx === activeIndex 
-                      ? 'opacity-100 scale-100 translate-x-0' 
-                      : 'opacity-0 scale-95 translate-x-8 hidden'
-                    }`}
-                  >
-                    <div className="relative">
-                      <div className="absolute -left-8 -top-8 text-primary-500/20 text-8xl font-serif">"</div>
+              <div className="relative">
+                {/* Previous Arrow with dynamic position */}
+                <button 
+                  onClick={handlePrevious}
+                  className="absolute left-0 bg-white/80 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all duration-300 -ml-5"
+                  style={{
+                    top: `${positions.arrowsY}px`,
+                    zIndex: positions.arrowsZ
+                  }}
+                  aria-label="Previous testimonial"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#081E27]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                
+                {/* Next Arrow with dynamic position */}
+                <button 
+                  onClick={handleNext}
+                  className="absolute right-0 bg-white/80 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all duration-300 -mr-5"
+                  style={{
+                    top: `${positions.arrowsY}px`,
+                    zIndex: positions.arrowsZ
+                  }}
+                  aria-label="Next testimonial"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#081E27]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              
+                <div 
+                  ref={testimonialContainerRef}
+                  className="testimonial-container relative overflow-visible"
+                  style={{ minHeight: `${positions.containerHeight}px` }}
+                >
+                  {randomizedTestimonials.map((t, idx) => (
+                    <div key={t.id} 
+                      className={`testimonial-item absolute top-0 left-0 w-full transition-all duration-500 ease-in-out transform ${
+                        idx === activeIndex 
+                        ? 'opacity-100 translate-x-0 z-10' 
+                        : slideDirection === 'right'
+                          ? idx < activeIndex 
+                            ? 'opacity-0 -translate-x-full z-0' 
+                            : 'opacity-0 translate-x-full z-0'
+                          : idx < activeIndex 
+                            ? 'opacity-0 translate-x-full z-0' 
+                            : 'opacity-0 -translate-x-full z-0'
+                      }`}
+                    >
+                      <div className="relative">
+                        <div className="absolute -left- -top-8 text-primary-500/20 text-8xl font-serif">"</div>
 
-                      <div className="bg-white border border-gray-200 rounded-xl p-8 pl-28 md:pl-36 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary-100">
-                        <div className="h-[150px] overflow-hidden mb-6">
-                          <p className="testimonial-text text-lg md:text-xl text-dark-900/90 font-lato leading-relaxed">
-                            "{truncateText(t.text)}"
-                            {t.text.length > 180 && (
-                              <button 
-                                onClick={() => openModal("Project Testimonial", t.text, t.author, t.position)}
-                                className="text-primary-500 font-medium hover:underline ml-2 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 rounded-sm transition-all duration-200"
-                                aria-label={`Read full testimonial for ${t.author}`}
-                              >
-                                Read more
-                              </button>
-                            )}
-                          </p>
+                        <div className="bg-white border border-gray-200 rounded-xl p-8 pl-12 md:pl-40 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary-100">
+                          {/* Testimonial title section - separated from content */}
+                          {t.text.includes("\"") && (
+                            <div className="mb-4 text-center">
+                              <h3 className="text-xl md:text-2xl font-medium text-[#081E27] ivymode-regular">
+                                "{t.text.split("\n\n")[0].replace(/\"/g, "")}"
+                              </h3>
+                            </div>
+                          )}
+                          
+                          {/* Testimonial content */}
+                          <div className="h-[150px] overflow-hidden mb-2"> {/* Adjusted height */}
+                            <p className="testimonial-text text-lg md:text-xl text-dark-900/90 font-lato leading-relaxed">
+                              {truncateText(t.text.split("\n\n")[1] || t.text)}
+                              {(t.text.split("\n\n")[1] || t.text).length > 250 && (
+                                <button 
+                                  onClick={() => openModal("Client Testimonial", t.text, t.author, t.position)}
+                                  className="text-primary-500 font-medium hover:underline ml-2 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 rounded-sm transition-all duration-200"
+                                  aria-label={`Read full testimonial for ${t.author}`}
+                                >
+                                  Read more
+                                </button>
+                              )}
+                            </p>
+                            
+                            {/* 5-star rating - centered below the text */}
+                            <div className="flex justify-center items-center star-rating mt-2 mb-1">
+                              {[...Array(5)].map((_, i) => (
+                                <img 
+                                  key={i} 
+                                  src="/assets/icon/500w/SVG/8GoPIo.svg" 
+                                  alt="Star" 
+                                  className="w-6 h-6 mx-1" />
+                              ))}
+                            </div>
+                          </div>
+                          
+                          <div className="pl-2 pb-4" style={{ marginTop: `${positions.clientInfoY}px` }}>
+                            <div className="flex items-end mb-1">
+                              {/* Client avatar directly before the name */}
+                              {t.clientAvatar && (
+                                <div className="w-24 h-24 rounded-full overflow-hidden border border-primary-500/30 mr-4 flex-shrink-0 shadow-md">
+                                  <img src={t.clientAvatar} alt={t.author} className="w-full h-full object-cover" />
+                                </div>
+                              )}
+                              <div className="mb-2">
+                                <h4 className="text-[#081E27] text-lg">{t.author}</h4>
+                                <p className="text-gray-600 text-sm">{t.position}</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="pl-2">
-                          <h4 className="text-[#081E27] text-lg font-medium">{t.author}</h4>
-                          <p className="text-gray-600 text-sm">{t.position}</p>
-                        </div>
-                      </div>
 
-                      {t.avatar && (
-                        <div className="testimonial-avatar absolute -left-6 -bottom-6 w-36 h-48 rounded-md overflow-hidden border-2 border-primary-500/30 bg-white shadow-md">
-                          <img src={t.avatar} alt={t.author} className="w-full h-full object-cover" />
-                        </div>
-                      )}
-                      
-                      <div className="testimonial-navigation absolute top-1/2 -right-6 transform -translate-y-1/2 flex items-center text-xs text-gray-400">
-                        {/* <span>Drag to see more</span> */}
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
+                        {t.avatar && (
+                          <div 
+                            className="testimonial-avatar absolute rounded-md overflow-hidden border-2 border-primary-500/30 bg-white shadow-lg" 
+                            style={{ 
+                              width: '260px', 
+                              height: '240px', 
+                              left: `${positions.avatarX}px`, 
+                              top: `${positions.avatarY}px`,
+                              zIndex: 15
+                            }}
+                          >
+                            <img src={t.avatar} alt="Project" className="w-full h-full object-cover" />
+                          </div>
+                        )}
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              <div className="flex mt-10 space-x-3">
+              <div className="flex justify-center mt-14 space-x-3">
                 {randomizedTestimonials.map((_, i) => (
                   <button 
                     key={i} 
@@ -416,54 +536,145 @@ const TestimonialSection: React.FC = () => {
           </div>
 
           {/* Right Column - Why We're Different */}
-          <div className="lg:col-span-4 bg-primary-50 p-10 rounded-xl border border-gray-200">
-            
+          <div className="lg:col-span-4 flex flex-col">
+            <div 
+              className="bg-[#FFFCF5] p-10 rounded-xl border border-gray-100 flex flex-col h-full"
+            >
+              {/* Stats with separating lines */}
+              <div className="flex flex-col gap-8 mb-10">
+                <div className="flex items-center py-3 border-b border-gray-200">
+                  <img src="/assets/icon/500w/clients.png" alt="Clients Icon" className="h-10 w-10 opacity-40" />
+                  <p className="ml-5 text-lg text-[#081E27] font-lato">{projectCount}+ Satisfied Clients</p>
+                </div>
 
-            {/* Highlight lines with inline numbers, icons and dividers */}
-            <div className="grid grid-cols-1 gap-4 mb-8">
-              <div className="flex items-center py-3 border-b border-gray-200">
-                {/* icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500" viewBox="0 0 464.1 659.5">
-                  <path d="M2.5,442.9h18.3c6.9,42,21.7,82.7,45.6,117.9l-46,86.4H4.3c.3-61.3-.8-183.8-.8-183.8l-1-20.5Z"/>
-                  <path d="M374.2,16h12.8v172.2h-12.8c-10.6-76.6-56.4-148.4-138.8-157.5-78.3-8.6-166,28.1-158.7,119.4,5.5,69.8,97.8,91.2,152,107.7l-50.9,96.3c-73.6-20.8-153.6-53.6-165.9-139C-11.6,52.6,156.5-36.4,296.9,14.2c19.8,7.1,41.8,21.8,63.2,19.3,6.8-.8,11.1-11.9,14.2-17.4Z"/>
-                  <path d="M106,643.6l17.8-32.8c17.4,8.1,36,13.5,55.1,16.1,75.9,10.4,167.1-1.2,192.1-86,21.3-71.9-10.5-123.1-76.5-150.7-14.7-6.1-30.1-10-44.8-15.6l50.4-94.8c32,9.5,64.6,18.5,92.9,36.6,62.6,40.1,81.9,104.6,66.1,176.1-19.9,89.9-96.3,158.2-186.2,163.7-47.3,2.9-94.9,4.5-141.4-5.8-8.6-1.9-17.1-4.5-25.6-6.9Z"/>
-                </svg>
-                <p className="ml-4 text-lg text-[#081E27] font-lato">1785+ properties transformed</p>
+                <div className="flex items-center py-3 border-b border-gray-200">
+                  <img src="/assets/icon/500w/projects.png" alt="Projects Icon" className="h-10 w-10 opacity-40" />
+                  <p className="ml-5 text-lg text-[#081E27] font-lato">£50K-5M+ Projects Delivered</p>
+                </div>
+
+                <div className="flex items-center py-3">
+                  <img src="/assets/icon/500w/experience.png" alt="Experience Icon" className="h-10 w-10 opacity-40" />
+                  <p className="ml-5 text-lg text-[#081E27] font-lato">20+ Years Leadership Experience</p>
+                </div>
               </div>
 
-              <div className="flex items-center py-3 border-b border-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500" viewBox="0 0 464.1 659.5">
-                  <path d="M2.5,442.9h18.3c6.9,42,21.7,82.7,45.6,117.9l-46,86.4H4.3c.3-61.3-.8-183.8-.8-183.8l-1-20.5Z"/>
-                  <path d="M374.2,16h12.8v172.2h-12.8c-10.6-76.6-56.4-148.4-138.8-157.5-78.3-8.6-166,28.1-158.7,119.4,5.5,69.8,97.8,91.2,152,107.7l-50.9,96.3c-73.6-20.8-153.6-53.6-165.9-139C-11.6,52.6,156.5-36.4,296.9,14.2c19.8,7.1,41.8,21.8,63.2,19.3,6.8-.8,11.1-11.9,14.2-17.4Z"/>
-                  <path d="M106,643.6l17.8-32.8c17.4,8.1,36,13.5,55.1,16.1,75.9,10.4,167.1-1.2,192.1-86,21.3-71.9-10.5-123.1-76.5-150.7-14.7-6.1-30.1-10-44.8-15.6l50.4-94.8c32,9.5,64.6,18.5,92.9,36.6,62.6,40.1,81.9,104.6,66.1,176.1-19.9,89.9-96.3,158.2-186.2,163.7-47.3,2.9-94.9,4.5-141.4-5.8-8.6-1.9-17.1-4.5-25.6-6.9Z"/>
-                </svg>
-                <p className="ml-4 text-lg text-[#081E27] font-lato">£5M+ projects delivered</p>
+              {/* Button centered and contained within the box */}
+              <div className="flex justify-center mt-auto">
+                <a 
+                  href="/contact" 
+                  className="block text-center bg-[#081E27] text-white py-4 px-6 rounded-[30px] hover:bg-[#0d2935] transition-all duration-300 text-base uppercase tracking-[0.09em] ivymode-regular"
+                >
+                  CHECK OUR AVAILABILITY
+                </a>
               </div>
-
-              <div className="flex items-center py-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500" viewBox="0 0 464.1 659.5">
-                  <path d="M2.5,442.9h18.3c6.9,42,21.7,82.7,45.6,117.9l-46,86.4H4.3c.3-61.3-.8-183.8-.8-183.8l-1-20.5Z"/>
-                  <path d="M374.2,16h12.8v172.2h-12.8c-10.6-76.6-56.4-148.4-138.8-157.5-78.3-8.6-166,28.1-158.7,119.4,5.5,69.8,97.8,91.2,152,107.7l-50.9,96.3c-73.6-20.8-153.6-53.6-165.9-139C-11.6,52.6,156.5-36.4,296.9,14.2c19.8,7.1,41.8,21.8,63.2,19.3,6.8-.8,11.1-11.9,14.2-17.4Z"/>
-                  <path d="M106,643.6l17.8-32.8c17.4,8.1,36,13.5,55.1,16.1,75.9,10.4,167.1-1.2,192.1-86,21.3-71.9-10.5-123.1-76.5-150.7-14.7-6.1-30.1-10-44.8-15.6l50.4-94.8c32,9.5,64.6,18.5,92.9,36.6,62.6,40.1,81.9,104.6,66.1,176.1-19.9,89.9-96.3,158.2-186.2,163.7-47.3,2.9-94.9,4.5-141.4-5.8-8.6-1.9-17.1-4.5-25.6-6.9Z"/>
-                </svg>
-                <p className="ml-4 text-lg text-[#081E27] font-lato">15+ years combined leadership</p>
-              </div>
-            </div>
-
-            <div className="inline-block">
-              <a href="/contact" className="bg-primary-500 text-[#081E27] font-lato py-3 px-8 rounded-md hover:bg-primary-400 transition-colors duration-300 text-lg">
-                Get a quote
-              </a>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Position Controls - Only visible in development mode */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="container mx-auto mt-12 mb-6 px-4 max-w-5xl">
+          <div className="p-4 border border-gray-300 rounded-lg bg-white shadow">
+            <h3 className="font-medium text-xl text-gray-700 mb-4">Position Controls</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div>
+                <label htmlFor="avatarX" className="block text-sm font-medium text-gray-700">Avatar X: {positions.avatarX}px</label>
+                <input 
+                  id="avatarX" 
+                  type="range" 
+                  min="-150" 
+                  max="150" 
+                  value={positions.avatarX} 
+                  onChange={(e) => setPositions({...positions, avatarX: parseInt(e.target.value)})}
+                  className="w-full mt-1"
+                />
+              </div>
+              <div>
+                <label htmlFor="avatarY" className="block text-sm font-medium text-gray-700">Avatar Y: {positions.avatarY}px</label>
+                <input 
+                  id="avatarY" 
+                  type="range" 
+                  min="0" 
+                  max="500" 
+                  value={positions.avatarY} 
+                  onChange={(e) => setPositions({...positions, avatarY: parseInt(e.target.value)})}
+                  className="w-full mt-1"
+                />
+              </div>
+              <div>
+                <label htmlFor="arrowsY" className="block text-sm font-medium text-gray-700">Arrows Y: {positions.arrowsY}px</label>
+                <input 
+                  id="arrowsY" 
+                  type="range" 
+                  min="0" 
+                  max="200" 
+                  value={positions.arrowsY} 
+                  onChange={(e) => setPositions({...positions, arrowsY: parseInt(e.target.value)})}
+                  className="w-full mt-1"
+                />
+              </div>
+              <div>
+                <label htmlFor="arrowsZ" className="block text-sm font-medium text-gray-700">Arrows Z-index: {positions.arrowsZ}</label>
+                <input 
+                  id="arrowsZ" 
+                  type="range" 
+                  min="1" 
+                  max="30" 
+                  value={positions.arrowsZ} 
+                  onChange={(e) => setPositions({...positions, arrowsZ: parseInt(e.target.value)})}
+                  className="w-full mt-1"
+                />
+              </div>
+              <div>
+                <label htmlFor="clientInfoY" className="block text-sm font-medium text-gray-700">Client Info Y: {positions.clientInfoY}px</label>
+                <input 
+                  id="clientInfoY" 
+                  type="range" 
+                  min="-20" 
+                  max="40" 
+                  value={positions.clientInfoY} 
+                  onChange={(e) => setPositions({...positions, clientInfoY: parseInt(e.target.value)})}
+                  className="w-full mt-1"
+                />
+              </div>
+              <div>
+                <label htmlFor="containerHeight" className="block text-sm font-medium text-gray-700">Container Height: {positions.containerHeight}px</label>
+                <input 
+                  id="containerHeight" 
+                  type="range" 
+                  min="200" 
+                  max="500" 
+                  value={positions.containerHeight} 
+                  onChange={(e) => {
+                    const value = parseInt(e.target.value);
+                    setPositions({...positions, containerHeight: value, rightColumnHeight: value})
+                  }}
+                  className="w-full mt-1"
+                />
+              </div>
+              <div>
+                <label htmlFor="rightColumnHeight" className="block text-sm font-medium text-gray-700">Right Col Height: {positions.rightColumnHeight}px</label>
+                <input 
+                  id="rightColumnHeight" 
+                  type="range" 
+                  min="200" 
+                  max="500" 
+                  value={positions.rightColumnHeight} 
+                  onChange={(e) => setPositions({...positions, rightColumnHeight: parseInt(e.target.value)})}
+                  className="w-full mt-1"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Testimonial Modal */}
       <Modal 
         isOpen={modalOpen}
         onClose={closeModal}
-        title="Project Testimonial"
+        title="Client Testimonial"
         content={modalContent.content}
         author={modalContent.author}
         position={modalContent.position}

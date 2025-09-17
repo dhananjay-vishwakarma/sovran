@@ -1,0 +1,156 @@
+{
+  "src/assets/logo/s.svg": [
+    {
+      "file": "src/pages/HomePage.tsx",
+      "type": "import"
+    },
+    {
+      "file": "src/pages/HomePage.tsx",
+      "type": "direct"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct"
+    },
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "import"
+    },
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    },
+    {
+      "file": "src/components/ExitIntentPopup.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/ExitIntentPopup.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran 2.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran 3.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran 4.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran 5.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran6.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran7.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran8.jpg": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "require"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/logo/Sovran-03-03.png": [
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "import"
+    },
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/AdobeStock_190403814.jpeg": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "import"
+    },
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Gerrards_Cross_Sovran_.jpeg": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "import"
+    },
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct"
+    }
+  ],
+  "src/assets/images/Battersea_Renovation_Sovran.jpg": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "import"
+    },
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct"
+    }
+  ]
+}

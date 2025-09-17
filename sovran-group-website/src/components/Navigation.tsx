@@ -5,117 +5,174 @@ import sovranInteriorsData from '../data/sovranInteriors.json';
 import '../styles/megaMenu.css';
 import '../styles/residential-submenu.css';
 import '../styles/residential-dropdown.css';
-import '../styles/mobile-menu.css';
-import { Helmet } from 'react-helmet';
-import LazyImage from './LazyImage';
+import '../styles/mega-menu-fixes.css';
 import './NavigationStyles.css';
 import sovranLogo from '../assets/logo/Sovran-03-03.png';
 
 // Types
-type MobileMenuState = 
+type DesktopMenuState = 
+  | 'interiors'
+  | 'build'
+  | 'build-residential';
+
+type DropdownType = 
+  | DesktopMenuState
   | 'mobile-about' 
   | 'mobile-design' 
   | 'mobile-build' 
   | 'mobile-interiors'
   | 'mobile-build-residential';
 
-type DesktopMenuState = 
-  | 'interiors'
-  | 'build'
-  | 'build-residential';
-
-type DropdownType = MobileMenuState | DesktopMenuState;
-
 // Helper function to check if a dropdown is part of the mobile build menu
 const isMobileBuildMenu = (dropdown: DropdownType | null): boolean => {
   return dropdown === 'mobile-build' || dropdown === 'mobile-build-residential';
 };
 
-// Skeleton placeholder component for image loading
+// Enhanced Skeleton placeholder component for image loading
 const ImageSkeleton = () => (
-  <div className="animate-pulse bg-dark-600 w-full h-full rounded-lg"></div>
+  <div className="skeleton-loader bg-dark-700/50 w-full h-full rounded-lg relative overflow-hidden">
+    <div className="skeleton-shimmer"></div>
+  </div>
 );
 
-// LazyLoadImage component to handle image loading with skeleton
-const LazyLoadImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
-  const [loaded, setLoaded] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
+// Progressive LazyLoadImage: skeleton → thumbnail → full image, full image loads after 1s or on hover
+const LazyLoadImage = ({
+  src,
+  alt,
+  className,
+  priority = false
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+}) => {
+  const [thumbLoaded, setThumbLoaded] = useState(false);
+  const [fullLoaded, setFullLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  const [triggerFull, setTriggerFull] = useState(priority); // full image load trigger
+  const fullImgRef = useRef<HTMLImageElement | null>(null);
+  const decodeStarted = useRef(false);
+  const decodePromise = useRef<Promise<void> | null>(null);
+  const timerRef = useRef<number | null>(null);
 
-  // Generate a much smaller thumbnail version path - we'll use query params to signal to CDN
-  // This assumes your server or CDN can handle image resizing with query params
-  // For direct file access without CDN, this will still load the original but we'll restrict size via CSS
-  const thumbnailSrc = `${src}?width=150&quality=60`;
+  // Generate a much smaller thumbnail version path
+  const thumbnailSrc = `${src}?width=150&quality=40`;
 
+  // Reset states on src change
   useEffect(() => {
-    // Reset loading state when source changes
-    setLoaded(false);
-    
-    const img = imgRef.current;
-    if (img && img.complete) {
-      setLoaded(true);
+    setThumbLoaded(false);
+    setFullLoaded(false);
+    setError(false);
+    setTriggerFull(priority);
+    decodeStarted.current = false;
+    decodePromise.current = null;
+    if (timerRef.current) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
-  }, [src]);
+    // Only set timer if not priority
+    if (!priority) {
+      timerRef.current = window.setTimeout(() => {
+        setTriggerFull(true);
+      }, 1000);
+    }
+    return () => {
+      if (timerRef.current) {
+        window.clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [src, priority]);
+
+  // On hover: trigger full image load immediately
+  const handleMouseEnter = () => {
+    if (!triggerFull) setTriggerFull(true);
+  };
+
+  // Pre-decode full image offscreen once triggered
+  useEffect(() => {
+    if (triggerFull && !fullLoaded && !decodeStarted.current && !error) {
+      decodeStarted.current = true;
+      const img = new window.Image();
+      img.src = src;
+      img.decoding = "async";
+      img.onload = () => {
+        // Only set loaded if still mounted and not error
+        setFullLoaded(true);
+      };
+      img.onerror = () => {
+        setError(true);
+      };
+      // try to decode
+      if (img.decode) {
+        decodePromise.current = img.decode()
+          .then(() => setFullLoaded(true))
+          .catch(() => setError(true));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [triggerFull, src]);
+
+  // If full image loads via <img> onLoad, also set loaded
+  const handleFullImgLoad = () => {
+    setFullLoaded(true);
+  };
+
+  // If full image errors, show error
+  const handleFullImgError = () => {
+    setError(true);
+  };
 
   return (
-    <>
-      {!loaded && <ImageSkeleton />}
-      <img 
-        ref={imgRef}
-        src={thumbnailSrc} // Use smaller thumbnail version
-        alt={alt} 
-        className={`${className} ${loaded ? 'opacity-100' : 'opacity-0'}`}
-        onLoad={() => setLoaded(true)}
-        style={{ 
-          transition: 'opacity 0.3s ease-in-out',
-          maxWidth: '100%',  // Restrict size
-          maxHeight: '100%', // Restrict size
-          width: 'auto',     // Let browser handle aspect ratio
-          height: 'auto'     // Let browser handle aspect ratio
+    <div
+      className="relative w-full h-full"
+      onMouseEnter={handleMouseEnter}
+    >
+      {/* Always show skeleton at mount, until thumb or error */}
+      {!thumbLoaded && !error && <ImageSkeleton />}
+      {/* Error state */}
+      {error && (
+        <div className="w-full h-full bg-dark-700/50 flex items-center justify-center text-sm text-gray-400">
+          Image not available
+        </div>
+      )}
+      {/* Thumbnail: loads immediately, visible until full image loaded */}
+      <img
+        src={thumbnailSrc}
+        alt={alt}
+        className={`${className} absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out ${thumbLoaded && !fullLoaded && !error ? 'opacity-100' : 'opacity-0'}`}
+        style={{
+          zIndex: 1,
+          objectFit: 'cover'
         }}
-        loading="eager" // Force eager loading to ensure images are ready
+        onLoad={() => setThumbLoaded(true)}
+        onError={() => setThumbLoaded(true)}
+        draggable={false}
+        loading={priority ? 'eager' : 'lazy'}
       />
-    </>
+      {/* Full-res image, fades in on load, loads after triggerFull */}
+      {!error && triggerFull && (
+        <img
+          ref={fullImgRef}
+          src={src}
+          alt={alt}
+          className={`${className} absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${fullLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{
+            zIndex: 2,
+            objectFit: 'cover'
+          }}
+          onLoad={handleFullImgLoad}
+          onError={handleFullImgError}
+          draggable={false}
+          decoding="async"
+          {...({ fetchpriority: "low" } as any)}
+          loading={priority ? 'eager' : 'lazy'}
+        />
+      )}
+    </div>
   );
-};
-
-// State interface for better type organization
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface NavigationState {
-  isScrolled: boolean;
-  isMobileMenuOpen: boolean; 
-  activeDropdown: DropdownType | null;
-  isMegaMenuOpen: boolean;
-}
-
-// Image paths for mega menu
-const megaMenuImages = {
-  'bespoke-rooms': {
-    main: '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg',
-    subcategories: {
-      'tv-units': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249572-HDR.jpg',
-      'offices': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg',
-      'bookshelves-displays': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249597-HDR.jpg',
-      'bars': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260088-HDR.jpg'
-    }
-  },
-  'bespoke-wardrobes': {
-    main: '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249418-HDR.jpg',
-    subcategories: {
-      'all-wardrobes': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg',
-      'shop-by-room-type': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249433-HDR.jpg',
-      'shop-by-door-style': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249468-HDR.jpg'
-    }
-  },
-  'kitchens': {
-    main: '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249592-HDR.jpg',
-    subcategories: {
-      'kitchen-collection': '/assets/images/Kitchen-Lounge-P1249557-HDR.jpg',
-      'kitchen-features': '/assets/images/Kitchen-Lounge-P1249562-HDR.jpg',
-      'luxury-kitchen-materials': '/assets/images/Kitchen-Lounge-P1249567-HDR.jpg',
-      'projects': '/assets/images/Kitchen-Lounge-P1260053-HDR.jpg',
-      'complete-home-solutions': '/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260063-HDR.jpg'
-    }
-  }
 };
 
 // Featured videos
@@ -143,6 +200,11 @@ const Navigation: React.FC = () => {
   const residentialMenuRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const residentialSubmenuRef = useRef<HTMLDivElement>(null);
+  const [activeAboutImage, setActiveAboutImage] = useState('default'); // Track which about us image is active
+  const aboutMenuRef = useRef<HTMLDivElement>(null); // Reference to About Us dropdown
+  
+  // For mobile menu positioning
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
   // Log mobile menu state for debugging
   useEffect(() => {
@@ -152,30 +214,26 @@ const Navigation: React.FC = () => {
   // Create refs for the dropdown menus
   const buildMenuRef = useRef<HTMLDivElement>(null);
   const interiorsMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   
   // Add timers for hover delays
-  const hoverTimerRef = useRef<number | null>(null);
   const leaveTimerRef = useRef<number | null>(null);
+  // Configurable timings for ultra-fast but smooth UX
+  const HOVER_CLOSE_DELAY = 150; // ms
 
+  // Toggle dropdown function for mobile menus
   const handleDropdownToggle = (dropdown: DropdownType) => {
-    setActiveDropdown(prevState => {
-      if (prevState === dropdown) {
-        return null;
-      } else if (dropdown.startsWith('mobile-build')) {
-        // For mobile build menu items, allow nested states
-        return dropdown;
-      } else {
-        // For other dropdowns, close others when opening
-        return dropdown;
-      }
-    });
+    setActiveDropdown(prevDropdown => prevDropdown === dropdown ? null : dropdown);
   };
 
   // Get an array of critical images that should be preloaded
-  const criticalImages = [
-    megaMenuImages['bespoke-rooms'].main,
-    megaMenuImages['bespoke-wardrobes'].main,
-    megaMenuImages['kitchens'].main
+  const aboutUsDropdownImages = [
+    "https://sovrangroup.co.uk/images/1.jpg",
+    "https://sovrangroup.co.uk/images/2.jpg",
+    "https://sovrangroup.co.uk/images/3.jpg",
+    "https://sovrangroup.co.uk/images/4.jpg",
+    "https://sovrangroup.co.uk/images/2.jpg",
+    "https://sovrangroup.co.uk/images/1.jpg"
   ];
 
   // Enhanced scroll handler with smoother behavior
@@ -191,88 +249,130 @@ const Navigation: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  // Refactored About Us menu item hover handler (React way) with debug logging
+  const handleMenuItemHover = (itemId: string) => {
+    console.log("Hover on item:", itemId);
+    setActiveAboutImage(itemId);
+  };
 
-  // Debounced hover handlers for better performance
-  const handleInteriorsMouseEnter = () => {
-    // Clear any pending close timer
-    if (leaveTimerRef.current) {
-      window.clearTimeout(leaveTimerRef.current);
-      leaveTimerRef.current = null;
-    }
-    
-    // Set active dropdown immediately for better UX
+  // Handler for mouse leaving the About Us dropdown
+  const handleAboutMenuMouseLeave = () => {
+    console.log("Mouse left About Us menu, reverting to default image");
+    setActiveAboutImage('default');
+  };
+
+  // Enhanced hover handlers: open instantly, no delay for build/interiors menus
+  const handleInteriorsMouseEnter = (_event: React.MouseEvent) => {
+    // Open instantly, no delay
     setActiveDropdown('interiors');
     setIsMegaMenuOpen(true);
-  };
-
-  const handleBuildMouseEnter = () => {
     // Clear any pending close timer
     if (leaveTimerRef.current) {
       window.clearTimeout(leaveTimerRef.current);
       leaveTimerRef.current = null;
     }
-    
-    // Set active dropdown immediately for better UX
-    setActiveDropdown('build');
-    setIsMegaMenuOpen(true);
   };
 
-  // Debounced close handler
-  const handleMouseLeave = () => {
-    // Use a short timeout to prevent accidental menu closing
-    // when user briefly moves mouse outside the menu
-    leaveTimerRef.current = window.setTimeout(() => {
-      setActiveDropdown(null);
-      setIsMegaMenuOpen(false);
-    }, 150); // Short delay before closing
+  const handleBuildMouseEnter = (_event: React.MouseEvent) => {
+    // Open instantly, no delay
+    setActiveDropdown('build');
+    setIsMegaMenuOpen(true);
+    // Clear any pending close timer
+    if (leaveTimerRef.current) {
+      window.clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = null;
+    }
+  };
+
+  // Improved mouse leave handler with precise boundary checking
+  const handleMouseLeave = (event: React.MouseEvent) => {
+    // Get current bounds of both menu elements
+    const buildRect = buildMenuRef.current?.getBoundingClientRect();
+    const interiorsRect = interiorsMenuRef.current?.getBoundingClientRect();
+    
+    // Get coordinates of where the mouse is moving to
+    const { clientX, clientY } = event;
+    
+    // Check if mouse is truly leaving all menu areas
+    const isLeavingBuildMenu = !buildRect || 
+      clientX < buildRect.left || 
+      clientX > buildRect.right || 
+      clientY < buildRect.top || 
+      clientY > buildRect.bottom;
+      
+    const isLeavingInteriorsMenu = !interiorsRect || 
+      clientX < interiorsRect.left || 
+      clientX > interiorsRect.right || 
+      clientY < interiorsRect.top || 
+      clientY > interiorsRect.bottom;
+    
+    // Only close if we're truly leaving all menu areas
+    if (isLeavingBuildMenu && isLeavingInteriorsMenu) {
+      // Use a short timeout to prevent accidental menu closing
+      leaveTimerRef.current = window.setTimeout(() => {
+        setActiveDropdown(null);
+        setIsMegaMenuOpen(false);
+        leaveTimerRef.current = null;
+      }, HOVER_CLOSE_DELAY);
+    }
   };
 
 useEffect(() => {
-  const handleClickOutside = () => {
-    setTimeout(() => {
-      setActiveDropdown(null);
-      setIsMegaMenuOpen(false);
-    },);
+  const handleClickOutside = (event: MouseEvent) => {
+    // Check if the click is outside both menu refs
+    const isClickOutsideBuildMenu = buildMenuRef.current && !buildMenuRef.current.contains(event.target as Node);
+    const isClickOutsideInteriorsMenu = interiorsMenuRef.current && !interiorsMenuRef.current.contains(event.target as Node);
+    
+    if (isClickOutsideBuildMenu && isClickOutsideInteriorsMenu) {
+      setTimeout(() => {
+        setActiveDropdown(null);
+        setIsMegaMenuOpen(false);
+      }, 100); // Add proper timeout value
+    }
   };
 
-  if (activeDropdown) {
-    document.addEventListener('click', handleClickOutside);
-  }
+    if (activeDropdown) {
+      document.addEventListener('click', handleClickOutside);
+    }
 
   return () => {
     document.removeEventListener('click', handleClickOutside);
     
     // Clean up any pending timers
-    // Copy to local variables to avoid the react-hooks/exhaustive-deps warning
-    const currentHoverTimer = hoverTimerRef.current;
     const currentLeaveTimer = leaveTimerRef.current;
-    
-    if (currentHoverTimer) {
-      window.clearTimeout(currentHoverTimer);
-    }
     if (currentLeaveTimer) {
       window.clearTimeout(currentLeaveTimer);
+      leaveTimerRef.current = null;
     }
   };
 }, [activeDropdown]);
 
-  // No need for JS positioning as it's handled by CSS now
-  useEffect(() => {
-    // Just keep the ref initialization
-  }, []);
+
 
   return (
-    <nav className={`header-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'scrolled' : 'bg-transparent'
-    }`}>
-      <Helmet>
-        {criticalImages.map((image, index) => (
-          <link key={index} rel="preload" href={image} as="image" />
-        ))}
-      </Helmet>
+    <nav 
+      className={`header-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'scrolled' : 'bg-transparent'
+      }`}
+    >
+
   <div className="header-container max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-        <div className="flex flex-col items-center">
-          {/* Logo (centered) */}
+        {/* Mobile menu button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+            console.log('Mobile menu toggled:', !isMobileMenuOpen);
+          }}
+          className="md:hidden text-white mobile-menu-button"
+          aria-label="Toggle mobile menu"
+        >
+          <Bars3Icon className="w-6 h-6" />
+        </button>
+          
+        <div className="flex flex-col md:flex-col items-center">
+          {/* Logo (centered on desktop, right on mobile) */}
           <div className="logo-container">
             <Link to="/">
               <img
@@ -289,37 +389,179 @@ useEffect(() => {
             <Link to="/" className="font-lato text-white hover:text-primary-400 transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 hover:after:w-full after:transition-all after:duration-300">
               Home
             </Link>
-            {/* About Us Dropdown */}
-            <div className="relative group py-2">
+            {/* About Us Dropdown - Enhanced with Images */}
+            <div className="relative group py-2" ref={aboutMenuRef}>
               <Link to="/about" className="flex items-center font-lato text-white hover:text-primary-400 transition-colors focus:outline-none">
                 <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 group-hover:after:w-full after:transition-all after:duration-300">
                   About Us
                 </span>
                 <ChevronDownIcon className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" />
               </Link>
-              <div className="absolute left-0 mt-2 w-56 bg-[#081E27]/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden z-30 hidden group-hover:block">
-                <Link to="/about#space-story" className="block px-4 py-2 text-white hover:bg-primary-600">
-                  Every Space Has a Story
-                </Link>
-                <div className="border-t border-dark-600">
-                  <Link to="/about#our-story" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Our Story
+              <div
+                className="absolute left-0 mt-2 w-[700px] bg-[#081E27]/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden z-30 hidden group-hover:flex flex-row items-stretch transform transition-all duration-150 ease-out origin-top-left"
+                onMouseLeave={handleAboutMenuMouseLeave}
+              >
+                {/* Left column: menu items */}
+                <div className="w-64 border-r border-dark-700 flex-shrink-0">
+                  <Link
+                    to="/about#space-story"
+                    className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
+                    data-item="space-story"
+                    onMouseEnter={() => handleMenuItemHover("space-story")}
+                  >
+                    <span className="relative z-10">Every Space Has a Story</span>
                   </Link>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/about#our-story"
+                      className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
+                      data-item="our-story"
+                      onMouseEnter={() => handleMenuItemHover("our-story")}
+                    >
+                      <span className="relative z-10">Our Story</span>
+                    </Link>
+                  </div>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/about#our-ethos"
+                      className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
+                      data-item="our-ethos"
+                      onMouseEnter={() => handleMenuItemHover("our-ethos")}
+                    >
+                      <span className="relative z-10">Our Ethos</span>
+                    </Link>
+                  </div>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/about#process"
+                      className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
+                      data-item="process"
+                      onMouseEnter={() => handleMenuItemHover("process")}
+                    >
+                      <span className="relative z-10">Our Process</span>
+                    </Link>
+                  </div>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/about#contact"
+                      className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
+                      data-item="contact"
+                      onMouseEnter={() => handleMenuItemHover("contact")}
+                    >
+                      <span className="relative z-10">Contact Us</span>
+                    </Link>
+                  </div>
                 </div>
-                <div className="border-t border-dark-600">
-                  <Link to="/about#our-ethos" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Our Ethos
-                  </Link>
-                </div>
-                <div className="border-t border-dark-600">
-                  <Link to="/about#process" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Our Process
-                  </Link>
-                </div>
-                <div className="border-t border-dark-600">
-                  <Link to="/about#contact" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Contact Us
-                  </Link>
+                {/* Right column: image panel */}
+                <div className="flex-1 h-[280px] relative overflow-hidden bg-dark-800">
+                  {/* Default image when menu first appears */}
+                  <div
+                    className={`absolute inset-0 about-image transition-all duration-200 ease-out ${activeAboutImage === "default" ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                    data-for="default"
+                  >
+                    <img
+                      src="https://sovrangroup.co.uk/images/1.jpg"
+                      alt="About Sovran Group"
+                      className="w-full h-full object-cover scale-120 relative z-30"
+                      onLoad={(e) => { console.log('About dropdown image loaded:', (e.target as HTMLImageElement).src); }}
+                      onError={(e) => { console.error('About dropdown image failed to load:', (e.target as HTMLImageElement).src); }}
+                    />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/70 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">About Sovran Group</div>
+                      <p className="text-sm font-lato text-white/80">Crafting exceptional spaces since 2015</p>
+                    </div>
+                  </div>
+                  {/* Every Space Has a Story image */}
+                  <div
+                    className={`absolute inset-0 about-image transition-all duration-200 ease-out ${activeAboutImage === "space-story" ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                    data-for="space-story"
+                  >
+                    <img
+                      src="https://sovrangroup.co.uk/images/2.jpg"
+                      alt="Every Space Has a Story"
+                      className="w-full h-full object-cover relative z-30"
+                      onLoad={(e) => { console.log('About dropdown image loaded:', (e.target as HTMLImageElement).src); }}
+                      onError={(e) => { console.error('About dropdown image failed to load:', (e.target as HTMLImageElement).src); }}
+                    />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/70 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Every Space Has a Story</div>
+                      <p className="text-sm font-lato text-white/80">How we transform your vision into reality</p>
+                    </div>
+                  </div>
+                  {/* Our Story image */}
+                  <div
+                    className={`absolute inset-0 about-image transition-all duration-200 ease-out ${activeAboutImage === "our-story" ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                    data-for="our-story"
+                  >
+                    <img
+                      src="https://sovrangroup.co.uk/images/3.jpg"
+                      alt="Our Story"
+                      className="w-full h-full object-cover relative z-30"
+                      onLoad={(e) => { console.log('About dropdown image loaded:', (e.target as HTMLImageElement).src); }}
+                      onError={(e) => { console.error('About dropdown image failed to load:', (e.target as HTMLImageElement).src); }}
+                    />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/70 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Our Story</div>
+                      <p className="text-sm font-lato text-white/80">The journey of Sovran Group</p>
+                    </div>
+                  </div>
+                  {/* Our Ethos image */}
+                  <div
+                    className={`absolute inset-0 about-image transition-all duration-200 ease-out ${activeAboutImage === "our-ethos" ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                    data-for="our-ethos"
+                  >
+                    <img
+                      src="https://sovrangroup.co.uk/images/4.jpg"
+                      alt="Our Ethos"
+                      className="w-full h-full object-cover relative z-30"
+                      onLoad={(e) => { console.log('About dropdown image loaded:', (e.target as HTMLImageElement).src); }}
+                      onError={(e) => { console.error('About dropdown image failed to load:', (e.target as HTMLImageElement).src); }}
+                    />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/70 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Our Ethos</div>
+                      <p className="text-sm font-lato text-white/80">The values that drive our work</p>
+                    </div>
+                  </div>
+                  {/* Process image */}
+                  <div
+                    className={`absolute inset-0 about-image transition-all duration-200 ease-out ${activeAboutImage === "process" ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                    data-for="process"
+                  >
+                    <img
+                      src="https://sovrangroup.co.uk/images/2.jpg"
+                      alt="Our Process"
+                      className="w-full h-full object-cover relative z-30"
+                      onLoad={(e) => { console.log('About dropdown image loaded:', (e.target as HTMLImageElement).src); }}
+                      onError={(e) => { console.error('About dropdown image failed to load:', (e.target as HTMLImageElement).src); }}
+                    />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/70 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Our Process</div>
+                      <p className="text-sm font-lato text-white/80">How we bring your project to life</p>
+                    </div>
+                  </div>
+                  {/* Contact image */}
+                  <div
+                    className={`absolute inset-0 about-image transition-all duration-200 ease-out ${activeAboutImage === "contact" ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                    data-for="contact"
+                  >
+                    <img
+                      src="https://sovrangroup.co.uk/images/1.jpg"
+                      alt="Contact Us"
+                      className="w-full h-full object-cover relative z-30"
+                      onLoad={(e) => { console.log('About dropdown image loaded:', (e.target as HTMLImageElement).src); }}
+                      onError={(e) => { console.error('About dropdown image failed to load:', (e.target as HTMLImageElement).src); }}
+                    />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/70 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Contact Us</div>
+                      <p className="text-sm font-lato text-white/80">Get in touch to start your project</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -334,26 +576,26 @@ useEffect(() => {
               </Link>
               <div className="absolute left-0 mt-2 w-64 bg-[#081E27]/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden z-30 hidden group-hover:block">
                 <Link to="/sovran-design#overview" className="block px-4 py-2 text-white hover:bg-primary-600">
-                  Architectural Services Overview
+                  Architectural services overview
                 </Link>
                 <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#planning" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Planning & Building Regulations
+                  <Link to="/sovran-design#planning-approvals" className="block px-4 py-2 text-white hover:bg-primary-600">
+                    Planning approvals
                   </Link>
                 </div>
                 <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#engineering" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Structural Engineering
+                  <Link to="/sovran-design#structural-calculations" className="block px-4 py-2 text-white hover:bg-primary-600">
+                    Structural calculations &amp; building regulations
                   </Link>
                 </div>
                 <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#renders" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    3D Renders & Visualisation
+                  <Link to="/sovran-design#private-building-control" className="block px-4 py-2 text-white hover:bg-primary-600">
+                    Private building control
                   </Link>
                 </div>
                 <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#portfolio" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Projects / Portfolio
+                  <Link to="/sovran-design#renders-vr" className="block px-4 py-2 text-white hover:bg-primary-600">
+                    3D Renders and VR
                   </Link>
                 </div>
               </div>
@@ -376,7 +618,7 @@ useEffect(() => {
               </button>
               
               {/* Mega Menu - always rendered but visibility controlled by CSS for better performance */}
-              <div className={`absolute left-0 mt-2 w-screen max-w-2xl -ml-64 bg-[#081E27]/95 backdrop-blur-md shadow-2xl rounded-lg overflow-hidden z-20 mega-menu font-lato transition-opacity duration-150 ${activeDropdown === 'build' ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+              <div className={`absolute left-0 mt-2 w-screen max-w-2xl -ml-64 bg-[#081E27]/95 backdrop-blur-md shadow-2xl rounded-lg overflow-hidden z-20 mega-menu font-lato transition-all duration-150 transform ${activeDropdown === 'build' ? 'opacity-100 visible translate-y-0 scale-100' : 'opacity-0 invisible -translate-y-2 scale-98'}`}>
                 <div className="p-6">
                   {/* Two-column layout */}
                   <div className="grid grid-cols-2 gap-6">
@@ -494,34 +736,38 @@ useEffect(() => {
                     </div>
                   </div>
                   
-                  {/* Bottom Image Grid */}
+                  {/* Bottom Image Grid with improved lazy loading and skeleton */}
                   <div className="mt-6 grid grid-cols-4 gap-3">
                     <div className="relative rounded-lg overflow-hidden h-24">
                       <LazyLoadImage 
-                        src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg" 
+                        src="https://sovrangroup.co.uk/images/1.jpg" 
                         alt="Kitchen Project" 
                         className="w-full h-full object-cover"
+                        priority={false}
                       />
                     </div>
                     <div className="relative rounded-lg overflow-hidden h-24">
                       <LazyLoadImage 
-                        src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249562-HDR.jpg" 
+                        src="https://sovrangroup.co.uk/images/2.jpg" 
                         alt="Lounge Project" 
                         className="w-full h-full object-cover"
+                        priority={false}
                       />
                     </div>
                     <div className="relative rounded-lg overflow-hidden h-24">
                       <LazyLoadImage 
-                        src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249572-HDR.jpg" 
+                        src="https://sovrangroup.co.uk/images/3.jpg" 
                         alt="Living Space" 
                         className="w-full h-full object-cover"
+                        priority={false}
                       />
                     </div>
                     <div className="relative rounded-lg overflow-hidden h-24">
                       <LazyLoadImage 
-                        src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249418-HDR.jpg" 
+                        src="https://sovrangroup.co.uk/images/4.jpg" 
                         alt="Bedroom Project" 
                         className="w-full h-full object-cover"
+                        priority={false}
                       />
                     </div>
                   </div>
@@ -546,7 +792,7 @@ useEffect(() => {
               </button>
               
               {/* Mega Menu - always rendered but visibility controlled by CSS for better performance */}
-              <div className={`absolute left-0 mt-2 w-screen max-w-3xl -ml-96 bg-[#081E27]/95 backdrop-blur-md shadow-2xl rounded-lg overflow-hidden z-20 mega-menu font-lato transition-opacity duration-150 ${activeDropdown === 'interiors' ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+              <div className={`absolute left-0 mt-2 w-screen max-w-3xl -ml-96 bg-[#081E27]/95 backdrop-filter backdrop-blur-lg shadow-2xl rounded-lg overflow-hidden z-20 mega-menu font-lato transition-all duration-150 transform ${activeDropdown === 'interiors' ? 'opacity-100 visible translate-y-0 scale-100' : 'opacity-0 invisible -translate-y-2 scale-98'}`}>
                 <div className="p-6">
                   {/* Three-column categories layout */}
                   <div className="grid grid-cols-3 gap-6">
@@ -574,36 +820,40 @@ useEffect(() => {
                     ))}
                   </div>
                   
-                  {/* Bottom image grid */}
+                  {/* Bottom image grid with improved lazy loading and skeleton */}
                   <div className="mt-6 pt-4 border-t border-dark-600">
-                    <h4 className="text-white text-base font-medium mb-3">Featured Projects</h4>
+                    <h4 className="text-white text-base font-lato font-medium mb-3">Featured Projects</h4>
                     <div className="grid grid-cols-4 gap-3">
                       <div className="relative rounded-lg overflow-hidden h-24">
                         <LazyLoadImage 
-                          src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg" 
+                          src="https://sovrangroup.co.uk/images/1.jpg" 
                           alt="Bespoke Room" 
                           className="w-full h-full object-cover"
+                          priority={false}
                         />
                       </div>
                       <div className="relative rounded-lg overflow-hidden h-24">
                         <LazyLoadImage 
-                          src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg" 
+                          src="https://sovrangroup.co.uk/images/2.jpg" 
                           alt="Bespoke Wardrobe" 
                           className="w-full h-full object-cover"
+                          priority={false}
                         />
                       </div>
                       <div className="relative rounded-lg overflow-hidden h-24">
                         <LazyLoadImage 
-                          src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249592-HDR.jpg" 
+                          src="https://sovrangroup.co.uk/images/3.jpg" 
                           alt="Kitchen Design" 
                           className="w-full h-full object-cover"
+                          priority={false}
                         />
                       </div>
                       <div className="relative rounded-lg overflow-hidden h-24">
                         <LazyLoadImage 
-                          src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg" 
+                          src="https://sovrangroup.co.uk/images/4.jpg" 
                           alt="Luxury Interior" 
                           className="w-full h-full object-cover"
+                          priority={false}
                         />
                       </div>
                     </div>
@@ -621,404 +871,321 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Mobile menu button - positioned at bottom with fixed positioning */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsMobileMenuOpen(!isMobileMenuOpen);
-            console.log('Mobile menu toggled:', !isMobileMenuOpen); // Add logging
-          }}
-          className="md:hidden text-white mobile-menu-button transition-all duration-300"
-          aria-label="Toggle mobile menu"
-        >
-          {isMobileMenuOpen ? (
-            <XMarkIcon className="w-6 h-6" />
-          ) : (
-            <Bars3Icon className="w-6 h-6" />
-          )}
-        </button>
-
-        {/* Mobile Navigation - positioned as a floating menu */}
+        {/* Mobile Navigation - Full screen */}
         <div 
-          className={`md:hidden bg-[#081E27]/95 backdrop-blur-md mobile-menu mobile-menu-scrollbar ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`} 
+          className={`md:hidden mobile-menu ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
           onClick={(e) => e.stopPropagation()}
-          style={{ 
-            transition: 'opacity 0.3s ease, visibility 0.3s ease',
-            display: 'block' // Always display the element but control visibility with opacity
-          }}
         >
-            <div className="mobile-menu-header px-4 py-3 flex items-center justify-between">
-              <h3 className="text-white font-medium text-lg">Menu</h3>
-              <button 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mobile-menu-close"
-              >
-                <XMarkIcon className="w-5 h-5 text-white" />
-              </button>
-            </div>
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                to="/"
-                className="block px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              {/* Mobile About Us Menu */}
-              <div className="space-y-1">
-                <Link
-                  to="/about"
-                  className="flex items-center justify-between w-full px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                  onClick={() => handleDropdownToggle('mobile-about')}
-                >
-                  <span>About Us</span>
-                  <ChevronDownIcon className={`w-4 h-4 transition-transform ${activeDropdown === 'mobile-about' ? 'rotate-180' : ''}`} />
-                </Link>
-                {activeDropdown === 'mobile-about' && (
-                  <div className="pl-4 space-y-1 pt-1 pb-2 bg-[#0a2732]/70 rounded-md ml-2 mr-2">
-                    <Link
-                      to="/about#space-story"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Every Space Has a Story
-                    </Link>
-                    <Link
-                      to="/about#our-story"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Our Story
-                    </Link>
-                    <Link
-                      to="/about#our-ethos"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Our Ethos
-                    </Link>
-                    <Link
-                      to="/about#process"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Our Process
-                    </Link>
-                    <Link
-                      to="/about#contact"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Contact Us
-                    </Link>
-                  </div>
-                )}
-              </div>
-              
-              {/* Mobile Sovran Interiors Collapsible */}
-              <div className="space-y-1">
-                <button
-                  onClick={() => handleDropdownToggle('mobile-interiors')}
-                  className="flex items-center justify-between w-full px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                >
-                  <span>Interiors</span>
-                  <ChevronDownIcon className={`w-4 h-4 transition-transform ${activeDropdown === 'mobile-interiors' ? 'rotate-180' : ''}`} />
-                </button>
-                
-                {activeDropdown === 'mobile-interiors' && (
-                  <div className="pl-4 space-y-3 py-2 bg-[#0a2732]/70 rounded-md ml-2 mr-2">
-                    <Link 
-                      to="/sovran-interiors" 
-                      className="block px-4 py-2 text-sm text-white font-medium hover:bg-dark-700 hover:text-white rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      All Interiors
-                    </Link>
-                    
-                    {/* Mobile menu category images */}
-                    <div className="grid grid-cols-2 gap-2 px-3 py-2">
-                      {sovranInteriorsData.navigation.mainCategories.map((category, index) => (
-                        <div key={category.id} className="relative rounded-lg overflow-hidden aspect-video">
-                          <LazyImage 
-                            src={megaMenuImages[category.id as keyof typeof megaMenuImages]?.main} 
-                            alt={category.title}
-                            className="w-full h-full object-cover"
-                            startLoading={activeDropdown === 'mobile-interiors'}
-                            priority={index}
-                          />
-                          <div className="absolute inset-0 bg-[#081E27]/60 flex items-center justify-center z-10">
-                            <Link 
-                              to={category.link}
-                              className="text-white text-xs font-medium hover:text-primary-400"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {category.title}
-                            </Link>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Mobile category lists */}
-                    {sovranInteriorsData.navigation.mainCategories.map((category) => (
-                      <div key={category.id} className="space-y-1 mt-2 border-t border-dark-700 pt-2">
-                        <Link 
-                          to={category.link} 
-                          className="block px-3 py-1.5 text-sm text-white font-medium hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {category.title}
-                        </Link>
-                        
-                        <div className="grid grid-cols-2 gap-x-2">
-                          {category.subcategories.map((subcategory) => (
-                            <Link 
-                              key={subcategory.id} 
-                              to={subcategory.link} 
-                              className="block px-5 py-1.5 text-xs text-gray-300 hover:bg-dark-700 hover:text-white rounded-md"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {subcategory.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-
-                    {/* Featured video thumbnails */}
-                    <div className="mt-4 border-t border-dark-700 pt-3">
-                      <h4 className="px-3 text-sm font-medium text-white mb-2">Featured Videos</h4>
-                      <div className="grid grid-cols-2 gap-2 px-3">
-                        {featuredVideos.map((video, index) => (
-                          <div key={index} className="relative rounded-lg overflow-hidden aspect-video">
-                            <LazyImage 
-                              src={video.thumbnail} 
-                              alt={video.title}
-                              className="w-full h-full object-cover"
-                              startLoading={activeDropdown === 'mobile-interiors'}
-                              priority={index}
-                            />
-                            <div className="absolute inset-0 bg-[#081E27]/60 flex items-center justify-center z-10">
-                              <Link 
-                                to={`/sovran-interiors/videos/${index}`}
-                                className="text-white text-xs font-medium hover:text-primary-400"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                {video.title}
-                              </Link>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              {/* Mobile Build Menu */}
-              <div className="space-y-1">
-                <button
-                  className="flex items-center justify-between w-full px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                  onClick={() => handleDropdownToggle('mobile-build')}
-                >
-                  <span>Build</span>
-                  <ChevronDownIcon className={`w-4 h-4 transition-transform ${activeDropdown === 'mobile-build' ? 'rotate-180' : ''}`} />
-                </button>
-                {activeDropdown === 'mobile-build' && (
-                  <div className="pl-4 space-y-1 pt-1 pb-2 bg-[#0a2732]/70 rounded-md ml-2 mr-2">
-                    {/* Residential Construction Section */}
-                    <button
-                      onClick={() => handleDropdownToggle('mobile-build-residential' as DropdownType)}
-                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                    >
-                      <span>Residential Construction</span>
-                      <ChevronDownIcon className={`w-4 h-4 transition-transform ${String(activeDropdown) === 'mobile-build-residential' ? 'rotate-180' : ''}`} />
-                    </button>
-                    {isMobileBuildMenu(activeDropdown) && (
-                      <div className="pl-4 space-y-1 bg-[#081E27]/60 rounded-md py-2 my-1 mx-2">
-                        <Link
-                          to="/sovran-builders/residential/renovations"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Renovations
-                        </Link>
-                        <Link
-                          to="/sovran-builders/residential/new-builds"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          New Builds
-                        </Link>
-                        <Link
-                          to="/sovran-builders/residential/extensions"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Extensions
-                        </Link>
-                        <Link
-                          to="/sovran-builders/residential/loft-conversions"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Loft Conversions
-                        </Link>
-                        <Link
-                          to="/sovran-builders/residential/basements"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Basements
-                        </Link>
-                        <Link
-                          to="/sovran-builders/residential/landscaping"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Landscaping
-                        </Link>
-                        <Link
-                          to="/sovran-builders/residential/swimming-pools"
-                          className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700 rounded-md"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Swimming Pools
-                        </Link>
-                      </div>
-                    )}
-                    <Link
-                      to="/sovran-builders/commercial"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Commercial Construction
-                    </Link>
-                    <Link
-                      to="/sovran-builders/process"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Process and Approach
-                    </Link>
-                    <Link
-                      to="/sovran-builders/portfolio"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Projects / Portfolio
-                    </Link>
-                    <Link
-                      to="/sovran-builders/testimonials"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Testimonials
-                    </Link>
-                    <Link
-                      to="/sovran-builders/faq"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      FAQ
-                    </Link>
-                    <Link
-                      to="/sovran-builders/contact"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Contact Us
-                    </Link>
-                    
-                    {/* Image grid at bottom of mobile menu */}
-                    <div className="mt-3 px-3 grid grid-cols-2 gap-2">
-                      <div className="relative rounded-lg overflow-hidden aspect-video">
-                        <LazyLoadImage 
-                          src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249677-HDR.jpg" 
-                          alt="Kitchen Project" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="relative rounded-lg overflow-hidden aspect-video">
-                        <LazyLoadImage 
-                          src="/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg" 
-                          alt="Bathroom Design" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-              {/* Mobile Architectural Design Menu */}
-              <div className="space-y-1">
-                <Link
-                  to="/sovran-design"
-                  className="flex items-center justify-between w-full px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                  onClick={() => handleDropdownToggle('mobile-design')}
-                >
-                  <span>Architectural Design</span>
-                  <ChevronDownIcon className={`w-4 h-4 transition-transform ${activeDropdown === 'mobile-design' ? 'rotate-180' : ''}`} />
-                </Link>
-                {activeDropdown === 'mobile-design' && (
-                  <div className="pl-4 space-y-1 pt-1 pb-2 bg-[#0a2732]/70 rounded-md ml-2 mr-2">
-                    <Link
-                      to="/sovran-design#overview"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Architectural Services Overview
-                    </Link>
-                    <Link
-                      to="/sovran-design#planning"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Planning & Building Regulations
-                    </Link>
-                    <Link
-                      to="/sovran-design#engineering"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Structural Engineering
-                    </Link>
-                    <Link
-                      to="/sovran-design#renders"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      3D Renders & Visualisation
-                    </Link>
-                    <Link
-                      to="/sovran-design#portfolio"
-                      className="block px-4 py-2 text-sm text-white hover:bg-dark-700 rounded-md"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Projects / Portfolio
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <Link
-                to="/careers"
-                className="block px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Careers
-              </Link>
-              <Link
-                to="/contact"
-                className="block px-4 py-3 font-lato text-white hover:bg-dark-700 rounded-md mobile-menu-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </div>
+          <div className="mobile-menu-header">
+            <h3 className="text-white font-medium text-lg">Menu</h3>
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mobile-menu-close"
+            >
+              <XMarkIcon className="w-6 h-6 text-white" />
+            </button>
           </div>
+          
+          <div className="p-4 w-full box-border overflow-x-hidden">
+            <Link
+              to="/"
+              className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            
+            {/* Mobile About Us Menu */}
+            <div className="block">
+              <button
+                onClick={() => handleDropdownToggle('mobile-about')}
+                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              >
+                <span>About Us</span>
+                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-about' ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-about' ? 'active' : ''}`}>
+                <Link
+                  to="/about#space-story"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Every Space Has a Story
+                </Link>
+                <Link
+                  to="/about#our-story"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Our Story
+                </Link>
+                <Link
+                  to="/about#our-ethos"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Our Ethos
+                </Link>
+                <Link
+                  to="/about#process"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Our Process
+                </Link>
+                <Link
+                  to="/about#contact"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+            
+            {/* Architectural Design Menu */}
+            <div className="block">
+              <button
+                onClick={() => handleDropdownToggle('mobile-design')}
+                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              >
+                <span>Design</span>
+                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-design' ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-design' ? 'active' : ''}`}>
+                <Link
+                  to="/sovran-design#overview"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Architectural services overview
+                </Link>
+                <Link
+                  to="/sovran-design#planning-approvals"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Planning approvals
+                </Link>
+                <Link
+                  to="/sovran-design#structural-calculations"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Structural calculations &amp; building regulations
+                </Link>
+                <Link
+                  to="/sovran-design#private-building-control"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Private building control
+                </Link>
+                <Link
+                  to="/sovran-design#renders-vr"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  3D Renders and VR
+                </Link>
+              </div>
+            </div>
+            
+            {/* Build Menu */}
+            <div className="block">
+              <button
+                onClick={() => handleDropdownToggle('mobile-build')}
+                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              >
+                <span>Build</span>
+                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-build' ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-build' ? 'active' : ''}`}>
+                <Link
+                  to="/sovran-builders/residential"
+                  className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Residential Construction
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/renovations"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Renovations
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/new-builds"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  New Builds
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/extensions"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Extensions
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/loft-conversions"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Loft Conversions
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/basements"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Basements
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/landscaping"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Landscaping
+                </Link>
+                <Link
+                  to="/sovran-builders/residential/swimming-pools"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Swimming Pools
+                </Link>
+                
+                <Link
+                  to="/sovran-builders/commercial"
+                  className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Commercial Construction
+                </Link>
+                <Link
+                  to="/sovran-builders/commercial#office-spaces"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Office Spaces
+                </Link>
+                <Link
+                  to="/sovran-builders/commercial#retail"
+                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Retail
+                </Link>
+                
+                <Link
+                  to="/sovran-builders/process"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Process and Approach
+                </Link>
+                <Link
+                  to="/sovran-builders/portfolio"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Projects / Portfolio
+                </Link>
+                <Link
+                  to="/sovran-builders/testimonials"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Testimonials
+                </Link>
+                <Link
+                  to="/sovran-builders/faq"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  to="/sovran-builders/contact"
+                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+            
+            {/* Interiors Menu */}
+            <div className="block">
+              <button
+                onClick={() => handleDropdownToggle('mobile-interiors')}
+                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              >
+                <span>Interiors</span>
+                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-interiors' ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-interiors' ? 'active' : ''}`}>
+                <Link
+                  to="/sovran-interiors"
+                  className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  All Interiors
+                </Link>
+                
+                {sovranInteriorsData.navigation.mainCategories.map((category) => (
+                  <div key={category.id}>
+                    <Link
+                      to={category.link}
+                      className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {category.title}
+                    </Link>
+                    
+                    {category.subcategories.map((subcategory) => (
+                      <Link
+                        key={subcategory.id}
+                        to={subcategory.link}
+                        className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {subcategory.title}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <Link
+              to="/careers"
+              className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Careers
+            </Link>
+            
+            <Link
+              to="/contact"
+              className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );
 }
 
 export default Navigation;
+

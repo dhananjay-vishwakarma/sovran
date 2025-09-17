@@ -15,7 +15,6 @@
     "@types/react-dom": "^18.2.0",
     "@types/react-helmet": "^6.1.11",
     "@types/react-router-dom": "^5.3.3",
-    "compressorjs": "^1.2.1",
     "firebase": "^12.1.0",
     "framer-motion": "^12.23.9",
     "gsap": "^3.13.0",
@@ -32,6 +31,14 @@
     "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
+    "build:optimized": "npm install glob sharp --save-dev && node scripts/analyze_image_usage.js && react-scripts build && node scripts/copy_used_images.js && node scripts/resize_large_images.js && node scripts/resize_large_videos.js",
+    "build:full-optimize": "npm install glob sharp --save-dev && react-scripts build && ./scripts/optimize_build.sh",
+    "resize-images": "node scripts/resize_large_images.js",
+    "resize-videos": "node scripts/resize_large_videos.js",
+    "resize-media": "node scripts/resize_large_images.js && node scripts/resize_large_videos.js",
+    "optimize-images": "node scripts/analyze_image_usage.js && node scripts/copy_used_images.js",
+    "optimize-build": "./scripts/optimize_build.sh",
+    "build:no-media": "react-scripts build && find build -type f \\( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.webp' -o -iname '*.svg' -o -iname '*.mp4' -o -iname '*.mov' -o -iname '*.webm' \\) -delete",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -56,7 +63,9 @@
   "devDependencies": {
     "@types/node": "^24.2.0",
     "autoprefixer": "^10.4.21",
+    "glob": "^11.0.3",
     "postcss": "^8.5.6",
+    "sharp": "^0.34.3",
     "tailwindcss": "^3.4.17"
   }
 }

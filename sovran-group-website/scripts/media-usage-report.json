@@ -1,0 +1,1956 @@
+{
+  "public/assets/images/Media-unit-Wine-lovers-dream-by-taaj-kitchens-scaled.jpg": [
+    {
+      "file": "src/templates/SovranInteriorsTemplate.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/templates/SovranInteriorsTemplate.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Kensington-Residence-by-Taaj-kitchens-front-view-scaled.jpg": [
+    {
+      "file": "src/templates/SovranInteriorsTemplate.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/templates/SovranInteriorsTemplate.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/ContactPage.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/ContactPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/ContactPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsHeroSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsHeroSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsHeroSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Copy-of-Luxury-London-Penthouse-Dark-kitchen-front-view-scaled.jpg": [
+    {
+      "file": "src/templates/SovranInteriorsTemplate.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/templates/SovranInteriorsTemplate.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Taaj-kitchens-German-FLUTED-KITCHEN_05.jpg": [
+    {
+      "file": "src/pages/ContactPage.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/ContactPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/ContactPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Executive-Office-furniture_MrWardrobe_0005-scaled.jpg": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/MrWardrobe-unparalleled-craftmanship-scaled-1.jpg": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/image-4-1.png": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Traditional-Craftmanship-Taaj-kitchens-Homepage-1.png": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Kensington-Residence-by-Taaj-kitchens-enterence-scaled.jpg": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Review-2-Em-Sheldon.jpg": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTeamSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTeamSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Review-3-Mathew-and-Jason.jpg": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTeamSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTeamSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Review-1-Maria-Carolina-860x1024.jpg": [
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/CareersPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249004-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Offices/mr wardrobe- bespoke home office.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-21-840.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/Luxurious Kitchens- 80K+/Picsart_24-06-05_16-35-46-845.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Karim/Photos/P1249069-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Kitchen/P1210010.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1260053-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Bushra Kitchen View.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "scripts/EXPLICIT_INCLUDE",
+      "type": "explicit",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249647-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bathroom 1/Photos/P1259847-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249662-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Mark/Photos/Exterior/P1209733.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249582-HDR.jpg": [
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/pages/AboutPage.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/icon/500w/SVG/8GoPIo.svg": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/icon/500w/clients.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/icon/500w/projects.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/icon/500w/experience.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/avatar/1.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/avatar/Marcus-O-Neill.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/avatar/2.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/avatar/Nyla-Idrissi.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/avatar/3.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/avatar/Shiv-Patel.png": [
+    {
+      "file": "src/components/TestimonialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/videos/Walkthrough.mp4": [
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "src",
+      "mediaType": "video"
+    },
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "absolute",
+      "mediaType": "video"
+    },
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "public/assets/avatar/Daniel-Turner.png": [
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/SuccessStorySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/everyspacehasstory/bg.png": [
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/StorySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/1.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/2.mp4": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "video"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "public/assets/images/portfolio/3.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/4.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/5.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/6.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/7.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/8.mp4": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "video"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "public/assets/images/portfolio/9.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/10.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/11.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/12.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/13.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/14.mp4": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "video"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "public/assets/images/portfolio/15.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/16.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/17.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/portfolio/18.jpg": [
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/RecentProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "src/assets/logo/Sovran-03-03.png": [
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "import",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Media Wall Reel.mp4": [
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Lounge/Photos/P1249682-HDR.jpg": [
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Wardrobe reel.mp4": [
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249438-HDR.jpg": [
+    {
+      "file": "src/components/Navigation.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/hero/1.png": [
+    {
+      "file": "src/components/MediaCards.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/hero/2.mp4": [
+    {
+      "file": "src/components/MediaCards.tsx",
+      "type": "direct",
+      "mediaType": "video"
+    }
+  ],
+  "src/assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg": [
+    {
+      "file": "src/components/ExitIntentPopup.tsx",
+      "type": "require",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/ExitIntentPopup.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "src/assets/logo/s.svg": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "import",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/verticals/1.png": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/verticals/2.jpg": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/verticals/3.jpg": [
+    {
+      "file": "src/components/BusinessVerticalsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/home-builder-2.jpg": [
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderHeroSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderHeroSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderHeroSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Before.jpg": [
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/traditional-kitchen-extension.jpg": [
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/After.jpg": [
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Grand-design-in-earthy-tones-by-Taaj-kitchens-5.jpg": [
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderAboutSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/traditional-shaker-kitchen.jpg": [
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/BuilderFeaturedWorksSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignFeaturedProjectsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/MrWardrobe-Magazine--739x1024.jpg": [
+    {
+      "file": "src/components/sections/interiors/InteriorsTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Glass-door-wardrobes-_MrWardrobe5-scaled.jpg": [
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsServicesSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Bespoke-dressing-room_MrWarobe_0002-1.jpg": [
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Copy-of-Taaj-Kitchens-Home-Bars_Wine-storages-scaled.jpg": [
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Bookshelvs_MrWardrobe-scaled.jpg": [
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/interiors/InteriorsGallerySection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/032720_RH_M7_Develop.jpeg": [
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/AdobeStock_1312472493.jpeg": [
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Aqib-10-Harold-Rd-027-scaled.jpg": [
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Background-image-for-finance-5-years-Taaj-Kitchens-1.png": [
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTestimonialsSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "scripts/EXPLICIT_INCLUDE",
+      "type": "explicit",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Review-4-Carlie-goodson.jpg": [
+    {
+      "file": "src/components/sections/design/DesignTeamSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignTeamSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/TAAJ Kitchens-20250726T155624Z-1-001/TAAJ Kitchens/3D renders/Pawan Kitchen render.jpg": [
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignRendersSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Dressing-Rooms.1.png.png": [
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Walk-in-wardrobe_MrWardrobe-scaled.jpg": [
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/home-Builder-2.jpg": [
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignPlanningSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Taaj-kitchens-Artistic-Handsketch-1-scaled.jpg": [
+    {
+      "file": "src/components/sections/design/DesignHeroSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignHeroSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignHeroSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignCtaSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignCtaSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignCtaSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/AdobeStock_586937970.png": [
+    {
+      "file": "src/components/sections/design/DesignEngineeringSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignEngineeringSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/design/DesignEngineeringSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/bespoke-loft-wardrobe_MrWardrobe_0005-scaled.jpg": [
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Wine-lovers-dream-by-taaj-kitchens-1-2-1.jpg": [
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderResidentialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/MrWardrobe-home-theme.jpg": [
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Designed-for-sould-Taaj-kitchens-Homepage.png": [
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderPortfolioSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Fretwork-wardrobes_MrWarobe_0001.png": [
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Mrwardrobe-manufacturing-unit.jpg": [
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "absolute",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/builder/BuilderCommercialSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Bedroom 1/Photos/P1249428-HDR.jpg": [
+    {
+      "file": "scripts/EXPLICIT_INCLUDE",
+      "type": "explicit",
+      "mediaType": "image"
+    }
+  ]
+}

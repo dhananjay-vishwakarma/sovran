@@ -1,19 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import "../styles/media-cards.css";
 
 gsap.registerPlugin(MotionPathPlugin);
 
-const videoSources = [
-  require("../assets/videos/output/Taaj_Dali_Kitchen_Media_V1_1.mp4"),
-  require("../assets/videos/output/Taaj_Dali_Wardrobe_Media_V1_1.mp4"),
-  require("../assets/videos/output/Loft Conversions Video Landscape_1.mp4"),
-  require("../assets/videos/output/Bedroom + Wardrobe - Landscape_1.mp4"),
-  require("../assets/videos/output/Taaj_Dali_Kitchen_Media_V1_1.mp4"),
+// Array containing both image and video sources
+const mediaSources = [
+  "/assets/hero/1.png", // Image with zoom effect
+  "/assets/hero/2.mp4", // Video
+  "assets/hero/3.png", // Video
 ];
 
-const baseRotations = [0, 5, 10, 15, 20];
+const baseRotations = [0, 5, 10];
 
 interface MediaCardsProps {
   className?: string;
@@ -21,15 +20,14 @@ interface MediaCardsProps {
 
 const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [activeVideoIndices, setActiveVideoIndices] = useState<number[]>([0, 1, 2]);
 
-  // ✅ Play video with preload option
   const playVideo = (card: HTMLElement | null, reset = true) => {
     const video = card?.querySelector("video") as HTMLVideoElement | null;
     if (video) {
-  // keep videos muted to remove music/audio
-  video.muted = true;
-  if (reset) video.currentTime = 0; // only reset if needed
-  video.play().catch(() => {});
+      video.muted = true;
+      if (reset) video.currentTime = 0;
+      video.play().catch(() => {});
     }
   };
 
@@ -43,23 +41,21 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
     });
   };
 
+  const isImage = (src: string): boolean => {
+    return src.endsWith('.png') || src.endsWith('.jpg') || src.endsWith('.jpeg');
+  };
+
   const applyStackStyle = () => {
     const cards = Array.from(containerRef.current?.children || []);
-
-    cards.forEach((card, i) => {
-      let rotation = 0;
-
-      if (i === 0) rotation = 0;
-      else if (i === 1) rotation = 5;
-      else if (i === 2) rotation = 10;
-      else if (i === 3) rotation = 15;
-      else rotation = 20; // last card or any extra
+    cards.slice(0, 3).forEach((card, i) => {
+      const rotation = baseRotations[i] || 0;
 
       gsap.to(card, {
         rotation,
-        zIndex: cards.length - i,
+        zIndex: 3 - i,
         duration: 0.5 + i * 0.1,
         ease: "power3.out",
+        display: "block"
       });
     });
   };
@@ -80,10 +76,16 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
 
       pauseAllVideos();
 
-      // 🔥 Preload next card muted (don’t reset time)
-      if (cards[1]) playVideo(cards[1], false);
+      // Check if the next card has a video and play it
+      const nextCard = cards[1];
+      if (nextCard) {
+        const nextVideo = nextCard.querySelector("video");
+        if (nextVideo) {
+          nextVideo.muted = true;
+          nextVideo.play().catch(() => {});
+        }
+      }
 
-      // Animate next cards rotation
       cards.slice(1).forEach((card, i) => {
         const targetRotation = (baseRotations[i + 1] ?? 0) - 5;
         gsap.to(card, {
@@ -91,6 +93,7 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
           duration: 0.6 + i * 0.1,
           ease: "power3.out",
           delay: i * 0.05,
+          display: i < 2 ? "block" : "none"
         });
       });
 
@@ -100,7 +103,6 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
         onComplete: () => {
           container.appendChild(topCard);
           applyStackStyle();
-          // ✅ no restart here — next card is already playing
         },
       });
 
@@ -109,7 +111,7 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
         motionPath: {
           path: [
             { x: localX + 360 + 300, y: localY, rotation: 18 },
-            { x: localX, y: localY, rotation: 20, opacity: 0 },
+            { x: localX, y: localY, rotation: 10, opacity: 0 },
           ],
           curviness: 1.2,
         },
@@ -122,33 +124,92 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
     };
 
     applyStackStyle();
-    playVideo(container.children[0] as HTMLElement); // first card starts normally
+    
+    // Play video if the first card has one
+    const firstCard = container.children[0] as HTMLElement;
+    const firstVideo = firstCard?.querySelector("video");
+    if (firstVideo) {
+      firstVideo.muted = true;
+      firstVideo.currentTime = 0;
+      firstVideo.play().catch(() => {});
+    }
 
     const interval = setInterval(swipeCard, 7000);
     return () => clearInterval(interval);
+  }, []);
+
+  // ✅ Handle tab visibility change
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        const cards = Array.from(container.children) as HTMLElement[];
+
+        cards.forEach((card, i) => {
+          gsap.set(card, {
+            x: 0,
+            y: 0,
+            rotation: baseRotations[i] || 0,
+            opacity: 1,
+            zIndex: 3 - i,
+            display: i < 3 ? "block" : "none"
+          });
+        });
+
+        applyStackStyle();
+        
+        // Play video if first card has one
+        const firstCard = cards[0];
+        const firstVideo = firstCard?.querySelector("video");
+        if (firstVideo) {
+          firstVideo.muted = true;
+          firstVideo.currentTime = 0;
+          firstVideo.play().catch(() => {});
+        }
+      } else {
+        pauseAllVideos();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   return (
     <div
       ref={containerRef}
       style={{ position: "relative" }}
-    className={`media-card-container w-full h-[480px] md:w-[480px]`}
+      className={`media-card-container w-full h-[480px] md:w-[600px] ${className || ""}`}
     >
-      {videoSources.map((src, i) => (
+      {mediaSources.slice(0, 3).map((src, i) => (
         <div
           key={i}
-           className="media-card absolute top-0 left-0 w-full h-full bg-gray-700 rounded-2xl shadow-xl overflow-hidden"
+          className="media-card absolute top-0 left-0 w-full h-full bg-gray-700 rounded-2xl shadow-xl overflow-hidden group"
           style={{ maxWidth: "calc(100vw - 40px)" }}
         >
-          <video
-            className="w-full h-full object-cover"
-            muted
-            playsInline
-            preload="metadata"
-            loop
-          >
-            <source src={src} type="video/mp4" />
-          </video>
+          {src.endsWith('.png') || src.endsWith('.jpg') || src.endsWith('.jpeg') ? (
+            // Image element with zoom effect
+            <img 
+              src={src} 
+              alt={`Media card ${i+1}`}
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 zoom-effect"
+            />
+          ) : (
+            // Video element
+            <video
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+              muted
+              playsInline
+              preload="metadata"
+              loop
+            >
+              <source src={src} type="video/mp4" />
+            </video>
+          )}
         </div>
       ))}
     </div>
