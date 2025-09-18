@@ -14,6 +14,10 @@ body.smooth-scroll {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden !important;
+}
+
 /* Advanced Smooth Scrolling */
 @media (prefers-reduced-motion: no-preference) {
   html, body.smooth-scroll {

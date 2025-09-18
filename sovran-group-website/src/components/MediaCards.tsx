@@ -5,15 +5,14 @@ import "../styles/media-cards.css";
 
 gsap.registerPlugin(MotionPathPlugin);
 
-// Array containing both image and video sources
+// Array containing image and video sources for media cards
 const mediaSources = [
   "/assets/hero/1.png", // Image with zoom effect
-  "/assets/hero/2.mp4", // Video
-  "assets/hero/3.png", // Video
+  "/assets/hero/1.mp4", // Video
+  "/assets/hero/3.png", // Video
 ];
 
 const baseRotations = [0, 5, 10];
-
 interface MediaCardsProps {
   className?: string;
 }

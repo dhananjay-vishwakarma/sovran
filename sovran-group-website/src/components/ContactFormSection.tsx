@@ -8,6 +8,7 @@ const ContactFormSection: React.FC = () => {
     email: '',
     phone: '',
     service: '',
+    investment: '',
     message: '',
   });
   
@@ -182,9 +183,33 @@ const ContactFormSection: React.FC = () => {
                       className="w-full px-0 py-2 bg-transparent border-b-2 border-[#CDAD7D]/30 focus:outline-none focus:border-[#CDAD7D] text-white placeholder-gray-400 appearance-none"
                     >
                       <option value="" className="bg-[#081E27] text-gray-400">Select a service</option>
-                      <option value="builders" className="bg-[#081E27]">Architectural</option>
-                      <option value="design" className="bg-[#081E27]">Build</option>
-                      <option value="interiors" className="bg-[#081E27]">Design</option>
+                      <option value="architectural" className="bg-[#081E27]">Architectural</option>
+                      <option value="build" className="bg-[#081E27]">Build</option>
+                      <option value="interiors" className="bg-[#081E27]">Interiors</option>
+                      <option value="multiple-projects" className="bg-[#081E27]">Multiple Projects</option>
+                      <option value="other" className="bg-[#081E27]">Other</option>
+                    </select>
+                    <div className="absolute right-0 top-3 pointer-events-none">
+                      <svg className="w-4 h-4 text-[#CDAD7D]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Investment dropdown next to service selection */}
+                  <div className="relative">
+                    <select
+                      id="investment"
+                      name="investment"
+                      value={(formData as any).investment || ''}
+                      onChange={handleChange}
+                      className="w-full px-0 py-2 bg-transparent border-b-2 border-[#CDAD7D]/30 focus:outline-none focus:border-[#CDAD7D] text-white placeholder-gray-400 appearance-none"
+                    >
+                      <option value="" className="bg-[#081E27] text-gray-400">Investment</option>
+                      <option value="under-100k" className="bg-[#081E27]">Under 100K</option>
+                      <option value="under-400k" className="bg-[#081E27]">Under 400K</option>
+                      <option value="under-1m" className="bg-[#081E27]">Under 1M</option>
+                      <option value="1m-plus" className="bg-[#081E27]">1M+</option>
                     </select>
                     <div className="absolute right-0 top-3 pointer-events-none">
                       <svg className="w-4 h-4 text-[#CDAD7D]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

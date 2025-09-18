@@ -7,6 +7,7 @@ const BuilderContactSection: React.FC = () => {
     email: '',
     phone: '',
     service: 'builders',
+    investment: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,6 +44,7 @@ const BuilderContactSection: React.FC = () => {
           email: '',
           phone: '',
           service: 'builders',
+          investment: '',
           message: ''
         });
       } else {

@@ -7,6 +7,7 @@ const DesignContactSection: React.FC = () => {
     email: '',
     phone: '',
     service: 'design',
+    investment: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,6 +50,7 @@ const DesignContactSection: React.FC = () => {
           email: '',
           phone: '',
           service: 'design',
+          investment: '',
           message: ''
         });
       } else {

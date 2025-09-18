@@ -25,7 +25,8 @@ export interface ContactFormData {
   name: string;
   email: string;
   phone: string;
-  service: 'builders' | 'design' | 'interiors' | '';
+  service: 'builders' | 'design' | 'interiors' | 'architectural' | 'build' | 'multiple-projects' | 'other' | '';
+  investment?: '' | 'under-100k' | 'under-400k' | 'under-1m' | '1m-plus';
   message: string;
   createdAt?: any;
 }

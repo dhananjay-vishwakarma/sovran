@@ -1,19 +1,22 @@
 /* MediaCards responsive styles */
 
 /* Common styles for all screen sizes */
+
+
 .media-card-container {
   margin: 0 auto;
   position: relative;
   z-index: 10;
-}
 
+}
+/* 
 .media-card {
   max-width: calc(100vw - 40px);
   margin: 0 auto;
   border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
-}
+} */
 
 /* Zoom effect for images */
 @keyframes zoomInOut {
