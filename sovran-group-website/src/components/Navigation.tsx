@@ -374,21 +374,22 @@ useEffect(() => {
         <div className="flex flex-col md:flex-col items-center">
           {/* Logo (centered on desktop, right on mobile) */}
           <div className="logo-container">
-            <Link to="/">
+            {/* Use a real anchor with full reload to force hard refresh when returning to home */}
+            <a href="/" onClick={(e) => { /* allow normal navigation which will hard reload */ }}>
               <img
                 src={sovranLogo}
                 alt="Sovran Group Logo"
                 className="logo"
               />
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation (centered below logo) */}
           <div className="hidden md:flex items-center space-x-8 nav-menu">
             {/* Home */}
-            <Link to="/" className="font-lato text-white hover:text-primary-400 transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 hover:after:w-full after:transition-all after:duration-300">
+            <a href="/" className="font-lato text-white hover:text-primary-400 transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 hover:after:w-full after:transition-all after:duration-300">
               Home
-            </Link>
+            </a>
             {/* About Us Dropdown - Enhanced with Images */}
             <div className="relative group py-2" ref={aboutMenuRef}>
               <Link to="/about" className="flex items-center font-lato text-white hover:text-primary-400 transition-colors focus:outline-none">
@@ -887,13 +888,13 @@ useEffect(() => {
           </div>
           
           <div className="p-4 w-full box-border overflow-x-hidden">
-            <Link
-              to="/"
+            <a
+              href="/"
               className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
-            </Link>
+            </a>
             
             {/* Mobile About Us Menu */}
             <div className="block">

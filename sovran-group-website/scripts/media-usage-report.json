@@ -1345,6 +1345,76 @@
       "mediaType": "image"
     }
   ],
+  "public/assets/section/5.png": [
+    {
+      "file": "src/components/BackgroundSection.tsx",
+      "type": "css",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/BackgroundSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/section/1.png": [
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/section/2.png": [
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/section/3.png": [
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
+  "public/assets/section/4.png": [
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "src",
+      "mediaType": "image"
+    },
+    {
+      "file": "src/components/sections/FloatingImageSection.tsx",
+      "type": "direct",
+      "mediaType": "image"
+    }
+  ],
   "public/assets/images/home-builder-2.jpg": [
     {
       "file": "src/components/sections/BuilderServicesSection.tsx",

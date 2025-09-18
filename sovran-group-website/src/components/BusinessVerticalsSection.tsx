@@ -10,8 +10,16 @@ const businessArch = '/assets/verticals/1.png';
 const businessBuild = '/assets/verticals/2.jpg';
 const businessInterior = '/assets/verticals/3.jpg';
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
+// Register ScrollTrigger if not already registered
+try {
+  // @ts-ignore - GSAP stores registered plugins internally
+  if (!gsap.__plugins || !gsap.__plugins.some((p: any) => p.name === 'ScrollTrigger')) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+} catch (err) {
+  // Fallback registration
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const BusinessVerticalsSection: React.FC = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -24,6 +32,7 @@ const BusinessVerticalsSection: React.FC = () => {
     const headingEl = headingRef.current;
     
     if (headingEl) {
+      console.log('[BusinessVerticals] Heading element found, creating animation');
       gsap.set(headingEl, { opacity: 1 });
       gsap.fromTo(
         headingEl,
@@ -36,6 +45,7 @@ const BusinessVerticalsSection: React.FC = () => {
           scrollTrigger: {
             trigger: headingEl,
             start: 'top 80%',
+            onEnter: () => console.log('[BusinessVerticals] heading onEnter'),
           },
         }
       );
@@ -46,6 +56,7 @@ const BusinessVerticalsSection: React.FC = () => {
     cards.forEach((card, index) => {
       if (!card) return;
 
+      console.log('[BusinessVerticals] creating card animation for index', index);
       gsap.fromTo(
         card,
         { y: 40, opacity: 0 },
@@ -58,12 +69,22 @@ const BusinessVerticalsSection: React.FC = () => {
           scrollTrigger: {
             trigger: card,
             start: 'top 90%',
+            onEnter: () => console.log('[BusinessVerticals] card onEnter index', index),
           },
         }
       );
     });
 
     return () => {
+    // Give ScrollTrigger a moment to recalc positions
+    setTimeout(() => {
+      try {
+        ScrollTrigger.refresh();
+        console.log('[BusinessVerticals] ScrollTrigger refreshed');
+      } catch (e) {
+        console.warn('[BusinessVerticals] ScrollTrigger.refresh failed', e);
+      }
+    }, 50);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);

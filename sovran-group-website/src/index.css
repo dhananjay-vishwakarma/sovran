@@ -305,3 +305,83 @@ code {
 .animate-fade-in-with-blur {
   animation: fadeInWithBlur 1.4s ease-out forwards;
 }
+
+/* Floating image entrance animations */
+.floating-image {
+  transition: transform 1.2s cubic-bezier(.22,.9,.29,1), opacity 1.2s ease-out;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* initial offsets (subtle) */
+.floating-image.from-left-top {
+  transform: translate(-40px, -24px) scale(0.995);
+}
+.floating-image.from-bottom-left {
+  transform: translate(-40px, 24px) scale(0.995);
+}
+.floating-image.from-right-top {
+  transform: translate(40px, -24px) scale(0.995);
+}
+.floating-image.from-bottom-right {
+  transform: translate(40px, 24px) scale(0.995);
+}
+.floating-image.from-center-top {
+  transform: translate(0px, -18px) scale(0.995);
+}
+
+/* when they enter view, move to natural position slowly */
+.floating-image.in-view {
+  transform: translate(0px, 0px) scale(1) !important;
+  opacity: 1 !important;
+}
+
+/* Continuous subtle drifting for floating images. Use .floating-inner to avoid clashing with GSAP transforms on parent */
+.floating-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+@keyframes drift-left-top {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-6px,-4px); }
+  100% { transform: translate(0,0); }
+}
+@keyframes drift-bottom-left {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-6px,4px); }
+  100% { transform: translate(0,0); }
+}
+@keyframes drift-right-top {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(6px,-4px); }
+  100% { transform: translate(0,0); }
+}
+@keyframes drift-bottom-right {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(6px,4px); }
+  100% { transform: translate(0,0); }
+}
+@keyframes drift-center-top {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(0,-6px); }
+  100% { transform: translate(0,0); }
+}
+
+.floating-image.from-left-top .floating-inner {
+  animation: drift-left-top 8s ease-in-out infinite;
+}
+.floating-image.from-bottom-left .floating-inner {
+  animation: drift-bottom-left 9s ease-in-out infinite;
+}
+.floating-image.from-right-top .floating-inner {
+  animation: drift-right-top 8.5s ease-in-out infinite;
+}
+.floating-image.from-bottom-right .floating-inner {
+  animation: drift-bottom-right 9s ease-in-out infinite;
+}
+.floating-image.from-center-top .floating-inner {
+  animation: drift-center-top 7.5s ease-in-out infinite;
+}

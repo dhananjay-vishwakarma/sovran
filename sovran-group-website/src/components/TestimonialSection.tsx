@@ -3,8 +3,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/testimonial-carousel.css';
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+// Register ScrollTrigger plugin safely
+try {
+  // @ts-ignore
+  if (!gsap.__plugins || !gsap.__plugins.some((p: any) => p.name === 'ScrollTrigger')) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+} catch (err) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 // Additional styles for testimonial
 const additionalStyles = `
@@ -218,14 +225,33 @@ const TestimonialSection: React.FC = () => {
       ease: 'power2.out'
     });
 
-    const trig = ScrollTrigger.create({ 
-      trigger: el, 
-      start: 'top 80%', 
-      onEnter: () => animation.play(), 
-      onLeaveBack: () => animation.pause(0), 
-      onEnterBack: () => animation.play(), 
-      once: false 
+    const trig = ScrollTrigger.create({
+      trigger: el,
+      start: 'top 80%',
+      onEnter: () => {
+        console.log('[Testimonial] heading onEnter, playing animation');
+        animation.play();
+      },
+      onLeaveBack: () => {
+        console.log('[Testimonial] heading onLeaveBack, resetting animation');
+        animation.pause(0);
+      },
+      onEnterBack: () => {
+        console.log('[Testimonial] heading onEnterBack, playing animation');
+        animation.play();
+      },
+      once: false,
     });
+
+    // Ensure ScrollTrigger measurements are up-to-date
+    setTimeout(() => {
+      try {
+        ScrollTrigger.refresh();
+        console.log('[Testimonial] ScrollTrigger refreshed after creating heading trigger');
+      } catch (e) {
+        console.warn('[Testimonial] ScrollTrigger.refresh failed', e);
+      }
+    }, 50);
 
     return () => {
       trig.kill(true);

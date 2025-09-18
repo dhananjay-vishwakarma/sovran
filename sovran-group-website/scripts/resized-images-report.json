@@ -1,9 +1,9 @@
 {
   "summary": {
-    "totalImages": 94,
+    "totalImages": 99,
     "resizedImages": 32,
     "skippedImages": 4,
-    "totalSavedBytes": 117428806,
+    "totalSavedBytes": 117428430,
     "totalSavedFormatted": "111.99 MB"
   },
   "resizedImages": [
@@ -25,7 +25,7 @@
     {
       "path": "assets/images/AdobeStock_586937970.png",
       "originalSize": 428897,
-      "newSize": 81897,
+      "newSize": 82255,
       "originalDimensions": {
         "width": 5036,
         "height": 2978
@@ -34,7 +34,7 @@
         "width": 2000,
         "height": 1183
       },
-      "byteSaved": 347000,
+      "byteSaved": 346642,
       "percentSaved": 81
     },
     {
@@ -475,7 +475,7 @@
     {
       "path": "static/media/Sovran-03-03.7daba6c2ae44e4352308.png",
       "originalSize": 86227,
-      "newSize": 31529,
+      "newSize": 31547,
       "originalDimensions": {
         "width": 4218,
         "height": 961
@@ -484,7 +484,7 @@
         "width": 2000,
         "height": 456
       },
-      "byteSaved": 54698,
+      "byteSaved": 54680,
       "percentSaved": 63
     }
   ],

@@ -11,8 +11,22 @@ const RecentProjectsSection: React.FC = () => {
 
   // Initialize animations for revealed images
   const initializeAnimations = () => {
-    // Clear any existing ScrollTrigger instances for clean slate
-    ScrollTrigger.getAll().forEach((t) => t.kill());
+    // Clear only ScrollTrigger instances that belong to this section
+    const killTriggersInSection = () => {
+      try {
+        const all = ScrollTrigger.getAll();
+        all.forEach((t) => {
+          const trigEl = t.trigger as Element | null;
+          if (trigEl && sectionRef.current && sectionRef.current.contains(trigEl)) {
+            t.kill();
+          }
+        });
+      } catch (e) {
+        // Fallback to safe behavior: don't kill global triggers
+        console.warn('[RecentProjects] killTriggersInSection failed', e);
+      }
+    };
+    killTriggersInSection();
     
     // Use a longer timeout to ensure DOM is fully updated
     setTimeout(() => {
@@ -50,8 +64,18 @@ const RecentProjectsSection: React.FC = () => {
     initializeAnimations();
     
     return () => {
-      // Clean up ScrollTrigger instances when component unmounts
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      // Clean up only triggers that belong to this section when component unmounts
+      try {
+        const all = ScrollTrigger.getAll();
+        all.forEach((t) => {
+          const trigEl = t.trigger as Element | null;
+          if (trigEl && sectionRef.current && sectionRef.current.contains(trigEl)) {
+            t.kill();
+          }
+        });
+      } catch (e) {
+        console.warn('[RecentProjects] cleanup failed', e);
+      }
     };
   }, [visibleItems, animationKey]);
 
@@ -192,14 +216,34 @@ const RecentProjectsSection: React.FC = () => {
           <button 
             onClick={() => {
               if (visibleItems >= portfolioItems.length) {
-                // When showing less, kill animations, update count, and force refresh
-                ScrollTrigger.getAll().forEach((t) => t.kill());
+                // When showing less, kill only animations inside this section, update count, and force refresh
+                try {
+                  const all = ScrollTrigger.getAll();
+                  all.forEach((t) => {
+                    const trigEl = t.trigger as Element | null;
+                    if (trigEl && sectionRef.current && sectionRef.current.contains(trigEl)) {
+                      t.kill();
+                    }
+                  });
+                } catch (e) {
+                  console.warn('[RecentProjects] kill-on-show-less failed', e);
+                }
                 setVisibleItems(9);
                 // Force re-initialization of animations with a new key
                 setAnimationKey(prevKey => prevKey + 1);
               } else {
-                // When loading more, kill animations, update count, and force refresh
-                ScrollTrigger.getAll().forEach((t) => t.kill());
+                // When loading more, kill only animations inside this section, update count, and force refresh
+                try {
+                  const all = ScrollTrigger.getAll();
+                  all.forEach((t) => {
+                    const trigEl = t.trigger as Element | null;
+                    if (trigEl && sectionRef.current && sectionRef.current.contains(trigEl)) {
+                      t.kill();
+                    }
+                  });
+                } catch (e) {
+                  console.warn('[RecentProjects] kill-on-load-more failed', e);
+                }
                 setVisibleItems(prev => prev + 9);
                 // Force re-initialization of animations with a new key
                 setAnimationKey(prevKey => prevKey + 1);

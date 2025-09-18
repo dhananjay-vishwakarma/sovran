@@ -385,6 +385,26 @@
       "type": "image"
     },
     {
+      "path": "build/assets/section/1.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/section/2.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/section/3.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/section/4.png",
+      "type": "image"
+    },
+    {
+      "path": "build/assets/section/5.png",
+      "type": "image"
+    },
+    {
       "path": "build/assets/verticals/1.png",
       "type": "image"
     },
@@ -399,30 +419,6 @@
     {
       "path": "build/assets/videos/Walkthrough.mp4",
       "type": "video"
-    },
-    {
-      "path": "build/static/media/Asset 1.82ae5d0bf68e2be82313.svg",
-      "type": "image"
-    },
-    {
-      "path": "build/static/media/Asset 2.9cb4f126bdbde4762eb0.svg",
-      "type": "image"
-    },
-    {
-      "path": "build/static/media/Asset 3.caba02d8113b0106e1e6.svg",
-      "type": "image"
-    },
-    {
-      "path": "build/static/media/Asset 4.b2f74d5f9df841180137.svg",
-      "type": "image"
-    },
-    {
-      "path": "build/static/media/Asset 5.5ec67a188604ea4839d4.svg",
-      "type": "image"
-    },
-    {
-      "path": "build/static/media/Asset 6.8ea22aea4ec2b398eee4.svg",
-      "type": "image"
     },
     {
       "path": "build/static/media/Chiswick home- Sovran1.18bef98c1b1010ac453f.jpg",
