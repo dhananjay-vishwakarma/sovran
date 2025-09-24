@@ -33,14 +33,17 @@ const additionalStyles = `
   }
   .testimonial-container {
     position: relative;
+    /* Ensure child slides are clipped to this container */
     overflow: hidden;
   }
+  /* Each testimonial is laid out in the normal flow so translateX can be clipped by the container */
   .testimonial-item {
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 0;
     left: 0;
     transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    will-change: transform, opacity;
   }
 `;
 
@@ -406,11 +409,15 @@ const TestimonialSection: React.FC = () => {
   };
 
   return (
+    
     <section className="py-20 md:py-28 bg-gray-50">
-      <div className="container mx-auto px-2 max-w-7xl">
+      <div className="mx-auto px-2 max-w-7xl">
+
+       
         <div className="mb-4">
           <span className="text-primary-500 text-sm font-lato uppercase tracking-wider">TESTIMONIAL</span>
         </div>
+       
 
         <h2 ref={headingRef} className="text-4xl md:text-5xl text-[#081E27] mb-28 ivymode-regular">Proven Expertise, Tangible Results</h2>
         
@@ -531,7 +538,7 @@ const TestimonialSection: React.FC = () => {
                               height: '240px', 
                               left: `${positions.avatarX}px`, 
                               top: `${positions.avatarY}px`,
-                              zIndex: 15
+                              zIndex: 100,
                             }}
                           >
                             <img src={t.avatar} alt="Project" className="w-full h-full object-cover" />
@@ -562,7 +569,7 @@ const TestimonialSection: React.FC = () => {
           </div>
 
           {/* Right Column - Why We're Different */}
-          <div className="lg:col-span-4 flex flex-col">
+          <div className="lg:col-span-4 flex flex-col z-10">
             <div 
               className="bg-[#FFFCF5] p-10 rounded-xl border border-gray-100 flex flex-col h-full"
             >
@@ -595,8 +602,10 @@ const TestimonialSection: React.FC = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
+
 
       {/* Position Controls - Only visible in development mode */}
       {process.env.NODE_ENV === 'development' && (
@@ -696,15 +705,6 @@ const TestimonialSection: React.FC = () => {
         </div>
       )}
 
-      {/* Testimonial Modal */}
-      <Modal 
-        isOpen={modalOpen}
-        onClose={closeModal}
-        title="Client Testimonial"
-        content={modalContent.content}
-        author={modalContent.author}
-        position={modalContent.position}
-      />
     </section>
   );
 };

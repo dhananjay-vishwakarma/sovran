@@ -1,13 +1,29 @@
 {
   "summary": {
-    "totalVideos": 7,
-    "resizedVideos": 3,
-    "skippedVideos": 4,
+    "totalVideos": 8,
+    "resizedVideos": 5,
+    "skippedVideos": 3,
     "failedVideos": 0,
-    "totalSavedBytes": 134811496,
-    "totalSavedFormatted": "128.57 MB"
+    "totalSavedBytes": 140740718,
+    "totalSavedFormatted": "134.22 MB"
   },
   "resizedVideos": [
+    {
+      "path": "assets/hero/1.mp4",
+      "originalSize": 4439840,
+      "newSize": 1475229,
+      "originalDimensions": {
+        "width": 1418,
+        "height": 1080
+      },
+      "newDimensions": {
+        "width": 944,
+        "height": 720
+      },
+      "duration": 6.2,
+      "byteSaved": 2964611,
+      "percentSaved": 67
+    },
     {
       "path": "assets/images/Drop Box-20250726T154239Z-1-009/Drop Box/Dali Bacha/Kitchen & Media Wall Reel.mp4",
       "originalSize": 81292834,
@@ -41,6 +57,22 @@
       "percentSaved": 90
     },
     {
+      "path": "assets/videos/1.mp4",
+      "originalSize": 4439840,
+      "newSize": 1475229,
+      "originalDimensions": {
+        "width": 1418,
+        "height": 1080
+      },
+      "newDimensions": {
+        "width": 944,
+        "height": 720
+      },
+      "duration": 6.2,
+      "byteSaved": 2964611,
+      "percentSaved": 67
+    },
+    {
       "path": "assets/videos/Walkthrough.mp4",
       "originalSize": 3656183,
       "newSize": 2305785,
@@ -58,14 +90,6 @@
     }
   ],
   "skippedVideos": [
-    {
-      "path": "assets/hero/2.mp4",
-      "reason": "Already within size limits",
-      "dimensions": {
-        "width": 600,
-        "height": 480
-      }
-    },
     {
       "path": "assets/images/portfolio/14.mp4",
       "reason": "Already within size limits",

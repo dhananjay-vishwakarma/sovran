@@ -143,8 +143,8 @@ const BusinessVerticalsSection: React.FC = () => {
                 <div
                   className="w-full"
                   style={{
-                    height: '230px', // Adjust this value to match the text block height
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,1) 100%)',
+                    height: '210px', // slightly taller so gradient starts higher on the image
+                    background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,1) 100%)',
                   }}
                 />
               </div>
@@ -168,13 +168,13 @@ const BusinessVerticalsSection: React.FC = () => {
               }}
             >
               <div className="absolute bottom-0 left-0 w-full" style={{ pointerEvents: 'none' }}>
-                 <div
-                  className="w-full"
-                  style={{
-                    height: '230px', // Adjust this value to match the text block height
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,1) 100%)',
-                  }}
-                />
+                   <div
+                    className="w-full"
+                    style={{
+                      height: '210px', // slightly shorter so gradient starts lower on the image
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,1) 100%)',
+                    }}
+                  />
               </div>
               <div className="relative flex flex-col justify-end items-center text-center h-full p-2">
                 <h3 className="text-4xl text-white mb-14 tracking-wider">BUILD</h3>
@@ -196,13 +196,13 @@ const BusinessVerticalsSection: React.FC = () => {
               }}
             >
               <div className="absolute bottom-0 left-0 w-full" style={{ pointerEvents: 'none' }}>
-                 <div
-                  className="w-full"
-                  style={{
-                    height: '230px', // Adjust this value to match the text block height
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,1) 100%)',
-                  }}
-                />
+                   <div
+                    className="w-full"
+                    style={{
+                      height: '210px', // mid value between card1 and card2 for variety
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,1) 100%)',
+                    }}
+                  />
               </div>
               <div className="relative flex flex-col justify-end items-center text-center h-full p-2">
                 <h3 className="text-4xl text-white mb-14 tracking-wider">INTERIORS</h3>

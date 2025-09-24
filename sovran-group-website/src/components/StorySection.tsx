@@ -35,7 +35,7 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
   // Developer controls state
   const [controls, setControls] = useState<ControlSettings>({
     textGlowAmount: 15,
-    overlayOpacity: 0.8,
+    overlayOpacity: 0.5,
     aspectRatio: '2.15:1',
     bgPosition: 'center',
     textPositionY: '0',
@@ -150,7 +150,7 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
           className={`space-y-8 ${controls.textPositionY !== '0' ? `pt-${controls.textPositionY}` : ''}`}
         >
           <h2 
-            className={`font-sans ${controls.headingSize} text-white mb-8 ivymode tracking-wider`}
+            className={`font-sans ${controls.headingSize} text-white mb-8 ivymode tracking-wider font-light`}
             style={{
               ...textGlowStyle,
               marginTop: `${controls.titlePositionY}px`,

@@ -1,9 +1,9 @@
 # Media Usage Report
 
-Generated on 9/18/2025, 12:28:20 AM
+Generated on 9/18/2025, 11:26:15 PM
 
-Total media files used: 102
-Images: 95
+Total media files used: 103
+Images: 96
 Videos: 7
 
 ## Media Files Used in Components
@@ -552,7 +552,13 @@ Used in the following files:
 
 - src/components/MediaCards.tsx (direct)
 
-### public/assets/hero/2.mp4 (video)
+### public/assets/hero/1.mp4 (video)
+
+Used in the following files:
+
+- src/components/MediaCards.tsx (direct)
+
+### public/assets/hero/3.png (image)
 
 Used in the following files:
 

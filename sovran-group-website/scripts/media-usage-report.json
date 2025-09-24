@@ -1293,11 +1293,18 @@
       "mediaType": "image"
     }
   ],
-  "public/assets/hero/2.mp4": [
+  "public/assets/hero/1.mp4": [
     {
       "file": "src/components/MediaCards.tsx",
       "type": "direct",
       "mediaType": "video"
+    }
+  ],
+  "public/assets/hero/3.png": [
+    {
+      "file": "src/components/MediaCards.tsx",
+      "type": "direct",
+      "mediaType": "image"
     }
   ],
   "src/assets/images/Chiswick/DBI/Chiswick home- Sovran1.jpg": [

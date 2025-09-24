@@ -33,12 +33,12 @@
       "type": "image"
     },
     {
-      "path": "build/assets/hero/1.png",
-      "type": "image"
+      "path": "build/assets/hero/1.mp4",
+      "type": "video"
     },
     {
-      "path": "build/assets/hero/2.mp4",
-      "type": "video"
+      "path": "build/assets/hero/1.png",
+      "type": "image"
     },
     {
       "path": "build/assets/hero/3.png",
@@ -415,6 +415,10 @@
     {
       "path": "build/assets/verticals/3.jpg",
       "type": "image"
+    },
+    {
+      "path": "build/assets/videos/1.mp4",
+      "type": "video"
     },
     {
       "path": "build/assets/videos/Walkthrough.mp4",
@@ -2071,10 +2075,6 @@
       "type": "image"
     },
     {
-      "path": "build/assets/videos/1.mp4",
-      "type": "video"
-    },
-    {
       "path": "build/assets/videos/Mark-Case_Study_1_Portrait_v3.mp4",
       "type": "video"
     },
@@ -2084,10 +2084,6 @@
     },
     {
       "path": "build/favicon-simple.svg",
-      "type": "image"
-    },
-    {
-      "path": "build/favicon.svg",
       "type": "image"
     },
     {

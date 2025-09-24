@@ -254,10 +254,10 @@ const RecentProjectsSection: React.FC = () => {
             }}
             className="bg-white text-black font-lato py-3 px-8 rounded-full hover:bg-gray-100 hover:text-gray-800 transition-colors duration-300 text-lg text-center"
           >
-            {visibleItems >= portfolioItems.length ? 'Show Less' : 'Load More'}
+            {visibleItems >= portfolioItems.length ? 'WORK WITH US' : 'LOAD MORE'}
           </button>
           <a href="/contact" className="bg-white text-black font-lato py-3 px-8 rounded-full hover:bg-gray-100 hover:text-gray-800 transition-colors duration-300 text-lg text-center">
-            Inquire
+            ASK A QUESTION
           </a>
         </div>
       </div>
