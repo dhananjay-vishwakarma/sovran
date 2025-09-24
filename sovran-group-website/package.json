@@ -31,6 +31,8 @@
     "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
+    "deploy:netlify": "npx netlify-cli deploy --dir=build --prod --site \"$NETLIFY_SITE_ID\"",
+    "build-and-deploy": "npm run build && npm run deploy:netlify",
     "build:optimized": "npm install glob sharp --save-dev && node scripts/analyze_image_usage.js && react-scripts build && node scripts/copy_used_images.js && node scripts/resize_large_images.js && node scripts/resize_large_videos.js",
     "build:full-optimize": "npm install glob sharp --save-dev && react-scripts build && ./scripts/optimize_build.sh",
     "resize-images": "node scripts/resize_large_images.js",
@@ -66,6 +68,7 @@
     "glob": "^11.0.3",
     "postcss": "^8.5.6",
     "sharp": "^0.34.4",
+    "netlify-cli": "^10.15.0",
     "tailwindcss": "^3.4.17"
   }
 }

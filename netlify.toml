@@ -1,6 +1,11 @@
 [build]
-  command = "npm --prefix sovran-group-website run build"
-  publish = "sovran-group-website/build"
+  # Run npm in the project subfolder; Netlify's `base` will be set to the
+  # `sovran-group-website` directory when deploying, so the command and
+  # publish path should be relative to that base. Using `--prefix` here is
+  # unnecessary during Netlify builds and caused a duplicated path when run
+  # from the repository root locally. Use a simple npm run command instead.
+  command = "npm run build"
+  publish = "build"
 
 [context.production.environment]
   NODE_ENV = "production"

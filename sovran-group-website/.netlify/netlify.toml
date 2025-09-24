@@ -1,0 +1,41 @@
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/sovran-group-website/build"
+publishOrigin = "config"
+commandOrigin = "config"
+base = "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website"
+command = "npm --prefix sovran-group-website run build"
+
+[build.environment]
+NODE_ENV = "production"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
