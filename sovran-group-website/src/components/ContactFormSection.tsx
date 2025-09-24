@@ -92,6 +92,10 @@ const ContactFormSection: React.FC = () => {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
+                <svg className="w-4 h-4 text-[#CDAD7D]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <polyline points="3 7 12 13 21 7" />
+                </svg>
                 <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="text-gray-300 hover:text-[#CDAD7D] transition-colors">
                   INFO@SOVRANGROUP.CO.UK
                 </a>

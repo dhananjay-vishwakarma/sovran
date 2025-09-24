@@ -1,205 +1,146 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
-// The section renders five hardcoded floating image cards. No runtime editor or localStorage.
 
 const FloatingImageSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const tweensRef = useRef<any[]>([]);
-  // cards are hardcoded via explicit JSX below
-  const isDev = process.env.NODE_ENV !== 'production';
-  // Always use GSAP + ScrollTrigger for parallax in this build. Debug logs added below.
 
-  type Pos = { top?: string | number; left?: string | number; width?: string | number; zIndex?: number };
-  const [overrides, setOverrides] = useState<Record<string, Pos>>({});
-
-  const getStyle = (id: string, base: Pos) => {
-    const o = overrides[id] || {};
-    const top = typeof o.top === 'number' ? `${o.top}px` : o.top ?? base.top;
-    const left = typeof o.left === 'number' ? `${o.left}px` : o.left ?? base.left;
-    const width = typeof o.width === 'number' ? `${o.width}px` : o.width ?? base.width;
-    const zIndex = o.zIndex ?? base.zIndex;
-    return { top, left, width, zIndex } as React.CSSProperties;
+  const getStyle = (base: { top?: string | number; left?: string | number; width?: string | number; zIndex?: number }) => {
+    return {
+      top: typeof base.top === 'number' ? `${base.top}px` : base.top,
+      left: typeof base.left === 'number' ? `${base.left}px` : base.left,
+      width: typeof base.width === 'number' ? `${base.width}px` : base.width,
+      zIndex: base.zIndex,
+    } as React.CSSProperties;
   };
 
-  const updateOverride = (id: string, patch: Pos) => {
-    setOverrides((prev) => ({ ...prev, [id]: { ...(prev[id] || {}), ...patch } }));
-  };
-
-  // on mount (dev only) compute numeric defaults from container size so sliders feel natural
-  useEffect(() => {
-    if (!isDev) return;
-    const container = containerRef.current;
-    const rect = container ? container.getBoundingClientRect() : { width: window.innerWidth, height: 680 };
-    const cw = rect.width || window.innerWidth;
-    const ch = rect.height || 680;
-
-    // User-requested initial positions (exact px values)
-    const initial: Record<string, Pos> = {
-      // top-left image
-      c1: { top: -22, left: 111, width: 267, zIndex: 12 },
-      // center image
-      c2: { top: 130, left: 500, width: 513, zIndex: 27 },
-      // left-bottom image
-      c3: { top: 228, left: -140, width: 478, zIndex: 8 },
-      // top-right image (user didn't supply zIndex; choosing 16 as a reasonable default)
-      c4: { top: -94, left: 883, width: 344, zIndex: 16 },
-      // bottom-right image
-      c5: { top: 404, left: 1006, width: 446, zIndex: 8 },
-    };
-
-    setOverrides((prev) => ({ ...initial, ...prev }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // initialize / reinitialize GSAP tweens whenever cards change
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) {
-      console.debug('[FloatingImageSection] containerRef is null');
-      return;
-    }
+    if (!container) return;
 
-    // helper to kill only tweens and scrollTriggers tied to this container
     const killTweens = () => {
-      tweensRef.current.forEach((t) => t && t.kill && t.kill());
+      tweensRef.current.forEach((t) => t?.kill?.());
       tweensRef.current = [];
-
-      // kill only ScrollTriggers that reference this container as trigger
-      try {
-          ScrollTrigger.getAll()
-            // keep triggers that are not children of this container
-            .filter((st: any) => st.trigger && container.contains(st.trigger))
-            .forEach((st: any) => {
-              console.debug('[FloatingImageSection] killing ScrollTrigger for', st.trigger);
-              st.kill();
-            });
-      } catch (e) {
-        // ignore
-      }
+      ScrollTrigger.getAll()
+        .filter((st) => st.trigger && container.contains(st.trigger))
+        .forEach((st) => st.kill());
     };
 
-    const initTweens = async () => {
-      console.debug('[FloatingImageSection] initTweens - starting');
+      const computeRelativePositions = (container: HTMLElement) => {
+        const centerEl = container.querySelector<HTMLElement>('[data-role="center"]');
+        if (!centerEl) return;
+
+        const containerRect = container.getBoundingClientRect();
+
+        const relativeItems = Array.from(container.querySelectorAll<HTMLElement>('[data-relative="center"]'));
+
+        relativeItems.forEach((el) => {
+          const dx = Number(el.dataset.dx ?? 0);
+          const dy = Number(el.dataset.dy ?? 0);
+          const anchor = (el.dataset.anchor || 'center') as
+            | 'center'
+            | 'topleft'
+            | 'topright'
+            | 'bottomleft'
+            | 'bottomright';
+
+          const cRect = centerEl.getBoundingClientRect();
+
+          let anchorX = cRect.left - containerRect.left + cRect.width / 2;
+          let anchorY = cRect.top - containerRect.top + cRect.height / 2;
+
+          // adjust anchor to corners if requested
+          if (anchor === 'topleft') {
+            anchorX = cRect.left - containerRect.left;
+            anchorY = cRect.top - containerRect.top;
+          } else if (anchor === 'topright') {
+            anchorX = cRect.left - containerRect.left + cRect.width;
+            anchorY = cRect.top - containerRect.top;
+          } else if (anchor === 'bottomleft') {
+            anchorX = cRect.left - containerRect.left;
+            anchorY = cRect.top - containerRect.top + cRect.height;
+          } else if (anchor === 'bottomright') {
+            anchorX = cRect.left - containerRect.left + cRect.width;
+            anchorY = cRect.top - containerRect.top + cRect.height;
+          }
+
+          // final position centers the element on the anchor point plus dx/dy
+          const left = Math.round(anchorX + dx - el.offsetWidth / 2);
+          const top = Math.round(anchorY + dy - el.offsetHeight / 2);
+
+          el.style.left = `${left}px`;
+          el.style.top = `${top}px`;
+        });
+      };
+
+      const initTweens = async () => {
       killTweens();
 
-      // Wait for images inside the container to finish loading so measurements are accurate
-      try {
-        const imgs = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
-        await Promise.all(
-          imgs.map((img) =>
-            img.complete
-              ? Promise.resolve()
-              : new Promise<void>((resolve) => {
-                  img.addEventListener('load', () => resolve(), { once: true });
-                  img.addEventListener('error', () => resolve(), { once: true });
-                })
-          )
-        );
-        console.debug('[FloatingImageSection] all images loaded or errored; proceeding');
-      } catch (e) {
-        console.warn('[FloatingImageSection] image load waiting failed', e);
-      }
+      const imgs = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
+      await Promise.all(
+        imgs.map((img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise<void>((resolve) => {
+                img.addEventListener('load', () => resolve(), { once: true });
+                img.addEventListener('error', () => resolve(), { once: true });
+              })
+        )
+      );
 
       const items = Array.from(container.querySelectorAll<HTMLElement>('.floating-image'));
-      console.debug('[FloatingImageSection] found items:', items.length);
+
       items.forEach((el, i) => {
-        try {
-          // keep movement subtle: small vertical parallax based on viewport height
-          const direction = i % 2 === 0 ? -1 : 1;
-          const distanceMultiplier = 0.03 + i * 0.01;
-          const distance = direction * window.innerHeight * distanceMultiplier;
+        const direction = i % 2 === 0 ? -1 : 1;
+        const distance = direction * window.innerHeight * (0.03 + i * 0.01);
 
-          const rect = el.getBoundingClientRect();
-          console.debug(`[FloatingImageSection] item ${i} rect: top=${rect.top.toFixed(1)} height=${rect.height.toFixed(1)} distance=${distance.toFixed(1)}`);
+        gsap.set(el, { y: 0, willChange: 'transform' });
 
-          gsap.set(el, { y: 0, willChange: 'transform' });
-          const st = gsap.fromTo(
-            el,
-            { y: 0 },
-            {
-              y: distance,
-              ease: 'power1.out',
-              scrollTrigger: {
-                // switch to per-element trigger so each card animates with its own viewport position
-                trigger: el,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 0.6,
-                markers: isDev,
-                onEnter: () => console.debug('[FloatingImageSection] ScrollTrigger onEnter for item', i),
-                onLeave: () => console.debug('[FloatingImageSection] ScrollTrigger onLeave for item', i),
-                // use the self argument to avoid depending on `this` which can be undefined in some environments
-                onRefresh: function (self: any) {
-                  try {
-                    console.debug('[FloatingImageSection] ScrollTrigger onRefresh for item', i, 'start', self?.start, 'end', self?.end);
-                  } catch (e) {
-                    console.debug('[FloatingImageSection] ScrollTrigger onRefresh for item', i, 'start/end unavailable');
-                  }
-                },
-                onUpdate: (self: any) => console.debug('[FloatingImageSection] onUpdate item', i, 'progress', self.progress.toFixed(3)),
-              },
-            }
-          );
-          tweensRef.current.push(st);
-          // log safely - scrollTrigger may not be attached immediately in some cases
-          try {
-            const stTrigger = (st as any).scrollTrigger;
-            console.debug(
-              '[FloatingImageSection] created tween for item',
-              i,
-              'distance',
-              distance.toFixed(1),
-              'start',
-              stTrigger?.start,
-              'end',
-              stTrigger?.end
-            );
-          } catch (e) {
-            console.debug('[FloatingImageSection] created tween for item', i, 'distance', distance.toFixed(1), 'scrollTrigger not available yet');
+        const tween = gsap.fromTo(
+          el,
+          { y: 0 },
+          {
+            y: distance,
+            ease: 'power1.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.6,
+            },
           }
-        } catch (err) {
-          console.error('[FloatingImageSection] error creating tween for item', i, err);
-        }
+        );
+
+        tweensRef.current.push(tween);
       });
 
-      try {
-        const stAll = ScrollTrigger.getAll();
-        console.debug('[FloatingImageSection] ScrollTrigger count after init:', stAll.length);
-        ScrollTrigger.refresh();
-      } catch (e) {
-        console.error('[FloatingImageSection] ScrollTrigger.refresh error', e);
-      }
+      // position any relative items after images & layout settled
+      computeRelativePositions(container);
+
+      ScrollTrigger.refresh();
     };
 
-    // Initialize immediately if the section is already in view
     initTweens();
 
-    // Simple IntersectionObserver to toggle 'in-view' class for CSS entrance animations
     const inViewObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const el = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            el.classList.add('in-view');
-          } else {
-            // keep the element visible once it has been revealed; remove this line to allow hide on exit
-            // el.classList.remove('in-view');
-          }
+          if (entry.isIntersecting) el.classList.add('in-view');
         });
       },
-      { root: null, rootMargin: '0px', threshold: 0.15 }
+      { threshold: 0.15 }
     );
 
     const itemsForObserver = Array.from(container.querySelectorAll<HTMLElement>('.floating-image'));
     itemsForObserver.forEach((it) => inViewObserver.observe(it));
 
-    // Re-init when section enters viewport, kill when it leaves
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.debug('[FloatingImageSection] IntersectionObserver entry', entry.isIntersecting, entry.intersectionRatio);
           if (entry.isIntersecting) {
             initTweens();
           } else {
@@ -207,90 +148,87 @@ const FloatingImageSection: React.FC = () => {
           }
         });
       },
-      { root: null, rootMargin: '0px', threshold: 0 }
+      { threshold: 0 }
     );
     observer.observe(container);
 
     const onResize = () => {
       try {
         ScrollTrigger.refresh();
-      } catch (e) {
-        // ignore
-      }
+        // recompute positions for relative items
+        try {
+          computeRelativePositions(container);
+        } catch {}
+      } catch {}
     };
     window.addEventListener('resize', onResize);
 
     return () => {
       observer.disconnect();
-      killTweens();
       inViewObserver.disconnect();
       window.removeEventListener('resize', onResize);
-      console.debug('[FloatingImageSection] cleanup complete');
+      killTweens();
     };
-  }, [overrides]);
-
-  // Note: CSS fallback removed — using GSAP + ScrollTrigger only in this debug build.
-
-  // no runtime card editing in this build - cards are hardcoded above
+  }, []);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#F7F7F7]">
+    <section className="py-24 relative overflow-hidden bg-[#e2d9ce]">
       <div ref={containerRef} className="relative h-[680px] max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Small top-left */}
-        <div className="floating-image from-left-top absolute transform-gpu" style={getStyle('c1', { top: '6%', left: '10%', width: '220px', zIndex: 12 })}>
-          <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
+  <div className="floating-image absolute transform-gpu" data-relative="center" data-dx="-480" data-dy="-220" style={getStyle({ top: '6%', left: '10%', width: '350px', zIndex: 12 })}>
+          <div className="floating-inner relative rounded-md overflow-hidden pointer-events-auto">
             <img src="/assets/section/1.png" alt="small top left" className="w-full h-auto object-cover block" />
           </div>
         </div>
 
-        {/* Center large - SAFE INVESTMENT */}
-        <div className="floating-image from-center-top absolute transform-gpu" style={getStyle('c2', { top: '26%', left: '38%', width: '520px', zIndex: 20 })}>
-          <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
+  <div className="floating-image absolute transform-gpu" data-role="center" style={getStyle({ top: '26%', left: '33%', width: '520px', zIndex: 20 })}>
+          <div className="floating-inner relative rounded-md overflow-hidden pointer-events-auto">
             <img src="/assets/section/2.png" alt="safe investment" className="w-full h-auto object-cover block" />
-            <div className="absolute inset-0 bg-black/30">
+            <div className="absolute inset-0 bg-black/23">
               <div className="flex items-center justify-center h-full text-center px-6">
                 <h4 className="text-white text-3xl md:text-4xl font-sans tracking-wide">SAFE INVESTMENT</h4>
               </div>
               <div className="absolute bottom-4 left-0 right-0 px-6 text-center">
-                <p className="text-white/90 text-sm md:text-base max-w-[80%] mx-auto">Guaranteed deadlines backed by airtight contracts. Milestones aligned payments—jointly signed off, so progress feels effortless.</p>
+                <p className="text-white/90 text-sm md:text-base max-w-[80%] mx-auto">
+                  Guaranteed deadlines backed by airtight contracts. Milestones aligned payments—jointly signed off, so progress feels effortless.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Left-bottom large - DESIGN SUPPORT */}
-        <div className="floating-image from-bottom-left absolute transform-gpu" style={getStyle('c3', { top: '50%', left: '6%', width: '420px', zIndex: 18 })}>
-          <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
+  <div className="floating-image absolute transform-gpu" data-relative="center" data-dx="-480" data-dy="100" style={getStyle({ top: '50%', left: '6%', width: '420px', zIndex: 18 })}>
+          <div className="floating-inner relative rounded-md overflow-hidden pointer-events-auto">
             <img src="/assets/section/3.png" alt="design support" className="w-full h-auto object-cover block" />
-            <div className="absolute inset-0 bg-black/30">
+            <div className="absolute inset-0 bg-black/23">
               <div className="flex items-center justify-center h-full text-center px-6">
                 <h4 className="text-white text-3xl md:text-4xl font-sans tracking-wide">DESIGN SUPPORT</h4>
               </div>
               <div className="absolute bottom-4 left-0 right-0 px-6 text-center">
-                <p className="text-white/90 text-sm md:text-base max-w-[80%] mx-auto">Architectural & structural drawings, planning approvals and interior design, all under one roof.</p>
+                <p className="text-white/90 text-sm md:text-base max-w-[80%] mx-auto">
+                  Architectural & structural drawings, planning approvals and interior design, all under one roof.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Top-right large - BUILD WITH CONFIDENCE */}
-        <div className="floating-image from-right-top absolute transform-gpu" style={getStyle('c4', { top: '6%', left: '68%', width: '360px', zIndex: 19 })}>
-          <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
+  <div className="floating-image absolute transform-gpu" data-relative="center" data-dx="400" data-dy="-200" style={getStyle({ top: '6%', left: '68%', width: '400px', zIndex: 39 })}>
+          <div className="floating-inner relative rounded-md overflow-hidden pointer-events-auto">
             <img src="/assets/section/5.png" alt="build with confidence" className="w-full h-auto object-cover block" />
-            <div className="absolute inset-0 bg-black/30">
+            <div className="absolute inset-0 bg-black/23">
               <div className="flex items-center justify-center h-full text-center px-4">
                 <h4 className="text-white text-2xl md:text-3xl font-sans tracking-wide">BUILD WITH CONFIDENCE</h4>
               </div>
               <div className="absolute bottom-4 left-0 right-0 px-4 text-center">
-                <p className="text-white/90 text-sm md:text-base max-w-[80%] mx-auto">Precision in build, discipline in safety & regulations.</p>
+                <p className="text-white/90 text-sm md:text-base max-w-[80%] mx-auto">Precision in build, discipline in safety & regulations.
+Building structures that endure beyond generations.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Small bottom-right */}
-        <div className="floating-image from-bottom-right absolute transform-gpu" style={getStyle('c5', { top: '66%', left: '78%', width: '320px', zIndex: 14 })}>
-          <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
+  <div className="floating-image absolute transform-gpu" data-relative="center" data-dx="500" data-dy="180" style={getStyle({ top: '66%', left: '78%', width: '320px', zIndex: 14 })}>
+          <div className="floating-inner relative rounded-md overflow-hidden pointer-events-auto">
             <img src="/assets/section/4.png" alt="maintained quality" className="w-full h-auto object-cover block" />
           </div>
         </div>
@@ -300,4 +238,3 @@ const FloatingImageSection: React.FC = () => {
 };
 
 export default FloatingImageSection;
-
