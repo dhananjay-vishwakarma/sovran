@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
       <FloatingImageSection />
 
       {/* Contact Form Section */}
-  <BackgroundSection />
+  
   <ContactFormSection />
       <Footer />
     </div>

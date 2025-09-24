@@ -72,6 +72,30 @@ nav {
   margin: 10px;
 }
 
+/* Small sticky logo shown when nav is scrolled */
+.sticky-logo {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0.65);
+  z-index: 10000;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sticky-logo.visible {
+  opacity: 1;
+  transform: translateY(-50%) scale(.85);
+  pointer-events: auto;
+}
+
+.sticky-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
 /* Nav menu */
 .nav-menu {
   display: flex;
@@ -106,6 +130,40 @@ nav {
   background-color: rgba(205, 173, 125, 0.7); /* Primary-600 with transparency */
 }
 
+/* When the parent group is hovered, ensure the first submenu item appears selected */
+.about-menu-item,
+.arch-menu-item {
+  background-color: transparent; /* ensure default is unchanged */
+}
+
+/* Only style the marked first items on parent hover/focus */
+.selected-first {
+  background-color: rgba(205, 173, 125, 0.7);
+}
+
+/* ===== Architectural Dropdown Images (match About Us) ===== */
+.arch-image {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
+  opacity: 0;
+  z-index: 0;
+  transform: scale(0.95);
+}
+
+.arch-image[data-for="overview"] {
+  opacity: 1;
+  z-index: 10;
+  transform: scale(1);
+}
+
+.arch-menu-item {
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.arch-menu-item:hover {
+  background-color: rgba(205, 173, 125, 0.7);
+}
+
 /* Animation when image becomes active */
 .about-image.active {
   opacity: 1;
@@ -131,6 +189,39 @@ nav {
 
 .header-nav.scrolled .header-container {
   padding: 0.2rem 1rem;
+}
+
+/* When scrolled, make header-inner a single centered row */
+.header-nav.scrolled .header-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+/* Make the sticky logo inline and ensure nav-menu follows it inline */
+.header-nav.scrolled .sticky-logo {
+  position: relative; /* take it into normal flow */
+  left: auto;
+  top: auto;
+  transform: none;
+  margin-right: 0.75rem;
+  opacity: 1; /* visible in scrolled state */
+  pointer-events: auto;
+}
+
+.header-nav.scrolled .sticky-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.header-nav.scrolled .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .header-nav.scrolled .logo-container {

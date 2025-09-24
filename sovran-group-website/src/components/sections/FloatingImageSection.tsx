@@ -13,8 +13,6 @@ const FloatingImageSection: React.FC = () => {
 
   type Pos = { top?: string | number; left?: string | number; width?: string | number; zIndex?: number };
   const [overrides, setOverrides] = useState<Record<string, Pos>>({});
-  const [selectedCard, setSelectedCard] = useState<string>('c2');
-  const [panelOpen, setPanelOpen] = useState<boolean>(true);
 
   const getStyle = (id: string, base: Pos) => {
     const o = overrides[id] || {};
@@ -42,13 +40,13 @@ const FloatingImageSection: React.FC = () => {
       // top-left image
       c1: { top: -22, left: 111, width: 267, zIndex: 12 },
       // center image
-      c2: { top: 130, left: 454, width: 513, zIndex: 27 },
+      c2: { top: 130, left: 500, width: 513, zIndex: 27 },
       // left-bottom image
       c3: { top: 228, left: -140, width: 478, zIndex: 8 },
       // top-right image (user didn't supply zIndex; choosing 16 as a reasonable default)
-      c4: { top: -94, left: 883, width: 444, zIndex: 16 },
+      c4: { top: -94, left: 883, width: 344, zIndex: 16 },
       // bottom-right image
-      c5: { top: 404, left: 1006, width: 246, zIndex: 8 },
+      c5: { top: 404, left: 1006, width: 446, zIndex: 8 },
     };
 
     setOverrides((prev) => ({ ...initial, ...prev }));
@@ -237,9 +235,8 @@ const FloatingImageSection: React.FC = () => {
 
   return (
     <section className="py-24 relative overflow-hidden bg-[#F7F7F7]">
-
-      <div ref={containerRef} className="relative h-[680px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  {/* Small top-left */}
+      <div ref={containerRef} className="relative h-[680px] max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Small top-left */}
         <div className="floating-image from-left-top absolute transform-gpu" style={getStyle('c1', { top: '6%', left: '10%', width: '220px', zIndex: 12 })}>
           <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
             <img src="/assets/section/1.png" alt="small top left" className="w-full h-auto object-cover block" />
@@ -247,7 +244,7 @@ const FloatingImageSection: React.FC = () => {
         </div>
 
         {/* Center large - SAFE INVESTMENT */}
-        <div className="floating-image from-center-top absolute transform-gpu" style={getStyle('c2', { top: '26%', left: '28%', width: '520px', zIndex: 20 })}>
+        <div className="floating-image from-center-top absolute transform-gpu" style={getStyle('c2', { top: '26%', left: '38%', width: '520px', zIndex: 20 })}>
           <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
             <img src="/assets/section/2.png" alt="safe investment" className="w-full h-auto object-cover block" />
             <div className="absolute inset-0 bg-black/30">
@@ -292,54 +289,12 @@ const FloatingImageSection: React.FC = () => {
         </div>
 
         {/* Small bottom-right */}
-        <div className="floating-image from-bottom-right absolute transform-gpu" style={getStyle('c5', { top: '66%', left: '78%', width: '160px', zIndex: 14 })}>
+        <div className="floating-image from-bottom-right absolute transform-gpu" style={getStyle('c5', { top: '66%', left: '78%', width: '320px', zIndex: 14 })}>
           <div className="floating-inner relative rounded-md  overflow-hidden pointer-events-auto">
             <img src="/assets/section/4.png" alt="maintained quality" className="w-full h-auto object-cover block" />
           </div>
         </div>
       </div>
-
-      {/* Dev slider controls (mirrors TestimonialSection pattern) */}
-      {process.env.NODE_ENV === 'development' && (
-        <>
-          {panelOpen ? (
-            <div className="fixed top-4 right-4 z-50 w-72 p-3 rounded bg-white/95 border border-gray-200 ">
-              <div className="flex items-center justify-between mb-2">
-                <strong className="text-sm text-black">Floating images</strong>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => setPanelOpen(false)} className="text-xs px-2 py-1 rounded bg-gray-100">Hide</button>
-                </div>
-              </div>
-              <div className="mb-2">
-                <select value={selectedCard} onChange={(e) => setSelectedCard(e.target.value)} className="w-full p-1 text-sm border rounded">
-                  <option value="c1">C1 — Top-left</option>
-                  <option value="c2">C2 — Center</option>
-                  <option value="c3">C3 — Left-bottom</option>
-                  <option value="c4">C4 — Top-right</option>
-                  <option value="c5">C5 — Bottom-right</option>
-                </select>
-              </div>
-              {(() => {
-                const o = overrides[selectedCard] || {};
-                return (
-                  <div className="text-xs">
-                    <div className="mb-1 text-black">Top <span className="float-right text-gray-600">{o.top ?? 0}px</span></div>
-                    <input type="range" min={-200} max={800} value={String(o.top ?? 0)} onChange={(e) => updateOverride(selectedCard, { top: Number(e.target.value) })} className="w-full mb-2" />
-                    <div className="mb-1 text-black">Left <span className="float-right text-gray-600">{o.left ?? 0}px</span></div>
-                    <input type="range" min={-300} max={1400} value={String(o.left ?? 0)} onChange={(e) => updateOverride(selectedCard, { left: Number(e.target.value) })} className="w-full mb-2" />
-                    <div className="mb-1 text-black">Width <span className="float-right text-gray-600">{o.width ?? 0}px</span></div>
-                    <input type="range" min={80} max={900} value={String(o.width ?? 200)} onChange={(e) => updateOverride(selectedCard, { width: Number(e.target.value) })} className="w-full mb-2" />
-                    <div className="mb-1 text-black">Z-index <span className="float-right text-gray-600">{o.zIndex ?? 0}</span></div>
-                    <input type="range" min={0} max={50} value={String(o.zIndex ?? 0)} onChange={(e) => updateOverride(selectedCard, { zIndex: Number(e.target.value) })} className="w-full" />
-                  </div>
-                );
-              })()}
-            </div>
-          ) : (
-            <button onClick={() => setPanelOpen(true)} className="fixed top-4 right-4 z-50 p-2 rounded bg-white/90 border border-gray-200 shadow text-xs">Edit floating images</button>
-          )}
-        </>
-      )}
     </section>
   );
 };

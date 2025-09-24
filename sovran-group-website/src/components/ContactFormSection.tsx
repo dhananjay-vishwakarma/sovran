@@ -66,7 +66,7 @@ const ContactFormSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Left column - Text content */}
           <div className="w-full lg:w-1/2 text-white">
-            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl mb-6 ivymode leading-tight">
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl mb-6 ivymode leading-tight font-light">
               Your Project.<br />Our Expertise.
             </h2>
             <div className="w-16 h-0.5 bg-[#CDAD7D] mb-8"></div>

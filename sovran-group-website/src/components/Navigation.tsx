@@ -7,6 +7,7 @@ import '../styles/residential-submenu.css';
 import '../styles/residential-dropdown.css';
 import '../styles/mega-menu-fixes.css';
 import './NavigationStyles.css';
+import '../styles/dropdown-blur.css';
 import sovranLogo from '../assets/logo/Sovran-03-03.png';
 
 // Types
@@ -201,6 +202,9 @@ const Navigation: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const residentialSubmenuRef = useRef<HTMLDivElement>(null);
   const [activeAboutImage, setActiveAboutImage] = useState('default'); // Track which about us image is active
+  const [activeArchitecturalImage, setActiveArchitecturalImage] = useState('default'); // Track which architectural image is active
+  const [hoveredAboutItem, setHoveredAboutItem] = useState<string | null>(null);
+  const [hoveredArchitecturalItem, setHoveredArchitecturalItem] = useState<string | null>(null);
   const aboutMenuRef = useRef<HTMLDivElement>(null); // Reference to About Us dropdown
   
   // For mobile menu positioning
@@ -215,6 +219,8 @@ const Navigation: React.FC = () => {
   const buildMenuRef = useRef<HTMLDivElement>(null);
   const interiorsMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const [isDesktopDropdownHover, setIsDesktopDropdownHover] = useState(false);
+  const blurTimerRef = useRef<number | null>(null);
   
   // Add timers for hover delays
   const leaveTimerRef = useRef<number | null>(null);
@@ -223,7 +229,17 @@ const Navigation: React.FC = () => {
 
   // Toggle dropdown function for mobile menus
   const handleDropdownToggle = (dropdown: DropdownType) => {
-    setActiveDropdown(prevDropdown => prevDropdown === dropdown ? null : dropdown);
+    setActiveDropdown(prevDropdown => {
+      const next = prevDropdown === dropdown ? null : dropdown;
+      // If opening mobile-about, set about image to first item
+      if (next === 'mobile-about') setActiveAboutImage('space-story');
+      // If closing mobile-about, reset about image
+      if (prevDropdown === 'mobile-about' && next === null) setActiveAboutImage('default');
+      // If opening mobile-design, set architectural image to first item
+      if (next === 'mobile-design') setActiveArchitecturalImage('overview');
+      if (prevDropdown === 'mobile-design' && next === null) setActiveArchitecturalImage('default');
+      return next;
+    });
   };
 
   // Get an array of critical images that should be preloaded
@@ -254,12 +270,21 @@ const Navigation: React.FC = () => {
   const handleMenuItemHover = (itemId: string) => {
     console.log("Hover on item:", itemId);
     setActiveAboutImage(itemId);
+    setHoveredAboutItem(itemId);
   };
 
   // Handler for mouse leaving the About Us dropdown
   const handleAboutMenuMouseLeave = () => {
     console.log("Mouse left About Us menu, reverting to default image");
     setActiveAboutImage('default');
+    setHoveredAboutItem(null);
+  };
+
+  // Handler for Architectural menu image reset
+  const handleArchitecturalMouseLeave = () => {
+    console.log("Mouse left Architectural menu, reverting to default image");
+    setActiveArchitecturalImage('default');
+    setHoveredArchitecturalItem(null);
   };
 
   // Enhanced hover handlers: open instantly, no delay for build/interiors menus
@@ -284,6 +309,9 @@ const Navigation: React.FC = () => {
       leaveTimerRef.current = null;
     }
   };
+
+  // Track when non-mega, CSS-driven desktop dropdowns (About, Architectural) are hovered
+  // so we can apply the global blur class while they're open.
 
   // Improved mouse leave handler with precise boundary checking
   const handleMouseLeave = (event: React.MouseEvent) => {
@@ -318,8 +346,8 @@ const Navigation: React.FC = () => {
     }
   };
 
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent) => {
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
     // Check if the click is outside both menu refs
     const isClickOutsideBuildMenu = buildMenuRef.current && !buildMenuRef.current.contains(event.target as Node);
     const isClickOutsideInteriorsMenu = interiorsMenuRef.current && !interiorsMenuRef.current.contains(event.target as Node);
@@ -348,6 +376,39 @@ useEffect(() => {
   };
 }, [activeDropdown]);
 
+  // Toggle the .blurred class on the root .App element when a desktop dropdown is active.
+  useEffect(() => {
+    const root = document.querySelector('.App');
+    if (!root) return;
+
+    const desktopOpen = activeDropdown === 'build' || activeDropdown === 'interiors' || isDesktopDropdownHover;
+
+    // If opening, apply immediately and clear any close timer
+    if (desktopOpen) {
+      if (blurTimerRef.current) {
+        window.clearTimeout(blurTimerRef.current);
+        blurTimerRef.current = null;
+      }
+      root.classList.add('blurred');
+      return;
+    }
+
+    // If closing, delay removal slightly to allow mouse to move between elements
+    if (blurTimerRef.current) window.clearTimeout(blurTimerRef.current);
+    blurTimerRef.current = window.setTimeout(() => {
+      root.classList.remove('blurred');
+      blurTimerRef.current = null;
+    }, 120);
+
+    return () => {
+      if (blurTimerRef.current) {
+        window.clearTimeout(blurTimerRef.current);
+        blurTimerRef.current = null;
+      }
+      // Don't force remove here as we handle removal via timer
+    };
+  }, [activeDropdown, isDesktopDropdownHover]);
+
 
 
   return (
@@ -371,7 +432,7 @@ useEffect(() => {
           <Bars3Icon className="w-6 h-6" />
         </button>
           
-        <div className="flex flex-col md:flex-col items-center">
+  <div className="flex flex-col md:flex-col items-center header-inner">
           {/* Logo (centered on desktop, right on mobile) */}
           <div className="logo-container">
             {/* Use a real anchor with full reload to force hard refresh when returning to home */}
@@ -386,12 +447,21 @@ useEffect(() => {
 
           {/* Desktop Navigation (centered below logo) */}
           <div className="hidden md:flex items-center space-x-8 nav-menu">
+            {/* Small sticky logo placed inline before Home (visible when scrolled) */}
+            <div className={`sticky-logo md:block ${isScrolled ? 'visible' : ''}`}>
+              <a href="/">
+                <img src={sovranLogo} alt="Sovran small logo" className="sticky-logo-img" />
+              </a>
+            </div>
             {/* Home */}
             <a href="/" className="font-lato text-white hover:text-primary-400 transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 hover:after:w-full after:transition-all after:duration-300">
               Home
             </a>
             {/* About Us Dropdown - Enhanced with Images */}
-            <div className="relative group py-2" ref={aboutMenuRef}>
+            <div className="relative group py-2" ref={aboutMenuRef}
+              onMouseEnter={() => { setActiveAboutImage('space-story'); setIsDesktopDropdownHover(true); }}
+              onMouseLeave={() => { handleAboutMenuMouseLeave(); setIsDesktopDropdownHover(false); }}
+            >
               <Link to="/about" className="flex items-center font-lato text-white hover:text-primary-400 transition-colors focus:outline-none">
                 <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 group-hover:after:w-full after:transition-all after:duration-300">
                   About Us
@@ -406,9 +476,10 @@ useEffect(() => {
                 <div className="w-64 border-r border-dark-700 flex-shrink-0">
                   <Link
                     to="/about#space-story"
-                    className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
+                    className={`block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item first-about-item ${hoveredAboutItem ? '' : 'selected-first'}`}
                     data-item="space-story"
                     onMouseEnter={() => handleMenuItemHover("space-story")}
+                    onMouseLeave={() => setHoveredAboutItem(null)}
                   >
                     <span className="relative z-10">Every Space Has a Story</span>
                   </Link>
@@ -417,7 +488,8 @@ useEffect(() => {
                       to="/about#our-story"
                       className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
                       data-item="our-story"
-                      onMouseEnter={() => handleMenuItemHover("our-story")}
+                      onMouseEnter={() => { handleMenuItemHover("our-story"); }}
+                      onMouseLeave={() => setHoveredAboutItem(null)}
                     >
                       <span className="relative z-10">Our Story</span>
                     </Link>
@@ -427,7 +499,8 @@ useEffect(() => {
                       to="/about#our-ethos"
                       className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
                       data-item="our-ethos"
-                      onMouseEnter={() => handleMenuItemHover("our-ethos")}
+                      onMouseEnter={() => { handleMenuItemHover("our-ethos"); }}
+                      onMouseLeave={() => setHoveredAboutItem(null)}
                     >
                       <span className="relative z-10">Our Ethos</span>
                     </Link>
@@ -437,7 +510,8 @@ useEffect(() => {
                       to="/about#process"
                       className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
                       data-item="process"
-                      onMouseEnter={() => handleMenuItemHover("process")}
+                      onMouseEnter={() => { handleMenuItemHover("process"); }}
+                      onMouseLeave={() => setHoveredAboutItem(null)}
                     >
                       <span className="relative z-10">Our Process</span>
                     </Link>
@@ -447,7 +521,8 @@ useEffect(() => {
                       to="/about#contact"
                       className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative about-menu-item"
                       data-item="contact"
-                      onMouseEnter={() => handleMenuItemHover("contact")}
+                      onMouseEnter={() => { handleMenuItemHover("contact"); }}
+                      onMouseLeave={() => setHoveredAboutItem(null)}
                     >
                       <span className="relative z-10">Contact Us</span>
                     </Link>
@@ -567,37 +642,118 @@ useEffect(() => {
               </div>
             </div>
             
-            {/* Architectural Design Dropdown */}
-            <div className="relative group py-2">
+            {/* Architectural Design Dropdown (now with image panel) */}
+            <div className="relative group py-2"
+              onMouseEnter={() => { setActiveArchitecturalImage('overview'); setIsDesktopDropdownHover(true); }}
+              onMouseLeave={() => { handleArchitecturalMouseLeave(); setIsDesktopDropdownHover(false); }}
+            >
               <Link to="/sovran-design" className="flex items-center font-lato text-white hover:text-primary-400 transition-colors focus:outline-none">
                 <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary-400 after:w-0 group-hover:after:w-full after:transition-all after:duration-300">
                   Architectural
                 </span>
                 <ChevronDownIcon className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" />
               </Link>
-              <div className="absolute left-0 mt-2 w-64 bg-[#081E27]/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden z-30 hidden group-hover:block">
-                <Link to="/sovran-design#overview" className="block px-4 py-2 text-white hover:bg-primary-600">
-                  Architectural services overview
-                </Link>
-                <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#planning-approvals" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Planning approvals
+              <div className="absolute left-0 mt-2 w-[700px] bg-[#081E27]/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden z-30 hidden group-hover:flex flex-row items-stretch transform transition-all duration-150 ease-out origin-top-left"
+                onMouseLeave={handleArchitecturalMouseLeave}
+              >
+                {/* Left: links */}
+                <div className="w-64 border-r border-dark-700 flex-shrink-0">
+                  <Link
+                    to="/sovran-design#overview"
+                    className={`block px-4 py-3 font-lato text-white hover:bg-primary-600 relative arch-menu-item first-arch-item ${hoveredArchitecturalItem ? '' : 'selected-first'}`}
+                    data-item="overview"
+                    onMouseEnter={() => { setActiveArchitecturalImage('overview'); setHoveredArchitecturalItem('overview'); }}
+                    onMouseLeave={() => setHoveredArchitecturalItem(null)}
+                  >
+                    <span className="relative z-10">Architectural services overview</span>
                   </Link>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/sovran-design#planning-approvals"
+                        className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative arch-menu-item"
+                        data-item="planning-approvals"
+                        onMouseEnter={() => { setActiveArchitecturalImage('planning-approvals'); setHoveredArchitecturalItem('planning-approvals'); }}
+                        onMouseLeave={() => setHoveredArchitecturalItem(null)}
+                    >
+                      <span className="relative z-10">Planning approvals</span>
+                    </Link>
+                  </div>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/sovran-design#structural-calculations"
+                        className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative arch-menu-item"
+                        data-item="structural-calculations"
+                        onMouseEnter={() => { setActiveArchitecturalImage('structural-calculations'); setHoveredArchitecturalItem('structural-calculations'); }}
+                        onMouseLeave={() => setHoveredArchitecturalItem(null)}
+                    >
+                      <span className="relative z-10">Structural calculations &amp; building regulations</span>
+                    </Link>
+                  </div>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/sovran-design#private-building-control"
+                      className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative arch-menu-item"
+                      data-item="private-building-control"
+                      onMouseEnter={() => { setActiveArchitecturalImage('private-building-control'); setHoveredArchitecturalItem('private-building-control'); }}
+                      onMouseLeave={() => setHoveredArchitecturalItem(null)}
+                    >
+                      <span className="relative z-10">Private building control</span>
+                    </Link>
+                  </div>
+                  <div className="border-t border-dark-700">
+                    <Link
+                      to="/sovran-design#renders-vr"
+                      className="block px-4 py-3 font-lato text-white hover:bg-primary-600 relative arch-menu-item"
+                      data-item="renders-vr"
+                      onMouseEnter={() => { setActiveArchitecturalImage('renders-vr'); setHoveredArchitecturalItem('renders-vr'); }}
+                      onMouseLeave={() => setHoveredArchitecturalItem(null)}
+                    >
+                      <span className="relative z-10">3D Renders and VR</span>
+                    </Link>
+                  </div>
                 </div>
-                <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#structural-calculations" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Structural calculations &amp; building regulations
-                  </Link>
-                </div>
-                <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#private-building-control" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    Private building control
-                  </Link>
-                </div>
-                <div className="border-t border-dark-600">
-                  <Link to="/sovran-design#renders-vr" className="block px-4 py-2 text-white hover:bg-primary-600">
-                    3D Renders and VR
-                  </Link>
+                {/* Right: image panel */}
+                <div className="flex-1 h-[280px] relative overflow-hidden bg-dark-800">
+                  <div className={`absolute inset-0 arch-image transition-all duration-200 ease-out ${activeArchitecturalImage === 'overview' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-for="overview">
+                    <img src="https://sovrangroup.co.uk/images/1.jpg" alt="Architectural overview" className="w-full h-full object-cover relative z-30" />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/60 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Architectural Overview</div>
+                      <p className="text-sm font-lato text-white/80">Comprehensive architectural services</p>
+                    </div>
+                  </div>
+                  <div className={`absolute inset-0 arch-image transition-all duration-200 ease-out ${activeArchitecturalImage === 'planning-approvals' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-for="planning-approvals">
+                    <img src="https://sovrangroup.co.uk/images/2.jpg" alt="Planning approvals" className="w-full h-full object-cover relative z-30" />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/60 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Planning approvals</div>
+                      <p className="text-sm font-lato text-white/80">Navigating planning approvals with expertise</p>
+                    </div>
+                  </div>
+                  <div className={`absolute inset-0 arch-image transition-all duration-200 ease-out ${activeArchitecturalImage === 'structural-calculations' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-for="structural-calculations">
+                    <img src="https://sovrangroup.co.uk/images/3.jpg" alt="Structural calculations" className="w-full h-full object-cover relative z-30" />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/60 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Structural Calculations</div>
+                      <p className="text-sm font-lato text-white/80">Compliance &amp; engineering support</p>
+                    </div>
+                  </div>
+                  <div className={`absolute inset-0 arch-image transition-all duration-200 ease-out ${activeArchitecturalImage === 'private-building-control' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-for="private-building-control">
+                    <img src="https://sovrangroup.co.uk/images/4.jpg" alt="Private building control" className="w-full h-full object-cover relative z-30" />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/60 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">Private Building Control</div>
+                      <p className="text-sm font-lato text-white/80">End-to-end private building control services</p>
+                    </div>
+                  </div>
+                  <div className={`absolute inset-0 arch-image transition-all duration-200 ease-out ${activeArchitecturalImage === 'renders-vr' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-for="renders-vr">
+                    <img src="https://sovrangroup.co.uk/images/2.jpg" alt="Renders and VR" className="w-full h-full object-cover relative z-30" />
+                    <div className="absolute inset-0 bg-[#CDAD7D]/60 z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-20">
+                      <div className="text-lg font-lato font-medium">3D Renders &amp; VR</div>
+                      <p className="text-sm font-lato text-white/80">Visualise your project in immersive detail</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -605,8 +761,8 @@ useEffect(() => {
             {/* Build Mega Menu */}
             <div 
               className="relative mega-menu-wrapper group py-2" 
-              onMouseEnter={handleBuildMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={(e) => { handleBuildMouseEnter(e); setIsDesktopDropdownHover(true); }}
+              onMouseLeave={(e) => { handleMouseLeave(e); setIsDesktopDropdownHover(false); }}
               ref={buildMenuRef}
             >
               <button
@@ -779,8 +935,8 @@ useEffect(() => {
             {/* Sovran Interiors Mega Menu */}
             <div 
               className="relative mega-menu-wrapper group py-2" 
-              onMouseEnter={handleInteriorsMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={(e) => { handleInteriorsMouseEnter(e); setIsDesktopDropdownHover(true); }}
+              onMouseLeave={(e) => { handleMouseLeave(e); setIsDesktopDropdownHover(false); }}
               ref={interiorsMenuRef}
             >
               <button

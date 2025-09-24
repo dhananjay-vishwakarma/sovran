@@ -148,8 +148,6 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
 
         cards.forEach((card, i) => {
           gsap.set(card, {
-            x: 0,
-            y: 0,
             rotation: baseRotations[i] || 0,
             opacity: 1,
             zIndex: 3 - i,

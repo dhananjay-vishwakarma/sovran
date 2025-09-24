@@ -252,11 +252,11 @@ const RecentProjectsSection: React.FC = () => {
               // Force GSAP to update its internal state
               window.dispatchEvent(new Event('resize'));
             }}
-            className="bg-white text-black font-lato py-3 px-8 rounded-full hover:bg-gray-100 hover:text-gray-800 transition-colors duration-300 text-lg text-center"
+            className="bg-white text-black font-lato py-3 px-8 rounded-full hover:bg-[#06151c] hover:text-white border-[0.5px]  hover:border-white transition-colors duration-300 text-lg text-center"
           >
             {visibleItems >= portfolioItems.length ? 'WORK WITH US' : 'LOAD MORE'}
           </button>
-          <a href="/contact" className="bg-white text-black font-lato py-3 px-8 rounded-full hover:bg-gray-100 hover:text-gray-800 transition-colors duration-300 text-lg text-center">
+          <a href="/contact" className="bg-white text-black font-lato py-3 px-8 rounded-full hover:bg-[#06151c] hover:text-white border-[0.5px]  hover:border-white transition-colors duration-300 text-lg text-center">
             ASK A QUESTION
           </a>
         </div>

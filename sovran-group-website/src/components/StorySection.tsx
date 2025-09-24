@@ -35,7 +35,7 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
   // Developer controls state
   const [controls, setControls] = useState<ControlSettings>({
     textGlowAmount: 15,
-    overlayOpacity: 0.5,
+    overlayOpacity: 0.65,
     aspectRatio: '2.15:1',
     bgPosition: 'center',
     textPositionY: '0',
