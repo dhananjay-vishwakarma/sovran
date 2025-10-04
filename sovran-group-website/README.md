@@ -44,3 +44,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Global smooth scrolling
+
+This project includes a small initializer that enables ease-in-out smooth scrolling across the site (wheel, keyboard, and anchor navigation). It runs automatically on app load.
+
+If you need to disable the smoothing on a particular page (for example a canvas-heavy page or third-party embed), add the attribute `data-no-smooth="true"` to the page `<body>` element. Example:
+
+```html
+<body data-no-smooth="true">
+	<!-- page markup -->
+</body>
+```
+
+The smooth scroll logic lives in `src/utils/smoothScroll.ts` and is initialized from `src/index.tsx`.

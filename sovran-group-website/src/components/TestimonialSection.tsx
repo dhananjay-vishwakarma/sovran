@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/testimonial-carousel.css';
+import TestimonialSectionMobile from './TestimonialSectionMobile';
 
 // Register ScrollTrigger plugin safely
 try {
@@ -409,8 +410,12 @@ const TestimonialSection: React.FC = () => {
   };
 
   return (
-    
-    <section className="py-20 md:py-28 bg-gray-50">
+    <>
+      <div className="block sm:hidden">
+        <TestimonialSectionMobile />
+      </div>
+
+      <section className="hidden sm:block py-20 md:py-28 bg-gray-50">
       <div className="mx-auto px-2 max-w-7xl">
 
        
@@ -706,6 +711,7 @@ const TestimonialSection: React.FC = () => {
       )}
 
     </section>
+    </>
   );
 };
 

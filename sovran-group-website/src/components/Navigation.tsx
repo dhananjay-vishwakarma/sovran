@@ -9,6 +9,7 @@ import '../styles/mega-menu-fixes.css';
 import './NavigationStyles.css';
 import '../styles/dropdown-blur.css';
 import sovranLogo from '../assets/logo/Sovran-03-03.png';
+import MobileNavigation from './MobileNavigation';
 
 // Types
 type DesktopMenuState = 
@@ -418,23 +419,27 @@ const Navigation: React.FC = () => {
       }`}
     >
 
+      
+
   <div className="header-container max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-        {/* Mobile menu button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsMobileMenuOpen(!isMobileMenuOpen);
-            console.log('Mobile menu toggled:', !isMobileMenuOpen);
-          }}
-          className="md:hidden text-white mobile-menu-button"
-          aria-label="Toggle mobile menu"
-        >
-          <Bars3Icon className="w-6 h-6" />
-        </button>
-          
-  <div className="flex flex-col md:flex-col items-center header-inner">
+       
+        {/* Mobile header row: logo left, hamburger right */}
+        <div className="w-full flex items-center justify-between md:justify-center mb-0">
+          <a href="/" onClick={() => {}} className="md:hidden flex items-center">
+            <img src={sovranLogo} alt="Sovran Group Logo" className="h-8 w-auto object-contain" />
+          </a>
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden text-white mobile-menu-button"
+            aria-label="Open mobile menu"
+          >
+            <Bars3Icon className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="flex flex-col hidden md:block md:flex-col items-center header-inner">
           {/* Logo (centered on desktop, right on mobile) */}
-          <div className="logo-container">
+          <div className="logo-container ">
             {/* Use a real anchor with full reload to force hard refresh when returning to home */}
             <a href="/" onClick={(e) => { /* allow normal navigation which will hard reload */ }}>
               <img
@@ -448,7 +453,7 @@ const Navigation: React.FC = () => {
           {/* Desktop Navigation (centered below logo) */}
           <div className="hidden md:flex items-center space-x-8 nav-menu">
             {/* Small sticky logo placed inline before Home (visible when scrolled) */}
-            <div className={`sticky-logo md:block ${isScrolled ? 'visible' : ''}`}>
+            <div className={`sticky-logo hidden md:block ${isScrolled ? 'visible' : ''}`}>
               <a href="/">
                 <img src={sovranLogo} alt="Sovran small logo" className="sticky-logo-img" />
               </a>
@@ -1028,317 +1033,13 @@ const Navigation: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation - Full screen */}
-        <div 
-          className={`md:hidden mobile-menu ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="mobile-menu-header">
-            <h3 className="text-white font-medium text-lg">Menu</h3>
-            <button 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mobile-menu-close"
-            >
-              <XMarkIcon className="w-6 h-6 text-white" />
-            </button>
-          </div>
-          
-          <div className="p-4 w-full box-border overflow-x-hidden">
-            <a
-              href="/"
-              className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Home
-            </a>
-            
-            {/* Mobile About Us Menu */}
-            <div className="block">
-              <button
-                onClick={() => handleDropdownToggle('mobile-about')}
-                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              >
-                <span>About Us</span>
-                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-about' ? 'rotate-180' : ''}`} />
-              </button>
-              
-              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-about' ? 'active' : ''}`}>
-                <Link
-                  to="/about#space-story"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Every Space Has a Story
-                </Link>
-                <Link
-                  to="/about#our-story"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Our Story
-                </Link>
-                <Link
-                  to="/about#our-ethos"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Our Ethos
-                </Link>
-                <Link
-                  to="/about#process"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Our Process
-                </Link>
-                <Link
-                  to="/about#contact"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-            
-            {/* Architectural Design Menu */}
-            <div className="block">
-              <button
-                onClick={() => handleDropdownToggle('mobile-design')}
-                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              >
-                <span>Design</span>
-                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-design' ? 'rotate-180' : ''}`} />
-              </button>
-              
-              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-design' ? 'active' : ''}`}>
-                <Link
-                  to="/sovran-design#overview"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Architectural services overview
-                </Link>
-                <Link
-                  to="/sovran-design#planning-approvals"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Planning approvals
-                </Link>
-                <Link
-                  to="/sovran-design#structural-calculations"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Structural calculations &amp; building regulations
-                </Link>
-                <Link
-                  to="/sovran-design#private-building-control"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Private building control
-                </Link>
-                <Link
-                  to="/sovran-design#renders-vr"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  3D Renders and VR
-                </Link>
-              </div>
-            </div>
-            
-            {/* Build Menu */}
-            <div className="block">
-              <button
-                onClick={() => handleDropdownToggle('mobile-build')}
-                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              >
-                <span>Build</span>
-                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-build' ? 'rotate-180' : ''}`} />
-              </button>
-              
-              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-build' ? 'active' : ''}`}>
-                <Link
-                  to="/sovran-builders/residential"
-                  className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Residential Construction
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/renovations"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Renovations
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/new-builds"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  New Builds
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/extensions"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Extensions
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/loft-conversions"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Loft Conversions
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/basements"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Basements
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/landscaping"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Landscaping
-                </Link>
-                <Link
-                  to="/sovran-builders/residential/swimming-pools"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Swimming Pools
-                </Link>
-                
-                <Link
-                  to="/sovran-builders/commercial"
-                  className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Commercial Construction
-                </Link>
-                <Link
-                  to="/sovran-builders/commercial#office-spaces"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Office Spaces
-                </Link>
-                <Link
-                  to="/sovran-builders/commercial#retail"
-                  className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Retail
-                </Link>
-                
-                <Link
-                  to="/sovran-builders/process"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Process and Approach
-                </Link>
-                <Link
-                  to="/sovran-builders/portfolio"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Projects / Portfolio
-                </Link>
-                <Link
-                  to="/sovran-builders/testimonials"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-                <Link
-                  to="/sovran-builders/faq"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  to="/sovran-builders/contact"
-                  className="block px-6 py-3 text-sm text-white hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-            
-            {/* Interiors Menu */}
-            <div className="block">
-              <button
-                onClick={() => handleDropdownToggle('mobile-interiors')}
-                className="flex items-center justify-between w-full mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              >
-                <span>Interiors</span>
-                <ChevronDownIcon className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-interiors' ? 'rotate-180' : ''}`} />
-              </button>
-              
-              <div className={`mobile-menu-dropdown ${activeDropdown === 'mobile-interiors' ? 'active' : ''}`}>
-                <Link
-                  to="/sovran-interiors"
-                  className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  All Interiors
-                </Link>
-                
-                {sovranInteriorsData.navigation.mainCategories.map((category) => (
-                  <div key={category.id}>
-                    <Link
-                      to={category.link}
-                      className="block px-6 py-3 text-sm text-white font-medium hover:bg-dark-700"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {category.title}
-                    </Link>
-                    
-                    {category.subcategories.map((subcategory) => (
-                      <Link
-                        key={subcategory.id}
-                        to={subcategory.link}
-                        className="block px-8 py-2 text-sm text-gray-300 hover:text-white hover:bg-dark-700"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {subcategory.title}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <Link
-              to="/careers"
-              className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Careers
-            </Link>
-            
-            <Link
-              to="/contact"
-              className="block mobile-menu-link font-lato text-white hover:bg-dark-700 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
+        {/* Mobile Navigation extracted to its own component */}
+        <MobileNavigation
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+          activeDropdown={activeDropdown}
+          handleDropdownToggle={handleDropdownToggle}
+        />
       </div>
     </nav>
   );

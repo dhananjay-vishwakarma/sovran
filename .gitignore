@@ -71,3 +71,6 @@ Desktop.ini
 *.tar
 *.gz
 *.rar.trash/
+
+# Local Netlify folder
+.netlify

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import initSmoothScroll from './utils/smoothScroll';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -17,3 +18,11 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// Initialize global smooth scrolling with ease-in-out behavior.
+// To disable smoothing for a page, set `data-no-smooth="true"` on <body>.
+try {
+  initSmoothScroll();
+} catch (e) {
+  // non-fatal if smooth scroll can't initialize
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FloatingImageSectionMobile from './FloatingImageSectionMobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,7 +173,12 @@ const FloatingImageSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#e2d9ce]">
+    <>
+      <div className="block sm:hidden">
+        <FloatingImageSectionMobile />
+      </div>
+
+      <section className="hidden sm:block py-24 relative overflow-hidden bg-[#e2d9ce]">
       <div ref={containerRef} className="relative h-[680px] max-w-full mx-auto px-4 sm:px-6 lg:px-8">
   <div className="floating-image absolute transform-gpu" data-relative="center" data-dx="-480" data-dy="-220" style={getStyle({ top: '6%', left: '10%', width: '350px', zIndex: 12 })}>
           <div className="floating-inner relative rounded-md overflow-hidden pointer-events-auto">
@@ -234,6 +240,7 @@ Building structures that endure beyond generations.</p>
         </div>
       </div>
     </section>
+    </>
   );
 };
 

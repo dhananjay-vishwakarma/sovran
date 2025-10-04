@@ -180,13 +180,13 @@ const MediaCards: React.FC<MediaCardsProps> = ({ className }) => {
     <div
       ref={containerRef}
       style={{ position: "relative" }}
-      className={`media-card-container w-full h-[480px] md:w-[600px] ${className || ""}`}
+      className={`media-card-container w-full h-[300px] sm:h-[400px] md:h-[480px] md:w-[600px] ${className || ""}`}
     >
       {mediaSources.slice(0, 3).map((src, i) => (
         <div
           key={i}
           className="media-card absolute top-0 left-0 w-full h-full bg-gray-700 rounded-2xl shadow-xl overflow-hidden group"
-          style={{ maxWidth: "calc(100vw - 40px)" }}
+          style={{ maxWidth: "100%" }}
         >
           {src.endsWith('.png') || src.endsWith('.jpg') || src.endsWith('.jpeg') ? (
             // Image element with zoom effect

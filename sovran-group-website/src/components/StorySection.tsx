@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ArrowButton from "./ArrowButton";
+import StorySectionMobile from './StorySectionMobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,16 +35,16 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
   
   // Developer controls state
   const [controls, setControls] = useState<ControlSettings>({
-    textGlowAmount: 15,
-    overlayOpacity: 0.65,
+    textGlowAmount: 12,
+    overlayOpacity: 0.6,
     aspectRatio: '2.15:1',
     bgPosition: 'center',
     textPositionY: '0',
     titlePositionY: '0',
-    paragraphPositionY: '100',
-    textMaxWidth: '4xl',
-    headingSize: 'text-5xl md:text-7xl',
-    paragraphSize: 'text-xl md:text-2xl',
+    paragraphPositionY: '40',
+    textMaxWidth: '3xl',
+    headingSize: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl',
+    paragraphSize: 'text-base sm:text-lg md:text-xl',
     showControls: isDev
   });
 
@@ -111,21 +112,30 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
   };
   
   // Apply the aspect ratio style
+  // For mobile we prefer a taller but constrained padding to avoid huge vertical height
+  const mobilePadding = controls.aspectRatio.includes(':') ? getAspectRatioPadding('16:9') : getAspectRatioPadding(controls.aspectRatio);
   const sectionStyle = {
     backgroundImage: "url('/assets/everyspacehasstory/bg.png')",
     backgroundSize: "cover",
     backgroundPosition: controls.bgPosition,
     height: 0,
     paddingBottom: getAspectRatioPadding(controls.aspectRatio),
-    width: "100%"
-  };
+    width: "100%",
+  } as React.CSSProperties;
 
   return (
-    <section
-      ref={sectionRef}
-      className={`relative overflow-hidden ${className || ""}`}
-      style={sectionStyle}
-    >
+    <>
+      {/* Mobile-optimized version */}
+      <div className="md:hidden">
+        <StorySectionMobile />
+      </div>
+
+      {/* Desktop/tablet version (md+) */}
+      <section
+        ref={sectionRef}
+        className={`hidden md:block relative overflow-hidden ${className || ""}`}
+        style={sectionStyle}
+      >
       {/* Developer toggle button - visible only in dev mode */}
       {isDev && (
         <button 
@@ -147,10 +157,10 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
         {/* Main heading */}
         <div 
           ref={textRef} 
-          className={`space-y-8 ${controls.textPositionY !== '0' ? `pt-${controls.textPositionY}` : ''}`}
+          className={`space-y-6 ${controls.textPositionY !== '0' ? `pt-${controls.textPositionY}` : ''}`}
         >
           <h2 
-            className={`font-sans ${controls.headingSize} text-white mb-8 ivymode tracking-wider font-light`}
+            className={`font-sans ${controls.headingSize} text-white mb-4 ivymode tracking-wider font-light leading-tight`}
             style={{
               ...textGlowStyle,
               marginTop: `${controls.titlePositionY}px`,
@@ -158,10 +168,9 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
           >
             EVERY SPACE HAS A STORY...
           </h2>
-          
-          <div className={`max-w-${controls.textMaxWidth} mx-auto`}>
+          <div className={`mx-auto`} style={{ maxWidth: controls.textMaxWidth === '3xl' ? 640 : controls.textMaxWidth === '4xl' ? 768 : 900 }}>
             <p 
-              className={`text-white ${controls.paragraphSize} leading-relaxed font-light mb-8`}
+              className={`text-white ${controls.paragraphSize} leading-relaxed font-light mb-6`}
               style={{
                 marginTop: `${controls.paragraphPositionY}px`,
               }}
@@ -170,8 +179,8 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
             </p>
             
             {showFullText ? (
-              <div 
-                className={`mt-10 text-white text-lg md:text-xl leading-relaxed max-w-${controls.textMaxWidth} mx-auto transition-opacity duration-500`}
+                <div 
+                className={`mt-8 text-white text-base md:text-lg leading-relaxed mx-auto transition-opacity duration-500`} style={{ maxWidth: controls.textMaxWidth === '3xl' ? 640 : 900 }}
               >
                 <p className="mb-6 leading-relaxed font-light mb-8">
                   FOR US, IT'S NOT JUST ABOUT BUILDING SPACES — IT'S ABOUT CREATING PLACES YOU'LL LOVE TO LIVE IN, 
@@ -185,7 +194,7 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
                 </p>
                 <button 
                   onClick={handleReadMore}
-                  className="mt-8 text-white underline hover:text-gray-300 transition-colors"
+                  className="mt-6 text-white underline hover:text-gray-300 transition-colors"
                 >
                   Read less...
                 </button>
@@ -362,7 +371,8 @@ const StorySection: React.FC<StorySectionProps> = ({ className }) => {
           </div>
         </div>
       )}
-    </section>
+      </section>
+    </>
   );
 };
 

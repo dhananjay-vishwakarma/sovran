@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Button from './Button';
 import ArrowButton from './ArrowButton';
-import MediaCards from './MediaCards';
 
 
 // No need for service cards as MediaCards component now handles this
@@ -17,6 +16,65 @@ const HeroSection: React.FC = () => {
   const [projectCount, setProjectCount] = useState(785);
   const maxCount = 855;
   const countingIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Video control knobs (persisted to localStorage)
+  const STORAGE_KEY = 'heroVideoKnobs_v1';
+  const [videoLeft, setVideoLeft] = useState<number>(-56); // px (negative moves left)
+  const [videoWidthPercent, setVideoWidthPercent] = useState<number>(220); // %
+  const [videoHeight, setVideoHeight] = useState<number>(473); // px
+  const [videoTranslateYPercent, setVideoTranslateYPercent] = useState<number>(50); // for translateY centering
+  const [videoBrightness, setVideoBrightness] = useState<number>(0.95);
+  const [videoContrast, setVideoContrast] = useState<number>(1.0);
+
+  // Show controls only in development by default. Can be forced with ?videoKnobs=1
+  const [showControls, setShowControls] = useState<boolean>(false);
+
+  // Load saved knobs
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const saved = JSON.parse(raw);
+        if (typeof saved.videoLeft === 'number') setVideoLeft(saved.videoLeft);
+        if (typeof saved.videoWidthPercent === 'number') setVideoWidthPercent(saved.videoWidthPercent);
+        if (typeof saved.videoHeight === 'number') setVideoHeight(saved.videoHeight);
+        if (typeof saved.videoTranslateYPercent === 'number') setVideoTranslateYPercent(saved.videoTranslateYPercent);
+        if (typeof saved.videoBrightness === 'number') setVideoBrightness(saved.videoBrightness);
+        if (typeof saved.videoContrast === 'number') setVideoContrast(saved.videoContrast);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    // Enable controls in dev, or if query string ?videoKnobs=1 is present
+    try {
+      const qs = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+      const qsEnabled = !!(qs && qs.get('videoKnobs') === '1');
+      const enabled = process.env.NODE_ENV !== 'production' || qsEnabled;
+      setShowControls(enabled);
+    } catch (e) {
+      setShowControls(process.env.NODE_ENV !== 'production');
+    }
+  }, []);
+
+  // Persist knobs
+  useEffect(() => {
+    const payload = {
+      videoLeft,
+      videoWidthPercent,
+      videoHeight,
+      videoTranslateYPercent,
+      videoBrightness,
+      videoContrast,
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (e) {
+      // ignore
+    }
+  }, [videoLeft, videoWidthPercent, videoHeight, videoTranslateYPercent, videoBrightness, videoContrast]);
 
   // No need for the column animations as MediaCards handles its own animations
   
@@ -110,14 +168,13 @@ const HeroSection: React.FC = () => {
     };
   }, []);
 
-  // Media Cards component will now handle the card display
 
   return (
-    <section className="hero-section relative overflow-visible flex items-center bg-[#081E27] pt-24 md:pt-28 lg:pt-28 pb-24 md:pb-32 lg:pb-48">
+  <section className="hero-section relative overflow-visible flex items-center bg-[#081E27] md:pt-28 lg:pt-28 md:pb-32 lg:pb-48">
       <div className="container mx-auto px-4 max-w-[1500px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center">
           {/* Left side - Hero Text with subtle animations - vertically centered */}
-          <div className="z-10 pr-0 lg:pr-4 lg:ml-12 flex flex-col justify-center lg:col-span-5 lg:col-start-2 mb-16 md:mb-0">
+          <div className="z-10 pr-0 lg:pr-4 lg:ml-12 flex flex-col justify-center lg:col-span-5 lg:col-start-2 md:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white leading-relaxed ivymode-regular tracking-wider" style={{ opacity: 0, filter: 'blur(10px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards', letterSpacing: '0.03em', lineHeight: '1.3' }}>
               We Add <span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}> Space</span>, <br/><span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}>Value</span>, and <span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}>Style 
                 <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary-600 transform scale-x-0 origin-left transition-transform duration-700 ease-out" style={{ animation: 'slideRight 1.5s ease-out 1.2s forwards' }}></span>
@@ -169,12 +226,104 @@ const HeroSection: React.FC = () => {
           </div>
           
           {/* Right side - MediaCards Component */}
-          <div className="relative overflow-visible lg:col-span-5" style={{ animation: 'fadeIn 2s ease-out 0.3s forwards' }}>
+  <div className="relative overflow-visible lg:col-span-5 py-8 lg:py-0" style={{ animation: 'fadeIn 2s ease-out 0.3s forwards' }}>
             {/* Media Cards Container - clean, no borders, backgrounds or blurs */}
             <div className="relative overflow-visible flex justify-center lg:justify-start">
-              {/* Media Cards component */}
-              <MediaCards className="relative" />
-            </div>
+                {/* Background looping hero video (no controls, muted, autoplay, loop)
+                    Positioned absolutely so it can extend beyond the right edge */}
+                <div className="relative w-full overflow-hidden md:overflow-visible">
+                  {/* Mobile: simple responsive video in normal flow (doesn't overlap) */}
+                  <div className="block md:hidden w-full mb-4">
+                    <video
+                      className="w-full h-auto rounded-md object-cover"
+                      src="/assets/hero/screen-capture_1.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-hidden="true"
+                    />
+                  </div>
+                  {/* live-adjustable hero video */}
+                  <video
+                    className="hidden md:absolute md:block rounded-md object-cover"
+                    src="/assets/hero/screen-capture_1.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-hidden="true"
+                    style={{
+                      left: `${videoLeft}px`,
+                      top: `${videoTranslateYPercent}%`,
+                      transform: `translateY(-${videoTranslateYPercent}%)`,
+                      width: `${videoWidthPercent}%`,
+                      height: `${videoHeight}px`,
+                      filter: `brightness(${videoBrightness}) contrast(${videoContrast})`,
+                    }}
+                  />
+
+                  {/* Controls panel (visible only in dev/local or with ?videoKnobs=1) */}
+                  {showControls && (
+                  <div className="absolute z-30 right-4 top-4 bg-[#0b1720]/80 backdrop-blur-sm p-3 rounded-md text-sm text-white w-[260px] shadow-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <strong>Video Controls</strong>
+                      <button
+                        className="text-xs text-gray-300 hover:text-white"
+                        onClick={() => {
+                          // reset to defaults
+                          setVideoLeft(-56);
+                          setVideoWidthPercent(220);
+                          setVideoHeight(451);
+                          setVideoTranslateYPercent(50);
+                          setVideoBrightness(0.95);
+                          setVideoContrast(1.0);
+                        }}
+                      >Reset</button>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs text-gray-300">Horizontal (px)</label>
+                      <span className="text-xs text-gray-200">{videoLeft}px</span>
+                    </div>
+                    <input className="w-full mb-2" type="range" min="-400" max="200" value={videoLeft} onChange={e => setVideoLeft(parseInt(e.target.value, 10))} />
+                    <div className="flex justify-between text-[11px] text-gray-400 mb-2"><span>-400</span><span>200</span></div>
+
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs text-gray-300">Width (%)</label>
+                      <span className="text-xs text-gray-200">{videoWidthPercent}%</span>
+                    </div>
+                    <input className="w-full mb-2" type="range" min="100" max="350" value={videoWidthPercent} onChange={e => setVideoWidthPercent(parseInt(e.target.value, 10))} />
+                    <div className="flex justify-between text-[11px] text-gray-400 mb-2"><span>100%</span><span>350%</span></div>
+
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs text-gray-300">Height (px)</label>
+                      <span className="text-xs text-gray-200">{videoHeight}px</span>
+                    </div>
+                    <input className="w-full mb-2" type="range" min="200" max="1000" value={videoHeight} onChange={e => setVideoHeight(parseInt(e.target.value, 10))} />
+                    <div className="flex justify-between text-[11px] text-gray-400 mb-2"><span>200</span><span>1000</span></div>
+
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs text-gray-300">Vertical center (%)</label>
+                      <span className="text-xs text-gray-200">{videoTranslateYPercent}%</span>
+                    </div>
+                    <input className="w-full mb-2" type="range" min="0" max="100" value={videoTranslateYPercent} onChange={e => setVideoTranslateYPercent(parseInt(e.target.value, 10))} />
+
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs text-gray-300">Brightness</label>
+                      <span className="text-xs text-gray-200">{videoBrightness.toFixed(2)}</span>
+                    </div>
+                    <input className="w-full mb-2" type="range" min="0.2" max="2" step="0.01" value={videoBrightness} onChange={e => setVideoBrightness(parseFloat(e.target.value))} />
+
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs text-gray-300">Contrast</label>
+                      <span className="text-xs text-gray-200">{videoContrast.toFixed(2)}</span>
+                    </div>
+                    <input className="w-full mb-1" type="range" min="0.2" max="2" step="0.01" value={videoContrast} onChange={e => setVideoContrast(parseFloat(e.target.value))} />
+                  </div>
+                  )}
+                </div>
+              </div>
           </div>
         </div>
       </div>

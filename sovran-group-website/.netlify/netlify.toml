@@ -7,11 +7,11 @@ headers = []
 [functions."*"]
 
 [build]
-publish = "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/sovran-group-website/build"
+publish = "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website/build"
 publishOrigin = "config"
 commandOrigin = "config"
 base = "/Users/dj/Documents/DJ/Sovran Group/SOVRAN GROUP/project/sovran-group-website"
-command = "npm --prefix sovran-group-website run build"
+command = "npm run build"
 
 [build.environment]
 NODE_ENV = "production"
