@@ -170,19 +170,19 @@ const HeroSection: React.FC = () => {
 
 
   return (
-  <section className="hero-section relative overflow-visible flex items-center bg-[#081E27] md:pt-28 lg:pt-28 md:pb-32 lg:pb-48">
+  <section className="hero-section relative overflow-visible flex items-start md:items-center bg-[#081E27] pt-4 md:pt-28 lg:pt-28 md:pb-32 lg:pb-48">
       <div className="container mx-auto px-4 max-w-[1500px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center">
           {/* Left side - Hero Text with subtle animations - vertically centered */}
           <div className="z-10 pr-0 lg:pr-4 lg:ml-12 flex flex-col justify-center lg:col-span-5 lg:col-start-2 md:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white leading-relaxed ivymode-regular tracking-wider" style={{ opacity: 0, filter: 'blur(10px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards', letterSpacing: '0.03em', lineHeight: '1.3' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white ivymode-regular tracking-wider leading-tight md:leading-snug lg:leading-normal mb-2 md:mb-6" style={{ opacity: 0, filter: 'blur(10px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards', letterSpacing: '0.03em' }}>
               We Add <span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}> Space</span>, <br/><span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}>Value</span>, and <span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}>Style 
                 <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary-600 transform scale-x-0 origin-left transition-transform duration-700 ease-out" style={{ animation: 'slideRight 1.5s ease-out 1.2s forwards' }}></span>
               </span> to Your Property
             </h1>
 
             
-            <div ref={buttonsRef} className="flex flex-wrap gap-8 mt-10 hero-buttons">
+            <div ref={buttonsRef} className="flex flex-wrap gap-6 mt-4 md:mt-10 hero-buttons">
               <div className="hero-button">
                 <ArrowButton 
                   text="Request a Consultation " 
@@ -199,12 +199,12 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <p ref={projectsTextRef} className="text-gray-400 mt-3 text-sm font-lato project-count">
+            <p ref={projectsTextRef} className="text-gray-400 mt-1 text-sm font-lato project-count">
               Trusted by <span className="font-semibold">{projectCount}+</span> families & property owners
             </p>
             
             {/* Features List */}
-            <div ref={featuresListRef} className="mt-8 space-y-1.5">
+            <div ref={featuresListRef} className="mt-3 md:mt-8 space-y-1.5">
                 {[
                 "UK’s top luxury property remodeling brand",
                 "Led by integrity, willingness, & transparency",

@@ -15,6 +15,44 @@ import ExitIntentPopup from './components/ExitIntentPopup';
 import './App.css';
 import './styles/media-cards.css';
 
+// Small helper component that lives inside Router so it can use useLocation
+function InnerRoutes() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const pageClass = `page-content${isHome ? ' home-no-offset' : ''}`;
+
+  return (
+    <div className={pageClass}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/sovran-builders" element={<SovranBuildersPage />} />
+        <Route path="/sovran-design" element={<SovranDesignPage />} />
+
+        {/* Sovran Interiors Routes */}
+        <Route path="/sovran-interiors" element={<SovranInteriorsPage />} />
+        <Route path="/sovran-interiors/:categoryId" element={<SovranInteriorsTemplate pageType="category" />} />
+        <Route path="/sovran-interiors/:categoryId/:subcategoryId" element={<SovranInteriorsTemplate pageType="subcategory" />} />
+
+        {/* Sovran Builders Routes */}
+        <Route path="/sovran-builders/residential" element={<SovranBuildersPage section="residential" />} />
+        <Route path="/sovran-builders/residential/:categoryId" element={<SovranBuildersTemplate />} />
+        <Route path="/sovran-builders/commercial" element={<SovranBuildersPage section="commercial" />} />
+        <Route path="/sovran-builders/process" element={<SovranBuildersPage section="process" />} />
+        <Route path="/sovran-builders/portfolio" element={<SovranBuildersPage section="portfolio" />} />
+        <Route path="/sovran-builders/testimonials" element={<SovranBuildersPage section="testimonials" />} />
+        <Route path="/sovran-builders/faq" element={<SovranBuildersPage section="faq" />} />
+        <Route path="/sovran-builders/contact" element={<SovranBuildersPage section="contact" />} />
+
+        {/* 404 Not Found Route */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </div>
+  );
+}
+
 function App() {
   const [showExitPopup, setShowExitPopup] = useState(false);
 
@@ -75,35 +113,8 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-        <div className="page-content">
-          <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="/sovran-builders" element={<SovranBuildersPage />} />
-          <Route path="/sovran-design" element={<SovranDesignPage />} />
-          
-          {/* Sovran Interiors Routes */}
-          <Route path="/sovran-interiors" element={<SovranInteriorsPage />} />
-          <Route path="/sovran-interiors/:categoryId" element={<SovranInteriorsTemplate pageType="category" />} />
-          <Route path="/sovran-interiors/:categoryId/:subcategoryId" element={<SovranInteriorsTemplate pageType="subcategory" />} />
-          
-          {/* Sovran Builders Routes */}
-          <Route path="/sovran-builders/residential" element={<SovranBuildersPage section="residential" />} />
-          <Route path="/sovran-builders/residential/:categoryId" element={<SovranBuildersTemplate />} />
-          <Route path="/sovran-builders/commercial" element={<SovranBuildersPage section="commercial" />} />
-          <Route path="/sovran-builders/process" element={<SovranBuildersPage section="process" />} />
-          <Route path="/sovran-builders/portfolio" element={<SovranBuildersPage section="portfolio" />} />
-          <Route path="/sovran-builders/testimonials" element={<SovranBuildersPage section="testimonials" />} />
-          <Route path="/sovran-builders/faq" element={<SovranBuildersPage section="faq" />} />
-          <Route path="/sovran-builders/contact" element={<SovranBuildersPage section="contact" />} />
-          
-          {/* 404 Not Found Route */}
-          <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </div>
-        
+        <InnerRoutes />
+
         {/* Exit Intent Popup */}
         {showExitPopup && <ExitIntentPopup onClose={handleClosePopup} />}
       </div>

@@ -16,6 +16,23 @@
 	}
 }
 
+/* If we need to remove the header offset for a full-bleed hero on small screens
+   (for example the Home page which renders a mobile-first hero), apply this
+   helper class to the page-content container: `home-no-offset` */
+@media (max-width: 768px) {
+  .page-content.home-no-offset {
+    padding-top: 0;
+  }
+}
+
+/* Pull mobile hero up so it sits directly under fixed header (uses --header-height) */
+@media (max-width: 768px) {
+  .hero-mobile-pullup {
+    margin-top: calc(var(--header-height) * -1);
+    padding-top: 0; /* ensure no extra space */
+  }
+}
+
 /* Exit Intent Popup Animation */
 @keyframes slideUp {
   from {

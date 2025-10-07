@@ -24,10 +24,10 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
         <div className="absolute inset-0 bg-[#081E27]/70"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl  text-white mb-6 reveal-up">
+            <h1 className="text-4xl md:text-6xl text-white mb-6 reveal-up leading-tight md:leading-snug lg:leading-normal">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-10 reveal-up">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-10 reveal-up leading-tight md:leading-relaxed">
               {description}
             </p>
             {ctaText && ctaLink && (

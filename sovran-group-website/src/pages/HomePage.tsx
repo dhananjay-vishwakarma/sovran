@@ -5,6 +5,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
+import HeroSectionMobile from '../components/HeroSectionMobile';
 import TestimonialSection from '../components/TestimonialSection';
 import BusinessVerticalsSection from '../components/BusinessVerticalsSection';
 import ProblemSolutionHookSection from '../components/ProblemSolutionHookSection';
@@ -155,7 +156,14 @@ const HomePage: React.FC = () => {
   return (
     <div ref={pageRef} className="min-h-screen bg-[#081E27]">
       <Navigation />
-      <HeroSection />
+      {/* Desktop / tablet hero */}
+      <div className="hidden md:block">
+        <HeroSection />
+      </div>
+      {/* Mobile-only hero (reordered with video between text and CTAs) */}
+      <div className="block md:hidden">
+        <HeroSectionMobile />
+      </div>
       <StorySection />
       {/* <ProblemSolutionHookSection /> */}
       <BusinessVerticalsSection />
