@@ -175,14 +175,19 @@ const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center">
           {/* Left side - Hero Text with subtle animations - vertically centered */}
           <div className="z-10 pr-0 lg:pr-4 lg:ml-12 flex flex-col justify-center lg:col-span-5 lg:col-start-2 md:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white ivymode-regular tracking-wider leading-tight md:leading-snug lg:leading-normal mb-2 md:mb-6" style={{ opacity: 0, filter: 'blur(10px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards', letterSpacing: '0.03em' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white ivymode-regular tracking-wider leading-tight md:leading-tight lg:leading-tight mb-2 md:mb-6" style={{ opacity: 0, filter: 'blur(10px)', animation: 'fadeInBlur 0.5s ease-out 0.2s forwards', letterSpacing: '0.03em', lineHeight: '1.02' }}>
               We Add <span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}> Space</span>, <br/><span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}>Value</span>, and <span className="text-primary-600 relative inline-block tracking-widest" style={{ letterSpacing: '0.08em' }}>Style 
                 <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary-600 transform scale-x-0 origin-left transition-transform duration-700 ease-out" style={{ animation: 'slideRight 1.5s ease-out 1.2s forwards' }}></span>
               </span> to Your Property
             </h1>
 
+            <p ref={projectsTextRef} className="text-gray-400 text-sm font-lato project-count mb-5">
+              Trusted by <span className="font-semibold">{projectCount}+</span> families & property owners
+            </p>
             
-            <div ref={buttonsRef} className="flex flex-wrap gap-6 mt-4 md:mt-10 hero-buttons">
+
+            
+            <div ref={buttonsRef} className="flex flex-wrap gap-6 hero-buttons">
               <div className="hero-button">
                 <ArrowButton 
                   text="Request a Consultation " 
@@ -199,9 +204,6 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <p ref={projectsTextRef} className="text-gray-400 mt-1 text-sm font-lato project-count">
-              Trusted by <span className="font-semibold">{projectCount}+</span> families & property owners
-            </p>
             
             {/* Features List */}
             <div ref={featuresListRef} className="mt-3 md:mt-8 space-y-1.5">
@@ -233,7 +235,7 @@ const HeroSection: React.FC = () => {
                     Positioned absolutely so it can extend beyond the right edge */}
                 <div className="relative w-full overflow-hidden md:overflow-visible">
                   {/* Mobile: simple responsive video in normal flow (doesn't overlap) */}
-                  <div className="block md:hidden w-full mb-4">
+                  <div className="block md:hidden w-full mb-4 ml-8 scale-110 rounded-md overflow-hidden">
                     <video
                       className="w-full h-auto rounded-md object-cover"
                       src="/assets/hero/screen-capture_1.mp4"

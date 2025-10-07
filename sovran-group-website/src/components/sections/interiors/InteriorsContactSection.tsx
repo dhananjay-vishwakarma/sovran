@@ -130,8 +130,8 @@ const InteriorsContactSection: React.FC = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-medium ivymode-regular">Email Us</h4>
                   <p className="text-gray-600 font-lato">
-                    <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="hover:text-primary-600 transition-colors">
-                      INFO@SOVRANGROUP.CO.UK
+                    <a href="mailto:info@sovrangroup.co.uk" className="hover:text-primary-600 transition-colors">
+                      info@sovrangroup.co.uk
                     </a>
                   </p>
                 </div>

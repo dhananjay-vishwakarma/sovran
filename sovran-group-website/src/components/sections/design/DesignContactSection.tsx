@@ -114,7 +114,7 @@ const DesignContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl  text-gray-900 mb-1">Email Us</h3>
-                  <p className="text-gray-600">INFO@SOVRANGROUP.CO.UK</p>
+                  <p className="text-gray-600">info@sovrangroup.co.uk</p>
                 </div>
               </div>
             </div>

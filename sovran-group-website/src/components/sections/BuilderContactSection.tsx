@@ -109,7 +109,7 @@ const BuilderContactSection: React.FC = () => {
                 </div>
                 <div className="ml-4">
                   <p className="text-[#081E27] font-medium">Email</p>
-                  <p className="text-dark-700">INFO@SOVRANGROUP.CO.UK</p>
+                  <p className="text-dark-700">info@sovrangroup.co.uk</p>
                 </div>
               </div>
               

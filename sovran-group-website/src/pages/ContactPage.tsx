@@ -336,8 +336,8 @@ const ContactPage: React.FC = () => {
                 
                 <div className="flex items-center space-x-3">
                   <EnvelopeIcon className="h-5 w-5 text-primary-500" />
-                  <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="text-gray-700 hover:text-primary-600 transition-colors">
-                    INFO@SOVRANGROUP.CO.UK
+                  <a href="mailto:info@sovrangroup.co.uk" className="text-gray-700 hover:text-primary-600 transition-colors">
+                    info@sovrangroup.co.uk
                   </a>
                 </div>
               </div>

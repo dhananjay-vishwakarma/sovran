@@ -89,9 +89,9 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 font-lato">
               <li className="flex items-center">
                 <EnvelopeIcon className="h-5 w-5 text-primary-500 mr-3" />
-                <a href="mailto:INFO@SOVRANGROUP.CO.UK" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  INFO@SOVRANGROUP.CO.UK
-                </a>
+                <a href="mailto:info@sovrangroup.co.uk" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  info@sovarangroup.co.uk
+                </a>    
               </li>
               <li className="flex items-center">
                 <PhoneIcon className="h-5 w-5 text-primary-500 mr-3" />

@@ -5,7 +5,6 @@ import sovranInteriorsData from '../data/sovranInteriors.json';
 import '../styles/megaMenu.css';
 import '../styles/residential-submenu.css';
 import '../styles/residential-dropdown.css';
-import '../styles/mega-menu-fixes.css';
 import './NavigationStyles.css';
 import '../styles/dropdown-blur.css';
 import sovranLogo from '../assets/logo/Sovran-03-03.png';
@@ -220,6 +219,7 @@ const Navigation: React.FC = () => {
   const buildMenuRef = useRef<HTMLDivElement>(null);
   const interiorsMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  // menu alignment is handled purely with CSS now; remove runtime adjustment
   const [isDesktopDropdownHover, setIsDesktopDropdownHover] = useState(false);
   const blurTimerRef = useRef<number | null>(null);
   
@@ -409,6 +409,7 @@ const Navigation: React.FC = () => {
       // Don't force remove here as we handle removal via timer
     };
   }, [activeDropdown, isDesktopDropdownHover]);
+
 
 
 

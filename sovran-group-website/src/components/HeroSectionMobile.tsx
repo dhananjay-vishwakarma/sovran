@@ -39,7 +39,7 @@ const HeroSectionMobile: React.FC = () => {
 
 
           {/* Mobile-first video placed between heading and CTAs */}
-          <div className="w-full mb-4 rounded-md overflow-hidden shadow-sm flex justify-center scale-110">
+          <div className="w-full mb-4 ml-7 rounded-md overflow-hidden  scale-125">
             <video
               className="w-full h-auto object-cover"
               src="/assets/hero/screen-capture_1.mp4"
@@ -52,7 +52,7 @@ const HeroSectionMobile: React.FC = () => {
           </div>
 
 
-          <ul className="space-y-2 text-gray-300 text-sm text-center mb-6">
+          <ul className="space-y-2 text-gray-300 text-sm text-center mb-6 mt-8">
             <li className="flex items-start gap-2 items-center justify-center text-center">
               <span className="w-4 h-4 rounded-full bg-[#CDAD7D]/20 flex items-center justify-center text-[#CDAD7D]">●</span>
               <span>UK’s top luxury property remodeling brand</span>

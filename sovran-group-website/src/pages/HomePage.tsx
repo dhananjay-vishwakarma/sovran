@@ -157,11 +157,11 @@ const HomePage: React.FC = () => {
     <div ref={pageRef} className="min-h-screen bg-[#081E27]">
       <Navigation />
       {/* Desktop / tablet hero */}
-      <div className="hidden md:block">
+      <div className="hidden md:block ml-20">
         <HeroSection />
       </div>
       {/* Mobile-only hero (reordered with video between text and CTAs) */}
-      <div className="block md:hidden">
+      <div className="block md:hidden ">
         <HeroSectionMobile />
       </div>
       <StorySection />
